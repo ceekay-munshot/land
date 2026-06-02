@@ -1,0 +1,7 @@
+# large raw source — re-downloaded by scripts/extract_gbn.py
+data/up_subdistricts.geojson
+
+__pycache__/
+*.pyc
+.DS_Store
+.env

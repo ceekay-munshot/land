@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LAND — NCR Land Intelligence (Phase 0)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <div id="title">
+    <h1>🏗️ LAND<span>· NCR Land Intelligence</span></h1>
+    <div class="phase">Phase 0 · Gautam Buddh Nagar pilot · <b>placeholder scores</b></div>
+  </div>
+
+  <div id="controls">
+    <button id="btn-india">🇮🇳 India view</button>
+    <button id="btn-gbn">🔍 Zoom to Gautam Buddh Nagar</button>
+  </div>
+
+  <div id="legend">
+    <div class="legend-title">Growth potential <span>(mock)</span></div>
+    <div class="row"><span class="sw green"></span> High · 🟢 70–100</div>
+    <div class="row"><span class="sw orange"></span> Medium · 🟠 45–69</div>
+    <div class="row"><span class="sw red"></span> Low · 🔴 0–44</div>
+    <hr />
+    <div class="row"><span class="dot"></span> Catalyst (approx.)</div>
+    <div class="disclaimer">Scores &amp; pins are Phase-0 placeholders to demo the mechanism. Real data lands in Phases 1–4.</div>
+  </div>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

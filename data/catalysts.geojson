@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "note": "Phase-0 PLACEHOLDER catalysts with APPROXIMATE coordinates. Replaced by the real geocoded govt-notification feed in Phase 3.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Noida International Airport (Jewar)",
+        "ctype": "Airport",
+        "status": "Phase-1 ~2026",
+        "impact": "anchor",
+        "note": "Single highest-impact catalyst; anchors the 6/12/24-month clock."
+      },
+      "geometry": { "type": "Point", "coordinates": [77.5500, 28.1600] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "YEIDA Aerotropolis Zone",
+        "ctype": "Master-plan / plotting",
+        "status": "notified",
+        "impact": "high",
+        "note": "YEIDA Master Plan 2041 development zone."
+      },
+      "geometry": { "type": "Point", "coordinates": [77.5100, 28.2300] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Yamuna Expressway (GBN stretch)",
+        "ctype": "Expressway",
+        "status": "operational",
+        "impact": "high",
+        "note": "Primary connectivity spine to the airport / Agra."
+      },
+      "geometry": { "type": "Point", "coordinates": [77.5300, 28.3200] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Greater Noida",
+        "ctype": "Urban node",
+        "status": "developed / expanding",
+        "impact": "med",
+        "note": "GNIDA residential & industrial schemes."
+      },
+      "geometry": { "type": "Point", "coordinates": [77.5040, 28.4744] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Noida",
+        "ctype": "Urban node",
+        "status": "developed",
+        "impact": "med",
+        "note": "Noida Authority core."
+      },
+      "geometry": { "type": "Point", "coordinates": [77.3910, 28.5355] }
+    }
+  ]
+}
