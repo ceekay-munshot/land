@@ -1,0 +1,62 @@
+name: bhoomirashi-probe
+
+# Scout the Bhoomi Rashi (MoRTH highway land-acquisition) portal — how to query by
+# state/district and pull 3A/3D acquisition notifications. Writes findings to _probe/
+# and commits them so results are git-readable (no Actions-log access needed).
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/bhoomirashi-probe.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe Bhoomi Rashi
+        shell: bash
+        run: |
+          set +e
+          mkdir -p _probe
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36'
+          {
+            echo "=== 1) homepage ==="
+            curl -sSL -k -m 30 -A "$UA" https://bhoomirashi.gov.in/ -o /tmp/h.html \
+              -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
+            echo "[markers]"; grep -oiE '<app-root|ng-version="[^"]*"|<title>[^<]*</title>|__VIEWSTATE|aspnet' /tmp/h.html | head
+            echo "[js bundles]"; grep -oE '[A-Za-z0-9_.-]+\.js' /tmp/h.html | sort -u | head -15
+            echo "[interesting links]"; grep -oiE 'href="[^"]*(search|proj|notif|3a|3d|acqui|gazette|report)[^"]*"' /tmp/h.html | sort -u | head -20
+
+            echo ""
+            echo "=== 2) project search page ==="
+            curl -sSL -k -m 30 -A "$UA" "https://bhoomirashi.gov.in/auth/revamp/search_proj.cshtml" -o /tmp/s.html \
+              -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
+            echo "[forms]"; grep -oiE '<form[^>]*action="[^"]*"' /tmp/s.html | head
+            echo "[selects]"; grep -oiE '<select[^>]*(name|id)="[^"]*"' /tmp/s.html | head -12
+            echo "[option samples]"; grep -oiE '<option[^>]*value="[^"]*"[^>]*>[^<]{0,30}' /tmp/s.html | head -15
+            echo "[api/ajax urls in js]"; grep -oiE "(url|action|href)\\s*[:=]\\s*['\"][^'\"]{4,70}" /tmp/s.html | sort -u | head -20
+            echo "[state/district hints]"; grep -oiE '(state|district|uttar|pradesh|gautam|jewar)[^<\"]{0,30}' /tmp/s.html | head -10
+
+            echo ""
+            echo "=== 3) guess API roots ==="
+            for p in "api/projects" "auth/revamp/getStates" "auth/revamp/getProjects" "getStateList"; do
+              echo "--- /$p ---"
+              curl -sSL -k -m 20 -A "$UA" "https://bhoomirashi.gov.in/$p" -o /tmp/a -w 'HTTP %{http_code} bytes %{size_download} type %{content_type}\n'
+              head -c 160 /tmp/a; echo
+            done
+            echo "PROBE DONE"
+          } > _probe/bhoomirashi.txt 2>&1
+          cp /tmp/s.html _probe/bhoomirashi_search.html 2>/dev/null
+          cat _probe/bhoomirashi.txt
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _probe
+          git commit -m "probe: bhoomirashi land-acquisition source" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
