@@ -1,7 +1,9 @@
 name: fetch-parcels
 
 # Pull real GBN/Jewar parcels from UP Bhu-Naksha (free US runner) and commit the
-# combined GeoJSON back to main so the map renders live land data.
+# combined GeoJSON back to main. Runs on a schedule (the "auto-batcher"): each run
+# resumes where the last left off and adds the next batch of villages, until the
+# whole tehsil is covered — then it harmlessly does nothing.
 on:
   workflow_dispatch:
     inputs:
@@ -9,14 +11,13 @@ on:
         description: Tehsil (Hindi substring)
         default: जेवर
       max_villages:
-        description: Max villages to fetch this run
-        default: '12'
-      start_village:
-        description: Village index to start from (for resuming)
-        default: '0'
+        description: Max villages per run
+        default: '15'
       include_owners:
         description: Include owner names (1=yes). Repo is public — keep 0 unless private.
         default: '0'
+  schedule:
+    - cron: '17 */3 * * *'   # every 3 hours
   push:
     paths:
       - '.github/workflows/fetch-parcels.yml'
@@ -24,6 +25,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: parcels-batcher
+  cancel-in-progress: false
 
 jobs:
   fetch:
@@ -35,18 +40,20 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests pyproj
-      - name: Fetch GBN parcels
+      - name: Fetch next batch of GBN parcels
         env:
           TEHSIL: ${{ github.event.inputs.tehsil || 'जेवर' }}
-          MAX_VILLAGES: ${{ github.event.inputs.max_villages || '12' }}
-          START_VILLAGE: ${{ github.event.inputs.start_village || '0' }}
+          MAX_VILLAGES: ${{ github.event.inputs.max_villages || '15' }}
           INCLUDE_OWNERS: ${{ github.event.inputs.include_owners || '0' }}
+          TIME_BUDGET: '1500'
+          SLEEP: '0.06'
+          APPEND: '1'
         run: python tools/fetch_gbn_parcels.py
       - name: Commit data back to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add web/data/gbn_parcels.geojson
-          git commit -m "data: GBN/Jewar parcels (scaled, automated fetch)" || { echo "no changes"; exit 0; }
+          git commit -m "data: GBN/Jewar parcels (auto-batcher)" || { echo "no changes"; exit 0; }
           git pull --rebase origin main || true
           git push

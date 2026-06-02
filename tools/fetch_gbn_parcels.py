@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """Fetch real cadastral parcels for Gautam Buddh Nagar villages from UP Bhu-Naksha
-(bhunakshaserver API) and emit a combined GeoJSON for the map.
+(bhunakshaserver API) and accumulate a combined GeoJSON for the map.
 
 FREE: runs from a GitHub Actions US runner (no geo-fence, no captcha on these
-endpoints). SCALED: loops villages in a tehsil with a bbox-skip optimisation and
-polite rate-limiting + hard caps, so it stays a good citizen of the gov server.
+endpoints). RESUMABLE: each run reads the existing file, skips villages already
+done, fetches the next batch, dedupes, and writes back — so a schedule fills in a
+whole tehsil over time without ever hammering the server.
 
 Recipe (confirmed via Playwright capture):
-  POST masterdata/levelvalue       level/codes              -> district/tehsil/village lists
-  POST MapInfo/getVVVVExtentGeoref  gisLevels=D,T,V         -> extent + crs + gisCode
-  POST MapInfo/getPlotAtXY         giscode&x&y&plotno       -> plot bbox + id + kide(plotNo)
-  POST MapInfo/getPlotInfo         {gisCode,plotNo}         -> khata + area(ha) + owners
+  POST masterdata/levelvalue        level/codes            -> district/tehsil/village lists
+  POST MapInfo/getVVVVExtentGeoref  gisLevels=D,T,V        -> extent + crs + gisCode
+  POST MapInfo/getPlotAtXY          giscode&x&y&plotno     -> plot bbox + id + kide(plotNo)
+  POST MapInfo/getPlotInfo          {gisCode,plotNo}       -> khata + area(ha) + owners
 
 Privacy: owner names are personal data; full lists emitted only if INCLUDE_OWNERS=1.
 """
@@ -29,13 +30,13 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
 
 DISTRICT_MATCH = os.environ.get("DISTRICT", "गौतम")
 TEHSIL_MATCH = os.environ.get("TEHSIL", "जेवर")
-START_VILLAGE = int(os.environ.get("START_VILLAGE", "0"))
-MAX_VILLAGES = int(os.environ.get("MAX_VILLAGES", "12"))
-STEP = float(os.environ.get("STEP", "30"))                 # grid spacing, metres
-PER_VILLAGE_MAX_PLOTS = int(os.environ.get("PER_VILLAGE_MAX_PLOTS", "400"))
-MAX_TOTAL_PLOTS = int(os.environ.get("MAX_TOTAL_PLOTS", "2500"))
-TIME_BUDGET = float(os.environ.get("TIME_BUDGET", "540"))  # seconds of village fetching
-SLEEP = float(os.environ.get("SLEEP", "0.05"))             # politeness delay per request
+MAX_VILLAGES = int(os.environ.get("MAX_VILLAGES", "15"))
+STEP = float(os.environ.get("STEP", "30"))
+PER_VILLAGE_MAX_PLOTS = int(os.environ.get("PER_VILLAGE_MAX_PLOTS", "500"))
+MAX_TOTAL_PLOTS = int(os.environ.get("MAX_TOTAL_PLOTS", "100000"))
+TIME_BUDGET = float(os.environ.get("TIME_BUDGET", "1500"))
+SLEEP = float(os.environ.get("SLEEP", "0.06"))
+APPEND = os.environ.get("APPEND", "1") == "1"
 INCLUDE_OWNERS = os.environ.get("INCLUDE_OWNERS", "0") == "1"
 OUT = os.environ.get("OUT", "web/data/gbn_parcels.geojson")
 
@@ -134,31 +135,53 @@ def main():
     if not t:
         sys.exit(f"tehsil {TEHSIL_MATCH!r} not found")
     villages = level(3, f'{d["code"]},{t["code"]}')
-    print(f"district={d['value']}({d['code']}) tehsil={t['value']}({t['code']}) "
-          f"villages={len(villages)}")
+
+    # resume: read what's already been fetched
+    existing, done_codes = [], set()
+    if APPEND and os.path.exists(OUT):
+        try:
+            cur = json.load(open(OUT, encoding="utf-8"))
+            existing = cur.get("features", [])
+            done_codes = set(cur.get("meta", {}).get("done_codes", []))
+        except Exception:
+            pass
+
+    remaining = [v for v in villages if v["code"] not in done_codes]
+    batch = remaining[:MAX_VILLAGES]
+    print(f"{d['value']}/{t['value']}: {len(villages)} villages, "
+          f"{len(done_codes)} done, {len(remaining)} remaining, fetching {len(batch)} now")
 
     T0 = time.time()
-    batch = villages[START_VILLAGE:START_VILLAGE + MAX_VILLAGES]
-    all_feats, done = [], []
+    new_feats = []
     for v in batch:
-        if not budget_left() or len(all_feats) >= MAX_TOTAL_PLOTS:
-            print("global cap/time reached — stopping")
+        if not budget_left() or len(existing) + len(new_feats) >= MAX_TOTAL_PLOTS:
             break
         feats = fetch_village(d["code"], t["code"], v)
-        all_feats.extend(feats)
-        done.append(v["value"])
-        print(f"  {v['value']}: +{len(feats)} plots (total {len(all_feats)}, "
-              f"{int(time.time() - T0)}s)")
+        new_feats.extend(feats)
+        if budget_left():                 # village finished within budget -> mark done
+            done_codes.add(v["code"])
+            print(f"  {v['value']}: +{len(feats)} (total {len(existing) + len(new_feats)}, {int(time.time() - T0)}s)")
+        else:
+            print(f"  {v['value']}: partial (budget) — will resume next run")
+            break
+
+    # merge + dedupe by (gis_code, plot_no)
+    merged = {}
+    for ft in existing + new_feats:
+        merged[(ft["properties"]["gis_code"], ft["properties"]["plot_no"])] = ft
+    all_feats = list(merged.values())
 
     fc = {"type": "FeatureCollection",
           "meta": {"district": d["value"], "tehsil": t["value"],
-                   "villages_fetched": done, "villages_total": len(villages),
-                   "plot_count": len(all_feats), "owners_included": INCLUDE_OWNERS},
+                   "done_codes": sorted(done_codes),
+                   "villages_done": len(done_codes), "villages_total": len(villages),
+                   "plot_count": len(all_feats), "owners_included": INCLUDE_OWNERS,
+                   "updated": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())},
           "features": all_feats}
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(fc, f, ensure_ascii=False)
-    print(f"WROTE {len(all_feats)} parcels from {len(done)} villages -> {OUT}")
+    print(f"WROTE {len(all_feats)} parcels | {len(done_codes)}/{len(villages)} villages done -> {OUT}")
 
 
 if __name__ == "__main__":
