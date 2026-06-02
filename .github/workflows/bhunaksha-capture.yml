@@ -1,0 +1,34 @@
+name: bhunaksha-capture
+
+# Drive the real UP Bhu-Naksha app under Playwright (free Actions runner) and
+# record its network calls -> the exact, captcha-free parcel geometry recipe.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/bhunaksha-capture.yml'
+      - 'tools/capture.mjs'
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright + Chromium
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: Capture Bhu-Naksha network
+        run: node tools/capture.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bhunaksha-capture
+          path: |
+            /tmp/page.html
+            /tmp/shot.png
+          if-no-files-found: ignore
