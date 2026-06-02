@@ -2,6 +2,7 @@
 const INDIA_BOUNDS = [[68.0, 6.5], [97.5, 37.0]];    // home view = India
 const GBN_BOUNDS = [[77.28, 28.02], [77.88, 28.66]]; // approx GBN bbox
 let parcelBounds = null;
+let airportCentroid = null;
 
 const map = new maplibregl.Map({
   container: 'map',
@@ -33,6 +34,14 @@ function polygonCentroid(geometry) {
   let x = 0, y = 0;
   for (const [lng, lat] of ring) { x += lng; y += lat; }
   return [x / ring.length, y / ring.length];
+}
+
+// great-circle distance in km between two [lng, lat] points
+function haversineKm(a, b) {
+  const R = 6371, t = Math.PI / 180;
+  const dLat = (b[1] - a[1]) * t, dLon = (b[0] - a[0]) * t;
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(a[1] * t) * Math.cos(b[1] * t) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(s));
 }
 
 const scoreColor = (s) => (s >= 70 ? '#2ecc71' : s >= 45 ? '#f39c12' : '#e74c3c');
@@ -122,6 +131,28 @@ map.on('load', async () => {
       .setLngLat(ft.geometry.coordinates).setPopup(pop).addTo(map);
   }
 
+  // Real catalyst geometry from OpenStreetMap (airport + expressways)
+  try {
+    const osm = await fetch('./data/catalysts_osm.geojson').then((r) => (r.ok ? r.json() : null));
+    if (osm && osm.features && osm.features.length) {
+      airportCentroid = osm.meta && osm.meta.airport_centroid;
+      map.addSource('osm-cat', { type: 'geojson', data: osm });
+      map.addLayer({ id: 'osm-roads', type: 'line', source: 'osm-cat',
+        filter: ['==', ['get', 'kind'], 'road'],
+        paint: { 'line-color': '#ff6d00', 'line-width': 2, 'line-opacity': 0.75 } });
+      map.addLayer({ id: 'osm-airport', type: 'circle', source: 'osm-cat',
+        filter: ['==', ['get', 'kind'], 'airport'],
+        paint: { 'circle-radius': 11, 'circle-color': '#1d4ed8', 'circle-opacity': 0.35,
+                 'circle-stroke-color': '#1d4ed8', 'circle-stroke-width': 2 } });
+      map.on('click', 'osm-airport', (e) => {
+        new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+          `<div class="pop"><h3>${e.features[0].properties.name}</h3>
+           <div class="ctype">${e.features[0].properties.status || ''}</div>
+           <div class="mock">real footprint · OpenStreetMap</div></div>`).addTo(map);
+      });
+    }
+  } catch (e) { /* no osm catalysts yet */ }
+
   // Real parcels from Bhu-Naksha (rendered only once the fetcher has produced them)
   try {
     const parcels = await fetch('./data/gbn_parcels.geojson').then((r) => (r.ok ? r.json() : null));
@@ -151,6 +182,11 @@ map.on('load', async () => {
           priceRows = `<tr><td>Circle value</td><td><b>${inr(val)}</b></td></tr>`
                     + `<tr><td>Rate (general)</td><td>${inr(r.general)}/ha</td></tr>`;
         }
+        let distRow = '';
+        if (airportCentroid) {
+          const km = haversineKm(airportCentroid, e.lngLat.toArray());
+          distRow = `<tr><td>✈ Airport</td><td>~${km.toFixed(1)} km</td></tr>`;
+        }
         new maplibregl.Popup({ maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(`
           <div class="pop">
             <h3>Plot ${p.plot_no} <small>${p.village || ''}</small></h3>
@@ -159,6 +195,7 @@ map.on('load', async () => {
               <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
               <tr><td>Owners</td><td>${Array.isArray(owners) ? owners.length : (p.owner_count ?? '—')}</td></tr>
               ${priceRows}
+              ${distRow}
             </table>
             ${Array.isArray(owners) && owners.length ? `<div class="driver">${owners.join(', ')}</div>` : ''}
             <div class="mock">parcel: Bhu-Naksha · price: IGRSUP circle rate</div>
