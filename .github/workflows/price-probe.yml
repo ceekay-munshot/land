@@ -60,12 +60,14 @@ jobs:
             done
             echo "PROBE DONE"
           } > _probe/price.txt 2>&1
+          cp /tmp/url.out _probe/igrsup_ratelist.html 2>/dev/null
+          cp /tmp/igr.html _probe/igrsup_home.html 2>/dev/null
           cat _probe/price.txt
       - name: Commit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _probe/price.txt
+          git add _probe
           git commit -m "probe: circle-rate sources report" || { echo "no change"; exit 0; }
           git pull --rebase origin main || true
           git push
