@@ -1,6 +1,7 @@
 // LAND — Phase 0 map. The data is placeholder; the mechanism is real.
 const INDIA_BOUNDS = [[68.0, 6.5], [97.5, 37.0]];    // home view = India
 const GBN_BOUNDS = [[77.28, 28.02], [77.88, 28.66]]; // approx GBN bbox
+let parcelBounds = null;
 
 const map = new maplibregl.Map({
   container: 'map',
@@ -19,7 +20,7 @@ const map = new maplibregl.Map({
   bounds: INDIA_BOUNDS,
   fitBoundsOptions: { padding: 20 },
   maxBounds: [[60.0, 2.0], [100.0, 39.0]], // keep the map India-focused
-  maxZoom: 16
+  maxZoom: 18
 });
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
 
@@ -147,6 +148,11 @@ map.on('load', async () => {
       });
       map.on('mouseenter', 'parcels-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'parcels-fill', () => { map.getCanvas().style.cursor = ''; });
+      const pb = new maplibregl.LngLatBounds();
+      for (const ft of parcels.features) for (const c of ft.geometry.coordinates[0]) pb.extend(c);
+      parcelBounds = pb;
+      const pbtn = document.getElementById('btn-parcels');
+      if (pbtn) { pbtn.style.display = 'inline-block'; pbtn.textContent = `🟣 Live parcels (${parcels.features.length})`; }
       console.log(`parcels loaded: ${parcels.features.length}`);
     }
   } catch (e) { /* no parcels yet — fetcher hasn't run */ }
@@ -159,3 +165,5 @@ document.getElementById('btn-india').onclick =
   () => map.fitBounds(INDIA_BOUNDS, { padding: 20, duration: 1500 });
 document.getElementById('btn-gbn').onclick =
   () => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 1500 });
+document.getElementById('btn-parcels').onclick =
+  () => { if (parcelBounds) map.fitBounds(parcelBounds, { padding: 40, maxZoom: 17, duration: 1500 }); };
