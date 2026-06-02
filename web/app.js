@@ -139,7 +139,8 @@ map.on('load', async () => {
       map.addSource('osm-cat', { type: 'geojson', data: osm });
       map.addLayer({ id: 'osm-roads', type: 'line', source: 'osm-cat',
         filter: ['==', ['get', 'kind'], 'road'],
-        paint: { 'line-color': '#ff6d00', 'line-width': 2, 'line-opacity': 0.75 } });
+        paint: { 'line-color': '#fb8c00', 'line-opacity': 0.55,
+                 'line-width': ['interpolate', ['linear'], ['zoom'], 5, 0.4, 10, 1.2, 14, 2.6] } });
       map.addLayer({ id: 'osm-airport', type: 'circle', source: 'osm-cat',
         filter: ['==', ['get', 'kind'], 'airport'],
         paint: { 'circle-radius': 11, 'circle-color': '#1d4ed8', 'circle-opacity': 0.35,
