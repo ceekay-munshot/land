@@ -5,11 +5,19 @@
     "unit": "INR per hectare, agricultural land (कृषक भूमि की दरें प्रति हैक्टेयर)",
     "columns": "road = on-road frontage (सड़क पर), adjacent = adjacent to road (सड़क से सटी), general = interior/general (सामान्य भूमि)",
     "match_note": "keys are village names with spaces removed, to match Bhu-Naksha village names",
-    "coverage": "3 of ~93 Jewar villages (pilot); rest to be parsed from the same rate book"
+    "coverage": "~11 of ~93 Jewar villages, read by hand from the rate book (general column most reliable)"
   },
   "rates": {
-    "अनवरगढखादर": { "village": "अनवरगढ खादर", "tehsil": "जेवर", "road": 9500000, "adjacent": 9200000, "general": 8800000 },
-    "अनवरगढबांगर": { "village": "अनवरगढ बांगर", "tehsil": "जेवर", "road": 9800000, "adjacent": 9500000, "general": 9000000 },
-    "अमरपुरपलाका": { "village": "अमरपुर पलाका", "tehsil": "जेवर", "road": 9800000, "adjacent": 9500000, "general": 9000000 }
+    "अनवरगढखादर": { "village": "अनवरगढ खादर", "road": 9500000, "adjacent": 9200000, "general": 8800000 },
+    "अनवरगढबांगर": { "village": "अनवरगढ बांगर", "road": 9800000, "adjacent": 9500000, "general": 9000000 },
+    "अमरपुरपलाका": { "village": "अमरपुर पलाका", "road": 9800000, "adjacent": 9500000, "general": 9000000 },
+    "अलाउद्दीननगरउर्फडुबरई": { "village": "अलाउद्दीन नगर उर्फ डुबरई", "road": 9800000, "adjacent": 9500000, "general": 9000000 },
+    "अहमदपुरचौरौली": { "village": "अहमदपुर चौरौली", "road": 9800000, "adjacent": 9500000, "general": 9000000 },
+    "नारोरा": { "village": "नारोरा (अमानुल्लापुर उर्फ)", "road": 9800000, "adjacent": 9500000, "general": 9000000 },
+    "दिनमऊपुर": { "village": "दिनमऊपुर", "road": 8600000, "adjacent": 8300000, "general": 8000000 },
+    "इण्डाईकनगरउर्फभोषरा": { "village": "इण्डाईक नगर उर्फ भोषरा", "road": 8600000, "adjacent": 8300000, "general": 8000000 },
+    "सादीपुर": { "village": "सादीपुर", "road": 9500000, "adjacent": 9200000, "general": 8800000 },
+    "करौलीबांगर": { "village": "करौली बांगर", "road": 9800000, "adjacent": 9500000, "general": 9000000 },
+    "करौलीखादर": { "village": "करौली खादर", "road": 9500000, "adjacent": 9200000, "general": 8800000 }
   }
 }
