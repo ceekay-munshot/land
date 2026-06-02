@@ -1,0 +1,67 @@
+name: source-probe
+
+# Free reachability + geo-fence probe. Tells us which data sources a US-based
+# GitHub Actions runner can fetch for free vs which are geo-fenced (need Firecrawl/manual).
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/source-probe.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Egress + geo-fence probe
+        shell: bash
+        run: |
+          set +e
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 probe'
+          COUNTRY=$(curl -sS -m 15 https://ipinfo.io/country 2>/dev/null | tr -d '\n')
+          echo "Runner egress country: ${COUNTRY:-unknown}"
+          {
+            echo "## 🛰️ Source probe — egress & geo-fence"
+            echo ""
+            echo "Runner egress country: **${COUNTRY:-unknown}** (hosted runners are usually US)"
+            echo ""
+            echo "| Source | HTTP | Bytes | Verdict |"
+            echo "|---|---:|---:|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          probe () {
+            local name="$1" url="$2"
+            local out code size verdict
+            out=$(curl -sSL -k -m 25 -r 0-4095 -A "$UA" -o /tmp/body -w '%{http_code} %{size_download}' "$url" 2>/tmp/err)
+            code=$(echo "$out" | awk '{print $1}'); size=$(echo "$out" | awk '{print $2}')
+            code=${code:-000}; size=${size:-0}
+            if [ "$code" = "200" ] || [ "$code" = "206" ]; then verdict="✅ reachable"
+            elif [ "$code" = "403" ]; then verdict="⛔ 403 (geo-fence/block?)"
+            elif [ "$code" = "000" ]; then verdict="❌ no-connect/timeout"
+            else verdict="⚠️ HTTP $code"; fi
+            echo "| $name | $code | $size | $verdict |" >> "$GITHUB_STEP_SUMMARY"
+            printf '%-42s %4s %8s  %s\n' "$name" "$code" "$size" "$verdict"
+            if [ "$code" != "200" ] && [ "$code" != "206" ]; then
+              echo "   body/err: $(head -c 140 /tmp/body 2>/dev/null | tr '\n' ' ') $(head -c 80 /tmp/err 2>/dev/null | tr '\n' ' ')"
+            fi
+          }
+
+          echo "=== OPEN sources (expect reachable from US) ==="
+          probe "GitHub raw (datta07 boundaries)"   "https://raw.githubusercontent.com/datta07/INDIAN-SHAPEFILES/master/INDIA/INDIA_STATES.geojson"
+          probe "AWS ESA WorldCover tile (S3)"       "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N27E075_Map.tif"
+          probe "AWS Sentinel-2 Earth Search STAC"   "https://earth-search.aws.element84.com/v1"
+          probe "OSM Overpass status"                "https://overpass-api.de/api/status"
+          probe "data.gov.in"                        "https://www.data.gov.in/"
+          probe "Internet Archive (eGazette mirror)" "https://archive.org/"
+
+          echo ""
+          echo "=== GOV portals (the geo-fence test) ==="
+          probe "Bhu-Naksha UP (home)"               "https://upbhunaksha.gov.in/"
+          probe "Bhu-Naksha UP WMS GetCapabilities"  "https://upbhunaksha.gov.in/bhunaksha/WMS?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1"
+          probe "IGRSUP (UP circle rates)"           "https://igrsup.gov.in/"
+          probe "YEIDA"                              "https://www.yamunaexpresswayauthority.com/"
+          probe "Bhoomi Rashi (land acquisition)"    "https://bhoomirashi.gov.in/"
+          probe "eGazette"                           "https://egazette.gov.in/"
+          probe "Jamabandi Haryana"                  "https://jamabandi.nic.in/"
+
+          echo ""
+          echo "probe complete"
