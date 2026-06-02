@@ -121,6 +121,36 @@ map.on('load', async () => {
       .setLngLat(ft.geometry.coordinates).setPopup(pop).addTo(map);
   }
 
+  // Real parcels from Bhu-Naksha (rendered only once the fetcher has produced them)
+  try {
+    const parcels = await fetch('./data/gbn_parcels.geojson').then((r) => (r.ok ? r.json() : null));
+    if (parcels && parcels.features && parcels.features.length) {
+      map.addSource('parcels', { type: 'geojson', data: parcels });
+      map.addLayer({ id: 'parcels-fill', type: 'fill', source: 'parcels',
+        paint: { 'fill-color': '#7c3aed', 'fill-opacity': 0.28 } });
+      map.addLayer({ id: 'parcels-line', type: 'line', source: 'parcels',
+        paint: { 'line-color': '#5b21b6', 'line-width': 0.6 } });
+      map.on('click', 'parcels-fill', (e) => {
+        const p = e.features[0].properties;
+        let owners = p.owners; try { owners = JSON.parse(p.owners); } catch { /* */ }
+        new maplibregl.Popup({ maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(`
+          <div class="pop">
+            <h3>Plot ${p.plot_no} <small>${p.village || ''}</small></h3>
+            <table>
+              <tr><td>Khata</td><td>${p.khata_no || '—'}</td></tr>
+              <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
+              <tr><td>Owners</td><td>${Array.isArray(owners) ? owners.length : (p.owner_count ?? '—')}</td></tr>
+            </table>
+            ${Array.isArray(owners) && owners.length ? `<div class="driver">${owners.join(', ')}</div>` : ''}
+            <div class="mock">UP Bhu-Naksha · live cadastral</div>
+          </div>`).addTo(map);
+      });
+      map.on('mouseenter', 'parcels-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'parcels-fill', () => { map.getCanvas().style.cursor = ''; });
+      console.log(`parcels loaded: ${parcels.features.length}`);
+    }
+  } catch (e) { /* no parcels yet — fetcher hasn't run */ }
+
   // Reveal: open on India, then fly to the GBN pilot
   setTimeout(() => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 2500 }), 1200);
 });

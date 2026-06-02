@@ -1,0 +1,48 @@
+name: fetch-parcels
+
+# Pull real GBN/Jewar parcels from UP Bhu-Naksha (free, US runner) and commit the
+# GeoJSON back to the repo so the map renders live land data. This is the Phase-2
+# ingestion pattern: Actions fetches -> commits data -> site redeploys.
+on:
+  workflow_dispatch:
+    inputs:
+      tehsil:
+        description: Tehsil (Hindi substring)
+        default: जेवर
+      village_index:
+        description: Village index within the tehsil
+        default: '0'
+      include_owners:
+        description: Include owner names (1=yes). Repo is public — keep 0 unless private.
+        default: '0'
+  push:
+    paths:
+      - '.github/workflows/fetch-parcels.yml'
+      - 'tools/fetch_gbn_parcels.py'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pyproj
+      - name: Fetch GBN parcels
+        env:
+          TEHSIL: ${{ github.event.inputs.tehsil || 'जेवर' }}
+          VILLAGE_INDEX: ${{ github.event.inputs.village_index || '0' }}
+          INCLUDE_OWNERS: ${{ github.event.inputs.include_owners || '0' }}
+        run: python tools/fetch_gbn_parcels.py
+      - name: Commit data back to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/data/gbn_parcels.geojson
+          git commit -m "data: GBN parcels from Bhu-Naksha (automated fetch)" || { echo "no changes"; exit 0; }
+          git pull --rebase origin main || true
+          git push
