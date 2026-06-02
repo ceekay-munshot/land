@@ -1,8 +1,7 @@
 name: bhoomirashi-probe
 
-# Scout the Bhoomi Rashi (MoRTH highway land-acquisition) portal — how to query by
-# state/district and pull 3A/3D acquisition notifications. Writes findings to _probe/
-# and commits them so results are git-readable (no Actions-log access needed).
+# Deep probe: resolve Gautam Buddh Nagar's district code via filldist1, then run the
+# NHAI acquisition search for it — to see if there's real Jewar-relevant signal.
 on:
   workflow_dispatch:
   push:
@@ -17,46 +16,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Probe Bhoomi Rashi
+      - name: Probe Bhoomi Rashi search
         shell: bash
         run: |
           set +e
           mkdir -p _probe
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36'
+          B="https://bhoomirashi.gov.in/auth/revamp"
           {
-            echo "=== 1) homepage ==="
-            curl -sSL -k -m 30 -A "$UA" https://bhoomirashi.gov.in/ -o /tmp/h.html \
-              -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
-            echo "[markers]"; grep -oiE '<app-root|ng-version="[^"]*"|<title>[^<]*</title>|__VIEWSTATE|aspnet' /tmp/h.html | head
-            echo "[js bundles]"; grep -oE '[A-Za-z0-9_.-]+\.js' /tmp/h.html | sort -u | head -15
-            echo "[interesting links]"; grep -oiE 'href="[^"]*(search|proj|notif|3a|3d|acqui|gazette|report)[^"]*"' /tmp/h.html | sort -u | head -20
-
-            echo ""
-            echo "=== 2) project search page ==="
-            curl -sSL -k -m 30 -A "$UA" "https://bhoomirashi.gov.in/auth/revamp/search_proj.cshtml" -o /tmp/s.html \
-              -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
-            echo "[forms]"; grep -oiE '<form[^>]*action="[^"]*"' /tmp/s.html | head
-            echo "[selects]"; grep -oiE '<select[^>]*(name|id)="[^"]*"' /tmp/s.html | head -12
-            echo "[option samples]"; grep -oiE '<option[^>]*value="[^"]*"[^>]*>[^<]{0,30}' /tmp/s.html | head -15
-            echo "[api/ajax urls in js]"; grep -oiE "(url|action|href)\\s*[:=]\\s*['\"][^'\"]{4,70}" /tmp/s.html | sort -u | head -20
-            echo "[state/district hints]"; grep -oiE '(state|district|uttar|pradesh|gautam|jewar)[^<\"]{0,30}' /tmp/s.html | head -10
-
-            echo ""
-            echo "=== 3) guess API roots ==="
-            for p in "api/projects" "auth/revamp/getStates" "auth/revamp/getProjects" "getStateList"; do
-              echo "--- /$p ---"
-              curl -sSL -k -m 20 -A "$UA" "https://bhoomirashi.gov.in/$p" -o /tmp/a -w 'HTTP %{http_code} bytes %{size_download} type %{content_type}\n'
-              head -c 160 /tmp/a; echo
+            echo "=== filldist1 for UP (state=9) — find Gautam Buddh Nagar code ==="
+            for q in "stateid=9" "state=9" "from_state=9" "id=9" "sid=9"; do
+              echo "--- ?$q ---"
+              curl -sSL -k -m 25 -A "$UA" "$B/filldist1.cshtml?$q" -o /tmp/d -w 'HTTP %{http_code}  bytes %{size_download}\n'
+              head -c 400 /tmp/d; echo
+              grep -oiE 'GAUTAM[^|<,]{0,20}' /tmp/d | head
             done
-            echo "PROBE DONE"
-          } > _probe/bhoomirashi.txt 2>&1
-          cp /tmp/s.html _probe/bhoomirashi_search.html 2>/dev/null
-          cat _probe/bhoomirashi.txt
+            echo ""
+            echo "=== whichever returned data, extract GBN code & search NHAI ==="
+            GBN=$(grep -oiE '[0-9]+[|,][^|,]*GAUTAM' /tmp/d | head -1 | grep -oE '^[0-9]+')
+            echo "parsed GBN district code: '${GBN}'"
+            for FD in "${GBN}" "-1"; do
+              [ -z "$FD" ] && continue
+              echo "--- POST search_proj agency=3(NHAI) state=9 dist=$FD ---"
+              curl -sSL -k -m 35 -A "$UA" -X POST \
+                --data "agency_id=3&from_state=9&from_dist=$FD&to_state=9&to_dist=$FD" \
+                "$B/search_proj.cshtml?nid=7" -o /tmp/r -w 'HTTP %{http_code}  bytes %{size_download}\n'
+              echo "[hits]"; grep -oiE '(NH-?[0-9]+|3[AD]|notification|village|gautam|jewar|project[^<]{0,30})' /tmp/r | sort | uniq -c | sort -rn | head -20
+              echo "[table rows ~]"; grep -ocE '<tr' /tmp/r | head -1
+            done
+            echo DONE
+          } > _probe/bhoomirashi2.txt 2>&1
+          cp /tmp/d _probe/br_dist_raw.txt 2>/dev/null
+          cp /tmp/r _probe/br_search_raw.html 2>/dev/null
+          cat _probe/bhoomirashi2.txt
       - name: Commit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add _probe
-          git commit -m "probe: bhoomirashi land-acquisition source" || { echo "no change"; exit 0; }
+          git commit -m "probe: bhoomirashi GBN acquisition search" || { echo "no change"; exit 0; }
           git pull --rebase origin main || true
           git push
