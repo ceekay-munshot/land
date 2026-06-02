@@ -131,9 +131,26 @@ map.on('load', async () => {
         paint: { 'fill-color': '#7c3aed', 'fill-opacity': 0.28 } });
       map.addLayer({ id: 'parcels-line', type: 'line', source: 'parcels',
         paint: { 'line-color': '#5b21b6', 'line-width': 0.6 } });
+      // circle-rate price layer (client-side join by village name)
+      let rates = {};
+      try {
+        const rj = await fetch('./data/circle_rates.json').then((r) => (r.ok ? r.json() : null));
+        if (rj) rates = rj.rates || {};
+      } catch (e) { /* no rates yet */ }
+      const normV = (s) => (s || '').replace(/\s+/g, '');
+      const inr = (v) => (v >= 1e7 ? '₹' + (v / 1e7).toFixed(2) + ' Cr'
+                        : v >= 1e5 ? '₹' + (v / 1e5).toFixed(1) + ' L' : '₹' + Math.round(v));
+
       map.on('click', 'parcels-fill', (e) => {
         const p = e.features[0].properties;
         let owners = p.owners; try { owners = JSON.parse(p.owners); } catch { /* */ }
+        const r = rates[normV(p.village)];
+        let priceRows = '';
+        if (r && p.area_ha != null) {
+          const val = p.area_ha * r.general;
+          priceRows = `<tr><td>Circle value</td><td><b>${inr(val)}</b></td></tr>`
+                    + `<tr><td>Rate (general)</td><td>${inr(r.general)}/ha</td></tr>`;
+        }
         new maplibregl.Popup({ maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(`
           <div class="pop">
             <h3>Plot ${p.plot_no} <small>${p.village || ''}</small></h3>
@@ -141,9 +158,10 @@ map.on('load', async () => {
               <tr><td>Khata</td><td>${p.khata_no || '—'}</td></tr>
               <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
               <tr><td>Owners</td><td>${Array.isArray(owners) ? owners.length : (p.owner_count ?? '—')}</td></tr>
+              ${priceRows}
             </table>
             ${Array.isArray(owners) && owners.length ? `<div class="driver">${owners.join(', ')}</div>` : ''}
-            <div class="mock">UP Bhu-Naksha · live cadastral</div>
+            <div class="mock">parcel: Bhu-Naksha · price: IGRSUP circle rate</div>
           </div>`).addTo(map);
       });
       map.on('mouseenter', 'parcels-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
