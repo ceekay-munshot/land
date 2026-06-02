@@ -1,7 +1,7 @@
 name: bhunaksha-probe
 
-# UP Bhu-Naksha is a modern Angular SPA — discover its REAL API endpoints by
-# reading the app's JS bundle + runtime config (free, from a US runner).
+# Extract the geometry recipe (GeoServer base, layer name, /api paths) from the
+# UP Bhu-Naksha Angular app bundle. Free, from a US runner.
 on:
   workflow_dispatch:
   push:
@@ -12,41 +12,30 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Discover UP Bhu-Naksha API (Angular bundle + config)
+      - name: Extract Bhu-Naksha geometry recipe (main bundle)
         shell: bash
         run: |
           set +e
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36'
           BASE="https://upbhunaksha.gov.in"
+          curl -sSL -k -m 60 -A "$UA" "$BASE/main-76RVRF3Z.js" -o /tmp/main.js -w 'main.js HTTP %{http_code}  bytes %{size_download}\n'
 
-          echo "=== fetch SPA index ==="
-          curl -sSL -k -m 40 -A "$UA" "$BASE/" -o /tmp/idx.html -w 'index: HTTP %{http_code}  bytes %{size_download}\n'
-
-          echo ""
-          echo "=== common Angular runtime config files ==="
-          for c in assets/appconfig.json assets/config.json assets/configuration.json assets/env.json assets/data/config.json appconfig.json config.json; do
-            echo "--- /$c ---"
-            curl -sSL -k -m 20 -A "$UA" "$BASE/$c" -o /tmp/c -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
-            head -c 500 /tmp/c; echo
-          done
+          echo "=== all /api/ paths ==="
+          grep -oE '/api/[A-Za-z0-9_/.-]+' /tmp/main.js | sort -u | head -60
 
           echo ""
-          echo "=== JS bundles referenced by index ==="
-          grep -oE '[A-Za-z0-9_.-]+\.js' /tmp/idx.html | sort -u | tee /tmp/js.list
+          echo "=== geoserver / wms / wfs / layer context ==="
+          grep -oiE '.{0,30}(geoserver|/wms|/wfs|typename|layers=|workspace|getfeatureinfo|info_format)[^"]{0,70}' /tmp/main.js | sort -u | head -60
 
           echo ""
-          echo "=== grep each bundle for API/endpoint clues ==="
-          while read -r js; do
-            [ -z "$js" ] && continue
-            url="$BASE/$js"
-            echo "----- $url -----"
-            curl -sSL -k -m 60 -A "$UA" "$url" -o /tmp/b.js -w 'HTTP %{http_code}  bytes %{size_download}\n'
-            echo "[high-signal paths]"
-            grep -oiE '(/?(api|rest)/[a-z0-9_/.-]*|geoserver[a-z0-9_/.-]*|getfeatureinfo|getcapabilities|/wms|/wfs|/bhunaksha/[a-z0-9_/.-]*)' /tmp/b.js | sort -u | head -50
-            echo "[endpoint-ish string literals]"
-            grep -oE '"[^"]*(district|tehsil|village|khasra|khsra|plot|parcel|mapinfo|extent|georef|scalar|featureinfo|nakshaUrl|apiUrl|baseUrl|serviceUrl)[^"]*"' /tmp/b.js | sort -u | head -60
-            echo "[absolute urls]"
-            grep -oE 'https?://[A-Za-z0-9._:/-]+' /tmp/b.js | sort -u | head -40
-          done < /tmp/js.list
+          echo "=== absolute http(s) urls in app bundle ==="
+          grep -oE 'https?://[A-Za-z0-9._:/-]+' /tmp/main.js | sort -u | head -50
 
-          echo "done"
+          echo ""
+          echo "=== layer/workspace-looking tokens (word:word) ==="
+          grep -oE '"[A-Za-z0-9_]+:[A-Za-z0-9_]+"' /tmp/main.js | sort -u | head -40
+
+          echo ""
+          echo "=== context around plot endpoints ==="
+          grep -oiE '.{0,20}(api/plots|plotinfo|getplot|plot_no|plotno|kid|giscode)[^"]{0,50}' /tmp/main.js | sort -u | head -40
+          echo done
