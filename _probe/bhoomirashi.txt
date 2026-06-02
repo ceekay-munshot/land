@@ -1,0 +1,130 @@
+=== 1) homepage ===
+HTTP 200  bytes 39569  type text/html; charset=utf-8
+[markers]
+<title>Land Acquisition Portal</title>
+[js bundles]
+MD5.js
+api.js
+bootstrap.bundle.min.js
+cdn.js
+clientchks.js
+counterup.min.js
+easing.min.js
+jquery-3.6.js
+main.js
+moment-timezone.min.js
+moment.min.js
+owl.carousel.min.js
+sha512.js
+tempusdominus-bootstrap-4.min.js
+waypoints.min.js
+[interesting links]
+href="projects_la_rep.cshtml"
+href="search_proj.cshtml"
+
+=== 2) project search page ===
+HTTP 200  bytes 30325  type text/html; charset=utf-8
+[forms]
+<form action="search_proj.cshtml?nid=7"
+[selects]
+<select name="agency_id" id="agency_id"
+<select id="from_state" name="from_state"
+<select id="from_dist" name="from_dist"
+[option samples]
+<option value="1">MoRTH
+<option value="2">NHIDCL
+<option value="3">NHAI
+<option value="-1">-- STATE --
+<option value="35">ANDAMAN &amp; NICOBAR ISLANDS
+<option value="28">ANDHRA PRADESH
+<option value="12">ARUNACHAL PRADESH
+<option value="18">ASSAM
+<option value="10">BIHAR
+<option value="4">CHANDIGARH
+<option value="22">CHHATTISGARH
+<option value="26">DADRA &amp; NAGAR HAVELI
+<option value="25">DAMAN &amp; DIU
+<option value="7">DELHI
+<option value="30">GOA
+[api/ajax urls in js]
+action="search_proj.cshtml?nid=7
+href="/auth/revamp/login1.cshtml
+href="caljs/calendar-win2k-cold-1.css
+href="contact_us.cshtml
+href="faq_main.cshtml
+href="https://fonts.googleapis.com
+href="https://fonts.gstatic.com
+href="login/css/all.min.css
+href="login/css/bootstrap-icons.css
+href="login/css/bootstrap.min.css
+href="login/css/css2.css
+href="login/css/style.css
+href="login/lib/animate/animate.min.css
+href="login/lib/owlcarousel/assets/owl.carousel.min.css
+href="login/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css
+[state/district hints]
+statechange = function () {
+State == 4) {
+DISTRICT --
+stateid = document.getElementById(s
+stateid)
+state|$|from_dist|$|land_req|$|land
+state
+State:
+state
+state
+
+=== 3) guess API roots ===
+--- /api/projects ---
+HTTP 200 bytes 398 type text/html
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Not found Page</title>
+
+
+</head>
+
+<body>
+--- /auth/revamp/getStates ---
+HTTP 200 bytes 398 type text/html
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Not found Page</title>
+
+
+</head>
+
+<body>
+--- /auth/revamp/getProjects ---
+HTTP 200 bytes 398 type text/html
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Not found Page</title>
+
+
+</head>
+
+<body>
+--- /getStateList ---
+HTTP 200 bytes 398 type text/html
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Not found Page</title>
+
+
+</head>
+
+<body>
+PROBE DONE
