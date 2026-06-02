@@ -1,0 +1,71 @@
+name: price-probe
+
+# Find a free path to Gautam Buddh Nagar circle/DLC rates (the official price floor).
+# Writes findings to _probe/price.txt and commits them back, so results are readable
+# via git (no Actions-log access needed).
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/price-probe.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe circle-rate sources
+        shell: bash
+        run: |
+          set +e
+          mkdir -p _probe
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36'
+          {
+            echo "=== 1) IGRSUP home (SPA? API? rate links?) ==="
+            curl -sSL -k -m 30 -A "$UA" https://igrsup.gov.in/ -o /tmp/igr.html \
+              -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
+            echo "[markers]"; grep -oiE '<app-root|ng-version="[^"]*"|<title>[^<]*</title>' /tmp/igr.html | head
+            echo "[js bundles]"; grep -oE '[A-Za-z0-9_.-]+\.js' /tmp/igr.html | sort -u | head -15
+            echo "[rate/circle links]"; grep -oiE '(href|src|routerlink)="[^"]*(rate|circle|dlc|valuation|sampatti)[^"]*"' /tmp/igr.html | head -15
+
+            echo ""
+            echo "=== 2) IGRSUP getUploadedRateList ==="
+            curl -sSL -k -m 30 -A "$UA" "https://igrsup.gov.in/igrsup/getUploadedRateList" -o /tmp/url.out \
+              -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
+            head -c 600 /tmp/url.out; echo
+
+            echo ""
+            echo "=== 3) IGRSUP possible API roots ==="
+            for p in "igrsup/masterdata/levelvalue" "igrsupserver/masterdata/levelvalue" "igrsup/rest/getDistrict" "igrsup/api/district"; do
+              echo "--- /$p ---"
+              curl -sSL -k -m 20 -A "$UA" "https://igrsup.gov.in/$p" -o /tmp/a.out \
+                -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
+              head -c 200 /tmp/a.out; echo
+            done
+
+            echo ""
+            echo "=== 4) GBN district NIC (circle-rate PDFs, often captcha-free) ==="
+            for u in "https://gbnagar.nic.in/documents/" \
+                     "https://gbnagar.nic.in/document/proposed-circle-rate-list-of-district-gautam-buddha-nagar/" \
+                     "https://gbnagar.nic.in/notice_category/circle-rate/" \
+                     "https://gbnagar.nic.in/en/tehsil/jewar/"; do
+              echo "--- $u ---"
+              curl -sSL -k -m 30 -A "$UA" "$u" -o /tmp/g.html \
+                -w 'HTTP %{http_code}  bytes %{size_download}\n'
+              grep -oiE 'href="[^"]*\.pdf"' /tmp/g.html | head -8
+              grep -oiE '(circle|rate|dlc)[^<"]{0,45}' /tmp/g.html | head -6
+            done
+            echo "PROBE DONE"
+          } > _probe/price.txt 2>&1
+          cat _probe/price.txt
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _probe/price.txt
+          git commit -m "probe: circle-rate sources report" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
