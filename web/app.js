@@ -72,7 +72,7 @@ map.on('load', async () => {
     id: 'gbn-fill', type: 'fill', source: 'gbn',
     paint: {
       'fill-color': ['step', ['get', 'mock_score'], '#e74c3c', 45, '#f39c12', 70, '#2ecc71'],
-      'fill-opacity': 0.55
+      'fill-opacity': 0.18
     }
   });
   map.addLayer({
@@ -154,16 +154,11 @@ map.on('load', async () => {
     }
   } catch (e) { /* no osm catalysts yet */ }
 
-  // Real parcels from Bhu-Naksha (rendered only once the fetcher has produced them)
+  // Real parcels from Bhu-Naksha + Phase-4 growth scoring
   try {
     const parcels = await fetch('./data/gbn_parcels.geojson').then((r) => (r.ok ? r.json() : null));
     if (parcels && parcels.features && parcels.features.length) {
-      map.addSource('parcels', { type: 'geojson', data: parcels });
-      map.addLayer({ id: 'parcels-fill', type: 'fill', source: 'parcels',
-        paint: { 'fill-color': '#7c3aed', 'fill-opacity': 0.28 } });
-      map.addLayer({ id: 'parcels-line', type: 'line', source: 'parcels',
-        paint: { 'line-color': '#5b21b6', 'line-width': 0.6 } });
-      // circle-rate price layer (client-side join by village name)
+      // circle rates (for price + score headroom)
       let rates = {};
       try {
         const rj = await fetch('./data/circle_rates.json').then((r) => (r.ok ? r.json() : null));
@@ -172,6 +167,46 @@ map.on('load', async () => {
       const normV = (s) => (s || '').replace(/\s+/g, '');
       const inr = (v) => (v >= 1e7 ? '₹' + (v / 1e7).toFixed(2) + ' Cr'
                         : v >= 1e5 ? '₹' + (v / 1e5).toFixed(1) + ' L' : '₹' + Math.round(v));
+      const clamp01 = (x) => Math.max(0, Math.min(1, x));
+      const featCentroid = (ft) => {
+        const ring = ft.geometry.coordinates[0];
+        let x = 0, y = 0; for (const c of ring) { x += c[0]; y += c[1]; }
+        return [x / ring.length, y / ring.length];
+      };
+
+      // ---- Phase-4 v1 growth score (transparent heuristic, NOT a guarantee) ----
+      //   65% airport proximity (distance-decay to 40 km) + 35% price headroom
+      //   (cheaper than the area's range = more room to appreciate near the catalyst)
+      const seenRates = parcels.features
+        .map((f) => (rates[normV(f.properties.village)] || {}).general)
+        .filter((v) => v != null);
+      const rMin = seenRates.length ? Math.min(...seenRates) : 0;
+      const rMax = seenRates.length ? Math.max(...seenRates) : 0;
+      for (const ft of parcels.features) {
+        const p = ft.properties;
+        let prox = null, head = null;
+        if (airportCentroid) {
+          p.airport_km = Math.round(haversineKm(airportCentroid, featCentroid(ft)) * 10) / 10;
+          prox = clamp01(1 - p.airport_km / 40);
+        }
+        const r = rates[normV(p.village)];
+        if (r && rMax > rMin) head = clamp01((rMax - r.general) / (rMax - rMin));
+        let score = null;
+        if (prox != null && head != null) score = 0.65 * prox + 0.35 * head;
+        else if (prox != null) score = prox;
+        else if (head != null) score = head;
+        if (score != null) p.score = Math.round(score * 100);
+      }
+
+      map.addSource('parcels', { type: 'geojson', data: parcels });
+      map.addLayer({ id: 'parcels-fill', type: 'fill', source: 'parcels',
+        paint: {
+          'fill-color': ['case', ['has', 'score'],
+            ['step', ['get', 'score'], '#e74c3c', 40, '#f39c12', 67, '#2ecc71'], '#9ca3af'],
+          'fill-opacity': 0.6
+        } });
+      map.addLayer({ id: 'parcels-line', type: 'line', source: 'parcels',
+        paint: { 'line-color': '#333', 'line-width': 0.5 } });
 
       map.on('click', 'parcels-fill', (e) => {
         const p = e.features[0].properties;
@@ -179,18 +214,19 @@ map.on('load', async () => {
         const r = rates[normV(p.village)];
         let priceRows = '';
         if (r && p.area_ha != null) {
-          const val = p.area_ha * r.general;
-          priceRows = `<tr><td>Circle value</td><td><b>${inr(val)}</b></td></tr>`
+          priceRows = `<tr><td>Circle value</td><td><b>${inr(p.area_ha * r.general)}</b></td></tr>`
                     + `<tr><td>Rate (general)</td><td>${inr(r.general)}/ha</td></tr>`;
         }
-        let distRow = '';
-        if (airportCentroid) {
-          const km = haversineKm(airportCentroid, e.lngLat.toArray());
-          distRow = `<tr><td>✈ Airport</td><td>~${km.toFixed(1)} km</td></tr>`;
-        }
+        const distRow = p.airport_km != null ? `<tr><td>✈ Airport</td><td>~${p.airport_km} km</td></tr>` : '';
+        const sc = p.score;
+        const col = sc == null ? '#9ca3af' : sc >= 67 ? '#2ecc71' : sc >= 40 ? '#f39c12' : '#e74c3c';
+        const band = sc == null ? '—' : sc >= 67 ? 'High 🟢' : sc >= 40 ? 'Medium 🟠' : 'Low 🔴';
+        const scoreHdr = sc == null ? '' :
+          `<div class="badge" style="background:${col}">Growth score ${sc}/100 · ${band}</div>`;
         new maplibregl.Popup({ maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(`
           <div class="pop">
             <h3>Plot ${p.plot_no} <small>${p.village || ''}</small></h3>
+            ${scoreHdr}
             <table>
               <tr><td>Khata</td><td>${p.khata_no || '—'}</td></tr>
               <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
@@ -198,18 +234,19 @@ map.on('load', async () => {
               ${priceRows}
               ${distRow}
             </table>
-            ${Array.isArray(owners) && owners.length ? `<div class="driver">${owners.join(', ')}</div>` : ''}
-            <div class="mock">parcel: Bhu-Naksha · price: IGRSUP circle rate</div>
+            <div class="driver">score v1 = 65% airport proximity + 35% price headroom · heuristic, not a guarantee</div>
+            <div class="mock">parcel: Bhu-Naksha · price: IGRSUP · catalyst: OSM</div>
           </div>`).addTo(map);
       });
       map.on('mouseenter', 'parcels-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'parcels-fill', () => { map.getCanvas().style.cursor = ''; });
+
       const pb = new maplibregl.LngLatBounds();
       for (const ft of parcels.features) for (const c of ft.geometry.coordinates[0]) pb.extend(c);
       parcelBounds = pb;
       const pbtn = document.getElementById('btn-parcels');
       if (pbtn) { pbtn.style.display = 'inline-block'; pbtn.textContent = `🟣 Live parcels (${parcels.features.length})`; }
-      console.log(`parcels loaded: ${parcels.features.length}`);
+      console.log(`parcels loaded + scored: ${parcels.features.length}`);
     }
   } catch (e) { /* no parcels yet — fetcher hasn't run */ }
 

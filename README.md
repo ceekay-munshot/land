@@ -29,12 +29,20 @@ deploy's root / output directory at `web/`.
 ## 🧱 Roadmap
 | Phase | What | Egress |
 |---|---|---|
-| **0 ✅** | Map + tehsils + catalyst pins + colour mechanism | none |
-| 1 | ESA WorldCover vacant-land grid + circle-rate price floor | low |
-| 2 | Real parcels (Bhu-Naksha WMS → GeoJSON, UP code 09) | India |
-| 3 | Catalyst ingestion (YEIDA / Bhoomi Rashi / eGazette) + geocoding | India |
-| 4 | Scoring engine → real colour + confidence bands | — |
+| **0 ✅** | Map + tehsils + catalyst layer | none |
+| **2 ✅** | Real parcels (Bhu-Naksha, auto-batcher) + owners/area | Actions |
+| **1 ✅** | Circle-rate price floor joined onto parcels | manual + Actions |
+| **3 ✅** | Real catalyst geometry (airport + expressways, OSM) + per-parcel distance | Actions |
+| 3b | Live notifications (Bhoomi Rashi / YEIDA / eGazette) | India |
+| **4 ✅ v1** | Growth score → real parcel colours | — |
 | 5 | Claude routines (refresh / alerts) + CRM owner-join | India |
+
+## 🧠 Growth score (Phase 4 v1)
+Every parcel gets a transparent **heuristic** score (0–100), coloured 🟢🟠🔴:
+- **65 % airport proximity** — distance-decay from Noida Int'l Airport (Jewar), → 0 at ~40 km
+- **35 % price headroom** — cheaper than the area's circle-rate range = more room to appreciate near the catalyst
+
+It is **not** a statistical probability — it's a weighted heuristic over *real* signals, shown honestly, and it sharpens as more signals (Phase 3b notifications, transaction history) are added. Computed client-side in `web/app.js`.
 
 ## 📡 Data sources (free-first)
 Boundaries `datta07/INDIAN-SHAPEFILES` · parcels Bhu-Naksha (NIC) · vacant land ESA WorldCover +
