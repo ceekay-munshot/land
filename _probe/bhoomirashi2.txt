@@ -1,0 +1,25 @@
+=== filldist1 for UP (state=9) — find Gautam Buddh Nagar code ===
+--- ?stateid=9 ---
+HTTP 200  bytes 0
+
+--- ?state=9 ---
+HTTP 200  bytes 0
+
+--- ?from_state=9 ---
+HTTP 200  bytes 0
+
+--- ?id=9 ---
+HTTP 200  bytes 0
+
+--- ?sid=9 ---
+HTTP 200  bytes 0
+
+
+=== whichever returned data, extract GBN code & search NHAI ===
+parsed GBN district code: ''
+--- POST search_proj agency=3(NHAI) state=9 dist=-1 ---
+HTTP 200  bytes 175
+[hits]
+[table rows ~]
+0
+DONE
