@@ -1,8 +1,7 @@
 name: bhunaksha-probe
 
-# Deep probe of the Bhu-Naksha UP parcel-geometry path, from a free runner.
-# Confirms the WMS GetCapabilities is real + lists queryable plot layers, and
-# checks the ScalarDatahandler hierarchy API — the basis of the Phase-2 scraper.
+# UP Bhu-Naksha is a modern Angular SPA — discover its REAL API endpoints by
+# reading the app's JS bundle + runtime config (free, from a US runner).
 on:
   workflow_dispatch:
   push:
@@ -13,44 +12,41 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Bhu-Naksha UP deep probe
+      - name: Discover UP Bhu-Naksha API (Angular bundle + config)
         shell: bash
         run: |
           set +e
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36'
-          B="https://upbhunaksha.gov.in/bhunaksha"
+          BASE="https://upbhunaksha.gov.in"
 
-          echo "=== 1) WMS GetCapabilities (full fetch) ==="
-          curl -sSL -k -m 45 -A "$UA" "$B/WMS?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1" \
-            -o /tmp/cap.xml -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
-          echo "--- first 400 bytes ---"; head -c 400 /tmp/cap.xml; echo
-          echo "--- root/service tag ---"
-          grep -oiE '<(WMT_MS_Capabilities|WMS_Capabilities|ServiceExceptionReport|html)[^>]*>' /tmp/cap.xml | head -3
-          echo "--- LAYER NAMES ---"
-          grep -oE '<Name>[^<]+</Name>' /tmp/cap.xml | sed -E 's:</?Name>::g' | sort -u | head -50
-          echo "--- queryable layers count ---"
-          grep -oE 'queryable="1"' /tmp/cap.xml | wc -l
+          echo "=== fetch SPA index ==="
+          curl -sSL -k -m 40 -A "$UA" "$BASE/" -o /tmp/idx.html -w 'index: HTTP %{http_code}  bytes %{size_download}\n'
 
           echo ""
-          echo "=== 2) ScalarDatahandler hierarchy (state=09 = UP) ==="
-          for q in "OP=2&level=3&state=09" "OP=2&state=09" "OP=2&level=3&selections=&state=09"; do
-            echo "--- ?$q ---"
-            curl -sSL -k -m 30 -A "$UA" "$B/ScalarDatahandler?$q" \
-              -o /tmp/sd -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
-            head -c 700 /tmp/sd; echo
+          echo "=== common Angular runtime config files ==="
+          for c in assets/appconfig.json assets/config.json assets/configuration.json assets/env.json assets/data/config.json appconfig.json config.json; do
+            echo "--- /$c ---"
+            curl -sSL -k -m 20 -A "$UA" "$BASE/$c" -o /tmp/c -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
+            head -c 500 /tmp/c; echo
           done
 
           echo ""
-          echo "=== 3) rest/MapInfo reachability ==="
-          curl -sSL -k -m 30 -A "$UA" "$B/rest/MapInfo/getVVVVExtentGeoref?state=09&gisLevels=09&srs=0" \
-            -o /tmp/mi -w 'HTTP %{http_code}  bytes %{size_download}  type %{content_type}\n'
-          head -c 500 /tmp/mi; echo
+          echo "=== JS bundles referenced by index ==="
+          grep -oE '[A-Za-z0-9_.-]+\.js' /tmp/idx.html | sort -u | tee /tmp/js.list
 
-          {
-            echo "## 🔑 Bhu-Naksha UP deep probe"
-            echo ""
-            echo "- GetCapabilities root: \`$(grep -oiE '<(WMT_MS_Capabilities|WMS_Capabilities|ServiceExceptionReport|html)' /tmp/cap.xml | head -1)\`"
-            echo "- queryable layers: **$(grep -oE 'queryable=\"1\"' /tmp/cap.xml | wc -l)**"
-            echo "- layer names: \`$(grep -oE '<Name>[^<]+</Name>' /tmp/cap.xml | sed -E 's:</?Name>::g' | sort -u | paste -sd', ' )\`"
-          } >> "$GITHUB_STEP_SUMMARY"
+          echo ""
+          echo "=== grep each bundle for API/endpoint clues ==="
+          while read -r js; do
+            [ -z "$js" ] && continue
+            url="$BASE/$js"
+            echo "----- $url -----"
+            curl -sSL -k -m 60 -A "$UA" "$url" -o /tmp/b.js -w 'HTTP %{http_code}  bytes %{size_download}\n'
+            echo "[high-signal paths]"
+            grep -oiE '(/?(api|rest)/[a-z0-9_/.-]*|geoserver[a-z0-9_/.-]*|getfeatureinfo|getcapabilities|/wms|/wfs|/bhunaksha/[a-z0-9_/.-]*)' /tmp/b.js | sort -u | head -50
+            echo "[endpoint-ish string literals]"
+            grep -oE '"[^"]*(district|tehsil|village|khasra|khsra|plot|parcel|mapinfo|extent|georef|scalar|featureinfo|nakshaUrl|apiUrl|baseUrl|serviceUrl)[^"]*"' /tmp/b.js | sort -u | head -60
+            echo "[absolute urls]"
+            grep -oE 'https?://[A-Za-z0-9._:/-]+' /tmp/b.js | sort -u | head -40
+          done < /tmp/js.list
+
           echo "done"
