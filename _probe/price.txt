@@ -1,0 +1,74 @@
+=== 1) IGRSUP home (SPA? API? rate links?) ===
+HTTP 200  bytes 73  type text/html;charset=ISO-8859-1
+[markers]
+[js bundles]
+[rate/circle links]
+
+=== 2) IGRSUP getUploadedRateList ===
+HTTP 200  bytes 20595  type text/html;charset=UTF-8
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link href="/igrsup/css/jquery-ui.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" language="javascript" src="/igrsup/js/jquery-3.7.1.js"></script>
+<script src="/igrsup/js/jquery-ui.js" type="text/javascript"></script>
+<link href="/igrsup/css/keyboard.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" language="javascript" src="/igrsup/js/keyboard.js"></script>
+<script src="/igrsup/js/prernaValidation.js" type="text/java
+
+=== 3) IGRSUP possible API roots ===
+--- /igrsup/masterdata/levelvalue ---
+HTTP 200  bytes 617  type text/html;charset=UTF-8
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+--- /igrsupserver/masterdata/levelvalue ---
+HTTP 404  bytes 431  type text/html;charset=utf-8
+<!doctype html><html lang="en"><head><title>HTTP Status 404 – Not Found</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;
+--- /igrsup/rest/getDistrict ---
+HTTP 200  bytes 617  type text/html;charset=UTF-8
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+--- /igrsup/api/district ---
+HTTP 200  bytes 617  type text/html;charset=UTF-8
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+=== 4) GBN district NIC (circle-rate PDFs, often captcha-free) ===
+--- https://gbnagar.nic.in/documents/ ---
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
+--- https://gbnagar.nic.in/document/proposed-circle-rate-list-of-district-gautam-buddha-nagar/ ---
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
+--- https://gbnagar.nic.in/notice_category/circle-rate/ ---
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
+--- https://gbnagar.nic.in/en/tehsil/jewar/ ---
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
+PROBE DONE
