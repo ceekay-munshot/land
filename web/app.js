@@ -1,5 +1,5 @@
 // LAND — Phase 0 map. The data is placeholder; the mechanism is real.
-const INDIA_CENTER = [79.0, 22.5];
+const INDIA_BOUNDS = [[68.0, 6.5], [97.5, 37.0]];    // home view = India
 const GBN_BOUNDS = [[77.28, 28.02], [77.88, 28.66]]; // approx GBN bbox
 
 const map = new maplibregl.Map({
@@ -16,8 +16,9 @@ const map = new maplibregl.Map({
     },
     layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
   },
-  center: INDIA_CENTER,
-  zoom: 3.6,
+  bounds: INDIA_BOUNDS,
+  fitBoundsOptions: { padding: 20 },
+  maxBounds: [[60.0, 2.0], [100.0, 39.0]], // keep the map India-focused
   maxZoom: 16
 });
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
@@ -39,12 +40,12 @@ map.on('load', async () => {
   let india, gbn, catalysts;
   try {
     [india, gbn, catalysts] = await Promise.all([
-      fetch('../data/india_states.geojson').then((r) => r.json()),
-      fetch('../data/gbn_tehsils.geojson').then((r) => r.json()),
-      fetch('../data/catalysts.geojson').then((r) => r.json())
+      fetch('./data/india_states.geojson').then((r) => r.json()),
+      fetch('./data/gbn_tehsils.geojson').then((r) => r.json()),
+      fetch('./data/catalysts.geojson').then((r) => r.json())
     ]);
   } catch (e) {
-    alert('Could not load data. Serve the repo root over http (see README): ' + e);
+    alert('Could not load data files. Make sure web/data/ is deployed alongside the app. ' + e);
     return;
   }
 
@@ -125,6 +126,6 @@ map.on('load', async () => {
 });
 
 document.getElementById('btn-india').onclick =
-  () => map.flyTo({ center: INDIA_CENTER, zoom: 3.6, duration: 1500 });
+  () => map.fitBounds(INDIA_BOUNDS, { padding: 20, duration: 1500 });
 document.getElementById('btn-gbn').onclick =
   () => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 1500 });

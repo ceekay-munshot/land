@@ -14,14 +14,15 @@ Real data arrives in Phases 1–4.
 
 ## ▶️ Run it
 ```bash
-# from the repo root
-python3 -m http.server 8000
-# then open http://localhost:8000/web/
+python3 -m http.server 8000 --directory web
+# then open http://localhost:8000/
 ```
-A static server is needed so the browser can fetch the GeoJSON in `data/`.
+The **`web/` folder is fully self-contained** (app + `web/data/` GeoJSON), so you can host that
+folder as-is on any static host — **Cloudflare Pages/Workers, GitHub Pages, Netlify…** Point the
+deploy's root / output directory at `web/`.
 
 ## 🗺️ What's on the map
-- **India outline** → auto-flies to **Gautam Buddh Nagar** (3 tehsils: Dadri, Sadar, **Jewar**).
+- **India home view** → auto-flies to **Gautam Buddh Nagar** (3 tehsils: Dadri, Sadar, **Jewar**).
 - Tehsils coloured by a **mock growth score**; click one for its 6 / 12 / 24-month band + driver.
 - **Catalyst pins** (airport, Yamuna E-way, YEIDA, Noida / Gr. Noida) — approximate placeholders.
 
@@ -47,7 +48,9 @@ Govt portals geo-fence foreign IPs and the build sandbox is allowlisted, so fetc
 
 ## 📁 Layout
 ```
-data/     geojson (boundaries, GBN tehsils, catalysts)
-web/      the map app (MapLibre GL — no build step)
-scripts/  extract_gbn.py — rebuilds data/gbn_tehsils.geojson
+web/            deployable site (self-contained)
+  index.html  app.js  style.css
+  data/         geojson the app loads (boundaries, GBN tehsils, catalysts)
+data_src/       large raw source (gitignored; re-downloaded by the script)
+scripts/        extract_gbn.py — rebuilds web/data/gbn_tehsils.geojson
 ```

@@ -5,18 +5,21 @@ green/orange/red mechanism end-to-end.
 
 The scores below are MOCK. Real scores come from the Phase-4 scoring engine
 (distance-decay to catalysts x land-use-change likelihood x rate momentum ...).
+
+Input : data_src/up_subdistricts.geojson   (large raw source, gitignored)
+Output: web/data/gbn_tehsils.geojson        (small, served by the app)
 """
 import json
 import os
 import urllib.request
 
-DATA = os.path.join(os.path.dirname(__file__), "..", "data")
-SRC = os.path.join(DATA, "up_subdistricts.geojson")
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+SRC = os.path.join(ROOT, "data_src", "up_subdistricts.geojson")
 SRC_URL = (
     "https://raw.githubusercontent.com/datta07/INDIAN-SHAPEFILES/"
     "master/STATES/UTTAR%20PRADESH/UTTAR%20PRADESH_SUBDISTRICTS.geojson"
 )
-OUT = os.path.join(DATA, "gbn_tehsils.geojson")
+OUT = os.path.join(ROOT, "web", "data", "gbn_tehsils.geojson")
 
 # Phase-0 placeholders ONLY. Jewar = Noida Int'l Airport core = hottest.
 MOCK = {
@@ -38,6 +41,7 @@ MOCK = {
 def main():
     if not os.path.exists(SRC):
         print("source missing -> downloading UP sub-districts (~29MB) ...")
+        os.makedirs(os.path.dirname(SRC), exist_ok=True)
         urllib.request.urlretrieve(SRC_URL, SRC)
 
     with open(SRC) as fh:
@@ -67,6 +71,7 @@ def main():
         feats.append(ft)
 
     out = {"type": "FeatureCollection", "features": feats}
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w") as fh:
         json.dump(out, fh)
     print(f"wrote {len(feats)} tehsils -> {OUT}")
