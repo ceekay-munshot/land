@@ -1,0 +1,648 @@
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link href="/igrsup/css/jquery-ui.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" language="javascript" src="/igrsup/js/jquery-3.7.1.js"></script>
+<script src="/igrsup/js/jquery-ui.js" type="text/javascript"></script>
+<link href="/igrsup/css/keyboard.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" language="javascript" src="/igrsup/js/keyboard.js"></script>
+<script src="/igrsup/js/prernaValidation.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+ 
+
+
+<script type="text/javascript" language="javascript">
+
+$(document).ready(function() {
+    function disableBack() { window.history.forward() }
+
+    window.onload = disableBack();
+    window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+});
+        window.location.hash="";
+window.location.hash="";//for google chrome
+window.onhashchange=function(){window.location.hash="";}
+
+
+ //Prevents backspace except in the case of textareas and text inputs to prevent user navigation.
+    $(document).keydown(function (e) {
+        var preventKeyPress;
+        if (e.keyCode == 8) {
+            var d = e.srcElement || e.target;
+            switch (d.tagName.toUpperCase()) {
+                case 'TEXTAREA':
+                    preventKeyPress = d.readOnly || d.disabled;
+                    break;
+                case 'INPUT':
+                    preventKeyPress = d.readOnly || d.disabled ||
+                        (d.attributes["type"] && $.inArray(d.attributes["type"].value.toLowerCase(), ["radio", "checkbox", "submit", "button"]) >= 0);
+                    break;
+                case 'DIV':
+                    preventKeyPress = d.readOnly || d.disabled || !(d.attributes["contentEditable"] && d.attributes["contentEditable"].value == "true");
+                    break;
+                default:
+                    preventKeyPress = true;
+                    break;
+            }
+        }
+        else
+            preventKeyPress = false;
+
+        if (preventKeyPress)
+            e.preventDefault();
+    });
+ 
+ function getSroList(element1,element2,element3) {
+	 	
+	 	var dropdown1 = document.getElementById(element1);
+	    var dropdown2 = document.getElementById(element2);
+	    var span=document.getElementById(element3);
+	    //alert(dropdown1.value+"\n"+dropdown2.value+"\n"+span.value);
+		while(dropdown2.options.length)
+	       {
+	           dropdown2.remove(0);
+	       }
+		if(dropdown2.value!=-1){
+			document.getElementById('districtCodeMsg').innerHTML='';
+			 $("#spinnerCir").show();
+			 
+		     $.post('getSroListJson', 
+		               {
+		    	 			districtCode : dropdown1.value
+		               },
+		      function (responseJson) {
+		                   dropdown2.innerHTML += '<option value="' + '-1' + '">' + '--- चयन करें ---' + '</option>';
+		                   $.each(responseJson, function (key, value) {
+		                	   
+		                   dropdown2.innerHTML += '<option value="' + key + '">' + value + '</option>';
+		                   
+		      });
+		                   $("#spinnerCir").hide();
+		      });
+		     
+		}
+		else{
+			span.style.color='red';
+			span.innerHTML='जनपद  चुनें';
+		}
+ }
+ 
+ 
+    function checkContentOnBlur(appName,spanMsg){
+    	checkForHindiCharacters(document.getElementById(appName));
+    	var appNames=document.getElementById(appName).value;
+    	if(appNames.trim()==''){
+    		document.getElementById(spanMsg).innerHTML='कृपया भरें';
+    		return false;
+    	}
+    	else{
+    		document.getElementById(spanMsg).innerHTML='';
+        	return true;
+    	}
+    }
+    function checkContentOnBlurs(appName,spanMsg){
+    	checkForHindiWithDigitCharacters(document.getElementById(appName));
+    	var appNames=document.getElementById(appName).value;
+    	if(appNames.trim()==''){
+    		document.getElementById(spanMsg).innerHTML='कृपया भरें';
+    		return false;
+    	}
+    	else{
+    		document.getElementById(spanMsg).innerHTML='';
+        	return true;
+    	}
+    }
+
+    function clearMsg(spanMsg){
+    		document.getElementById(spanMsg).innerHTML='';
+    		return true;
+    }
+
+
+    function checkAppMobOnBlur(appMob,spanMsg){
+    	checkForDigitsOnly(document.getElementById(appMob));
+    	var appMobs=document.getElementById(appMob).value;
+    	if(appMobs.trim()==''){
+    		document.getElementById(spanMsg).innerHTML='कृपया मोबाइल संख्या भरें';
+    		return false;
+    	}
+    	else if(appMobs.trim().length<10 || appMobs.trim().length>10){
+    		document.getElementById(spanMsg).innerHTML='कृपया सही मोबाइल संख्या भरें';
+        	return false;
+        	}
+    	else{
+    		document.getElementById(spanMsg).innerHTML='';
+    		return true;
+    	}
+    }
+    function checkEmailOnBlur(appEmail,spanMsg){
+    	
+    	var appEmails=document.getElementById(appEmail).value;
+    	if(appEmails!=''){
+    		 var filter =/^([A-Za-z0-9_\-\.]+)\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    	    if(appEmails.trim()==''){
+    			
+    			return true;
+    		}
+    		else if(!filter.test(appEmails)){
+    			document.getElementById(spanMsg).innerHTML='कृपया सही भरें';
+    	    	return false;
+    	    	}
+    		else{
+    			document.getElementById(spanMsg).innerHTML='';
+    			return true;
+    		}
+    	}
+    	else{
+    		document.getElementById(spanMsg).innerHTML='';
+    		return true;
+    	}
+    }
+
+
+    function checkComoboValue(value,spanMsg){
+    	
+    	alert("");
+    	
+    	var appField=document.getElementById(value).value;
+    	if(appField=='-1'){
+    		document.getElementById(spanMsg).innerHTML='कृपया चुनें';
+            return false;
+    	}
+    	else
+    		{
+    		document.getElementById(spanMsg).innerHTML='';
+    		return true;
+    		}
+    }
+    function  checkAll(){
+    	
+    	var userDistrict=document.getElementById("districtCode").value.trim();
+    	var userSro=document.getElementById("sroOfficeCode").value.trim();
+    	
+    	
+    	if( userDistrict=='-1' || userSro=='-1'){
+    		document.getElementById("userSuggestionMsg").innerHTML="कृपया अनिवार्य प्रविष्टि भरें";
+    		return false;
+    	}
+    	else{
+    		document.getElementById("userSuggestionMsg").innerHTML="";
+    		return true;
+    	}
+    }
+    function checkForHindiWithDigitCharacters(element)
+    {
+    	var str = element.value;
+    	var i = str.length;
+    	while (i--) {
+    	  var charCode = str[i].charCodeAt(0);
+    	  if ((charCode >= 33 && charCode <= 44) ||(charCode >= 48 && (charCode > 57 && charCode<=127))  || (charCode >= 58 && charCode <= 122) )
+    		  {
+    		  element.value="";
+    		  element.focus();
+    		 
+    		  }
+    	  
+    	}
+    }
+
+
+    function checkForDigitsOnly(element)
+    {
+    	var str = element.value;
+    	var i = str.length;
+    	while (i--) {
+    	  var charCode = str[i].charCodeAt(0);
+    	  if ((charCode >= 48 && charCode > 57))
+    		  {
+    		  element.value="";
+    		  element.focus();
+    		 
+    		  }
+    	  
+    	}
+    	
+    }
+
+    function checkForHindiCharacters(element)
+    {
+    	var str = element.value;
+    	var i = str.length;
+    	while (i--) {
+    	  var charCode = str[i].charCodeAt(0);
+    	  if (((charCode >= 33 && charCode !=32) && charCode <= 126) )
+    		  {
+    		  element.value="";
+    		  element.focus();
+    		  
+    		  }
+    	 
+    	}
+    }
+</script>
+  <style>
+ td{
+        font-family:'times new roman';
+        }
+         textArea{
+  
+             width: 100%; 
+            max-width: 100%; 
+             max-height: 50%; 
+             min-height: 50px; 
+            min-width: 100%; 
+            resize:none;
+         }
+.spinner {
+    position:fixed;
+    top: 0%;
+    left: 0%;
+    margin-left: 0px; /* half width of the spinner gif */
+    margin-top: 0px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:1001;
+    width:100%; /* width of the spinner gif */
+    height: 100%; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+ .content{
+float:left;
+width: 970px;
+height: auto;
+text-align: center;
+
+border-right: 1px solid silver;
+border-left: 1px solid silver;
+}
+  </style>
+</head>
+<body>
+<div class="container">
+<!------------------Spinner Start-------------->
+<div id="spinnerCir" class="spinner"  style="display:none; overflow-y: auto; width: 100%; height:100%; background-color: rgba(5,5,5, 0.1);color:white;">
+	<div class="row-fluid" style="margin-top:300px;">
+	<img id="img-spinner" src="/igrsup/images/ajax-loader1.gif"/>
+	</div>
+</div>
+<!------------------Spinner Close-------------->
+<div class="row-fluid" style="background-image: url('img/banner.png');background-repeat:no-repeat;background-size: 100% 100%;border: 1px solid;">
+     <div class="span1" style='height:120pt' >
+<!--      <img src="img/logo.png"  height="120pt"/> -->
+     
+     </div>
+     <div class="span5" >
+<!--      <img src="img/stamp.png" width="100%" style="padding-top: 10pt;"/> -->
+<!--      <img src="img/tagline.png" width="30%" style="float:right;margin-top: -15pt;margin-right: 8pt;"/> -->
+     
+     </div>
+     
+     <div class="span3">
+     
+     </div>
+     <div class="span3" >
+<!-- <img src="img/UttarPradesh.gif"  height="120pt" width="80%" style="float:right"/> -->
+     
+     </div>
+     </div>
+     
+     
+<!-- <div class="row-fluid" style="border-bottom: 7px solid #DD7500;">
+     
+	</div>
+ -->     
+
+ <div class="row" >
+       <div class="col-xs-10">
+       </div>
+       <div class="col-xs-2">
+	   		<ul class="nav nav-pilss">
+		  		<li class="active"><a    href="defaultAction"><span class="glyphicon glyphicon-home"></span>  मुख पृष्ठ</a></li>
+	   		</ul>
+       </div>
+</div>
+
+
+	    	 <center>
+	    	 	<div style="background-color:#fff; padding-top: 0px;text-align:center;font-weight:bold;margin-left: 20%;margin-right: 20%"><h3>मूल्यांकन सूची विवरण</h3></div>
+				<div  style="margin-left: 20%;margin-right: 20%;margin-bottom:30px; padding: 5px 5px 5px 5px;border: 2px solid #000000;">
+					<form id="getUploadedRateList" name="getUploadedRateList" action="/igrsup/getUploadedRateList;jsessionid=B032853D41C78A21A7F95EF22BD2D856" method="post" autocomplete="off">    	 	
+			    	 <table frame="box" style="width:50%;padding-top:0px;margin-top: 50px" border="0">
+			    		<tr>
+							<td nowrap>
+								जनपद:
+							</td>
+							<td>
+									<select name="districtCode" id="districtCode" style="width:150px;" onchange="return getSroList('districtCode','sroOfficeCode','districtCodeMsg')">
+    <option value="-1"
+    >-- चयन करें --</option>
+    <option value="178">अंबेडकर नगर</option>
+    <option value="137">अमरोहा</option>
+    <option value="203">अमेठी</option>
+    <option value="177">अयोध्या</option>
+    <option value="143">अलीगढ़</option>
+    <option value="146">आगरा</option>
+    <option value="191">आजमगढ़</option>
+    <option value="161">इटावा</option>
+    <option value="156">उन्नाव</option>
+    <option value="201">एटा</option>
+    <option value="162">औरैया </option>
+    <option value="160">कन्नौज</option>
+    <option value="163">कानपुर देहात</option>
+    <option value="164">कानपुर नगर</option>
+    <option value="202">कासगंज</option>
+    <option value="189">कुशीनगर</option>
+    <option value="174">कौशांबी</option>
+    <option value="140">गाजियाबाद</option>
+    <option value="195">गाजीपुर</option>
+    <option value="183">गोंडा </option>
+    <option value="188">गोरखपुर</option>
+    <option value="141">गौतम बुद्ध नगर</option>
+    <option value="196">चंदौली </option>
+    <option value="171">चित्रकूट</option>
+    <option value="165">जालौन </option>
+    <option value="194">जौनपुर</option>
+    <option value="166">झांसी</option>
+    <option value="190">देवरिया</option>
+    <option value="151">पीलीभीत</option>
+    <option value="173">प्रतापगढ़</option>
+    <option value="175">प्रयागराज</option>
+    <option value="172">फतेहपुर</option>
+    <option value="159">फर्रुखाबाद</option>
+    <option value="147">फ़िरोजाबाद</option>
+    <option value="149">बदायूं </option>
+    <option value="150">बरेली</option>
+    <option value="182">बलरामपुर </option>
+    <option value="193">बलिया</option>
+    <option value="185">बस्ती</option>
+    <option value="180">बहराइच</option>
+    <option value="139">बागपत</option>
+    <option value="170">बांदा</option>
+    <option value="176">बाराबंकी</option>
+    <option value="134">बिजनौर</option>
+    <option value="142">बुलन्दशहर </option>
+    <option value="198">भदोही</option>
+    <option value="192">मऊ</option>
+    <option value="145">मथुरा</option>
+    <option value="187">महाराजगंज </option>
+    <option value="169">महोबा </option>
+    <option value="199">मिर्जापुर</option>
+    <option value="133">मुजफ्फरनगर</option>
+    <option value="135">मुरादाबाद</option>
+    <option value="138">मेरठ</option>
+    <option value="148">मैनपुरी </option>
+    <option value="136">रामपुर</option>
+    <option value="158">रायबरेली</option>
+    <option value="157">लखनऊ</option>
+    <option value="153">लखीमपुर खीरी</option>
+    <option value="167">ललितपुर</option>
+    <option value="197">वाराणसी</option>
+    <option value="206">शामली</option>
+    <option value="152">शाहजहांपुर</option>
+    <option value="181">श्रावस्ती </option>
+    <option value="186">संत कबीर नगर</option>
+    <option value="205">सम्भल</option>
+    <option value="132">सहारनपुर</option>
+    <option value="184">सिद्धार्थनगर</option>
+    <option value="154">सीतापुर</option>
+    <option value="179">सुलतानपुर</option>
+    <option value="200">सोनभद्र</option>
+    <option value="168">हमीरपुर</option>
+    <option value="155">हरदोई</option>
+    <option value="144">हाथरस</option>
+    <option value="204">हापुड</option>
+
+
+</select>
+
+
+									<span id='districtCodeMsg' style='color:red;'></span>
+							</td>
+						</tr>
+						<tr>
+							<td nowrap>
+								उप निबंधक कार्यालय:<!-- <font color='red'>*</font> -->
+							</td>
+							<td>
+									<select name="sroOfficeCode" id="sroOfficeCode" style="width:150px;">
+    <option value="-1"
+    >-- चयन करें --</option>
+
+
+</select>
+
+
+							</td>
+						</tr>
+			    	 	<tr>
+				    	 	<td style="text-align: left;">
+				    	 		कैप्चा :
+				    	 	</td>
+				    	 	<td style="text-align: left;">
+				    	 		<img src="CaptchaImageAction" height="25px" width="120px"/><a    href="" onclick="getCaptchaString()"  class="refresh">पुनश्चर्या</a>
+				    	 	</td>   
+			    	 	</tr>
+			    	 	<tr>
+				    	 	<td style="text-align: left;">
+				    	 		 कैप्चा अंकित करें <font color='red'> *</font>:  
+				    	 	</td>
+				    	 	<td style="text-align: left;">
+				    	 		<input type="text" name="enteredCaptcha" value="" tabindex="3" id="enteredCaptcha" autocomplete="off" required="true"/>
+				    	 	</td>   
+			    	 	</tr>
+						<tr>
+				    	 	<td style="text-align: center;" colspan="2">
+				    	 		<span style="color:red;" id='districtCodeMsg'></span><br/>
+				    	 	</td>
+			    	 	</tr>
+			    	 	<tr>
+				    	 	<td style="text-align: center;" colspan="2">
+				    	 	<input type="submit" value="मूल्यांकन सूची देखें" id="getUploadedRateList_button_save" name="action:getUploadRateListDocForUser" onclick="return checkAll()"/>
+
+				    	 	</td>
+			    	 	</tr>
+			    	 	<tr>
+				    	 	<td style="color:red; text-align: center;" colspan="2">
+				    	 		<span id='userSuggestionMsg'></span><br/>
+				    	 		
+				    	 	</td>
+			    	 	</tr>
+		
+			    	 </table>
+			    	<input type="hidden" name="struts.token.name" value="token" />
+<input type="hidden" name="token" value="95FRXUYU5KKNUH2BPPYRKJPSW4NITCCI" />
+			    	</form>
+
+
+
+			    	
+			    	
+		    	   
+					
+						     
+					
+		    	
+		    	
+		    	</div>
+	    	 </center>
+	    
+
+	    	 
+	    	 
+
+   
+   
+   
+   
+   
+   
+     <div class="row-fluid" style="border-top: 5px solid #4493DB;background-color:#0D4375;color: #fff">
+
+            <div class="col-sm-8">
+
+                <footer>
+
+<!--                     <p style="font-size: 10pt;font-weight: bold">&copy; Copyright 2015 - साइट डिज़ाइन एवं होस्ट - <img alt="" src="img/niclogo.png" height="20px">राष्ट्रीय सूचना  -->
+
+<!-- विज्ञान केंद्र​, लखनऊ, उत्तर प्रदेश   -->
+
+<!--  </p> -->
+
+                </footer>
+
+            </div>
+     </div>
+         
+     
+    
+  </div>
+</body>
+<script type="text/javascript">
+var pager = new Pager('tablepaging', 10);
+var pagerbottom = new Pager('tablepaging', 10);
+pager.init();
+pagerbottom.init();
+pager.showPageNav('pager', 'pageNavPosition');
+pager.showPage(1);
+
+
+
+
+function Pager(tableName, itemsPerPage) {
+
+	  this.tableName = tableName;
+
+	  this.itemsPerPage = itemsPerPage;
+
+	  this.currentPage = 1;
+
+	  this.pages = 0;
+
+	  this.inited = false;
+
+	  this.showRecords = function(from, to) {
+
+	  var rows = document.getElementById(tableName).rows;
+
+	  // i starts from 1 to skip table header row
+
+	  for (var i = 2; i < rows.length; i++) {
+
+	  if (i < from || i > to)
+
+	  rows[i].style.display = 'none';
+
+	  else
+
+	  rows[i].style.display = '';
+
+	  }
+
+	  }
+
+	  this.showPage = function(pageNumber) {
+
+	  if (! this.inited) {
+
+	  alert("not inited");
+
+	  return;
+
+	  }
+
+	  var oldPageAnchor = document.getElementById('pg'+this.currentPage);
+
+	  oldPageAnchor.className = 'pg-normal';
+
+	  this.currentPage = pageNumber;
+
+	  var newPageAnchor = document.getElementById('pg'+this.currentPage);
+
+	  newPageAnchor.className = 'pg-selected';
+
+	  var from = (pageNumber - 1) * itemsPerPage + 1;
+
+	  var to = from + itemsPerPage - 1;
+
+	  this.showRecords(from, to);
+
+	  }
+
+	  this.prev = function() {
+
+	  if (this.currentPage > 1)
+
+	  this.showPage(this.currentPage - 1);
+
+	  }
+
+	  this.next = function() {
+
+	  if (this.currentPage < this.pages) {
+
+	  this.showPage(this.currentPage + 1);
+
+	  }
+
+	  }
+
+	  this.init = function() {
+
+	  var rows = document.getElementById(tableName).rows;
+
+	  var records = (rows.length - 1);
+
+	  this.pages = Math.ceil(records / itemsPerPage);
+
+	  this.inited = true;
+
+	  }
+
+	  this.showPageNav = function(pagerName, positionId) {
+
+	  if (! this.inited) {
+
+	  alert("not inited");
+
+	  return;
+
+	  }
+
+	  var element = document.getElementById(positionId);
+
+	  var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal"> </span> ';
+
+	  for (var page = 1; page <= this.pages; page++)
+
+	  pagerHtml += '<span id="pg' + page + '" class="pg-normal" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span> ';
+
+	  pagerHtml += '<span onclick="'+pagerName+'.next();" class="pg-normal"></span>';
+
+	  element.innerHTML = pagerHtml;
+
+	  }
+
+	  }
+</script>
+</html>
