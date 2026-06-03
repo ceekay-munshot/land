@@ -35,6 +35,13 @@
               "display_name": "YEIDA Sector 28, Tirthli, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India"
             },
             {
+              "lat": 28.2303682,
+              "lon": 77.6080863,
+              "type": "suburb",
+              "category": "place",
+              "display_name": "YEIDA Sector 33, Murad Garhi, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India"
+            },
+            {
               "lat": 28.21635,
               "lon": 77.6081337,
               "type": "suburb",
@@ -49,13 +56,6 @@
               "display_name": "YEIDA Sector 29, Tirthli, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India"
             },
             {
-              "lat": 28.2303682,
-              "lon": 77.6080863,
-              "type": "suburb",
-              "category": "place",
-              "display_name": "YEIDA Sector 33, Murad Garhi, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India"
-            },
-            {
               "lat": 28.2861293,
               "lon": 77.5635624,
               "type": "city",
@@ -63,15 +63,12 @@
               "display_name": "YEIDA City, Gautam Buddha Nagar, Uttar Pradesh, 203209, India"
             }
           ]
+        },
+        {
+          "query": "Sector 18, Yamuna Expressway Industrial Development Authority",
+          "results": []
         }
-      ],
-      "chosen": {
-        "lat": 28.2303074,
-        "lon": 77.5849515,
-        "type": "suburb",
-        "category": "place",
-        "display_name": "YEIDA Sector 28, Tirthli, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India"
-      }
+      ]
     },
     {
       "sector": "24A",
