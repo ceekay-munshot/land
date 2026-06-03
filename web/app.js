@@ -3,6 +3,8 @@ const INDIA_BOUNDS = [[68.0, 6.5], [97.5, 37.0]];    // home view = India
 const GBN_BOUNDS = [[77.28, 28.02], [77.88, 28.66]]; // approx GBN bbox
 let parcelBounds = null;
 let airportCentroid = null;
+let locatedSchemes = [];   // YEIDA schemes we could place (pins + parcel proximity)
+const schemePins = {};     // scheme code -> Marker (panel <-> map linking)
 
 const map = new maplibregl.Map({
   container: 'map',
@@ -218,6 +220,13 @@ map.on('load', async () => {
                     + `<tr><td>Rate (general)</td><td>${inr(r.general)}/ha</td></tr>`;
         }
         const distRow = p.airport_km != null ? `<tr><td>✈ Airport</td><td>~${p.airport_km} km</td></tr>` : '';
+        let schemeRow = '';
+        if (locatedSchemes.length) {
+          const cc = featCentroid(e.features[0]);
+          let best = null, bd = Infinity;
+          for (const s2 of locatedSchemes) { const d = haversineKm(cc, [s2.lng, s2.lat]); if (d < bd) { bd = d; best = s2; } }
+          if (best) schemeRow = `<tr><td>◆ Live scheme</td><td>${best.code || best.title} · ${bd.toFixed(1)} km</td></tr>`;
+        }
         const sc = p.score;
         const col = sc == null ? '#9ca3af' : sc >= 67 ? '#2ecc71' : sc >= 40 ? '#f39c12' : '#e74c3c';
         const band = sc == null ? '—' : sc >= 67 ? 'High 🟢' : sc >= 40 ? 'Medium 🟠' : 'Low 🔴';
@@ -233,6 +242,7 @@ map.on('load', async () => {
               <tr><td>Owners</td><td>${Array.isArray(owners) ? owners.length : (p.owner_count ?? '—')}</td></tr>
               ${priceRows}
               ${distRow}
+              ${schemeRow}
             </table>
             <div class="driver">score v1 = 65% airport proximity + 35% price headroom · heuristic, not a guarantee</div>
             <div class="mock">parcel: Bhu-Naksha · price: IGRSUP · catalyst: OSM</div>
@@ -272,6 +282,7 @@ map.on('load', async () => {
         const b = s.brochure || {};
         const col = SCAT[s.category] || SCAT.Other;
         const price = b.rate_per_sqm ? `₹${Number(b.rate_per_sqm).toLocaleString('en-IN')}/m²` : '';
+        locatedSchemes.push({ code: s.code, title: s.title, lat: loc.lat, lng: loc.lng });
         const el = document.createElement('div');
         el.className = 'scheme-pin' + (loc.approx ? ' approx' : '');
         el.style.background = col;
@@ -284,8 +295,9 @@ map.on('load', async () => {
             ${s.deadline ? `<div class="note">⏰ ${esc(s.deadline)}</div>` : ''}
             <div class="mock">${loc.approx ? '~ ' + esc(loc.display_name) + ' (approx)' : 'YEIDA Sector ' + esc(key) + ' · OSM'}</div>
           </div>`);
-        new maplibregl.Marker({ element: el, anchor: 'center' })
+        const mk = new maplibregl.Marker({ element: el, anchor: 'center' })
           .setLngLat([loc.lng, loc.lat]).setPopup(pop).addTo(map);
+        if (s.code) schemePins[s.code] = mk;
       }
     }
   } catch (e) { /* no scheme pins yet */ }
@@ -337,7 +349,7 @@ document.getElementById('btn-parcels').onclick =
       links.push(`<a href="${esc(s.brochure_or_status_url)}" target="_blank" rel="noopener">${docLabel}</a>`);
     if (s.apply_url)
       links.push(`<a href="${esc(s.apply_url)}" target="_blank" rel="noopener">🔗 Apply / status</a>`);
-    return `<div class="scheme">
+    return `<div class="scheme" data-code="${esc(s.code || '')}">
       <div class="scheme-top">
         <span class="cat" style="background:${col}">${esc(s.category)}</span>
         ${s.code ? `<span class="code">${esc(s.code)}</span>` : ''}
@@ -348,6 +360,15 @@ document.getElementById('btn-parcels').onclick =
       ${links.length ? `<div class="scheme-links">${links.join('')}</div>` : ''}
     </div>`;
   }).join('');
+
+  // panel -> map: click a scheme row to fly to its pin (if it's locatable)
+  document.querySelectorAll('#schemes-list .scheme').forEach((el) => {
+    el.addEventListener('click', (ev) => {
+      if (ev.target.closest('a')) return;            // let the real links work
+      const mk = schemePins[el.getAttribute('data-code')];
+      if (mk) { map.flyTo({ center: mk.getLngLat(), zoom: 12, duration: 1200 }); mk.togglePopup(); }
+    });
+  });
 
   document.getElementById('schemes-count').textContent = data.schemes.length + ' live';
   let when = '';
