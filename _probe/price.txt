@@ -52,11 +52,23 @@ HTTP 200  bytes 617  type text/html;charset=UTF-8
 
 === 4) GBN district NIC (circle-rate PDFs, often captcha-free) ===
 --- https://gbnagar.nic.in/documents/ ---
-HTTP 504  bytes 562
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
 --- https://gbnagar.nic.in/document/proposed-circle-rate-list-of-district-gautam-buddha-nagar/ ---
-HTTP 504  bytes 562
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
 --- https://gbnagar.nic.in/notice_category/circle-rate/ ---
-HTTP 404  bytes 321
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
 --- https://gbnagar.nic.in/en/tehsil/jewar/ ---
-HTTP 404  bytes 321
+curl: (35) Recv failure: Connection reset by peer
+HTTP 000  bytes 0
+grep: /tmp/g.html: No such file or directory
+grep: /tmp/g.html: No such file or directory
 PROBE DONE
