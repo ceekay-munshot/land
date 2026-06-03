@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-03T07:07:48.053001Z",
+  "fetched_at": "2026-06-03T07:17:06.762714Z",
   "pages": [
     {
       "slug": "home",
@@ -9,24 +9,6 @@
       "n_links": 22,
       "title": "Yamuna Expressway Industrial Development Authority (YEIDA) Official Website",
       "has_live_scheme": true
-    },
-    {
-      "slug": "notifications",
-      "url": "https://www.yamunaexpresswayauthority.com/web/notifications/",
-      "success": true,
-      "md_len": 31746,
-      "n_links": 106,
-      "title": "Yamuna Expressway Industrial Development Authority (YEIDA) Official Website",
-      "has_live_scheme": false
-    },
-    {
-      "slug": "schemes_archive",
-      "url": "https://www.yamunaexpresswayauthority.com/web/property/schemes/schemes-archives/",
-      "success": true,
-      "md_len": 7738,
-      "n_links": 49,
-      "title": "Yamuna Expressway Industrial Development Authority (YEIDA) Official Website",
-      "has_live_scheme": false
     }
   ],
   "live_schemes_parsed": 9
