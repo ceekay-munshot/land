@@ -18,10 +18,12 @@ import json
 import datetime
 import urllib.request
 
+# Only the homepage carries live, text-structured signal (the "Live Scheme" list).
+# The notices page is image-based (WhatsApp screenshots → no extractable text) and the
+# schemes archive is static history, so the weekly scrape targets the homepage only —
+# cheaper (~1 page) and no junk. Re-add others here if we ever add OCR / archive diffing.
 URLS = {
     "home": "https://www.yamunaexpresswayauthority.com/",
-    "notifications": "https://www.yamunaexpresswayauthority.com/web/notifications/",
-    "schemes_archive": "https://www.yamunaexpresswayauthority.com/web/property/schemes/schemes-archives/",
 }
 
 
