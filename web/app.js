@@ -1,5 +1,5 @@
 // LAND — Phase 0 map. The data is placeholder; the mechanism is real.
-const INDIA_BOUNDS = [[68.0, 6.5], [97.5, 37.0]];    // home view = India
+const NCR_BOUNDS = [[76.65, 27.55], [78.05, 28.95]]; // Delhi-NCR down to Jewar — the working area
 const GBN_BOUNDS = [[77.28, 28.02], [77.88, 28.66]]; // approx GBN bbox
 let parcelBounds = null;
 let airportCentroid = null;
@@ -20,9 +20,10 @@ const map = new maplibregl.Map({
     },
     layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
   },
-  bounds: INDIA_BOUNDS,
+  bounds: NCR_BOUNDS,
   fitBoundsOptions: { padding: 20 },
-  maxBounds: [[60.0, 2.0], [100.0, 39.0]], // keep the map India-focused
+  maxBounds: [[76.2, 27.1], [78.6, 29.4]], // lock to the NCR/GBN region — no empty world map
+  minZoom: 8,
   maxZoom: 18
 });
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
@@ -116,28 +117,19 @@ map.on('load', async () => {
   map.on('mouseenter', 'gbn-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'gbn-fill', () => { map.getCanvas().style.cursor = ''; });
 
-  // Catalyst markers
-  for (const ft of catalysts.features) {
-    const p = ft.properties;
-    const el = document.createElement('div');
-    el.className = 'catalyst-pin';
-    el.title = p.name;
-    const pop = new maplibregl.Popup({ offset: 14 }).setHTML(`
-      <div class="pop">
-        <h3>${p.name}</h3>
-        <div class="ctype">${p.ctype} · ${p.status}</div>
-        <div class="note">${p.note}</div>
-        <div class="mock">approx. location · Phase-0 placeholder</div>
-      </div>`);
-    new maplibregl.Marker({ element: el, anchor: 'center' })
-      .setLngLat(ft.geometry.coordinates).setPopup(pop).addTo(map);
-  }
+  // (Phase-0 placeholder catalyst pins removed — the real OSM airport + expressways render below.)
 
   // Real catalyst geometry from OpenStreetMap (airport + expressways)
   try {
     const osm = await fetch('./data/catalysts_osm.geojson').then((r) => (r.ok ? r.json() : null));
     if (osm && osm.features && osm.features.length) {
       airportCentroid = osm.meta && osm.meta.airport_centroid;
+      if (airportCentroid) {
+        const ae = document.createElement('div');
+        ae.className = 'airport-pin'; ae.textContent = '✈';
+        ae.title = 'Noida International Airport (Jewar)';
+        new maplibregl.Marker({ element: ae, anchor: 'center' }).setLngLat(airportCentroid).addTo(map);
+      }
       map.addSource('osm-cat', { type: 'geojson', data: osm });
       map.addLayer({ id: 'osm-roads', type: 'line', source: 'osm-cat',
         filter: ['==', ['get', 'kind'], 'road'],
@@ -302,12 +294,12 @@ map.on('load', async () => {
     }
   } catch (e) { /* no scheme pins yet */ }
 
-  // Reveal: open on India, then fly to the GBN pilot
-  setTimeout(() => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 2500 }), 1200);
+  // Reveal: open on the NCR region, then settle on the GBN pilot
+  setTimeout(() => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 2200 }), 900);
 });
 
 document.getElementById('btn-india').onclick =
-  () => map.fitBounds(INDIA_BOUNDS, { padding: 20, duration: 1500 });
+  () => map.fitBounds(NCR_BOUNDS, { padding: 20, duration: 1500 });
 document.getElementById('btn-gbn').onclick =
   () => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 1500 });
 document.getElementById('btn-parcels').onclick =
