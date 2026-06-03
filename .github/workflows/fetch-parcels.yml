@@ -49,6 +49,7 @@ jobs:
           TIME_BUDGET: '1500'
           SLEEP: '0.06'
           APPEND: '1'
+          TARGET_LATLNG: '28.1607,77.6100'   # grow coverage outward from Noida Int'l Airport (Jewar)
         run: python tools/fetch_gbn_parcels.py
       - name: Commit data back to main
         run: |
