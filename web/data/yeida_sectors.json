@@ -1,0 +1,23 @@
+{
+  "note": "Only YEIDA-corridor matches; unplaced sectors omitted (no fake coords).",
+  "sectors": {
+    "18": {
+      "lat": 28.2303074,
+      "lng": 77.5849515,
+      "display_name": "YEIDA Sector 28, Tirthli, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India",
+      "query": "YEIDA Sector 18, Uttar Pradesh, India"
+    },
+    "28": {
+      "lat": 28.2303074,
+      "lng": 77.5849515,
+      "display_name": "YEIDA Sector 28, Tirthli, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India",
+      "query": "YEIDA Sector 28, Uttar Pradesh, India"
+    },
+    "29": {
+      "lat": 28.2160691,
+      "lng": 77.5849997,
+      "display_name": "YEIDA Sector 29, Tirthli, Jewar, Gautam Buddha Nagar, Uttar Pradesh, India",
+      "query": "YEIDA Sector 29, Uttar Pradesh, India"
+    }
+  }
+}
