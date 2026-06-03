@@ -1,0 +1,36 @@
+name: yeida-firecrawl
+
+# Scrape the Cloudflare-protected YEIDA portal via Firecrawl (India proxy + stealth)
+# to capture live scheme / public-notice signals. Needs the FIRECRAWL_API_KEY secret
+# (repo Settings > Secrets and variables > Actions). v1 = probe; dumps returned content
+# so we can confirm Cloudflare is beaten and then build the notice parser.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/yeida-firecrawl.yml'
+      - 'tools/fetch_yeida_firecrawl.py'
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Firecrawl YEIDA probe
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: python tools/fetch_yeida_firecrawl.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _probe/yeida_firecrawl.json
+          git commit -m "probe: YEIDA via Firecrawl (stealth + IN)" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
