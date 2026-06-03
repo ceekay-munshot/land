@@ -5,6 +5,9 @@ let parcelBounds = null;
 let airportCentroid = null;
 let locatedSchemes = [];   // YEIDA schemes we could place (pins + parcel proximity)
 const schemePins = {};     // scheme code -> Marker (panel <-> map linking)
+const SQFT = 10.7639;      // 1 m² in sq ft — plot rates/sizes shown in sq ft (familiar unit)
+const sqft = (m2) => Math.round(m2 * SQFT).toLocaleString('en-IN');
+const ratePsf = (psm) => Math.round(psm / SQFT).toLocaleString('en-IN');
 
 const map = new maplibregl.Map({
   container: 'map',
@@ -273,7 +276,7 @@ map.on('load', async () => {
         const loc = SLOC[key];
         const b = s.brochure || {};
         const col = SCAT[s.category] || SCAT.Other;
-        const price = b.rate_per_sqm ? `₹${Number(b.rate_per_sqm).toLocaleString('en-IN')}/m²` : '';
+        const price = b.rate_per_sqm ? `₹${ratePsf(b.rate_per_sqm)}/sq ft` : '';
         locatedSchemes.push({ code: s.code, title: s.title, lat: loc.lat, lng: loc.lng });
         const el = document.createElement('div');
         el.className = 'scheme-pin' + (loc.approx ? ' approx' : '');
@@ -330,10 +333,10 @@ document.getElementById('btn-parcels').onclick =
     const sec = b.sectors || s.sector;
     if (sec) meta.push(`<span class="sector">📍 Sec ${esc(sec)}</span>`);
     const econ = [];
-    if (b.rate_per_sqm) econ.push(`<b class="rate">₹${Number(b.rate_per_sqm).toLocaleString('en-IN')}/m²</b>`);
+    if (b.rate_per_sqm) econ.push(`<b class="rate">₹${ratePsf(b.rate_per_sqm)}/sq ft</b>`);
     if (Array.isArray(b.plot_sizes_sqm) && b.plot_sizes_sqm.length) {
       const ps = b.plot_sizes_sqm;
-      econ.push(`${ps.length} size${ps.length > 1 ? 's' : ''} ${ps[0]}–${ps[ps.length - 1]} m²`);
+      econ.push(`${ps.length} size${ps.length > 1 ? 's' : ''} ${sqft(ps[0])}–${sqft(ps[ps.length - 1])} sq ft`);
     }
     if (b.lease_years) econ.push(`${b.lease_years}-yr lease`);
     const links = [];
