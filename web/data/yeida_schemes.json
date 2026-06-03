@@ -11,7 +11,21 @@
       "sector": null,
       "deadline": null,
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/04/FINAL_YEIDA-brochure-A4-_04-04-26.pdf",
-      "apply_url": "https://schemes.yamunaexpresswayauthority.com/"
+      "apply_url": "https://schemes.yamunaexpresswayauthority.com/",
+      "brochure": {
+        "rate_per_sqm": 36260,
+        "sectors": "15C, 18, 24A",
+        "plot_sizes_sqm": [
+          162,
+          183,
+          184,
+          200,
+          223,
+          290
+        ],
+        "rera": "UPRERAPRJ307764/03/2026",
+        "lease_years": 90
+      }
     },
     {
       "title": "Eligibility Status of YEA/IND-MDP(2026)-06 Scheme",

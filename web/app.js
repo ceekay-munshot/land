@@ -279,10 +279,19 @@ document.getElementById('btn-parcels').onclick =
 
   document.getElementById('schemes-list').innerHTML = data.schemes.map((s) => {
     const col = CAT[s.category] || CAT.Other;
+    const b = s.brochure || {};
     const docLabel = (s.brochure_or_status_url || '').toLowerCase().endsWith('.pdf') ? '📄 Brochure' : '📄 Status';
     const meta = [];
     if (s.deadline) meta.push(`<span class="deadline">⏰ ${esc(s.deadline)}</span>`);
-    if (s.sector) meta.push(`<span class="sector">📍 Sec ${esc(s.sector)}</span>`);
+    const sec = b.sectors || s.sector;
+    if (sec) meta.push(`<span class="sector">📍 Sec ${esc(sec)}</span>`);
+    const econ = [];
+    if (b.rate_per_sqm) econ.push(`<b class="rate">₹${Number(b.rate_per_sqm).toLocaleString('en-IN')}/m²</b>`);
+    if (Array.isArray(b.plot_sizes_sqm) && b.plot_sizes_sqm.length) {
+      const ps = b.plot_sizes_sqm;
+      econ.push(`${ps.length} size${ps.length > 1 ? 's' : ''} ${ps[0]}–${ps[ps.length - 1]} m²`);
+    }
+    if (b.lease_years) econ.push(`${b.lease_years}-yr lease`);
     const links = [];
     if (s.brochure_or_status_url)
       links.push(`<a href="${esc(s.brochure_or_status_url)}" target="_blank" rel="noopener">${docLabel}</a>`);
@@ -295,6 +304,7 @@ document.getElementById('btn-parcels').onclick =
       </div>
       <div class="scheme-title">${esc(s.title)}</div>
       ${meta.length ? `<div class="scheme-meta">${meta.join('')}</div>` : ''}
+      ${econ.length ? `<div class="scheme-econ">${econ.join(' · ')}</div>` : ''}
       ${links.length ? `<div class="scheme-links">${links.join('')}</div>` : ''}
     </div>`;
   }).join('');
