@@ -27,6 +27,8 @@ URLS = [
     "https://www.yamunaexpresswayauthority.com/taxonomy/term/1.html",
 ]
 
+print(f"FIRECRAWL_API_KEY detected (len={len(KEY)}); scraping {len(URLS)} YEIDA URLs via stealth + IN proxy")
+
 
 def scrape(u):
     body = json.dumps({
