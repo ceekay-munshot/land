@@ -250,6 +250,46 @@ map.on('load', async () => {
     }
   } catch (e) { /* no parcels yet — fetcher hasn't run */ }
 
+  // YEIDA live-scheme pins — dropped at each scheme's real sector location (OSM where exact,
+  // Dankaur-area approx for the residential cluster). Schemes with no locatable sector stay
+  // in the side panel only — no fake placement.
+  try {
+    const [schemesD, sectorsD] = await Promise.all([
+      fetch('./data/yeida_schemes.json').then((r) => (r.ok ? r.json() : null)),
+      fetch('./data/yeida_sectors.json').then((r) => (r.ok ? r.json() : null))
+    ]);
+    const SLOC = sectorsD && sectorsD.sectors;
+    if (schemesD && SLOC) {
+      const SCAT = { 'Residential': '#2563eb', 'Industrial': '#7c3aed', 'Institutional': '#0891b2',
+                     'Commercial': '#ea580c', 'Mixed land use': '#65a30d', 'Other': '#6b7280' };
+      const esc = (t) => (t == null ? '' : String(t)).replace(/[&<>"]/g,
+        (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      for (const s of schemesD.schemes) {
+        const toks = ((s.sector || '') + ' ' + ((s.brochure || {}).sectors || '')).match(/\d+[A-Z]?/g) || [];
+        const key = toks.find((t) => SLOC[t]);
+        if (!key) continue;
+        const loc = SLOC[key];
+        const b = s.brochure || {};
+        const col = SCAT[s.category] || SCAT.Other;
+        const price = b.rate_per_sqm ? `₹${Number(b.rate_per_sqm).toLocaleString('en-IN')}/m²` : '';
+        const el = document.createElement('div');
+        el.className = 'scheme-pin' + (loc.approx ? ' approx' : '');
+        el.style.background = col;
+        el.title = s.title;
+        const pop = new maplibregl.Popup({ offset: 16 }).setHTML(`
+          <div class="pop">
+            <h3>${esc(s.title)}</h3>
+            <div class="ctype" style="color:${col}">${esc(s.category)}${s.code ? ' · ' + esc(s.code) : ''}</div>
+            ${price ? `<div class="badge" style="background:#047857">${price}</div>` : ''}
+            ${s.deadline ? `<div class="note">⏰ ${esc(s.deadline)}</div>` : ''}
+            <div class="mock">${loc.approx ? '~ ' + esc(loc.display_name) + ' (approx)' : 'YEIDA Sector ' + esc(key) + ' · OSM'}</div>
+          </div>`);
+        new maplibregl.Marker({ element: el, anchor: 'center' })
+          .setLngLat([loc.lng, loc.lat]).setPopup(pop).addTo(map);
+      }
+    }
+  } catch (e) { /* no scheme pins yet */ }
+
   // Reveal: open on India, then fly to the GBN pilot
   setTimeout(() => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 2500 }), 1200);
 });

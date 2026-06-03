@@ -26,6 +26,16 @@ UA = "LAND-map/1.0 (https://github.com/ceekay-munshot/land; ceekay@muns.io)"
 ANCHORS = ["Dankaur, Gautam Buddh Nagar, Uttar Pradesh, India",
            "Jewar, Gautam Buddh Nagar, Uttar Pradesh, India"]
 
+# Town anchors for YEIDA sectors that aren't in OSM by name. APPROX only — flagged as such,
+# coordinates from a gazetteer (no fake precision).
+TOWN_ANCHORS = {"Dankaur": (28.3509, 77.5537)}  # PIN 203201
+SECTOR_TOWN = {"15C": "Dankaur", "18": "Dankaur", "24A": "Dankaur"}  # residential RPS10/2026 cluster
+
+
+def sector_matches(display_name, sec):
+    m = re.search(r"Sector\s*([0-9]+[A-Z]?)", display_name or "", re.I)
+    return bool(m) and m.group(1).upper() == sec.upper()
+
 
 def nominatim(q):
     url = ("https://nominatim.openstreetmap.org/search?"
@@ -70,7 +80,11 @@ def main():
     for a in ANCHORS:
         dump["anchors"].append(nominatim(a))
 
-    cache = {}
+    # start from the existing cache so a flaky OSM run never drops known-good coords
+    try:
+        cache = json.load(open("web/data/yeida_sectors.json")).get("sectors", {})
+    except Exception:
+        cache = {}
     for sec in sectors:
         rec = {"sector": sec, "attempts": []}
         for q in (f"Sector {sec}, Yamuna Expressway, Gautam Buddh Nagar, Uttar Pradesh, India",
@@ -78,16 +92,26 @@ def main():
                   f"Sector {sec}, Yamuna Expressway Industrial Development Authority"):
             r = nominatim(q)
             rec["attempts"].append(r)
-            hit = next((x for x in r.get("results", []) if in_corridor(x)), None)
+            # keep only hits that are in-corridor AND actually named the queried sector
+            hit = next((x for x in r.get("results", [])
+                        if in_corridor(x) and sector_matches(x["display_name"], sec)), None)
             if hit:
                 rec["chosen"] = hit
-                cache[sec] = {"lat": hit["lat"], "lng": hit["lon"],
-                              "display_name": hit["display_name"], "query": q}
+                cache[sec] = {"lat": hit["lat"], "lng": hit["lon"], "approx": False,
+                              "source": "OSM", "display_name": hit["display_name"]}
                 break
+        if sec not in cache and sec in SECTOR_TOWN:   # approx town-anchor fallback
+            town = SECTOR_TOWN[sec]
+            lat, lng = TOWN_ANCHORS[town]
+            cache[sec] = {"lat": lat, "lng": lng, "approx": True,
+                          "source": f"{town} town (gazetteer, PIN 203201)",
+                          "display_name": f"Sector {sec} area, near {town}"}
+            rec["anchored_to"] = town
         dump["sectors"].append(rec)
 
     json.dump(dump, open("_probe/yeida_geocode.json", "w"), ensure_ascii=False, indent=2)
-    json.dump({"note": "Only YEIDA-corridor matches; unplaced sectors omitted (no fake coords).",
+    json.dump({"note": "YEIDA sector coords: OSM where the named sector matches (exact); "
+                        "town-anchored + flagged approx where OSM lacks it. No fake precision.",
                "sectors": cache}, open("web/data/yeida_sectors.json", "w"),
               ensure_ascii=False, indent=2)
     print(f"sectors referenced: {sectors}")

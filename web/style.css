@@ -36,6 +36,10 @@ body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   border: 2px solid #fff; box-shadow: 0 0 0 1px #1d4ed8; display: inline-block;
 }
 #legend hr { border: 0; border-top: 1px solid #e2e6ea; margin: 8px 0; }
+#legend .schemesw {
+  width: 11px; height: 11px; background: #2563eb; transform: rotate(45deg);
+  display: inline-block; border: 2px solid #fff; box-shadow: 0 0 0 1px #2563eb;
+}
 #legend .disclaimer { font-size: 11px; opacity: .65; margin-top: 8px; line-height: 1.35; }
 
 #schemes {
@@ -84,6 +88,13 @@ body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   cursor: pointer; transition: transform .1s;
 }
 .catalyst-pin:hover { transform: scale(1.25); }
+.scheme-pin {
+  width: 18px; height: 18px; border-radius: 5px; border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .3), 0 2px 6px rgba(0, 0, 0, .35);
+  cursor: pointer; transform: rotate(45deg); transition: transform .1s;
+}
+.scheme-pin:hover { transform: rotate(45deg) scale(1.2); }
+.scheme-pin.approx { border-style: dashed; opacity: .92; }
 
 .pop { font-size: 13px; }
 .pop h3 { margin: 0 0 6px; font-size: 15px; }
