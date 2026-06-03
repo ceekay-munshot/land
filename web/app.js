@@ -260,3 +260,53 @@ document.getElementById('btn-gbn').onclick =
   () => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 1500 });
 document.getElementById('btn-parcels').onclick =
   () => { if (parcelBounds) map.fitBounds(parcelBounds, { padding: 40, maxZoom: 17, duration: 1500 }); };
+
+// ---- Live YEIDA schemes panel (data scraped weekly from the YEIDA portal via Firecrawl) ----
+(async function renderSchemes() {
+  const panel = document.getElementById('schemes');
+  if (!panel) return;
+  let data;
+  try { data = await fetch('./data/yeida_schemes.json').then((r) => (r.ok ? r.json() : null)); }
+  catch (e) { panel.style.display = 'none'; return; }
+  if (!data || !Array.isArray(data.schemes) || !data.schemes.length) { panel.style.display = 'none'; return; }
+
+  const CAT = {
+    'Residential': '#2563eb', 'Industrial': '#7c3aed', 'Institutional': '#0891b2',
+    'Commercial': '#ea580c', 'Mixed land use': '#65a30d', 'Other': '#6b7280'
+  };
+  const esc = (s) => (s == null ? '' : String(s)).replace(/[&<>"]/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  document.getElementById('schemes-list').innerHTML = data.schemes.map((s) => {
+    const col = CAT[s.category] || CAT.Other;
+    const docLabel = (s.brochure_or_status_url || '').toLowerCase().endsWith('.pdf') ? '📄 Brochure' : '📄 Status';
+    const meta = [];
+    if (s.deadline) meta.push(`<span class="deadline">⏰ ${esc(s.deadline)}</span>`);
+    if (s.sector) meta.push(`<span class="sector">📍 Sec ${esc(s.sector)}</span>`);
+    const links = [];
+    if (s.brochure_or_status_url)
+      links.push(`<a href="${esc(s.brochure_or_status_url)}" target="_blank" rel="noopener">${docLabel}</a>`);
+    if (s.apply_url)
+      links.push(`<a href="${esc(s.apply_url)}" target="_blank" rel="noopener">🔗 Apply / status</a>`);
+    return `<div class="scheme">
+      <div class="scheme-top">
+        <span class="cat" style="background:${col}">${esc(s.category)}</span>
+        ${s.code ? `<span class="code">${esc(s.code)}</span>` : ''}
+      </div>
+      <div class="scheme-title">${esc(s.title)}</div>
+      ${meta.length ? `<div class="scheme-meta">${meta.join('')}</div>` : ''}
+      ${links.length ? `<div class="scheme-links">${links.join('')}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  document.getElementById('schemes-count').textContent = data.schemes.length + ' live';
+  let when = '';
+  try { when = new Date(data.fetched_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }); }
+  catch (e) { /* keep blank */ }
+  document.getElementById('schemes-foot').textContent =
+    `Live from the YEIDA portal · via Firecrawl${when ? ' · ' + when : ''}`;
+
+  const head = document.getElementById('schemes-head');
+  const tog = document.getElementById('schemes-toggle');
+  head.onclick = () => { tog.textContent = panel.classList.toggle('collapsed') ? '▸' : '▾'; };
+})();
