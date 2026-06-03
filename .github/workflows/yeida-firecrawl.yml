@@ -6,6 +6,8 @@ name: yeida-firecrawl
 # so we can confirm Cloudflare is beaten and then build the notice parser.
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '30 4 * * 1'   # Mondays 04:30 UTC (~10:00 AM IST) — weekly live refresh
   push:
     paths:
       - '.github/workflows/yeida-firecrawl.yml'

@@ -8,62 +8,70 @@
       "title": "Residential Plots RPS10/2026 Brochure",
       "code": "RPS10/2026",
       "category": "Residential",
+      "sector": null,
       "deadline": null,
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/04/FINAL_YEIDA-brochure-A4-_04-04-26.pdf",
-      "apply_url": null
+      "apply_url": "https://schemes.yamunaexpresswayauthority.com/"
     },
     {
       "title": "Eligibility Status of YEA/IND-MDP(2026)-06 Scheme",
       "code": "YEA/IND-MDP(2026)-06",
       "category": "Industrial",
+      "sector": null,
       "deadline": null,
       "brochure_or_status_url": "https://yamunaexpresswayauthority.com/web/forms/mdp_list_2026_01_06_2026.php",
       "apply_url": null
     },
     {
       "title": "Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06",
-      "code": null,
+      "code": "YEA/INST 2025-2026/06",
       "category": "Institutional",
+      "sector": null,
       "deadline": "30-05-2026 - 5:00PM",
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf",
-      "apply_url": null
+      "apply_url": "https://hpplots.yamunaexpresswayauthority.com/"
     },
     {
       "title": "Nursery School & CRECHE Plots YEA/INST 2025-2026/07",
-      "code": null,
+      "code": "YEA/INST 2025-2026/07",
       "category": "Institutional",
+      "sector": null,
       "deadline": "30-05-2026 - 5:00PM",
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/NURSERY-SCHOOL-BROCHURE.pdf",
-      "apply_url": null
+      "apply_url": "https://nacplots.yamunaexpresswayauthority.com/"
     },
     {
       "title": "Hotel Plots IN Sec-28, 29 CHP-07",
       "code": "CHP-07",
       "category": "Commercial",
-      "deadline": "31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://mixplots.yamunaexpresswayauthority.com/)",
+      "sector": "28, 29",
+      "deadline": "31-05-2026",
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-1.pdf",
-      "apply_url": null
+      "apply_url": "https://mixplots.yamunaexpresswayauthority.com/"
     },
     {
       "title": "Commercial Footprint Plots CFP-08",
       "code": "CFP-08",
       "category": "Commercial",
-      "deadline": "31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://sssplots.yamunaexpresswayauthority.com/)",
+      "sector": null,
+      "deadline": "31-05-2026",
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-2.pdf",
-      "apply_url": null
+      "apply_url": "https://sssplots.yamunaexpresswayauthority.com/"
     },
     {
       "title": "Commercial Plots CSCM-01",
       "code": "CSCM-01",
       "category": "Commercial",
-      "deadline": "31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://mixplots.yamunaexpresswayauthority.com/)",
+      "sector": null,
+      "deadline": "31-05-2026",
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-3.pdf",
-      "apply_url": null
+      "apply_url": "https://mixplots.yamunaexpresswayauthority.com/"
     },
     {
       "title": "Final Status of Industrial plots Applications YEA/IND8000(2025-26)-14",
       "code": "YEA/IND8000(2025-26)-14",
       "category": "Industrial",
+      "sector": null,
       "deadline": null,
       "brochure_or_status_url": "https://yamunaexpresswayauthority.com/web/forms/final_eauction_ind8000_status_06_05_2026.php",
       "apply_url": null
@@ -72,6 +80,7 @@
       "title": "Final Allotment Status of Mix Land use scheme MLU/2025-26/11",
       "code": "MLU/2025-26/11",
       "category": "Mixed land use",
+      "sector": null,
       "deadline": null,
       "brochure_or_status_url": "https://yamunaexpresswayauthority.com/web/forms/final_mlu_allotment_status_06_05_2026.php",
       "apply_url": null
