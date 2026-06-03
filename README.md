@@ -25,6 +25,9 @@ deploy's root / output directory at `web/`.
 - **India home view** → auto-flies to **Gautam Buddh Nagar** (3 tehsils: Dadri, Sadar, **Jewar**).
 - Tehsils coloured by a **mock growth score**; click one for its 6 / 12 / 24-month band + driver.
 - **Catalyst pins** (airport, Yamuna E-way, YEIDA, Noida / Gr. Noida) — approximate placeholders.
+- **🟢 Live YEIDA Schemes panel** — current plot-allotment schemes (residential / industrial /
+  institutional / commercial) pulled **weekly** from the YEIDA portal, with scheme codes, deadlines
+  & apply links. First live development signal on the map.
 
 ## 🧱 Roadmap
 | Phase | What | Egress |
@@ -33,7 +36,7 @@ deploy's root / output directory at `web/`.
 | **2 ✅** | Real parcels (Bhu-Naksha, auto-batcher) + owners/area | Actions |
 | **1 ✅** | Circle-rate price floor joined onto parcels | manual + Actions |
 | **3 ✅** | Real catalyst geometry (airport + expressways, OSM) + per-parcel distance | Actions |
-| 3b | Live notifications (Bhoomi Rashi / YEIDA / eGazette) | India |
+| **3b 🟢** | **Live YEIDA schemes** — portal scraped weekly via Firecrawl (stealth + India proxy); Bhoomi Rashi / eGazette next | Actions + Firecrawl |
 | **4 ✅ v1** | Growth score → real parcel colours | — |
 | 5 | Claude routines (refresh / alerts) + CRM owner-join | India |
 
