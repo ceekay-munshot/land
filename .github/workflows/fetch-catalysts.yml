@@ -5,6 +5,7 @@ name: fetch-catalysts
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/fetch-catalysts.yml'
       - 'tools/fetch_catalysts_osm.py'

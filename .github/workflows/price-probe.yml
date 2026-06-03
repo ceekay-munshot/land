@@ -6,6 +6,7 @@ name: price-probe
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/price-probe.yml'
 

@@ -5,6 +5,7 @@ name: source-probe
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/source-probe.yml'
 
