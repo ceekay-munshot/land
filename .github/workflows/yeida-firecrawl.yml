@@ -9,6 +9,7 @@ on:
   schedule:
     - cron: '30 4 * * 1'   # Mondays 04:30 UTC (~10:00 AM IST) — weekly live refresh
   push:
+    branches: [main]
     paths:
       - '.github/workflows/yeida-firecrawl.yml'
       - 'tools/fetch_yeida_firecrawl.py'
