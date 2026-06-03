@@ -1,0 +1,33 @@
+name: yeida-geocode
+
+# Geocode YEIDA sectors (referenced by live schemes) to real coordinates via OSM/Nominatim,
+# so the map can pin each scheme where it actually is. Corridor-bounded; no fake coords.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/yeida-geocode.yml'
+      - 'tools/geocode_yeida_sectors.py'
+
+permissions:
+  contents: write
+
+jobs:
+  geocode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Geocode sectors
+        run: python tools/geocode_yeida_sectors.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _probe/yeida_geocode.json web/data/yeida_sectors.json
+          git commit -m "data: geocode YEIDA sectors (corridor-bounded, OSM)" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
