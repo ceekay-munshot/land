@@ -8,13 +8,10 @@ Live SchemeCommercialIndustrialInstitutionalResidentialServices
 
 ## Live Scheme
 
-- [Residential Plots \\
+- [Applicant List of\\
 \\
-RPS10/2026 Brochure](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/04/FINAL_YEIDA-brochure-A4-_04-04-26.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
+RPS10/2026](https://yamunaexpresswayauthority.com/web/forms/rps10_04_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-
-
-[![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Check Status](https://schemes.yamunaexpresswayauthority.com/)
 - [Eligibility Status of \\
 \\
 YEA/IND-MDP(2026)-06 Scheme](https://yamunaexpresswayauthority.com/web/forms/mdp_list_2026_01_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
@@ -23,32 +20,20 @@ YEA/IND-MDP(2026)-06 Scheme](https://yamunaexpresswayauthority.com/web/forms/mdp
 \\
 YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-Extended - 30-05-2026 - 5:00PM
+Extended - 30-06-2026 - 5:00PM
 
 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://hpplots.yamunaexpresswayauthority.com/)
 - [Nursery School & CRECHE Plots \\
 \\
 YEA/INST 2025-2026/07](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/NURSERY-SCHOOL-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-Extended - 30-05-2026 - 5:00PM
+Extended - 30-06-2026 - 5:00PM
 
 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://nacplots.yamunaexpresswayauthority.com/)
 
-- [Hotel Plots IN Sec-28,\\
+- [Final Status of \\
 \\
-29 CHP-07](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-1.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://mixplots.yamunaexpresswayauthority.com/)
-- [Commercial Footprint\\
-\\
-Plots CFP-08](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-2.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://sssplots.yamunaexpresswayauthority.com/)
-- [Commercial Plots \\
-\\
-CSCM-01](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-3.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://mixplots.yamunaexpresswayauthority.com/)
+YEA/INST 2024-2025/07](https://yamunaexpresswayauthority.com/web/forms/YEA_INST_2024_2025_07_06_01_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
 - [Final Status of Industrial plots Applications\\
 \\
@@ -62,22 +47,6 @@ MLU/2025-26/11](https://yamunaexpresswayauthority.com/web/forms/final_mlu_allotm
 **Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
 
 ## Commercial
-
-- [Hotel Plots IN Sec-28,\\
-\\
-29 CHP-07](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-1.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://mixplots.yamunaexpresswayauthority.com/)
-- [Commercial Footprint\\
-\\
-Plots CFP-08](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-2.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://sssplots.yamunaexpresswayauthority.com/)
-- [Commercial Plots \\
-\\
-CSCM-01](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-3.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 31-05-2026 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://mixplots.yamunaexpresswayauthority.com/)
 
 **Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
 
@@ -100,18 +69,22 @@ MLU/2025-26/11](https://yamunaexpresswayauthority.com/web/forms/final_mlu_allotm
 
 ## Institutional
 
+- [Final Status of \\
+\\
+YEA/INST 2024-2025/07](https://yamunaexpresswayauthority.com/web/forms/YEA_INST_2024_2025_07_06_01_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
+
 - [Hospital, Child Welfare & Maternity Centre Plots \\
 \\
 YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-Extended - 30-05-2026 - 5:00PM
+Extended - 30-06-2026 - 5:00PM
 
 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://hpplots.yamunaexpresswayauthority.com/)
 - [Nursery School & CRECHE Plots \\
 \\
 YEA/INST 2025-2026/07](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/NURSERY-SCHOOL-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-Extended - 30-05-2026 - 5:00PM
+Extended - 30-06-2026 - 5:00PM
 
 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://nacplots.yamunaexpresswayauthority.com/)
 
@@ -119,11 +92,10 @@ Extended - 30-05-2026 - 5:00PM
 
 ## Residential
 
-- [Residential Plots \\
+- [Applicant List of\\
 \\
-RPS10/2026 Brochure](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/04/FINAL_YEIDA-brochure-A4-_04-04-26.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
+RPS10/2026](https://yamunaexpresswayauthority.com/web/forms/rps10_04_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-[![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Check Status](https://schemes.yamunaexpresswayauthority.com/)
 
 **Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
 

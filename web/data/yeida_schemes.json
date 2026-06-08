@@ -1,31 +1,17 @@
 {
   "source": "YEIDA official portal — Live Scheme section, via Firecrawl (stealth + IN)",
   "url": "https://www.yamunaexpresswayauthority.com/",
-  "fetched_at": "2026-06-03T07:27:41.978637Z",
-  "count": 9,
+  "fetched_at": "2026-06-08T09:10:20.761886Z",
+  "count": 7,
   "schemes": [
     {
-      "title": "Residential Plots RPS10/2026 Brochure",
+      "title": "Applicant List of RPS10/2026",
       "code": "RPS10/2026",
       "category": "Residential",
       "sector": null,
       "deadline": null,
-      "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/04/FINAL_YEIDA-brochure-A4-_04-04-26.pdf",
-      "apply_url": "https://schemes.yamunaexpresswayauthority.com/",
-      "brochure": {
-        "rate_per_sqm": 36260,
-        "sectors": "15C, 18, 24A",
-        "plot_sizes_sqm": [
-          162,
-          183,
-          184,
-          200,
-          223,
-          290
-        ],
-        "rera": "UPRERAPRJ307764/03/2026",
-        "lease_years": 90
-      }
+      "brochure_or_status_url": "https://yamunaexpresswayauthority.com/web/forms/rps10_04_06_2026.php",
+      "apply_url": null
     },
     {
       "title": "Eligibility Status of YEA/IND-MDP(2026)-06 Scheme",
@@ -41,7 +27,7 @@
       "code": "YEA/INST 2025-2026/06",
       "category": "Institutional",
       "sector": null,
-      "deadline": "30-05-2026 - 5:00PM",
+      "deadline": "30-06-2026 - 5:00PM",
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf",
       "apply_url": "https://hpplots.yamunaexpresswayauthority.com/"
     },
@@ -50,36 +36,18 @@
       "code": "YEA/INST 2025-2026/07",
       "category": "Institutional",
       "sector": null,
-      "deadline": "30-05-2026 - 5:00PM",
+      "deadline": "30-06-2026 - 5:00PM",
       "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/NURSERY-SCHOOL-BROCHURE.pdf",
       "apply_url": "https://nacplots.yamunaexpresswayauthority.com/"
     },
     {
-      "title": "Hotel Plots IN Sec-28, 29 CHP-07",
-      "code": "CHP-07",
-      "category": "Commercial",
-      "sector": "28, 29",
-      "deadline": "31-05-2026",
-      "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-1.pdf",
-      "apply_url": "https://mixplots.yamunaexpresswayauthority.com/"
-    },
-    {
-      "title": "Commercial Footprint Plots CFP-08",
-      "code": "CFP-08",
-      "category": "Commercial",
+      "title": "Final Status of YEA/INST 2024-2025/07",
+      "code": "YEA/INST 2024-2025/07",
+      "category": "Other",
       "sector": null,
-      "deadline": "31-05-2026",
-      "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-2.pdf",
-      "apply_url": "https://sssplots.yamunaexpresswayauthority.com/"
-    },
-    {
-      "title": "Commercial Plots CSCM-01",
-      "code": "CSCM-01",
-      "category": "Commercial",
-      "sector": null,
-      "deadline": "31-05-2026",
-      "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/01/YEIDA-Brochure-3.pdf",
-      "apply_url": "https://mixplots.yamunaexpresswayauthority.com/"
+      "deadline": null,
+      "brochure_or_status_url": "https://yamunaexpresswayauthority.com/web/forms/YEA_INST_2024_2025_07_06_01_2026.php",
+      "apply_url": null
     },
     {
       "title": "Final Status of Industrial plots Applications YEA/IND8000(2025-26)-14",
