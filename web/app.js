@@ -2,6 +2,7 @@
 const NCR_BOUNDS = [[76.65, 27.55], [78.05, 28.95]]; // Delhi-NCR down to Jewar — the working area
 const GBN_BOUNDS = [[77.28, 28.02], [77.88, 28.66]]; // approx GBN bbox
 let parcelBounds = null;
+let nalgadhaBounds = null;
 let airportCentroid = null;
 let locatedSchemes = [];   // YEIDA schemes we could place (pins + parcel proximity)
 const schemePins = {};     // scheme code -> Marker (panel <-> map linking)
@@ -297,6 +298,45 @@ map.on('load', async () => {
     }
   } catch (e) { /* no scheme pins yet */ }
 
+  // Nalgadha gata register (title reconstruction) — coloured by # of owners (fragmentation).
+  // Counts only here; owner names live in the private build.
+  try {
+    const ng = await fetch('./data/nalgadha_parcels.geojson').then((r) => (r.ok ? r.json() : null));
+    if (ng && ng.features && ng.features.length) {
+      map.addSource('nalgadha', { type: 'geojson', data: ng });
+      map.addLayer({
+        id: 'nalgadha-fill', type: 'fill', source: 'nalgadha',
+        paint: {
+          'fill-color': ['step', ['get', 'owner_count'],
+            '#ddd6fe', 1, '#c4b5fd', 3, '#a78bfa', 6, '#8b5cf6', 10, '#6d28d9'],
+          'fill-opacity': 0.8
+        }
+      });
+      map.addLayer({ id: 'nalgadha-line', type: 'line', source: 'nalgadha',
+        paint: { 'line-color': '#4c1d95', 'line-width': 0.5 } });
+      map.on('click', 'nalgadha-fill', (e) => {
+        const p = e.features[0].properties;
+        new maplibregl.Popup({ maxWidth: '280px' }).setLngLat(e.lngLat).setHTML(`
+          <div class="pop">
+            <h3>Gata ${p.plot_no} <small>Nalgadha</small></h3>
+            <table>
+              <tr><td>Khata</td><td>${p.khata_no || '—'}</td></tr>
+              <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
+              <tr><td>Owners</td><td><b>${p.owner_count ?? '—'}</b></td></tr>
+            </table>
+            <div class="mock">title reconstruction · owner names in the private build</div>
+          </div>`).addTo(map);
+      });
+      map.on('mouseenter', 'nalgadha-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'nalgadha-fill', () => { map.getCanvas().style.cursor = ''; });
+      const nb = new maplibregl.LngLatBounds();
+      for (const ft of ng.features) for (const c of ft.geometry.coordinates[0]) nb.extend(c);
+      nalgadhaBounds = nb;
+      const nbtn = document.getElementById('btn-nalgadha');
+      if (nbtn) { nbtn.style.display = 'inline-block'; nbtn.textContent = `🧬 Nalgadha (${ng.features.length})`; }
+    }
+  } catch (e) { /* no nalgadha data yet */ }
+
   // Reveal: open on the NCR region, then settle on the GBN pilot
   setTimeout(() => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 2200 }), 900);
 });
@@ -307,6 +347,8 @@ document.getElementById('btn-gbn').onclick =
   () => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 1500 });
 document.getElementById('btn-parcels').onclick =
   () => { if (parcelBounds) map.fitBounds(parcelBounds, { padding: 40, maxZoom: 17, duration: 1500 }); };
+document.getElementById('btn-nalgadha').onclick =
+  () => { if (nalgadhaBounds) map.fitBounds(nalgadhaBounds, { padding: 60, maxZoom: 16, duration: 1500 }); };
 
 // ---- Live YEIDA schemes panel (data scraped weekly from the YEIDA portal via Firecrawl) ----
 (async function renderSchemes() {

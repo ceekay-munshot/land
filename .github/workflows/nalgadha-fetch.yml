@@ -5,9 +5,8 @@ name: nalgadha-fetch
 # This is the spine for the title reconstruction. Resumable; re-run to finish a large village.
 on:
   workflow_dispatch:
-  # Auto-grind paused until the repo is private — then we resume AND switch on owner names.
-  # schedule:
-  #   - cron: '*/30 * * * *'
+  schedule:
+    - cron: '*/30 * * * *'   # counts-only grind (public-safe); owner names stay OFF until repo is private
   push:
     branches: [main]
     paths:
