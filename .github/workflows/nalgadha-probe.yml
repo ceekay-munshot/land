@@ -1,0 +1,33 @@
+name: nalgadha-probe
+
+# Locate Nalgadha (Noida side) in UP Bhu-Naksha -> its tehsil + village code, so we can
+# pull its gata register (the spine for the 100-year title reconstruction).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/nalgadha-probe.yml'
+      - 'tools/probe_nalgadha.py'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python tools/probe_nalgadha.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _probe/nalgadha_locate.json
+          git commit -m "probe: locate Nalgadha gata register source" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
