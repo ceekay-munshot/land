@@ -1,65 +1,17 @@
 {
-  "contexts": {
-    "geoserver": [
-      "bject.assign({REQUEST:\"GetMap\"},o);let a=e/t,l=[$N(jt(i)/a,4),$N(un(i)/a,4)];if(t!=1)switch(s){case\"geoserver\":let A=90*t+.5|0;\"FORMAT_OPTIONS\"in o?o.FORMAT_OPTIONS+=\";dpi:\"+A:o.FORMAT_OPTIONS=\"dpi:\"+A;break;c",
-      "baseUrl}/WMS`,params:{LAYERS:\"DERIVED_LAYER\",state:\"\",gis_code:t,layercodes:n,plotId:r},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getWMSTileLayer(t){return te(this,null,function*()",
-      "E_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",CRS:\"\",STYLES:\"VILLAGE_MAP\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getWMSTileLayerTransparent(t){return te(this,null,function*()",
-      "gis_code:t,overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"VILLAGE_MAP_TRANSPARENT\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getStateBoundaryLayer(){return te(this,null,function*(){retur",
-      "sparent:!0,state:\"\",overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"STATE_BOUNDARY\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getCustomLayerWMS(t,n,r){return te(this,null,function*(){retu",
-      "Url}/WMS`,params:{LAYERS:\"OVERLAY_LAYER\",state:\"\",gis_code:t,overlay_codes:n,oprType:r},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getVillageMapWMS(t){return te(this,null,function*("
-    ],
-    "getPlotByPlotNo": [
-      "eturn this.httpClient.post(`${this.baseUrl}/tempdivision/fetchDivIdDetails`,r,{withCredentials:!0})}getPlotByPlotNo(t,n){let r=new Ei().set(\"giscode\",t).set(\"plotno\",n);return this.httpClient.post(`${this.baseUrl}/M",
-      "et r=new Ei().set(\"giscode\",t).set(\"plotno\",n);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotByPlotNo`,r)}getPlotInfo(t,n){let r={gisCode:t,plotNo:n};return this.httpClient.post(`${this.baseUrl}/MapInf",
-      "}getPlotAtXY(t,n,r,o){return this.http.fetchPlotAtXY(t,n,r,o)}getPloyByPlotNo(t,n){return this.http.getPlotByPlotNo(t,n)}getPlotByPlotId(t,n){return this.http.getPlotByPlotId(t,n)}getPlotsByDivid(t,n){return this.ht"
-    ],
-    "getPlotAtXY": [
-      "code\",t).set(\"x\",n).set(\"y\",r).set(\"plotno\",o);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotAtXY`,s)}getPlotsByDivid(t,n){let r=new Ei().set(\"bhucode\",t).set(\"divId\",n);return this.httpClient.post",
-      "t(t,n){return te(this,null,function*(){t.getView().fit([n.xmin,n.ymin,n.xmax,n.ymax],t.getSize())})}getPlotAtXY(t,n,r,o){return this.http.fetchPlotAtXY(t,n,r,o)}getPloyByPlotNo(t,n){return this.http.getPlotByPlo",
-      "(\"attribution\",this.attribution)}),this.map.on(\"singleclick\",t=>{let n=t.coordinate;this.mapService.getPlotAtXY(this.currentGisCode,n[0],n[1],this.plotno).subscribe(r=>{this.createOverLayPlotsLayer(r.kide),this."
-    ],
-    "typeName": [
-      "lid tag value.\");this.stream=e,this.header=t,this.length=n,this.tag=r,this.sub=o}return i.prototype.typeName=function(){switch(this.tag.tagClass){case 0:switch(this.tag.tagNumber){case 0:return\"EOC\";case 1:re",
-      "am.parseTime(t,t+n,this.tag.tagNumber==23)}return null},i.prototype.toString=function(){return this.typeName()+\"@\"+this.stream.pos+\"[header:\"+this.header+\",length:\"+this.length+\",sub:\"+(this.sub===null?\"null\"",
-      "\"null\":this.sub.length)+\"]\"},i.prototype.toPrettyString=function(e){e===void 0&&(e=\"\");var t=e+this.typeName()+\" @\"+this.stream.pos;if(this.length>=0&&(t+=\"+\"),t+=this.length,this.tag.tagConstructed?t+=\" (con"
-    ],
-    "GetFeature": [
-      ",0,t9),o={QUERY_LAYERS:i.params.LAYERS,INFO_FORMAT:\"application/json\"};Object.assign(o,$v(i.params,\"GetFeatureInfo\"),i.params);let s=Qh((e[0]-r[0])/t,4),a=Qh((r[3]-e[1])/t,4),l=Mv(o.VERSION,\"1.3\")>=0;return o[l",
-      "r_;f!==0&&(h=zc(h,d*f,h));let g={QUERY_LAYERS:this.params_.LAYERS};Object.assign(g,$v(this.params_,\"GetFeatureInfo\"),r);let p=Math.floor((l[0]-h[0])/d),v=Math.floor((h[3]-l[1])/d);return g[this.v13_?\"I\":\"X\"]=p,"
-    ],
-    "getFeatureInfoUrl": [
-      "pi:!0,this.renderedRevision_=0,this.ratio_=e.ratio!==void 0?e.ratio:1.5,this.loaderProjection_=null}getFeatureInfoUrl(e,t,n,r){let o=ui(n),s=this.getProjection();s&&s!==o&&(t=Jh(s,o,e,t),e=Xc(e,o,s));let a={url:this.u",
-      "dpi!==void 0?e.hidpi:!0,this.tmpExtent_=dr(),this.updateV13_(),this.setKey(this.getKeyForParams_())}getFeatureInfoUrl(e,t,n,r){let o=ui(n),s=this.getProjection()||o,a=this.getTileGrid();a||(a=this.getTileGridForProjec"
-    ],
-    "CQL": [
-      "QEb8pkYAAAEAKv9aAYMDQAADAABTMwEjKlIBB1IDQPwaAAABADb/WgD4A0AABwAAVzMRIzUzESM2cXHCwmADWkb8GgAAAQAdAQwCCQLPAAYAAFMzEyMDAyP9MtpOpapPAs/+PQFn/pkAAf/+/2IBnf+mAAMAAEchFSECAZ/+YVpEAAABACz/WgFRA0AAJQAAUzI2NjU1NDY",
-      "JdZBS1NJVkGYrToINLKDjxcuIlyfVsKQSG/G4DyiO2SlQvJ0d0Ot1uOG5IFSAkq+PRVMgVMDvOIJMdqjeCFKUGRWBW9wigYvcbU7CQL/7meF2KZAaWl+4y9uhowAX7elogAvItAAxo2+SFxGRsHGEW9BnhlTuWigYxRcnVUBRQHV41LV+Fr5CJYV7sHfeywswx4XMtUx6Ek"
-    ],
-    "getMapInternal": [
-      "ojection(s.projection),A=Tt(l);A in e.wantedTiles||(e.wantedTiles[A]={});let d=e.wantedTiles[A],u=a.getMapInternal(),h=Math.max(n-o,c.getMinZoom(),c.getZForResolution(Math.min(a.getMaxResolution(),u?u.getView().get",
-      "a(e){return!this.renderer_||!this.rendered?null:this.renderer_.getData(e)}isVisible(e){let t,n=this.getMapInternal();!e&&n&&(e=n.getView()),e instanceof yn?t={viewState:e.getState(),extent:e.calculateExtent()}:t=e,",
-      "t=this.getRenderer();t&&t.renderDeferred(e)}setMapInternal(e){e||this.unrender(),this.set(vn.MAP,e)}getMapInternal(){return this.get(vn.MAP)}setMap(e){this.mapPrecomposeKey_&&(ci(this.mapPrecomposeKey_),this.mapPre"
-    ],
-    "layers": [
-      "._started=!1,this._destroyed=!1,this._onDestroyFns=[],this.parentPlayer=null,this.totalTime=0,this.players=e;let t=0,n=0,r=0,o=this.players.length;o==0?queueMicrotask(()=>this._onFinish()):this.players.forE",
-      "his._onDestroyFns=[],this.parentPlayer=null,this.totalTime=0,this.players=e;let t=0,n=0,r=0,o=this.players.length;o==0?queueMicrotask(()=>this._onFinish()):this.players.forEach(s=>{s.onDone(()=>{++t==o&&thi",
-      "his.players=e;let t=0,n=0,r=0,o=this.players.length;o==0?queueMicrotask(()=>this._onFinish()):this.players.forEach(s=>{s.onDone(()=>{++t==o&&this._onFinish()}),s.onDestroy(()=>{++n==o&&this._onDestroy()}),s",
-      "oy(()=>{++n==o&&this._onDestroy()}),s.onStart(()=>{++r==o&&this._onStart()})}),this.totalTime=this.players.reduce((s,a)=>Math.max(s,a.totalTime),0)}_onFinish(){this._finished||(this._finished=!0,this._onDon",
-      "this._finished||(this._finished=!0,this._onDoneFns.forEach(e=>e()),this._onDoneFns=[])}init(){this.players.forEach(e=>e.init())}onStart(e){this._onStartFns.push(e)}_onStart(){this.hasStarted()||(this._start",
-      "sh(e)}hasStarted(){return this._started}play(){this.parentPlayer||this.init(),this._onStart(),this.players.forEach(e=>e.play())}pause(){this.players.forEach(e=>e.pause())}restart(){this.players.forEach(e=>e"
-    ],
-    "bhucode": [
-      "s.httpClient.post(`${this.baseUrl}/MapInfo/getPlotAtXY`,s)}getPlotsByDivid(t,n){let r=new Ei().set(\"bhucode\",t).set(\"divId\",n);return this.httpClient.post(`${this.baseUrl}/tempdivision/fetchDivIdDetails`,r,{",
-      "his.baseUrl}/MapInfo/getPlotInfo`,r,{responseType:\"text\"})}getPlotByPlotId(t,n){let r=new Ei().set(\"bhucode\",t).set(\"id\",n);return this.httpClient.post(`${this.baseUrl}/v1/khasramap/plot`,{},{params:r})}getM",
-      "{generatedPolygons:t,generatedLines:n,generatedPoints:r,geoJsonNewLineLayerFeatures:o,kide:l,area:c,bhucode:s,khid:a,comments:A,operatorType:d};return this.httpClient.post(`${this.baseUrl}/mapModificationCon",
-      "color\":i});function zbe(i,e){if(i&1&&(_(0,\"option\",25),y(1),m()),i&2){let t=e.$implicit;D(\"value\",t.bhucode),w(),De(\" \",t.villageName,\" \")}}function Wbe(i,e){if(i&1&&(_(0,\"option\",25),y(1),m()),i&2){let t=e.",
-      "g(JSON.stringify(t)),Object.keys(t).length>0&&(this.pendingVillage=Object.entries(t).map(([n,r])=>({bhucode:n,villageName:r})))}),this.webComponent(),this.session.setStorageItem(\"giscode\",null),this.session.",
-      "lot\").subscribe(n=>{n&&Object.keys(n).length>0?this.pendingVillage=Object.entries(n).map(([r,o])=>({bhucode:r,villageName:o})):this.pendingVillage=[],this.cdr.detectChanges()}),this.selectedIndex!==void 0&&t"
-    ]
+  "plotAtXY": {
+    "miny": 3156149.458243503,
+    "minx": 151239.7256004286,
+    "bhucode": "14100743120241",
+    "maxy": 3156347.938628527,
+    "maxx": 151492.73165669158,
+    "id": "wd-q4mkjQEuchapUVJyOUg",
+    "kide": "146"
   },
-  "js_found": [
-    "main-76RVRF3Z.js",
-    "polyfills-RM666RQK.js",
-    "scripts-BZQBXHEN.js"
-  ]
+  "getPlotByPlotNo": {
+    "status": 200,
+    "ct": "application/json",
+    "len": 145,
+    "body": "{\"miny\":3156149.458243503,\"minx\":151239.7256004286,\"maxy\":3156347.938628527,\"maxx\":151492.73165669158,\"id\":\"wd-q4mkjQEuchapUVJyOUg\",\"kide\":\"146\"}"
+  }
 }
