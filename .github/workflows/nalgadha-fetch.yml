@@ -5,8 +5,9 @@ name: nalgadha-fetch
 # This is the spine for the title reconstruction. Resumable; re-run to finish a large village.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/30 * * * *'   # TEMP: grind Nalgadha to completion (then no-ops). Remove once done.
+  # Auto-grind paused until the repo is private — then we resume AND switch on owner names.
+  # schedule:
+  #   - cron: '*/30 * * * *'
   push:
     branches: [main]
     paths:
