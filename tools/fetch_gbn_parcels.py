@@ -40,6 +40,7 @@ SLEEP = float(os.environ.get("SLEEP", "0.06"))
 APPEND = os.environ.get("APPEND", "1") == "1"
 INCLUDE_OWNERS = os.environ.get("INCLUDE_OWNERS", "0") == "1"
 OUT = os.environ.get("OUT", "web/data/gbn_parcels.geojson")
+VILLAGE_CODE = os.environ.get("VILLAGE_CODE", "")  # if set, fetch only this village (gata-register mode)
 
 s = requests.Session()
 s.headers.update({
@@ -156,6 +157,8 @@ def main():
     if not t:
         sys.exit(f"tehsil {TEHSIL_MATCH!r} not found")
     villages = level(3, f'{d["code"]},{t["code"]}')
+    if VILLAGE_CODE:
+        villages = [v for v in villages if v["code"] == VILLAGE_CODE]
 
     # resume: read what's already been fetched
     existing, done_codes, village_xy = [], set(), {}

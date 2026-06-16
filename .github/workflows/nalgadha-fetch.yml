@@ -1,0 +1,49 @@
+name: nalgadha-fetch
+
+# Pull the Nalgadha gata register (village नलगढ़ा / 120241, Gautam Buddh Nagar Sadar tehsil)
+# from UP Bhu-Naksha: every gata + plot/khata/area + OWNER COUNT (no names — public-safe).
+# This is the spine for the title reconstruction. Resumable; re-run to finish a large village.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/nalgadha-fetch.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nalgadha-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pyproj
+      - name: Fetch Nalgadha gata register
+        env:
+          TEHSIL: 'गौतमबुद्धनगर'
+          VILLAGE_CODE: '120241'
+          OUT: 'web/data/nalgadha_parcels.geojson'
+          MAX_VILLAGES: '1'
+          PER_VILLAGE_MAX_PLOTS: '3000'
+          INCLUDE_OWNERS: '0'
+          TIME_BUDGET: '1500'
+          SLEEP: '0.06'
+          APPEND: '1'
+        run: python tools/fetch_gbn_parcels.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/data/nalgadha_parcels.geojson
+          git commit -m "data: Nalgadha gata register (Bhu-Naksha, owner counts)" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
