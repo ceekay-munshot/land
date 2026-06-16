@@ -5,6 +5,8 @@ name: nalgadha-fetch
 # This is the spine for the title reconstruction. Resumable; re-run to finish a large village.
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'   # TEMP: grind Nalgadha to completion (then no-ops). Remove once done.
   push:
     branches: [main]
     paths:
@@ -38,6 +40,8 @@ jobs:
           TIME_BUDGET: '1500'
           SLEEP: '0.06'
           APPEND: '1'
+          RESUME_SCAN: '1'
+          REQ_TIMEOUT: '10'
         run: python tools/fetch_gbn_parcels.py
       - name: Commit data
         run: |

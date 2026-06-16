@@ -41,6 +41,7 @@ APPEND = os.environ.get("APPEND", "1") == "1"
 INCLUDE_OWNERS = os.environ.get("INCLUDE_OWNERS", "0") == "1"
 OUT = os.environ.get("OUT", "web/data/gbn_parcels.geojson")
 VILLAGE_CODE = os.environ.get("VILLAGE_CODE", "")  # if set, fetch only this village (gata-register mode)
+REQ_TIMEOUT = float(os.environ.get("REQ_TIMEOUT", "20"))  # per-request timeout (lower = fail fast on empty points)
 
 s = requests.Session()
 s.headers.update({
@@ -90,7 +91,7 @@ def plot_info(gis_code, plotno):
     khata, area_ha, owners = None, None, []
     try:
         txt = s.post(f"{BASE}/MapInfo/getPlotInfo", json={"gisCode": gis_code, "plotNo": plotno},
-                     headers={"Content-Type": "application/json"}, timeout=20).text
+                     headers={"Content-Type": "application/json"}, timeout=REQ_TIMEOUT).text
         m = re.search(r"Khata No:\s*(\S+)", txt)
         khata = m.group(1) if m else None
         m = re.search(r"Area\s*:\s*([\d.]+)", txt)
@@ -105,17 +106,17 @@ def rect(b):
     return [(b[0], b[1]), (b[2], b[1]), (b[2], b[3]), (b[0], b[3]), (b[0], b[1])]
 
 
-def fetch_village(dc, tc, v):
+def fetch_village(dc, tc, v, start_y=None):
     try:
         ext = s.post(f"{BASE}/MapInfo/getVVVVExtentGeoref",
                      data={"gisLevels": f"{dc},{tc},{v['code']}"}, headers=FORM, timeout=30).json()
     except Exception:
-        return []
+        return [], start_y, False
     gis_code, crs = ext["gisCode"], ext.get("crs", "EPSG:32644")
     xmin, ymin, xmax, ymax = ext["xmin"], ext["ymin"], ext["xmax"], ext["ymax"]
     tr = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
     seen, covered, feats = set(), [], []
-    y = ymin + STEP / 2
+    y = start_y if start_y is not None else (ymin + STEP / 2)
     while y < ymax and budget_left() and len(seen) < PER_VILLAGE_MAX_PLOTS:
         x = xmin + STEP / 2
         while x < xmax and budget_left() and len(seen) < PER_VILLAGE_MAX_PLOTS:
@@ -123,7 +124,7 @@ def fetch_village(dc, tc, v):
                 try:
                     j = s.post(f"{BASE}/MapInfo/getPlotAtXY",
                                data={"giscode": gis_code, "x": x, "y": y, "plotno": "undefined"},
-                               headers=FORM, timeout=20).json()
+                               headers=FORM, timeout=REQ_TIMEOUT).json()
                     pid = j.get("id")
                     if pid and pid not in seen and j.get("kide"):
                         bb = (j["minx"], j["miny"], j["maxx"], j["maxy"])
@@ -144,11 +145,12 @@ def fetch_village(dc, tc, v):
                 time.sleep(SLEEP)
             x += STEP
         y += STEP
-    return feats
+    return feats, y, (y >= ymax)
 
 
 def main():
     global T0
+    resume = os.environ.get("RESUME_SCAN") == "1"
     s.get(HOME, timeout=30)
     d = find(level(1, ""), DISTRICT_MATCH)
     if not d:
@@ -161,13 +163,14 @@ def main():
         villages = [v for v in villages if v["code"] == VILLAGE_CODE]
 
     # resume: read what's already been fetched
-    existing, done_codes, village_xy = [], set(), {}
+    existing, done_codes, village_xy, scan = [], set(), {}, {}
     if APPEND and os.path.exists(OUT):
         try:
             cur = json.load(open(OUT, encoding="utf-8"))
             existing = cur.get("features", [])
             done_codes = set(cur.get("meta", {}).get("done_codes", []))
             village_xy = cur.get("meta", {}).get("village_xy", {})
+            scan = cur.get("meta", {}).get("scan", {})
         except Exception:
             pass
 
@@ -202,13 +205,16 @@ def main():
     for v in batch:
         if not budget_left() or len(existing) + len(new_feats) >= MAX_TOTAL_PLOTS:
             break
-        feats = fetch_village(d["code"], t["code"], v)
+        feats, last_y, completed = fetch_village(d["code"], t["code"], v,
+                                                  scan.get(v["code"]) if resume else None)
         new_feats.extend(feats)
-        if budget_left():                 # village finished within budget -> mark done
-            done_codes.add(v["code"])
-            print(f"  {v['value']}: +{len(feats)} (total {len(existing) + len(new_feats)}, {int(time.time() - T0)}s)")
+        if completed:
+            done_codes.add(v["code"]); scan.pop(v["code"], None)
+            print(f"  {v['value']}: +{len(feats)} DONE (total {len(existing) + len(new_feats)}, {int(time.time() - T0)}s)")
         else:
-            print(f"  {v['value']}: partial (budget) — will resume next run")
+            if resume:
+                scan[v["code"]] = last_y
+            print(f"  {v['value']}: +{len(feats)} partial — resume next run")
             break
 
     # merge + dedupe by (gis_code, plot_no)
@@ -219,7 +225,7 @@ def main():
 
     fc = {"type": "FeatureCollection",
           "meta": {"district": d["value"], "tehsil": t["value"],
-                   "done_codes": sorted(done_codes), "village_xy": village_xy,
+                   "done_codes": sorted(done_codes), "village_xy": village_xy, "scan": scan,
                    "villages_done": len(done_codes), "villages_total": len(villages),
                    "plot_count": len(all_feats), "owners_included": INCLUDE_OWNERS,
                    "updated": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())},
