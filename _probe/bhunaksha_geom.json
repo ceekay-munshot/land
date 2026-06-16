@@ -1,0 +1,66 @@
+{
+  "extent": {
+    "xmin": 149750.8841794433,
+    "ymin": 3155412.00702694,
+    "xmax": 153064.25490310282,
+    "ymax": 3157126.46502543,
+    "attribution": null,
+    "scaleFactor": 1.0,
+    "crs": "EPSG:32644",
+    "gisCode": "14100743120241"
+  },
+  "getPlotAtXY_full": {
+    "miny": 3156149.458243503,
+    "minx": 151239.7256004286,
+    "bhucode": "14100743120241",
+    "maxy": 3156347.938628527,
+    "maxx": 151492.73165669158,
+    "id": "wd-q4mkjQEuchapUVJyOUg",
+    "kide": "146"
+  },
+  "getPlotInfo_head": "Khata No: 00071   Plot No: 146क    Area : 2.2250 Hectare\nKhata No: 00072   Plot No: 146ख    Area : 0.1010 Hectare\n\n\nOwner Details For Khata No.:- 00071\n1 :-  नाम :   सीलिग     संरक्षक का नाम : ,     निवास स्थान : नि.ग्राम\nOwner Details For Khata No.:- 00072\n1 :-  नाम :   नवीन परती     संरक्षक का नाम : ---     निवास स्थान : नि.ग्राम\n\n\nOrder Description For Khata No.:- 00071\n1 : हरीराम ,सूर्य प्रकाश ,चन्द्र पुत्रगण बृजविहारी निरस्त  किये जाते है ा यदि अपील कत्र्तागण के पास सीलिग सीमा  से अधिक भूमि हो ा तो उनके विरूद्व अधिनियम  के  अन्तर्गत नियमानुसार कार्यवाही की जाये ा   ह.अ.  \n2 : 107म   2-9-9.2/3 2      4-19-9.2/3  31.25 50शेरा पुत्र बुद्वू नि.नलगढा       118म   5-0-0   31.25 51शिवचरन पुत्र दोजी नि. मोहियापुर  162म  1-9-0 52अमीलाल पुत्र आशा नि. शहदरा    162म  1-10-0 163म   1-17-0\n3 : 10म 0-4-13.1/3 14म 1-11-0 21म  0-8-0 54म  0-3-5.2/3 55म  0-6-0 58म  0-3-0\n4 : 12वेदप्रकाश पुत्रधनीराम नि.शहदरा   1म  5-0-0 31.25 13जगदीश पुत्र आशा नि.शहदरा     1म  5-0-0 31.25 14भूलवे पुत्र मलतू नि.शहदरा ",
+  "probes": [
+    {
+      "path": "MapInfo/getPlotKML",
+      "status": 500,
+      "ct": "application/json",
+      "len": 209,
+      "head": "{\"status\":\"500 INTERNAL_SERVER_ERROR\",\"code\":500,\"error\":\"No static resource MapInfo/getPlotKML.\",\"message\":\"An unexpected error occurred. \",\"path\":\"/MapInfo/getPlotKML\",\"time\":\"2026-06-16T14:55:03.649213002\"}"
+    },
+    {
+      "path": "MapInfo/getPlotByGisCode",
+      "status": 500,
+      "ct": "application/json",
+      "len": 221,
+      "head": "{\"status\":\"500 INTERNAL_SERVER_ERROR\",\"code\":500,\"error\":\"No static resource MapInfo/getPlotByGisCode.\",\"message\":\"An unexpected error occurred. \",\"path\":\"/MapInfo/getPlotByGisCode\",\"time\":\"2026-06-16T14:55:06.679830801\"}"
+    },
+    {
+      "path": "MapInfo/getmap",
+      "status": 500,
+      "ct": "application/json",
+      "len": 201,
+      "head": "{\"status\":\"500 INTERNAL_SERVER_ERROR\",\"code\":500,\"error\":\"No static resource MapInfo/getmap.\",\"message\":\"An unexpected error occurred. \",\"path\":\"/MapInfo/getmap\",\"time\":\"2026-06-16T14:55:12.434664314\"}"
+    },
+    {
+      "path": "MapInfo/getMapSvg",
+      "status": 500,
+      "ct": "application/json",
+      "len": 206,
+      "head": "{\"status\":\"500 INTERNAL_SERVER_ERROR\",\"code\":500,\"error\":\"No static resource MapInfo/getMapSvg.\",\"message\":\"An unexpected error occurred. \",\"path\":\"/MapInfo/getMapSvg\",\"time\":\"2026-06-16T14:55:19.33916304\"}"
+    },
+    {
+      "path": "MapInfo/getVVPlots",
+      "status": 500,
+      "ct": "application/json",
+      "len": 209,
+      "head": "{\"status\":\"500 INTERNAL_SERVER_ERROR\",\"code\":500,\"error\":\"No static resource MapInfo/getVVPlots.\",\"message\":\"An unexpected error occurred. \",\"path\":\"/MapInfo/getVVPlots\",\"time\":\"2026-06-16T14:55:25.373394553\"}"
+    },
+    {
+      "path": "rest/MapInfo/getPlotsByGisCode",
+      "status": 401,
+      "ct": null,
+      "len": 52,
+      "head": "{\"error\": \"Missing or invalid Authorization header\"}"
+    }
+  ]
+}
