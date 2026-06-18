@@ -1,9 +1,9 @@
 name: nalgadha-fetch
 
 # Pull the Nalgadha gata register (village नलगढ़ा / 120241, Gautam Buddh Nagar Sadar tehsil)
-# from UP Bhu-Naksha: every gata + plot/khata/area + owner COUNT (public). Owner NAMES are
-# collected separately and ENCRYPTED (NALGADHA_KEY secret) — kept OUT of the public geojson.
-# Resumable; re-run to finish a large village. (NALGADHA_KEY set; level() retry-hardened.)
+# from UP Bhu-Naksha: every gata + plot/khata/area + owner names (PUBLIC — founder's decision).
+# Names go to web/data/nalgadha_owners.json (plaintext) for the public dashboard.
+# Resumable; re-run to finish a large village.
 on:
   workflow_dispatch:
   schedule:
@@ -30,23 +30,13 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests pyproj
-      - name: Decrypt existing owner names (to resume the backfill)
-        env:
-          NALGADHA_KEY: ${{ secrets.NALGADHA_KEY }}
-        run: |
-          mkdir -p _tmp
-          echo '{}' > _tmp/owners_old.json
-          if [ -n "$NALGADHA_KEY" ] && [ -f web/data/nalgadha_owners.json.enc ]; then
-            openssl enc -d -aes-256-cbc -pbkdf2 -in web/data/nalgadha_owners.json.enc \
-              -out _tmp/owners_old.json -pass env:NALGADHA_KEY 2>/dev/null || echo '{}' > _tmp/owners_old.json
-          fi
-      - name: Fetch gata register + backfill owner names
+      - name: Fetch gata register + backfill owner names (plaintext, public)
         env:
           TEHSIL: 'गौतमबुद्धनगर'
           VILLAGE_CODE: '120241'
           OUT: 'web/data/nalgadha_parcels.geojson'
-          OWNERS_IN: '_tmp/owners_old.json'
-          OWNERS_OUT: '_tmp/owners_merged.json'
+          OWNERS_IN: 'web/data/nalgadha_owners.json'
+          OWNERS_OUT: 'web/data/nalgadha_owners.json'
           NAMES_BUDGET: '700'
           MAX_VILLAGES: '1'
           PER_VILLAGE_MAX_PLOTS: '3000'
@@ -56,21 +46,12 @@ jobs:
           RESUME_SCAN: '1'
           REQ_TIMEOUT: '10'
         run: python tools/fetch_gbn_parcels.py
-      - name: Encrypt owner names (held back from the public geojson)
-        env:
-          NALGADHA_KEY: ${{ secrets.NALGADHA_KEY }}
-        run: |
-          if [ -z "$NALGADHA_KEY" ]; then echo "no key — names not stored"; exit 0; fi
-          if [ ! -f _tmp/owners_merged.json ]; then echo "no names file produced"; exit 0; fi
-          openssl enc -aes-256-cbc -pbkdf2 -salt -in _tmp/owners_merged.json \
-            -out web/data/nalgadha_owners.json.enc -pass env:NALGADHA_KEY
-          python3 -c "import json;print('encrypted owner-name records:', len(json.load(open('_tmp/owners_merged.json'))))"
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add web/data/nalgadha_parcels.geojson
-          git add web/data/nalgadha_owners.json.enc 2>/dev/null || true
-          git commit -m "data: Nalgadha gata register + encrypted owner names" || { echo "no change"; exit 0; }
+          git rm -q --ignore-unmatch web/data/nalgadha_owners.json.enc
+          git add web/data/nalgadha_parcels.geojson web/data/nalgadha_owners.json
+          git commit -m "data: Nalgadha gata register + owner names (public)" || { echo "no change"; exit 0; }
           git pull --rebase origin main || true
           git push

@@ -301,7 +301,12 @@ map.on('load', async () => {
   // Nalgadha gata register (title reconstruction) — coloured by # of owners (fragmentation).
   // Counts only here; owner names live in the private build.
   try {
-    const ng = await fetch('./data/nalgadha_parcels.geojson').then((r) => (r.ok ? r.json() : null));
+    const [ng, ngOwners] = await Promise.all([
+      fetch('./data/nalgadha_parcels.geojson').then((r) => (r.ok ? r.json() : null)),
+      fetch('./data/nalgadha_owners.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}))
+    ]);
+    const ngEsc = (t) => (t == null ? '' : String(t)).replace(/[&<>"]/g,
+      (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     if (ng && ng.features && ng.features.length) {
       map.addSource('nalgadha', { type: 'geojson', data: ng });
       map.addLayer({
@@ -324,7 +329,8 @@ map.on('load', async () => {
               <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
               <tr><td>Owners</td><td><b>${p.owner_count ?? '—'}</b></td></tr>
             </table>
-            <div class="mock">title reconstruction · owner names in the private build</div>
+            ${(ngOwners[String(p.plot_no)] || []).length ? `<div class="owners"><b>Owners</b><br>${(ngOwners[String(p.plot_no)] || []).map(ngEsc).join('<br>')}</div>` : ''}
+            <div class="mock">title reconstruction · UP Bhu-Naksha</div>
           </div>`).addTo(map);
       });
       map.on('mouseenter', 'nalgadha-fill', () => { map.getCanvas().style.cursor = 'pointer'; });

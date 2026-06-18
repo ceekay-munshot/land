@@ -5,8 +5,4 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
-
-# never commit plaintext owner names — only the encrypted .enc is allowed
 _tmp/
-*owners*.json
-!*owners*.json.enc
