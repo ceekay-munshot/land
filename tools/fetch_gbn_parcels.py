@@ -44,6 +44,7 @@ VILLAGE_CODE = os.environ.get("VILLAGE_CODE", "")  # if set, fetch only this vil
 REQ_TIMEOUT = float(os.environ.get("REQ_TIMEOUT", "20"))  # per-request timeout (lower = fail fast on empty points)
 OWNERS_OUT = os.environ.get("OWNERS_OUT", "")  # if set, write {gata: [owner names]} here (kept OUT of the public geojson, for separate encryption)
 OWNER_NAMES = {}  # gata -> [names], collected this run when OWNERS_OUT is set
+ENUM_MAX = int(os.environ.get("ENUM_MAX", "0"))  # >0: enumerate gatas by number 1..ENUM_MAX (complete coverage, vs grid sampling)
 
 s = requests.Session()
 s.headers.update({
@@ -158,6 +159,41 @@ def fetch_village(dc, tc, v, start_y=None):
     return feats, y, (y >= ymax)
 
 
+def fetch_village_by_plotno(dc, tc, v, max_plotno):
+    """Enumerate gatas by plot NUMBER (1..max_plotno) via getPlotByPlotNo — complete coverage,
+    no grid-sampling gaps. Returns bbox features (+ owners collected when OWNERS_OUT is set)."""
+    try:
+        ext = s.post(f"{BASE}/MapInfo/getVVVVExtentGeoref",
+                     data={"gisLevels": f"{dc},{tc},{v['code']}"}, headers=FORM, timeout=40).json()
+    except Exception:
+        return []
+    gis_code, crs = ext["gisCode"], ext.get("crs", "EPSG:32644")
+    tr = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
+    feats = []
+    for pn in range(1, max_plotno + 1):
+        if not budget_left():
+            break
+        try:
+            j = s.post(f"{BASE}/MapInfo/getPlotByPlotNo",
+                       data={"giscode": gis_code, "plotno": str(pn)}, headers=FORM, timeout=REQ_TIMEOUT).json()
+        except Exception:
+            time.sleep(0.3)
+            continue
+        if j.get("kide") and j.get("minx") is not None:
+            bb = (j["minx"], j["miny"], j["maxx"], j["maxy"])
+            khata, area_ha, owners = plot_info(gis_code, j["kide"])
+            if OWNERS_OUT and owners:
+                OWNER_NAMES[str(j["kide"])] = owners
+            props = {"plot_no": j["kide"], "khata_no": khata, "area_ha": area_ha,
+                     "owner_count": len(owners), "village": v["value"],
+                     "gis_code": gis_code, "source": "UP Bhu-Naksha"}
+            feats.append({"type": "Feature", "properties": props,
+                          "geometry": {"type": "Polygon",
+                                       "coordinates": [[list(tr.transform(px, py)) for px, py in rect(bb)]]}})
+        time.sleep(SLEEP)
+    return feats
+
+
 def main():
     global T0
     resume = os.environ.get("RESUME_SCAN") == "1"
@@ -187,48 +223,51 @@ def main():
         except Exception:
             pass
 
-    remaining = [v for v in villages if v["code"] not in done_codes]
-
-    # opt-in: fetch villages nearest a catalyst first (TARGET_LATLNG="lat,lng") instead of
-    # alphabetically — so coverage grows outward from the hot zone. Centroids are cached in
-    # meta to stay cheap; any failure falls back to the original order (no regression).
-    target = os.environ.get("TARGET_LATLNG")
-    if target:
-        try:
-            tlat, tlng = (float(x) for x in target.split(","))
-            T0 = time.time()
-            for v in remaining:
-                if v["code"] not in village_xy and budget_left():
-                    c = village_centroid(d["code"], t["code"], v)
-                    if c:
-                        village_xy[v["code"]] = c
-                    time.sleep(SLEEP)
-            remaining.sort(key=lambda v: haversine(village_xy[v["code"]], (tlat, tlng))
-                           if v["code"] in village_xy else 1e9)
-            print(f"prioritized villages by distance to {tlat},{tlng}")
-        except Exception as e:
-            print("prioritization skipped:", e)
-
-    batch = remaining[:MAX_VILLAGES]
-    print(f"{d['value']}/{t['value']}: {len(villages)} villages, "
-          f"{len(done_codes)} done, {len(remaining)} remaining, fetching {len(batch)} now")
-
     T0 = time.time()
     new_feats = []
-    for v in batch:
-        if not budget_left() or len(existing) + len(new_feats) >= MAX_TOTAL_PLOTS:
-            break
-        feats, last_y, completed = fetch_village(d["code"], t["code"], v,
-                                                  scan.get(v["code"]) if resume else None)
-        new_feats.extend(feats)
-        if completed:
-            done_codes.add(v["code"]); scan.pop(v["code"], None)
-            print(f"  {v['value']}: +{len(feats)} DONE (total {len(existing) + len(new_feats)}, {int(time.time() - T0)}s)")
-        else:
-            if resume:
-                scan[v["code"]] = last_y
-            print(f"  {v['value']}: +{len(feats)} partial — resume next run")
-            break
+    if ENUM_MAX and villages:
+        # COMPLETE coverage: enumerate gatas by NUMBER (1..ENUM_MAX) via getPlotByPlotNo —
+        # finds gatas the grid sampling missed. Merged with existing below; names backfilled.
+        v = villages[0]
+        new_feats = fetch_village_by_plotno(d["code"], t["code"], v, ENUM_MAX)
+        done_codes.add(v["code"])
+        scan.pop(v["code"], None)
+        print(f"{d['value']}/{t['value']}: enum {v['value']} plotno 1..{ENUM_MAX} -> {len(new_feats)} gatas")
+    else:
+        remaining = [v for v in villages if v["code"] not in done_codes]
+        # opt-in: fetch villages nearest a catalyst first (TARGET_LATLNG) instead of alphabetically.
+        target = os.environ.get("TARGET_LATLNG")
+        if target:
+            try:
+                tlat, tlng = (float(x) for x in target.split(","))
+                for v in remaining:
+                    if v["code"] not in village_xy and budget_left():
+                        c = village_centroid(d["code"], t["code"], v)
+                        if c:
+                            village_xy[v["code"]] = c
+                        time.sleep(SLEEP)
+                remaining.sort(key=lambda v: haversine(village_xy[v["code"]], (tlat, tlng))
+                               if v["code"] in village_xy else 1e9)
+                print(f"prioritized villages by distance to {tlat},{tlng}")
+            except Exception as e:
+                print("prioritization skipped:", e)
+        batch = remaining[:MAX_VILLAGES]
+        print(f"{d['value']}/{t['value']}: {len(villages)} villages, "
+              f"{len(done_codes)} done, {len(remaining)} remaining, fetching {len(batch)} now")
+        for v in batch:
+            if not budget_left() or len(existing) + len(new_feats) >= MAX_TOTAL_PLOTS:
+                break
+            feats, last_y, completed = fetch_village(d["code"], t["code"], v,
+                                                      scan.get(v["code"]) if resume else None)
+            new_feats.extend(feats)
+            if completed:
+                done_codes.add(v["code"]); scan.pop(v["code"], None)
+                print(f"  {v['value']}: +{len(feats)} DONE (total {len(existing) + len(new_feats)}, {int(time.time() - T0)}s)")
+            else:
+                if resume:
+                    scan[v["code"]] = last_y
+                print(f"  {v['value']}: +{len(feats)} partial — resume next run")
+                break
 
     # merge + dedupe by (gis_code, plot_no)
     merged = {}
