@@ -6,8 +6,9 @@ name: nalgadha-fetch
 # Resumable; re-run to finish a large village. (enum 1..400; retry-hardened + graceful skip.)
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/30 * * * *'   # grind to full village; counts public + names encrypted (needs NALGADHA_KEY secret)
+  # Coverage complete (188 gatas). Schedule paused — re-enable to refresh, or run manually.
+  # schedule:
+  #   - cron: '*/30 * * * *'
   push:
     branches: [main]
     paths:
