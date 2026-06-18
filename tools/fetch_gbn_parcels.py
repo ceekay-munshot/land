@@ -60,16 +60,16 @@ def budget_left():
 
 
 def level(n, codes=""):
-    for i in range(5):
+    for i in range(8):
         try:
             r = s.post(f"{BASE}/masterdata/levelvalue", data={"level": n, "codes": codes},
-                       headers=FORM, timeout=40)
+                       headers=FORM, timeout=50)
             r.raise_for_status()
             return r.json()
         except Exception:
-            if i == 4:
+            if i == 7:
                 raise
-            time.sleep(2 * (i + 1))
+            time.sleep(3 * (i + 1))
 
 
 def find(items, needle):
@@ -162,10 +162,15 @@ def fetch_village(dc, tc, v, start_y=None):
 def fetch_village_by_plotno(dc, tc, v, max_plotno):
     """Enumerate gatas by plot NUMBER (1..max_plotno) via getPlotByPlotNo — complete coverage,
     no grid-sampling gaps. Returns bbox features (+ owners collected when OWNERS_OUT is set)."""
-    try:
-        ext = s.post(f"{BASE}/MapInfo/getVVVVExtentGeoref",
-                     data={"gisLevels": f"{dc},{tc},{v['code']}"}, headers=FORM, timeout=40).json()
-    except Exception:
+    ext = None
+    for i in range(5):
+        try:
+            ext = s.post(f"{BASE}/MapInfo/getVVVVExtentGeoref",
+                         data={"gisLevels": f"{dc},{tc},{v['code']}"}, headers=FORM, timeout=50).json()
+            break
+        except Exception:
+            time.sleep(3 * (i + 1))
+    if not ext:
         return []
     gis_code, crs = ext["gisCode"], ext.get("crs", "EPSG:32644")
     tr = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
@@ -201,13 +206,17 @@ def main():
         s.get(HOME, timeout=40)
     except Exception:
         pass
-    d = find(level(1, ""), DISTRICT_MATCH)
-    if not d:
-        sys.exit(f"district {DISTRICT_MATCH!r} not found")
-    t = find(level(2, d["code"]), TEHSIL_MATCH)
-    if not t:
-        sys.exit(f"tehsil {TEHSIL_MATCH!r} not found")
-    villages = level(3, f'{d["code"]},{t["code"]}')
+    try:
+        d = find(level(1, ""), DISTRICT_MATCH)
+        if not d:
+            sys.exit(f"district {DISTRICT_MATCH!r} not found")
+        t = find(level(2, d["code"]), TEHSIL_MATCH)
+        if not t:
+            sys.exit(f"tehsil {TEHSIL_MATCH!r} not found")
+        villages = level(3, f'{d["code"]},{t["code"]}')
+    except Exception as e:
+        print(f"Bhu-Naksha unreachable right now ({str(e)[:120]}); skipping this run, will retry next schedule.")
+        return
     if VILLAGE_CODE:
         villages = [v for v in villages if v["code"] == VILLAGE_CODE]
 

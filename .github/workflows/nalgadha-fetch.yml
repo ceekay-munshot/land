@@ -3,7 +3,7 @@ name: nalgadha-fetch
 # Pull the Nalgadha gata register (village नलगढ़ा / 120241, Gautam Buddh Nagar Sadar tehsil)
 # from UP Bhu-Naksha: every gata + plot/khata/area + owner names (PUBLIC — founder's decision).
 # Names go to web/data/nalgadha_owners.json (plaintext) for the public dashboard.
-# Resumable; re-run to finish a large village.
+# Resumable; re-run to finish a large village. (enum 1..400; retry-hardened + graceful skip.)
 on:
   workflow_dispatch:
   schedule:
