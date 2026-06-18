@@ -42,6 +42,8 @@ INCLUDE_OWNERS = os.environ.get("INCLUDE_OWNERS", "0") == "1"
 OUT = os.environ.get("OUT", "web/data/gbn_parcels.geojson")
 VILLAGE_CODE = os.environ.get("VILLAGE_CODE", "")  # if set, fetch only this village (gata-register mode)
 REQ_TIMEOUT = float(os.environ.get("REQ_TIMEOUT", "20"))  # per-request timeout (lower = fail fast on empty points)
+OWNERS_OUT = os.environ.get("OWNERS_OUT", "")  # if set, write {gata: [owner names]} here (kept OUT of the public geojson, for separate encryption)
+OWNER_NAMES = {}  # gata -> [names], collected this run when OWNERS_OUT is set
 
 s = requests.Session()
 s.headers.update({
@@ -132,6 +134,8 @@ def fetch_village(dc, tc, v, start_y=None):
                         covered.append(bb)
                         khata, area_ha, owners = plot_info(gis_code, j["kide"])
                         time.sleep(SLEEP)
+                        if OWNERS_OUT and owners:
+                            OWNER_NAMES[str(j["kide"])] = owners
                         props = {"plot_no": j["kide"], "khata_no": khata, "area_ha": area_ha,
                                  "owner_count": len(owners), "village": v["value"],
                                  "gis_code": gis_code, "source": "UP Bhu-Naksha"}
@@ -234,6 +238,10 @@ def main():
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(fc, f, ensure_ascii=False)
     print(f"WROTE {len(all_feats)} parcels | {len(done_codes)}/{len(villages)} villages done -> {OUT}")
+    if OWNERS_OUT:
+        os.makedirs(os.path.dirname(OWNERS_OUT) or ".", exist_ok=True)
+        json.dump(OWNER_NAMES, open(OWNERS_OUT, "w"), ensure_ascii=False)
+        print(f"wrote {len(OWNER_NAMES)} plots' owner names -> {OWNERS_OUT} (for encryption)")
 
 
 if __name__ == "__main__":

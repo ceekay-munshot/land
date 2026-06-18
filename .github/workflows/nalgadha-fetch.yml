@@ -1,12 +1,13 @@
 name: nalgadha-fetch
 
 # Pull the Nalgadha gata register (village नलगढ़ा / 120241, Gautam Buddh Nagar Sadar tehsil)
-# from UP Bhu-Naksha: every gata + plot/khata/area + OWNER COUNT (no names — public-safe).
-# This is the spine for the title reconstruction. Resumable; re-run to finish a large village.
+# from UP Bhu-Naksha: every gata + plot/khata/area + owner COUNT (public). Owner NAMES are
+# collected separately and ENCRYPTED (NALGADHA_KEY secret) — kept OUT of the public geojson.
+# Resumable; re-run to finish a large village.
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'   # counts-only grind (public-safe); owner names stay OFF until repo is private
+    - cron: '*/30 * * * *'   # grind to full village; counts public + names encrypted (needs NALGADHA_KEY secret)
   push:
     branches: [main]
     paths:
@@ -34,6 +35,7 @@ jobs:
           TEHSIL: 'गौतमबुद्धनगर'
           VILLAGE_CODE: '120241'
           OUT: 'web/data/nalgadha_parcels.geojson'
+          OWNERS_OUT: '_tmp/owners_new.json'
           MAX_VILLAGES: '1'
           PER_VILLAGE_MAX_PLOTS: '3000'
           INCLUDE_OWNERS: '0'
@@ -43,11 +45,31 @@ jobs:
           RESUME_SCAN: '1'
           REQ_TIMEOUT: '10'
         run: python tools/fetch_gbn_parcels.py
+      - name: Encrypt owner names (held back from the public geojson)
+        env:
+          NALGADHA_KEY: ${{ secrets.NALGADHA_KEY }}
+        run: |
+          if [ -z "$NALGADHA_KEY" ]; then
+            echo "NALGADHA_KEY secret not set — names NOT stored this run. Add the secret to enable encryption."
+            exit 0
+          fi
+          mkdir -p _tmp
+          if [ -f web/data/nalgadha_owners.json.enc ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -in web/data/nalgadha_owners.json.enc \
+              -out _tmp/owners_old.json -pass env:NALGADHA_KEY 2>/dev/null || echo '{}' > _tmp/owners_old.json
+          else
+            echo '{}' > _tmp/owners_old.json
+          fi
+          python3 -c "import json,os; o=json.load(open('_tmp/owners_old.json')); n=json.load(open('_tmp/owners_new.json')) if os.path.exists('_tmp/owners_new.json') else {}; o.update(n); json.dump(o, open('_tmp/owners_merged.json','w'), ensure_ascii=False); print('owner-name records total:', len(o))"
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in _tmp/owners_merged.json \
+            -out web/data/nalgadha_owners.json.enc -pass env:NALGADHA_KEY
+          echo "encrypted -> web/data/nalgadha_owners.json.enc"
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add web/data/nalgadha_parcels.geojson
-          git commit -m "data: Nalgadha gata register (Bhu-Naksha, owner counts)" || { echo "no change"; exit 0; }
+          git add web/data/nalgadha_owners.json.enc 2>/dev/null || true
+          git commit -m "data: Nalgadha gata register + encrypted owner names" || { echo "no change"; exit 0; }
           git pull --rebase origin main || true
           git push
