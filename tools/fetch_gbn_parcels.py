@@ -248,9 +248,31 @@ def main():
         json.dump(fc, f, ensure_ascii=False)
     print(f"WROTE {len(all_feats)} parcels | {len(done_codes)}/{len(villages)} villages done -> {OUT}")
     if OWNERS_OUT:
+        # Backfill owner names over EVERY plot in the register (not just newly-scanned ones),
+        # resuming from already-collected names (OWNERS_IN). Bounded by NAMES_BUDGET.
+        owners_in = os.environ.get("OWNERS_IN", "")
+        if owners_in and os.path.exists(owners_in):
+            try:
+                OWNER_NAMES.update(json.load(open(owners_in, encoding="utf-8")))
+            except Exception:
+                pass
+        nb_start = time.time()
+        nb_budget = float(os.environ.get("NAMES_BUDGET", "600"))
+        fetched = 0
+        for ft in all_feats:
+            if time.time() - nb_start > nb_budget:
+                break
+            pn = str(ft["properties"]["plot_no"])
+            if pn in OWNER_NAMES:
+                continue
+            _, _, owners = plot_info(ft["properties"]["gis_code"], pn)
+            if owners:
+                OWNER_NAMES[pn] = owners
+            fetched += 1
+            time.sleep(SLEEP)
         os.makedirs(os.path.dirname(OWNERS_OUT) or ".", exist_ok=True)
         json.dump(OWNER_NAMES, open(OWNERS_OUT, "w"), ensure_ascii=False)
-        print(f"wrote {len(OWNER_NAMES)} plots' owner names -> {OWNERS_OUT} (for encryption)")
+        print(f"names: {len(OWNER_NAMES)} total ({fetched} newly fetched this run) -> {OWNERS_OUT}")
 
 
 if __name__ == "__main__":

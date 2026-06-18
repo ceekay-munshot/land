@@ -30,16 +30,27 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests pyproj
-      - name: Fetch Nalgadha gata register
+      - name: Decrypt existing owner names (to resume the backfill)
+        env:
+          NALGADHA_KEY: ${{ secrets.NALGADHA_KEY }}
+        run: |
+          mkdir -p _tmp
+          echo '{}' > _tmp/owners_old.json
+          if [ -n "$NALGADHA_KEY" ] && [ -f web/data/nalgadha_owners.json.enc ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -in web/data/nalgadha_owners.json.enc \
+              -out _tmp/owners_old.json -pass env:NALGADHA_KEY 2>/dev/null || echo '{}' > _tmp/owners_old.json
+          fi
+      - name: Fetch gata register + backfill owner names
         env:
           TEHSIL: 'गौतमबुद्धनगर'
           VILLAGE_CODE: '120241'
           OUT: 'web/data/nalgadha_parcels.geojson'
-          OWNERS_OUT: '_tmp/owners_new.json'
+          OWNERS_IN: '_tmp/owners_old.json'
+          OWNERS_OUT: '_tmp/owners_merged.json'
+          NAMES_BUDGET: '700'
           MAX_VILLAGES: '1'
           PER_VILLAGE_MAX_PLOTS: '3000'
-          INCLUDE_OWNERS: '0'
-          TIME_BUDGET: '1500'
+          TIME_BUDGET: '700'
           SLEEP: '0.06'
           APPEND: '1'
           RESUME_SCAN: '1'
@@ -49,21 +60,11 @@ jobs:
         env:
           NALGADHA_KEY: ${{ secrets.NALGADHA_KEY }}
         run: |
-          if [ -z "$NALGADHA_KEY" ]; then
-            echo "NALGADHA_KEY secret not set — names NOT stored this run. Add the secret to enable encryption."
-            exit 0
-          fi
-          mkdir -p _tmp
-          if [ -f web/data/nalgadha_owners.json.enc ]; then
-            openssl enc -d -aes-256-cbc -pbkdf2 -in web/data/nalgadha_owners.json.enc \
-              -out _tmp/owners_old.json -pass env:NALGADHA_KEY 2>/dev/null || echo '{}' > _tmp/owners_old.json
-          else
-            echo '{}' > _tmp/owners_old.json
-          fi
-          python3 -c "import json,os; o=json.load(open('_tmp/owners_old.json')); n=json.load(open('_tmp/owners_new.json')) if os.path.exists('_tmp/owners_new.json') else {}; o.update(n); json.dump(o, open('_tmp/owners_merged.json','w'), ensure_ascii=False); print('owner-name records total:', len(o))"
+          if [ -z "$NALGADHA_KEY" ]; then echo "no key — names not stored"; exit 0; fi
+          if [ ! -f _tmp/owners_merged.json ]; then echo "no names file produced"; exit 0; fi
           openssl enc -aes-256-cbc -pbkdf2 -salt -in _tmp/owners_merged.json \
             -out web/data/nalgadha_owners.json.enc -pass env:NALGADHA_KEY
-          echo "encrypted -> web/data/nalgadha_owners.json.enc"
+          python3 -c "import json;print('encrypted owner-name records:', len(json.load(open('_tmp/owners_merged.json'))))"
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
