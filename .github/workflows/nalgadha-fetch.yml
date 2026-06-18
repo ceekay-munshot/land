@@ -3,7 +3,7 @@ name: nalgadha-fetch
 # Pull the Nalgadha gata register (village नलगढ़ा / 120241, Gautam Buddh Nagar Sadar tehsil)
 # from UP Bhu-Naksha: every gata + plot/khata/area + owner COUNT (public). Owner NAMES are
 # collected separately and ENCRYPTED (NALGADHA_KEY secret) — kept OUT of the public geojson.
-# Resumable; re-run to finish a large village. (NALGADHA_KEY configured — names now encrypt.)
+# Resumable; re-run to finish a large village. (NALGADHA_KEY set; level() retry-hardened.)
 on:
   workflow_dispatch:
   schedule:

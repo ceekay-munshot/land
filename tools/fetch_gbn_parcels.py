@@ -59,10 +59,16 @@ def budget_left():
 
 
 def level(n, codes=""):
-    r = s.post(f"{BASE}/masterdata/levelvalue", data={"level": n, "codes": codes},
-               headers=FORM, timeout=30)
-    r.raise_for_status()
-    return r.json()
+    for i in range(5):
+        try:
+            r = s.post(f"{BASE}/masterdata/levelvalue", data={"level": n, "codes": codes},
+                       headers=FORM, timeout=40)
+            r.raise_for_status()
+            return r.json()
+        except Exception:
+            if i == 4:
+                raise
+            time.sleep(2 * (i + 1))
 
 
 def find(items, needle):
@@ -155,7 +161,10 @@ def fetch_village(dc, tc, v, start_y=None):
 def main():
     global T0
     resume = os.environ.get("RESUME_SCAN") == "1"
-    s.get(HOME, timeout=30)
+    try:
+        s.get(HOME, timeout=40)
+    except Exception:
+        pass
     d = find(level(1, ""), DISTRICT_MATCH)
     if not d:
         sys.exit(f"district {DISTRICT_MATCH!r} not found")
