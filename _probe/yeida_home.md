@@ -8,9 +8,7 @@ Live SchemeCommercialIndustrialInstitutionalResidentialServices
 
 ## Live Scheme
 
-- [Applicant List of\\
-\\
-RPS10/2026](https://yamunaexpresswayauthority.com/web/forms/rps10_04_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
+- [RPS10/2026 Draw Result](https://yamunaexpresswayauthority.com/web/forms/rps10_draw_result_18_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
 - [Eligibility Status of \\
 \\
@@ -92,9 +90,11 @@ Extended - 30-06-2026 - 5:00PM
 
 ## Residential
 
-- [Applicant List of\\
+- [RPS10/2026 Draw Result](https://yamunaexpresswayauthority.com/web/forms/rps10_draw_result_18_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
+
+- [Final Applicant List of\\
 \\
-RPS10/2026](https://yamunaexpresswayauthority.com/web/forms/rps10_04_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
+RPS10/2026](https://yamunaexpresswayauthority.com/web/forms/rps10_04_06_2026.php)
 
 
 **Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
