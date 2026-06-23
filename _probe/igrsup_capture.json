@@ -1,0 +1,284 @@
+{
+  "steps": [],
+  "inputs": [
+    {
+      "tag": "SELECT",
+      "name": "districtCode",
+      "id": "districtCode",
+      "type": "select-one"
+    },
+    {
+      "tag": "INPUT",
+      "name": "districtNameEng",
+      "id": "taxDistrictNameEngForRular",
+      "type": "hidden"
+    },
+    {
+      "tag": "SELECT",
+      "name": "sroCode",
+      "id": "sroCode",
+      "type": "select-one"
+    },
+    {
+      "tag": "SELECT",
+      "name": "gaonCode1",
+      "id": "villageCode3",
+      "type": "select-one"
+    },
+    {
+      "tag": "INPUT",
+      "name": "tehsilCode",
+      "id": "tehsilCode",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propNEWAddress",
+      "id": "propNEWAddress",
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "name": "Submit",
+      "id": "commonBtn",
+      "type": "submit"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "id": "hiddenR_psDistrictCode",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "id": "hiddenR_psTehsilCode",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "id": "hiddenR_psVillageCode",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "id": "hiddenR_psPlotKhasaraNo",
+      "type": "hidden"
+    },
+    {
+      "tag": "SELECT",
+      "name": "taxDistrictCode",
+      "id": "taxDistrictCode",
+      "type": "select-one"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "id": "taxDistrictNameEngForUrban",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propertyId",
+      "id": "propertyId",
+      "type": "text"
+    },
+    {
+      "tag": "INPUT",
+      "name": "Submit",
+      "id": "commonBtn2",
+      "type": "submit"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "id": "hiddenU_psDistrictCode",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "",
+      "id": "hiddenU_psPropertyId",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "districtCode",
+      "id": "districtCode124",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "sroCode",
+      "id": "sroCode124",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propertyId",
+      "id": "propertyId124",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propNEWAddress",
+      "id": "propNEWAddress124",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "gaonCode1",
+      "id": "gaonCode124",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "action:getPropertyDeedSearchDetail",
+      "id": "PropertyDeedSearchS",
+      "type": "submit"
+    },
+    {
+      "tag": "INPUT",
+      "name": "taxDistrictCode",
+      "id": "districtCode125",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propertyId",
+      "id": "propertyId125",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "action:getPropertyDeedDetailBYPropertyId",
+      "id": "PropertyDeedSearchById",
+      "type": "submit"
+    },
+    {
+      "tag": "INPUT",
+      "name": "taxDistrictCode",
+      "id": "dcode123",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "sroCode",
+      "id": "sroCode123",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propertyId",
+      "id": "propertyId123",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propNEWAddress",
+      "id": "propNEWAddress123",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "action:getPropertyTaxDuesDetail",
+      "id": "yourlinkId",
+      "type": "submit"
+    },
+    {
+      "tag": "INPUT",
+      "name": "taxDistrictCode",
+      "id": "dcode127",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "sroCode",
+      "id": "sroCode127",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propertyId",
+      "id": "propertyId127",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propNEWAddress",
+      "id": "propNEWAddress127",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "action:getPropertyAndGISinfo",
+      "id": "yourlinkId",
+      "type": "submit"
+    },
+    {
+      "tag": "INPUT",
+      "name": "districtCode",
+      "id": "districtCode11",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "sroCode",
+      "id": "sroCode11",
+      "type": "hidden"
+    },
+    {
+      "tag": "INPUT",
+      "name": "propNEWAddress",
+      "id": "propNEWAddress11",
+      "type": "hidden"
+    }
+  ],
+  "district": {
+    "v": "141",
+    "t": "गौतम बुद्ध नगर"
+  },
+  "districts_sample": [
+    {
+      "v": "-1",
+      "t": "-- select--"
+    },
+    {
+      "v": "178",
+      "t": "अंबेडकर नगर"
+    },
+    {
+      "v": "137",
+      "t": "अमरोहा"
+    },
+    {
+      "v": "203",
+      "t": "अमेठी"
+    },
+    {
+      "v": "177",
+      "t": "अयोध्या"
+    }
+  ],
+  "tehsils": null,
+  "villages_sample": [
+    {
+      "v": "-1",
+      "t": "-select--"
+    }
+  ],
+  "searched": "input[type=\"submit\"]",
+  "result_html": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"><html><head> <noscript> <meta http-equiv=\"refresh\" content=\"0; url=whatyouwant.jsp\" /> </noscript> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <meta http-equiv=\"Pragma\" content=\"no-cache\"> <meta http-equiv=\"cache-control\" content=\"max-age=0, must-revalidate, no-cache, no-store, private\"> <meta http-equiv=\"Cache-Control\" content=\"post-check=0, pre-check=0\"> <meta http-equiv=\"Expires\" content=\"0\"> <title>index</title> <link href=\"/igrsup/css/style.css\" type=\"text/css\" rel=\"stylesheet\"> <link href=\"/igrsup/css/keyboard.css\" type=\"text/css\" rel=\"stylesheet\"> <script type=\"text/javascript\" language=\"javascript\" src=\"/igrsup/js/jquery-3.7.1.js\"></script> <script type=\"text/javascript\" language=\"javascript\" src=\"/igrsup/js/jquery.uniform.js charset=\" utf-8\"=\"\"></script> <script type=\"text/javascript\" language=\"javascript\" src=\"/igrsup/js/prernaUser.js\" charset=\"utf-8\"></script> <script type=\"text/javascript\" language=\"javascript\" src=\"/igrsup/js/keyboard.js\" charset=\"utf-8\"></script> <script type=\"text/javascript\" language=\"javascript\"> $(document).ready(function() { function disableBack() { window.history.forward() } window.onload = disableBack(); window.onpageshow = function(evt) { if (evt.persisted) disableBack() } }); window.location.hash=\"\"; window.location.hash=\"\";//for google chrome window.onhashchange=function(){window.location.hash=\"\";} //Prevents backspace except in the case of textareas and text inputs to prevent user navigation. $(document).keydown(function (e) { var preventKeyPress; if (e.keyCode == 8) { var d = e.srcElement || e.target; switch (d.tagName.toUpperCase()) { case 'TEXTAREA': preventKeyPress = d.readOnly || d.disabled; break; case 'INPUT': preventKeyPress = d.readOnly || d.disabled || (d.attributes[\"type\"] && $.inArray(d.attributes[\"type\"].value.toLowerCase(), [\"radio\", \"checkbox\", \"submit\", \"button\"]) >= 0); break; case 'DIV': preventKeyPress = d.readOnly || d.disabled || !(d.attributes[\"contentEditable\"] && d.attributes[\"contentEditable\"].value == \"true\"); break; default: preventKeyPress = true; break; } } else preventKeyPress = false; if (preventKeyPress) e.preventDefault(); }); </script> </head> <body> <center> <div class=\"wrapper\"> <script type=\"text/javascript\" language=\"javascript\" src=\"/igrsup/js/sessionListner.js\"></script> <script type=\"text/javascript\"> window.onload = getSessionTimeOut(); </script> <st",
+  "posts": [
+    {
+      "url": "https://igrsup.gov.in/igrsup/getDistrictNameEngJson",
+      "post": "districtCode=141"
+    },
+    {
+      "url": "https://igrsup.gov.in/igrsup/getSroListJson",
+      "post": "districtCode=141"
+    }
+  ]
+}
