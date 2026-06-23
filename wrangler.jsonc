@@ -1,0 +1,8 @@
+{
+  // Static-assets-only Worker: serve the self-contained web/ folder (app + data)
+  // as the site root. No server code — this just makes the Cloudflare "Workers
+  // Builds" deploy succeed by telling wrangler what to publish.
+  "name": "land",
+  "compatibility_date": "2026-06-23",
+  "assets": { "directory": "./web" }
+}
