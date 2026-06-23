@@ -4,7 +4,7 @@
   "village_code": "120241",
   "district_code": "141",
   "generated_by": "tools/fetch_igrsup_deeds.py",
-  "generated_at": "2026-06-23T14:45:18Z",
+  "generated_at": "2026-06-23T15:05:11Z",
   "schema_version": 1,
   "source": "IGRSUP newPropertySearchAction (SCAFFOLD)",
   "mode": "dry-run",
