@@ -1,0 +1,35 @@
+name: igrsup-capture
+
+# Drive IGRSUP's deed-search form under Playwright to capture the exact POST recipe
+# (district/tehsil/village/khasra -> deeds), so we can replay it per Nalgadha gata.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/igrsup-capture.yml'
+      - 'tools/capture_igrsup.mjs'
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm i playwright@1.47.2
+      - run: npx playwright install --with-deps chromium
+      - run: node tools/capture_igrsup.mjs
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _probe/igrsup_capture.json
+          git commit -m "probe: IGRSUP deed-search capture (Playwright)" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
