@@ -1,0 +1,71 @@
+[
+  {
+    "name": "igrsup_home",
+    "url": "https://igrsup.gov.in/",
+    "status": 200,
+    "ct": "text/html;charset=ISO-8859-1",
+    "length": 73,
+    "captcha": false,
+    "indicators": [],
+    "form_fields": [],
+    "head": "<meta http-equiv=\"refresh\" content=\"0;url=/igrsup/defaultAction.action\"/>"
+  },
+  {
+    "name": "igrsup_property_search",
+    "url": "https://igrsup.gov.in/igrsup/newPropertySearchAction",
+    "status": 200,
+    "ct": "text/html;charset=UTF-8",
+    "length": 68717,
+    "captcha": false,
+    "indicators": [
+      "DISTRICT",
+      "District",
+      "Khasra",
+      "Tehsil",
+      "Village",
+      "district",
+      "tehsil",
+      "village"
+    ],
+    "form_fields": [
+      "PropertyDeedSearch",
+      "PropertyDeedSearchByPropertyId",
+      "Submit",
+      "districtCode",
+      "districtNameEng",
+      "gaonOderedNEWlist",
+      "propNEWAddress",
+      "propertyGIS",
+      "propertyId",
+      "propertyTax",
+      "sroCode",
+      "taxDistrictCode",
+      "tehsilCode"
+    ],
+    "head": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"> <html> <head> <noscript> <meta http-equiv=\"refresh\" content=\"0; url=whatyouwant.jsp\" /> </noscript> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/> <meta http-equiv=\"Pragma\" content=\"no-cache\"> <meta http-equiv=\"cache-control"
+  },
+  {
+    "name": "bhulekh_home",
+    "url": "https://upbhulekh.gov.in/",
+    "status": 200,
+    "ct": "text/html",
+    "length": 5509,
+    "captcha": false,
+    "indicators": [],
+    "form_fields": [
+      "viewport"
+    ],
+    "head": "<!doctype html> <html lang=\"en\" data-beasties-container> <head> <meta charset=\"utf-8\"> <title>à¤­à¥à¤²à¥à¤</title> <!-- <title>BhuLekh</title> --> <base href=\"/\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script> <!-- <meta name=\"viewport\" cont"
+  },
+  {
+    "name": "bhulekh_public_ror",
+    "url": "https://upbhulekh.gov.in/public/public_ror/publicRor.jsp",
+    "status": 404,
+    "ct": "text/html;charset=utf-8",
+    "length": 427,
+    "captcha": false,
+    "indicators": [],
+    "form_fields": [],
+    "head": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – N"
+  }
+]
