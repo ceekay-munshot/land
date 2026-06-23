@@ -38,7 +38,9 @@ deploy's root / output directory at `web/`.
 | **3 ✅** | Real catalyst geometry (airport + expressways, OSM) + per-parcel distance | Actions |
 | **3b 🟢** | **Live YEIDA schemes** — portal scraped weekly via Firecrawl (stealth + India proxy); Bhoomi Rashi / eGazette next | Actions + Firecrawl |
 | **4 ✅ v1** | Growth score → real parcel colours | — |
-| 5 | Claude routines (refresh / alerts) + CRM owner-join | India |
+| **5 ✅** | **Parcel explorer** — search (gata/khata/owner), click-to-highlight, on-map gata labels, detail drawer, satellite toggle, URL permalinks, mobile sheets | — |
+| **6 🟢** | **Ownership history (chain-of-title)** — per-gata timeline of how land changed hands. Reconstructed seed shipped (synthetic, clearly labelled — `tools/gen_nalgadha_history.py`); real deeds scaffolded via IGRSUP `newPropertySearchAction` (`tools/fetch_igrsup_deeds.py` + Actions, pending deed parser + captcha) | Actions |
+| 7 | Claude routines (refresh / alerts) + CRM owner-join | India |
 
 ## 🧠 Growth score (Phase 4 v1)
 Every parcel gets a transparent **heuristic** score (0–100), coloured 🟢🟠🔴:
