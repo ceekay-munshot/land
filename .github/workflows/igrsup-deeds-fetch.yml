@@ -1,0 +1,49 @@
+name: igrsup-deeds-fetch
+
+# EXPERIMENTAL / manual-only. Pull real per-gata transfer history from IGRSUP
+# (newPropertySearchAction) into web/data/nalgadha_history.json — the same schema
+# the reconstructed seed (tools/gen_nalgadha_history.py) uses. The portal is
+# captcha/session gated and the deed parser is not implemented yet, so this runs
+# in safe --dry-run by default (zero network, writes a stub to _probe/, never
+# clobbers the shipped reconstructed history). No schedule — run on demand only.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'dry-run (safe, no network) or live (experimental, needs captcha)'
+        type: choice
+        default: 'dry-run'
+        options: [dry-run, live]
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/igrsup-deeds-fetch.yml'
+      - 'tools/fetch_igrsup_deeds.py'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Run fetcher
+        run: |
+          if [ "${{ github.event.inputs.mode }}" = "live" ]; then
+            python tools/fetch_igrsup_deeds.py --live
+          else
+            python tools/fetch_igrsup_deeds.py
+          fi
+      - name: Commit results (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/data/nalgadha_history.json _probe/igrsup_deeds_dryrun.json 2>/dev/null || true
+          git commit -m "data: IGRSUP deed fetch (${{ github.event.inputs.mode || 'dry-run' }})" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push

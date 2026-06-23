@@ -12,7 +12,7 @@
 
   <div id="title">
     <h1>🏗️ LAND<span>· NCR Land Intelligence</span></h1>
-    <div class="phase">Phase 4 · Gautam Buddh Nagar · <b>live parcel scoring</b> + <b>YEIDA schemes</b></div>
+    <div class="phase">Phase 5 · Gautam Buddh Nagar · <b>parcel explorer</b> + <b>ownership history</b></div>
   </div>
 
   <div id="growth">
@@ -35,10 +35,15 @@
   </div>
 
   <div id="controls">
+    <div id="search">
+      <input id="search-input" type="search" placeholder="🔎 Gata / khata / owner…" autocomplete="off" />
+      <div id="search-results"></div>
+    </div>
     <button id="btn-india">🗺️ NCR view</button>
-    <button id="btn-gbn">🔍 Zoom to Gautam Buddh Nagar</button>
+    <button id="btn-gbn">🔍 Zoom to GBN</button>
     <button id="btn-parcels" style="display:none">🟣 Live parcels</button>
     <button id="btn-nalgadha" style="display:none">🧬 Nalgadha</button>
+    <button id="btn-sat">🛰️ Satellite</button>
   </div>
 
   <div id="legend">
@@ -51,6 +56,11 @@
     <div class="row"><span class="schemesw"></span> ◆ YEIDA live schemes <span style="opacity:.6">(◇ approx)</span></div>
     <div class="disclaimer">Parcel colours = real heuristic score (airport proximity + price headroom). Faint tehsil fills are a coarse placeholder.</div>
   </div>
+
+  <aside id="drawer" class="closed" aria-hidden="true">
+    <button id="drawer-close" aria-label="Close details">✕</button>
+    <div id="drawer-body"></div>
+  </aside>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <script src="./app.js"></script>

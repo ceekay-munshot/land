@@ -1,0 +1,7602 @@
+{
+ "meta": {
+  "village": "नलगढ़ा",
+  "village_code": "120241",
+  "district_code": "141",
+  "generated_by": "tools/gen_nalgadha_history.py",
+  "generated_at": "2026-06-23T14:46:21Z",
+  "schema_version": 1,
+  "disclaimer": "RECONSTRUCTED / SYNTHETIC chain-of-title for UX demonstration. NOT registry-verified. Parties shown as 'prior holder' are placeholders; only current owners are real (public Bhu-Naksha data). Real deeds to come from IGRSUP newPropertySearchAction (districtCode=141, villageCode=120241, Khasra_Number=<plot_no>)."
+ },
+ "histories": {
+  "259": {
+   "plot_no": "259",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2006-03-06",
+     "deed_no": "RECON-259-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-07-23",
+     "deed_no": "RECON-259-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 40210000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "204": {
+   "plot_no": "204",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2003-06-06",
+     "deed_no": "RECON-204-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-02-09",
+     "deed_no": "RECON-204-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1670000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-06-17",
+     "deed_no": "RECON-204-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2380000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "196": {
+   "plot_no": "196",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2015-08-16",
+     "deed_no": "RECON-196-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-01-07",
+     "deed_no": "RECON-196-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-11-21",
+     "deed_no": "RECON-196-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3010000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "198": {
+   "plot_no": "198",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2010-09-27",
+     "deed_no": "RECON-198-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-09-15",
+     "deed_no": "RECON-198-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3540000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "195": {
+   "plot_no": "195",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2007-02-27",
+     "deed_no": "RECON-195-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-09-28",
+     "deed_no": "RECON-195-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 610000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-07-06",
+     "deed_no": "RECON-195-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 890000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "206": {
+   "plot_no": "206",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2002-01-03",
+     "deed_no": "RECON-206-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2004-10-06",
+     "deed_no": "RECON-206-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 150000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "84": {
+   "plot_no": "84",
+   "khata_no": "00073",
+   "events": [
+    {
+     "date": "2009-05-22",
+     "deed_no": "RECON-84-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-07-23",
+     "deed_no": "RECON-84-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-12-04",
+     "deed_no": "RECON-84-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "नाली"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "95": {
+   "plot_no": "95",
+   "khata_no": "00021",
+   "events": [
+    {
+     "date": "2014-08-03",
+     "deed_no": "RECON-95-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-05-07",
+     "deed_no": "RECON-95-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "चरन सिंह",
+      "चरन सिंह",
+      "टीकम सिंह",
+      "मंदीप कुमार"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "98": {
+   "plot_no": "98",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2008-10-09",
+     "deed_no": "RECON-98-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-03-06",
+     "deed_no": "RECON-98-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1910000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-01-09",
+     "deed_no": "RECON-98-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अंकित लोहिया",
+      "अतरसिह",
+      "अनुज लोहिया",
+      "चतरसिह",
+      "मनुज लोहिया",
+      "राजसिह",
+      "श्रीमती रेशम",
+      "अंकित कुमार",
+      "निरंजन एस0शाह",
+      "ब्रहमानन्द",
+      "मोहित डेढा",
+      "रामकुमार",
+      "श्रीमती कमला",
+      "श्रीमती प्रतिमा एन0शाह",
+      "संकल्प बंसल"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "101": {
+   "plot_no": "101",
+   "khata_no": "00043",
+   "events": [
+    {
+     "date": "2011-10-14",
+     "deed_no": "RECON-101-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-10-02",
+     "deed_no": "RECON-101-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "मंगतू",
+      "रजनासिह",
+      "विक्रम",
+      "सीलिग"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "194": {
+   "plot_no": "194",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2008-05-02",
+     "deed_no": "RECON-194-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-06-18",
+     "deed_no": "RECON-194-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 330000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-12-23",
+     "deed_no": "RECON-194-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 540000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "207": {
+   "plot_no": "207",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2007-12-05",
+     "deed_no": "RECON-207-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-10-10",
+     "deed_no": "RECON-207-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 330000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-02-14",
+     "deed_no": "RECON-207-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 730000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "86": {
+   "plot_no": "86",
+   "khata_no": "00049",
+   "events": [
+    {
+     "date": "2014-06-21",
+     "deed_no": "RECON-86-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-11-13",
+     "deed_no": "RECON-86-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "आशीष कुमार",
+      "उज्‍जवल त्‍यागी",
+      "किशन त्‍यागी",
+      "जतन",
+      "नरेश कुमार",
+      "रमेश",
+      "विनोद कुमार वर्मा",
+      "विमला",
+      "श्यामवती",
+      "श्रीमती भागरती",
+      "श्रीमती मुकेश देवी",
+      "सदीप कुमार",
+      "सुनील कुमार वर्मा",
+      "हर्ष"
+     ],
+     "share": "1/14 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "102": {
+   "plot_no": "102",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2006-11-02",
+     "deed_no": "RECON-102-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-05-11",
+     "deed_no": "RECON-102-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 500000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-09-27",
+     "deed_no": "RECON-102-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1260000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-05-22",
+     "deed_no": "RECON-102-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2720000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "104": {
+   "plot_no": "104",
+   "khata_no": "00031",
+   "events": [
+    {
+     "date": "2011-06-23",
+     "deed_no": "RECON-104-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-11-11",
+     "deed_no": "RECON-104-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 770000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-08-01",
+     "deed_no": "RECON-104-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1680000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-10-14",
+     "deed_no": "RECON-104-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "निरंजन एस0शाह",
+      "प्रवीन कुमार",
+      "बिजेन्द्र सिंह",
+      "श्रीमती प्रतिभा एन0शाह",
+      "हरी पाल सिंह"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "114": {
+   "plot_no": "114",
+   "khata_no": "00016",
+   "events": [
+    {
+     "date": "2015-07-28",
+     "deed_no": "RECON-114-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-04-02",
+     "deed_no": "RECON-114-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4750000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-06-21",
+     "deed_no": "RECON-114-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 8340000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-02-14",
+     "deed_no": "RECON-114-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अजय सिंह नागर",
+      "आशुतोष त्रिपाठी",
+      "इन्&zwj;द्रपाल नागर",
+      "इन्&zwj;द्राज सिंह",
+      "चेत राम",
+      "नरेश चौहान",
+      "पवन कुमार",
+      "पैमराजसिह",
+      "प्रभात ना0वा0 आयु 14 वर्ष",
+      "बलराज सिंह",
+      "बाबूराम",
+      "ब्रहमपाल सिह",
+      "ब्रिजेश सिंह नागर",
+      "योगेश कुमारी",
+      "रघुराज"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "197": {
+   "plot_no": "197",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2012-09-22",
+     "deed_no": "RECON-197-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-05-08",
+     "deed_no": "RECON-197-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 230000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-07-25",
+     "deed_no": "RECON-197-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 320000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "199": {
+   "plot_no": "199",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2003-06-08",
+     "deed_no": "RECON-199-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-11-15",
+     "deed_no": "RECON-199-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 900000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-07-04",
+     "deed_no": "RECON-199-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-02-27",
+     "deed_no": "RECON-199-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2170000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "253": {
+   "plot_no": "253",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2007-09-04",
+     "deed_no": "RECON-253-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-01-11",
+     "deed_no": "RECON-253-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 64330000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "82": {
+   "plot_no": "82",
+   "khata_no": "00011",
+   "events": [
+    {
+     "date": "2010-06-02",
+     "deed_no": "RECON-82-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-11-08",
+     "deed_no": "RECON-82-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 680000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-08-18",
+     "deed_no": "RECON-82-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "कवल सिंह",
+      "जगदीश",
+      "नवल सिंह",
+      "भोपाल सिंह",
+      "श्रीमती चरना",
+      "सतवीर सिंह"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "115": {
+   "plot_no": "115",
+   "khata_no": "00019",
+   "events": [
+    {
+     "date": "2013-08-14",
+     "deed_no": "RECON-115-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-12-02",
+     "deed_no": "RECON-115-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5990000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-09-02",
+     "deed_no": "RECON-115-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अंकित",
+      "अंकित भाटी उम्र 16 वर्ष",
+      "अनिल भाटी",
+      "अनुज",
+      "अभिषेक कुमार",
+      "अमरेन्द्र कुमार झा",
+      "अशोक कुमार",
+      "ऋषि देव शाक्य",
+      "कु0 निधि",
+      "खजान सिंह",
+      "चेतराम",
+      "जिलेसिंह",
+      "दिनेश सिंह",
+      "देवीदास",
+      "नन्‍दकिशोर"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "165": {
+   "plot_no": "165",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2002-11-04",
+     "deed_no": "RECON-165-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-10-06",
+     "deed_no": "RECON-165-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 610000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-02-23",
+     "deed_no": "RECON-165-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1390000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-01-26",
+     "deed_no": "RECON-165-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1420000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "202": {
+   "plot_no": "202",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2010-09-13",
+     "deed_no": "RECON-202-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-06-17",
+     "deed_no": "RECON-202-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1500000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "79": {
+   "plot_no": "79",
+   "khata_no": "00052",
+   "events": [
+    {
+     "date": "2013-09-15",
+     "deed_no": "RECON-79-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-08-09",
+     "deed_no": "RECON-79-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5040000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-07-25",
+     "deed_no": "RECON-79-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "कु0 रिंकी",
+      "भूपेन्‍द्र",
+      "राजेन्द्र सिंह",
+      "विजेन्द्र",
+      "श्रीमती सुमन",
+      "सोविन्‍द्र सिंह"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "81": {
+   "plot_no": "81",
+   "khata_no": "00002",
+   "events": [
+    {
+     "date": "2006-08-16",
+     "deed_no": "RECON-81-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-05-03",
+     "deed_no": "RECON-81-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "कु0 सोनिका",
+      "नितिन चौहान",
+      "परवीन डेविड",
+      "प्रवेश",
+      "श्रीमती उर्मिला",
+      "श्रीमती विदया",
+      "सन्‍नी डेढा"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "117": {
+   "plot_no": "117",
+   "khata_no": "00018",
+   "events": [
+    {
+     "date": "2003-01-24",
+     "deed_no": "RECON-117-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-03-10",
+     "deed_no": "RECON-117-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 110000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-03-18",
+     "deed_no": "RECON-117-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "जयवती",
+      "नरेश यादव",
+      "नरेश यादव",
+      "नरेश यादव",
+      "श्रीमती जयवती",
+      "सुदेश कुमार",
+      "नरेश यादव"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "91": {
+   "plot_no": "91",
+   "khata_no": "00058",
+   "events": [
+    {
+     "date": "2014-10-05",
+     "deed_no": "RECON-91-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-03-20",
+     "deed_no": "RECON-91-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 540000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-07-16",
+     "deed_no": "RECON-91-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 640000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-03-08",
+     "deed_no": "RECON-91-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "रामपाल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1080000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "97": {
+   "plot_no": "97",
+   "khata_no": "00067",
+   "events": [
+    {
+     "date": "2008-09-24",
+     "deed_no": "RECON-97-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-03-24",
+     "deed_no": "RECON-97-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1180000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-01-04",
+     "deed_no": "RECON-97-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1250000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-05-13",
+     "deed_no": "RECON-97-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अमित चौहान",
+      "अंशुल रस्तोगी",
+      "जिले सिंह",
+      "तपन चौहान",
+      "पवन कुमार जैन",
+      "युद्धवीर सिंह",
+      "युद्ववीर चौहान",
+      "रवि",
+      "रविन्द्र",
+      "रविन्द्र कुमार",
+      "राजकली",
+      "राजपाल सिंह चौहान",
+      "राजेन्द्र",
+      "विनोद चौहान",
+      "वीर बहादुर सिंह"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "112": {
+   "plot_no": "112",
+   "khata_no": "00056",
+   "events": [
+    {
+     "date": "2004-05-10",
+     "deed_no": "RECON-112-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-07-28",
+     "deed_no": "RECON-112-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अखिलेश कुमार झा",
+      "अजब सिंह",
+      "अमित दीक्षित",
+      "अरविन्द कुमार शुक्ला",
+      "अविरल अग्रवाल",
+      "कविता शर्मा",
+      "किशन कुमार",
+      "किशन कुमार",
+      "कुमारी पूनम",
+      "कृष्ण कुमार अग्रवाल",
+      "खुशवू",
+      "खैरूल अनाम",
+      "गुरूबचन शर्मा",
+      "धर्मपाल",
+      "भूपेश तिवारी"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "161": {
+   "plot_no": "161",
+   "khata_no": "00028",
+   "events": [
+    {
+     "date": "2006-10-21",
+     "deed_no": "RECON-161-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-10-25",
+     "deed_no": "RECON-161-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "नरेश यादव",
+      "नरेश यादव",
+      "श्रीमती जयवती",
+      "सुदेश कुमार"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "73": {
+   "plot_no": "73",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2012-09-22",
+     "deed_no": "RECON-73-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-04-21",
+     "deed_no": "RECON-73-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "कु0 सोनिका",
+      "परवीन डेविड",
+      "प्रवेश",
+      "श्रीमती उर्मिला",
+      "श्रीमती विदया",
+      "सन्‍नी डेढा",
+      "अजीत सिंह",
+      "अजीपाल",
+      "अशोक",
+      "ओमकारसिह",
+      "कमल सिंह",
+      "कमलसिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "कंवल सिंह"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "163": {
+   "plot_no": "163",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2008-11-21",
+     "deed_no": "RECON-163-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-05-05",
+     "deed_no": "RECON-163-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1340000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-02-11",
+     "deed_no": "RECON-163-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1470000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "89": {
+   "plot_no": "89",
+   "khata_no": "00051",
+   "events": [
+    {
+     "date": "2005-11-15",
+     "deed_no": "RECON-89-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-10-25",
+     "deed_no": "RECON-89-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 330000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-03-01",
+     "deed_no": "RECON-89-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "कु0 रिंकी",
+      "ब्रजेन्द्रसिह",
+      "भूपेन्‍द्र",
+      "राजेन्द्र सिह",
+      "श्रीमती सुमन",
+      "सोविन्‍द्र सिंह"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "54": {
+   "plot_no": "54",
+   "khata_no": "00012",
+   "events": [
+    {
+     "date": "2009-04-04",
+     "deed_no": "RECON-54-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-11-15",
+     "deed_no": "RECON-54-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2450000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-02-07",
+     "deed_no": "RECON-54-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अजीत सिंह",
+      "अजीपाल",
+      "अशोक",
+      "ओमकारसिह",
+      "कमल सिंह",
+      "कमलसिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "कंवल सिंह",
+      "कु0 सोनिका",
+      "कुलदीपसिह",
+      "चवलसिह",
+      "जगदीश",
+      "जगवीर",
+      "जगेश"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "107": {
+   "plot_no": "107",
+   "khata_no": "00005",
+   "events": [
+    {
+     "date": "2007-06-28",
+     "deed_no": "RECON-107-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-01-11",
+     "deed_no": "RECON-107-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 720000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-03-15",
+     "deed_no": "RECON-107-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "ऋषिपाल",
+      "मुन्दरेश",
+      "श्रीमती कमला भाटी"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "109": {
+   "plot_no": "109",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2004-04-28",
+     "deed_no": "RECON-109-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-02-02",
+     "deed_no": "RECON-109-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 370000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "111": {
+   "plot_no": "111",
+   "khata_no": "00032",
+   "events": [
+    {
+     "date": "2011-03-24",
+     "deed_no": "RECON-111-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-09-28",
+     "deed_no": "RECON-111-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पुष्पा"
+     ],
+     "share": "1/1",
+     "consideration_inr": 930000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "110": {
+   "plot_no": "110",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2004-07-14",
+     "deed_no": "RECON-110-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-09-15",
+     "deed_no": "RECON-110-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1900000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "118": {
+   "plot_no": "118",
+   "khata_no": "00020",
+   "events": [
+    {
+     "date": "2009-04-26",
+     "deed_no": "RECON-118-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-05-15",
+     "deed_no": "RECON-118-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3160000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-12-08",
+     "deed_no": "RECON-118-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अंकुर चौहान",
+      "अश्विनी कुमार",
+      "आजाद खान",
+      "आशीष चौहान",
+      "इकबाल अहमद खान",
+      "जयपाल सिंह चौहन",
+      "जयपाल सिंह चौहान",
+      "जीतराम",
+      "तरूण शर्मा",
+      "नीरज",
+      "भीम",
+      "भौपाल सिंह चौहान",
+      "रविन्‍द्र कुमार",
+      "वचन",
+      "श्रीमति सुमन"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "119": {
+   "plot_no": "119",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2003-02-27",
+     "deed_no": "RECON-119-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-10-14",
+     "deed_no": "RECON-119-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 770000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "250": {
+   "plot_no": "250",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2005-07-08",
+     "deed_no": "RECON-250-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-06-14",
+     "deed_no": "RECON-250-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग",
+      "शमशान (मरधट)",
+      "हडवार"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "52": {
+   "plot_no": "52",
+   "khata_no": "00046",
+   "events": [
+    {
+     "date": "2004-08-28",
+     "deed_no": "RECON-52-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-09-11",
+     "deed_no": "RECON-52-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 800000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-04-06",
+     "deed_no": "RECON-52-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1030000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-04-08",
+     "deed_no": "RECON-52-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "रणबीर सिंह",
+      "राजवीर सिंह",
+      "सरदार सिंह"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "108": {
+   "plot_no": "108",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2005-04-06",
+     "deed_no": "RECON-108-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-04-11",
+     "deed_no": "RECON-108-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1130000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "158": {
+   "plot_no": "158",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2012-12-02",
+     "deed_no": "RECON-158-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-02-11",
+     "deed_no": "RECON-158-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2970000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "122": {
+   "plot_no": "122",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2010-02-13",
+     "deed_no": "RECON-122-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-08-07",
+     "deed_no": "RECON-122-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 6540000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "231": {
+   "plot_no": "231",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2005-03-19",
+     "deed_no": "RECON-231-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-05-27",
+     "deed_no": "RECON-231-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1680000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-07-12",
+     "deed_no": "RECON-231-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3030000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "51": {
+   "plot_no": "51",
+   "khata_no": "00008",
+   "events": [
+    {
+     "date": "2015-08-19",
+     "deed_no": "RECON-51-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-02-11",
+     "deed_no": "RECON-51-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 8980000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-02-23",
+     "deed_no": "RECON-51-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 22720000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-07-19",
+     "deed_no": "RECON-51-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अकिता सिंघल",
+      "अजय धस्माना",
+      "अनामिका भारती",
+      "अनीस अहमद",
+      "अनुराग वर्मा",
+      "अमर कुमार सिंह",
+      "अमित कुमार",
+      "अरविन्द भटटू",
+      "अर्चना मिश्रा",
+      "अशोक कुमार",
+      "उमेद सिंह तोपवाल",
+      "ओमप्रकाश",
+      "कफील अहमद",
+      "कमल सिंह",
+      "कमलसिंह"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "125": {
+   "plot_no": "125",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2006-12-03",
+     "deed_no": "RECON-125-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-11-21",
+     "deed_no": "RECON-125-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 920000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-11-25",
+     "deed_no": "RECON-125-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1170000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-04-19",
+     "deed_no": "RECON-125-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2440000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "222": {
+   "plot_no": "222",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2004-06-08",
+     "deed_no": "RECON-222-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-07-15",
+     "deed_no": "RECON-222-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4380000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-09-04",
+     "deed_no": "RECON-222-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 12540000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "59": {
+   "plot_no": "59",
+   "khata_no": "00063",
+   "events": [
+    {
+     "date": "2015-03-05",
+     "deed_no": "RECON-59-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-11-16",
+     "deed_no": "RECON-59-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3350000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-09-12",
+     "deed_no": "RECON-59-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "श्रीमति जगवती"
+     ],
+     "share": "1/1",
+     "consideration_inr": 6390000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "174": {
+   "plot_no": "174",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2012-02-02",
+     "deed_no": "RECON-174-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-10-17",
+     "deed_no": "RECON-174-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 90000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-05-03",
+     "deed_no": "RECON-174-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 170000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "175": {
+   "plot_no": "175",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2013-01-02",
+     "deed_no": "RECON-175-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-08-04",
+     "deed_no": "RECON-175-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2560000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-09-11",
+     "deed_no": "RECON-175-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5860000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "184": {
+   "plot_no": "184",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2014-10-02",
+     "deed_no": "RECON-184-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-12-09",
+     "deed_no": "RECON-184-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1030000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-09-14",
+     "deed_no": "RECON-184-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1760000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-09-04",
+     "deed_no": "RECON-184-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2930000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "124": {
+   "plot_no": "124",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2009-04-02",
+     "deed_no": "RECON-124-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-11-01",
+     "deed_no": "RECON-124-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1350000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-03-03",
+     "deed_no": "RECON-124-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2600000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "50": {
+   "plot_no": "50",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2008-02-26",
+     "deed_no": "RECON-50-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-07-15",
+     "deed_no": "RECON-50-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 750000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "8": {
+   "plot_no": "8",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2014-03-17",
+     "deed_no": "RECON-8-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-08-20",
+     "deed_no": "RECON-8-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5810000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-05-15",
+     "deed_no": "RECON-8-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 12930000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "224": {
+   "plot_no": "224",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2010-04-08",
+     "deed_no": "RECON-224-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-06-21",
+     "deed_no": "RECON-224-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 7720000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "257": {
+   "plot_no": "257",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2004-05-19",
+     "deed_no": "RECON-257-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-09-20",
+     "deed_no": "RECON-257-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5850000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "56": {
+   "plot_no": "56",
+   "khata_no": "00048",
+   "events": [
+    {
+     "date": "2003-12-20",
+     "deed_no": "RECON-56-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-09-13",
+     "deed_no": "RECON-56-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 760000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-06-19",
+     "deed_no": "RECON-56-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1300000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-09-18",
+     "deed_no": "RECON-56-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अखिलेश चन्द चौधरी",
+      "अनिल कुमार झा",
+      "अनिल केसरी",
+      "अनिल चौहान",
+      "अनिल पाहवा",
+      "अलोके कुमार हलधर",
+      "अविनाश चन्द चौधरी",
+      "आशीष कुमार द्धिवेदी",
+      "इकवाल मसीह",
+      "कपिल देव शर्मा",
+      "चन्दन कुमार",
+      "चन्द्र भानु बिष्ट",
+      "डा0 एच0बी0 राजपूत",
+      "तारा शंकर माइती",
+      "धीरेन्द्र गुप्ता"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "153": {
+   "plot_no": "153",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2011-03-11",
+     "deed_no": "RECON-153-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-07-10",
+     "deed_no": "RECON-153-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 520000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-03-12",
+     "deed_no": "RECON-153-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1140000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-02-27",
+     "deed_no": "RECON-153-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1610000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "178": {
+   "plot_no": "178",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2006-09-05",
+     "deed_no": "RECON-178-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-11-01",
+     "deed_no": "RECON-178-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 220000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-08-08",
+     "deed_no": "RECON-178-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "151": {
+   "plot_no": "151",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2002-08-12",
+     "deed_no": "RECON-151-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-02-15",
+     "deed_no": "RECON-151-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 940000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-07-14",
+     "deed_no": "RECON-151-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1830000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "146": {
+   "plot_no": "146",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2004-11-03",
+     "deed_no": "RECON-146-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-10-14",
+     "deed_no": "RECON-146-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3600000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-10-18",
+     "deed_no": "RECON-146-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5560000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "28": {
+   "plot_no": "28",
+   "khata_no": "00010",
+   "events": [
+    {
+     "date": "2009-07-18",
+     "deed_no": "RECON-28-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-07-08",
+     "deed_no": "RECON-28-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अजय कुमार मिश्रा",
+      "अनूप कुमार श्रीवास्तव",
+      "अफसरी खातून",
+      "अभिषेक अग्रवाल",
+      "अमित कुमार",
+      "आशुतोष राणा",
+      "इनाम खान",
+      "कवल सिंह",
+      "जगदीश",
+      "जयश्री मोहंती",
+      "नवल सिंह",
+      "नीरज रानी",
+      "प्रतिभा सिंह",
+      "प्रवीन कुमार",
+      "भोपाल सिंह"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "26": {
+   "plot_no": "26",
+   "khata_no": "00068",
+   "events": [
+    {
+     "date": "2007-02-21",
+     "deed_no": "RECON-26-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-11-22",
+     "deed_no": "RECON-26-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "ओमवीर",
+      "कर्मवीर",
+      "मोहित कुमार भाटी नावा0 12 वर्ष",
+      "विनय कुमार भाटी नावा0 12 वर्ष",
+      "श्रीपाल",
+      "श्रीमती सावित्री",
+      "हरिश्चन्द"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "25": {
+   "plot_no": "25",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2012-03-12",
+     "deed_no": "RECON-25-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-08-02",
+     "deed_no": "RECON-25-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अक्षय एस0 कुमार",
+      "अजीत सिंह",
+      "अनिल कुमार",
+      "अमित कुमार सिंह",
+      "अरविन्द जैन",
+      "आरूश अग्रवाल ना0बा013 वर्ष",
+      "आरूश अग्रवाल ना०बा० आयु  16 वर्ष",
+      "आरूषी अग्रवाल ना0बा013 वर्ष",
+      "आरूषी अग्रवाल ना०बा० आयु 16 वर्ष",
+      "आलोक कुमार राय",
+      "इन्द्रजीत सिंह",
+      "ओमवीर",
+      "दीपक अग्रवाल",
+      "देवेन्द्र कुमार"
+     ],
+     "share": "1/14 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "217": {
+   "plot_no": "217",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2003-06-26",
+     "deed_no": "RECON-217-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-05-16",
+     "deed_no": "RECON-217-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 7650000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-09-13",
+     "deed_no": "RECON-217-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10760000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-04-22",
+     "deed_no": "RECON-217-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 26770000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "17": {
+   "plot_no": "17",
+   "khata_no": "00034",
+   "events": [
+    {
+     "date": "2002-06-07",
+     "deed_no": "RECON-17-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2004-09-02",
+     "deed_no": "RECON-17-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अजय दास",
+      "अजीत कुमार टोप्पो",
+      "आसिफ खान",
+      "घिरेन्द्र झा",
+      "पैमा",
+      "प्रदीप कुमार",
+      "बादाम सिंह",
+      "युनाइटेड ग्रुप इण्डिया द्वारा पार्टनर विजय कुमार",
+      "यूनाइटेड ग्रुप इण्डिया कार्यालय जी 42 अरोडा शायर",
+      "यूनाइटेड ग्रुप इण्डिया द्वारा  पार्टनर",
+      "राज कुमार",
+      "राजकुमार",
+      "विजेन्द्र सिंह यादव",
+      "विद्यावती श्रीवास्तव",
+      "विनीत सक्सेना"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "36": {
+   "plot_no": "36",
+   "khata_no": "00069",
+   "events": [
+    {
+     "date": "2004-09-06",
+     "deed_no": "RECON-36-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-10-22",
+     "deed_no": "RECON-36-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "गुरचरन कौर",
+      "फतहचन्द शर्मा",
+      "महावीर प्रसाद ऊनियाल",
+      "महोन श्याम शर्मा",
+      "मुखीन्‍द्रपाल सिंह",
+      "रविन्‍द्र सिंह",
+      "राजवीर सिंह",
+      "वलवीर सिंह",
+      "विवेक सिंह",
+      "सतीश",
+      "हरेन्द्र कुमार"
+     ],
+     "share": "1/11 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "27": {
+   "plot_no": "27",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2012-04-25",
+     "deed_no": "RECON-27-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-06-11",
+     "deed_no": "RECON-27-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2500000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-07-14",
+     "deed_no": "RECON-27-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अमित कुमार श्रीवास्तव",
+      "अशोक राणा",
+      "अंसार अली अंसारी",
+      "आनन्द कुमार",
+      "आशीष ताखी",
+      "कवल सिंह",
+      "गोपाल वेहेरा",
+      "चारू गुप्‍ता",
+      "जी0एन0मेहरा",
+      "दीपक जैन",
+      "देवन्‍ती शुक्‍ला",
+      "मदन लाल",
+      "मन्जेश राय",
+      "मुकुन्द हौसिलाप्रसाद सिंग",
+      "मौहम्मद जावेद"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "22": {
+   "plot_no": "22",
+   "khata_no": "00036",
+   "events": [
+    {
+     "date": "2013-01-04",
+     "deed_no": "RECON-22-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-01-18",
+     "deed_no": "RECON-22-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1340000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-06-02",
+     "deed_no": "RECON-22-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "बलजीत"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3060000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "20": {
+   "plot_no": "20",
+   "khata_no": "00065",
+   "events": [
+    {
+     "date": "2002-01-05",
+     "deed_no": "RECON-20-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-08-17",
+     "deed_no": "RECON-20-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 320000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-01-15",
+     "deed_no": "RECON-20-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अखलाक अहमद",
+      "अमित कुमार",
+      "अंसार अहमद",
+      "आसिफ कमाल",
+      "इश्तेकार",
+      "तैयव खान",
+      "पिन्‍टू",
+      "श्रीमती मूर्ति",
+      "श्रीमती राधा नेगी",
+      "श्रीमती सुनीता सोनी",
+      "सूरज सिंह"
+     ],
+     "share": "1/11 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "15": {
+   "plot_no": "15",
+   "khata_no": "00062",
+   "events": [
+    {
+     "date": "2010-11-20",
+     "deed_no": "RECON-15-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-05-25",
+     "deed_no": "RECON-15-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2890000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-05-13",
+     "deed_no": "RECON-15-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2780000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-12-01",
+     "deed_no": "RECON-15-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "कविता चौहान",
+      "जय भगवान चौहान",
+      "शिव ओम के0आर0सी0 ग्रुप",
+      "शेष नारायण तिवारी",
+      "श्रीमती राधा शर्मा",
+      "श्रीमती सविता शर्मा",
+      "सुरेशचन्द शर्मा"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "130": {
+   "plot_no": "130",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2015-08-12",
+     "deed_no": "RECON-130-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-07-10",
+     "deed_no": "RECON-130-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3640000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "219": {
+   "plot_no": "219",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2009-05-12",
+     "deed_no": "RECON-219-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-07-20",
+     "deed_no": "RECON-219-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10260000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-04-15",
+     "deed_no": "RECON-219-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 11320000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-11-28",
+     "deed_no": "RECON-219-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 14490000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "220": {
+   "plot_no": "220",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2015-11-03",
+     "deed_no": "RECON-220-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-02-22",
+     "deed_no": "RECON-220-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2900000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-07-10",
+     "deed_no": "RECON-220-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5500000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "221": {
+   "plot_no": "221",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2008-06-21",
+     "deed_no": "RECON-221-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-08-11",
+     "deed_no": "RECON-221-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 14250000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-09-15",
+     "deed_no": "RECON-221-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 33780000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-11-13",
+     "deed_no": "RECON-221-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 49490000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "23": {
+   "plot_no": "23",
+   "khata_no": "00070",
+   "events": [
+    {
+     "date": "2004-01-18",
+     "deed_no": "RECON-23-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-01-07",
+     "deed_no": "RECON-23-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1390000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-08-06",
+     "deed_no": "RECON-23-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3310000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-05-26",
+     "deed_no": "RECON-23-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अभिषेक दिखित",
+      "अमित कुमार",
+      "अर्चित अवस्थी",
+      "कल्याण सिंह नेगी",
+      "गजेन्द्र कुमार",
+      "जया",
+      "धर्मेन्द्र कुमार",
+      "पिंटू",
+      "प्रकाश चन्‍द शर्मा",
+      "मधु",
+      "महेन्द्र कुमार खन्ना",
+      "मुन्दरेश",
+      "मुन्नाबाबू पाण्डेय",
+      "मूर्ति",
+      "रामसागर"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "12": {
+   "plot_no": "12",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2010-06-27",
+     "deed_no": "RECON-12-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-08-25",
+     "deed_no": "RECON-12-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 21000000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "6": {
+   "plot_no": "6",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2013-09-19",
+     "deed_no": "RECON-6-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-05-22",
+     "deed_no": "RECON-6-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 29450000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-06-03",
+     "deed_no": "RECON-6-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 56610000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "4": {
+   "plot_no": "4",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2007-07-20",
+     "deed_no": "RECON-4-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-07-15",
+     "deed_no": "RECON-4-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1070000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "135": {
+   "plot_no": "135",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2010-03-06",
+     "deed_no": "RECON-135-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-07-28",
+     "deed_no": "RECON-135-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 42020000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-06-26",
+     "deed_no": "RECON-135-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 64580000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "9": {
+   "plot_no": "9",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2007-11-03",
+     "deed_no": "RECON-9-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-06-16",
+     "deed_no": "RECON-9-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1060000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-07-21",
+     "deed_no": "RECON-9-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2170000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-06-05",
+     "deed_no": "RECON-9-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "ओमवीर",
+      "कर्मवीर",
+      "श्रीमती शकुन्तला",
+      "सजंय"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "11": {
+   "plot_no": "11",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2006-10-18",
+     "deed_no": "RECON-11-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-04-13",
+     "deed_no": "RECON-11-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 210000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "13": {
+   "plot_no": "13",
+   "khata_no": "00042",
+   "events": [
+    {
+     "date": "2003-06-15",
+     "deed_no": "RECON-13-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-12-19",
+     "deed_no": "RECON-13-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 760000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-11-22",
+     "deed_no": "RECON-13-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अजय गुप्ता",
+      "अनिल कुमार",
+      "अनुराग धरियाल",
+      "आभा मित्तल",
+      "उषा रानी",
+      "के0एन0 ओझा",
+      "तपेश्वर भाटी",
+      "नवीन कुमारशर्मा",
+      "निधी कोठारी",
+      "प्रेम सिंह विष्ट",
+      "बरूण कुमार झा",
+      "मुन्दरेश",
+      "राजीव कुमार",
+      "विनोद कुमार",
+      "श्रीमती अनिता"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "21": {
+   "plot_no": "21",
+   "khata_no": "00038",
+   "events": [
+    {
+     "date": "2008-01-14",
+     "deed_no": "RECON-21-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-12-13",
+     "deed_no": "RECON-21-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "उमेश",
+      "मनोज",
+      "श्रीमती राजवती"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "29": {
+   "plot_no": "29",
+   "khata_no": "00013",
+   "events": [
+    {
+     "date": "2003-10-11",
+     "deed_no": "RECON-29-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-08-06",
+     "deed_no": "RECON-29-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2540000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-09-03",
+     "deed_no": "RECON-29-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अंकुर चौहान",
+      "अजीत सिंह",
+      "अनिल कुमार शर्मा",
+      "ओमकारसिह",
+      "कुलदीपसिह",
+      "चन्द्रशेखर तिवारी",
+      "चवलसिह",
+      "चेतन चौहान",
+      "जगरेश",
+      "जितेन्द्र सिह",
+      "तारीफ सिंह यादव",
+      "दिवाकर यादव",
+      "बाबू सिंह",
+      "बाबूसिंह",
+      "बालेश्वर सिंह"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "31": {
+   "plot_no": "31",
+   "khata_no": "00026",
+   "events": [
+    {
+     "date": "2004-11-05",
+     "deed_no": "RECON-31-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-04-02",
+     "deed_no": "RECON-31-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "कवल सिंह",
+      "जगदीश",
+      "धूमसिह",
+      "नवल सिंह",
+      "भोपाल सिंह",
+      "श्रीमती चरना",
+      "सतवीर सिंह"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "35": {
+   "plot_no": "35",
+   "khata_no": "00022",
+   "events": [
+    {
+     "date": "2003-09-13",
+     "deed_no": "RECON-35-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-12-28",
+     "deed_no": "RECON-35-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-11-09",
+     "deed_no": "RECON-35-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "दलजीतसिह"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "37": {
+   "plot_no": "37",
+   "khata_no": "00001",
+   "events": [
+    {
+     "date": "2009-10-09",
+     "deed_no": "RECON-37-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-01-28",
+     "deed_no": "RECON-37-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 6010000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-05-25",
+     "deed_no": "RECON-37-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "नवीन ओखला औधोगिक विकास प्रधिकरण सै0 6 तहसील दादरी"
+     ],
+     "share": "1/1",
+     "consideration_inr": 12360000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "38": {
+   "plot_no": "38",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2007-04-07",
+     "deed_no": "RECON-38-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-09-10",
+     "deed_no": "RECON-38-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "नाली"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1220000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "39": {
+   "plot_no": "39",
+   "khata_no": "00003",
+   "events": [
+    {
+     "date": "2010-07-10",
+     "deed_no": "RECON-39-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-04-04",
+     "deed_no": "RECON-39-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4690000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-04-15",
+     "deed_no": "RECON-39-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10350000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-12-01",
+     "deed_no": "RECON-39-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अजीपाल",
+      "आजाद पाल",
+      "कृपाल सिंह",
+      "धीरजसिह",
+      "धूमसिह",
+      "नानकचन्द",
+      "मनोज",
+      "मलखान सिंह",
+      "रणवीर सिंह",
+      "रविन्‍द्र सिंह",
+      "राजवीर सिंह",
+      "रामगोपाल",
+      "वलीराम",
+      "विक्रम सिंह",
+      "श्रीमति सन्तरा"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "40": {
+   "plot_no": "40",
+   "khata_no": "00017",
+   "events": [
+    {
+     "date": "2014-08-15",
+     "deed_no": "RECON-40-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-04-20",
+     "deed_no": "RECON-40-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 810000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-07-08",
+     "deed_no": "RECON-40-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1010000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-09-03",
+     "deed_no": "RECON-40-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अशोक कुमार",
+      "जग्गू",
+      "प्रवीन कुमार",
+      "विक्रान्‍त वर्मा"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "42": {
+   "plot_no": "42",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2002-03-19",
+     "deed_no": "RECON-42-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-07-10",
+     "deed_no": "RECON-42-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अशोक कुमार",
+      "गजराज",
+      "मोनू कुमार",
+      "रणवीर",
+      "राकेश",
+      "रामवती",
+      "रूपेश",
+      "रोशन",
+      "विनोद",
+      "श्यामवीर",
+      "श्रीमती पूनम",
+      "श्रीमती प्रेमवती",
+      "श्रीमती रामवती",
+      "श्रीमती विमलेश",
+      "सतेश"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "44": {
+   "plot_no": "44",
+   "khata_no": "00041",
+   "events": [
+    {
+     "date": "2004-07-13",
+     "deed_no": "RECON-44-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-03-21",
+     "deed_no": "RECON-44-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 470000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-09-19",
+     "deed_no": "RECON-44-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 730000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-02-20",
+     "deed_no": "RECON-44-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अभिषेक नावा0 आयु 15 वर्ष",
+      "नितिन कुमार नावा0 आयु 12 वर्ष",
+      "महेश",
+      "विकास",
+      "विवेक सिंह",
+      "श्रीमती मिथलेश"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "46": {
+   "plot_no": "46",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2015-09-13",
+     "deed_no": "RECON-46-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-02-07",
+     "deed_no": "RECON-46-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अनिल कुमार",
+      "धीरजसिह",
+      "धूमसिंह",
+      "वीर सिंह",
+      "श्रीमती कृष्णा",
+      "श्रीमती धर्मवती देवी",
+      "श्रीमती मेमवती",
+      "श्रीमती मैमवती",
+      "श्रीमती व्रहमवती",
+      "श्रीमती शीला देवी",
+      "सुनील कुमार"
+     ],
+     "share": "1/11 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "47": {
+   "plot_no": "47",
+   "khata_no": "00057",
+   "events": [
+    {
+     "date": "2011-10-18",
+     "deed_no": "RECON-47-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-06-16",
+     "deed_no": "RECON-47-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1090000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-09-14",
+     "deed_no": "RECON-47-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1870000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-09-25",
+     "deed_no": "RECON-47-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "कपिल देव मिश्रा",
+      "प्रवीन कुमार",
+      "मोहित डेढा",
+      "योगेश प्रताप",
+      "रिभव जैन",
+      "श्रीमती रूचि जैन"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "48": {
+   "plot_no": "48",
+   "khata_no": "00045",
+   "events": [
+    {
+     "date": "2009-10-04",
+     "deed_no": "RECON-48-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-05-09",
+     "deed_no": "RECON-48-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "चन्द्रभान",
+      "जगत सिह",
+      "जगदीश",
+      "जतिन अव्यस्क आयु 5 वर्ष",
+      "तुषार अव्यस्क आयु 8 वर्ष",
+      "भगत सिह",
+      "रणजीत",
+      "श्रीमती ज्ञानवती",
+      "श्रीमती राजबाला",
+      "श्रीमती सुरेश",
+      "सुरेन्‍द्र सिंह",
+      "सूरजभान"
+     ],
+     "share": "1/12 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "49": {
+   "plot_no": "49",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2015-09-02",
+     "deed_no": "RECON-49-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-09-14",
+     "deed_no": "RECON-49-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "धीरेन्द्रपाल सिंह",
+      "श्रीमती इन्दिरा भारतीय"
+     ],
+     "share": "1/2 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "53": {
+   "plot_no": "53",
+   "khata_no": "00012",
+   "events": [
+    {
+     "date": "2008-11-10",
+     "deed_no": "RECON-53-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-09-16",
+     "deed_no": "RECON-53-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अजीत सिंह",
+      "अजीपाल",
+      "अशोक",
+      "ओमकारसिह",
+      "कमल सिंह",
+      "कमलसिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "कंवल सिंह",
+      "कु0 सोनिका",
+      "कुलदीपसिह",
+      "चवलसिह",
+      "जगदीश",
+      "जगवीर",
+      "जगेश"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "55": {
+   "plot_no": "55",
+   "khata_no": "00012",
+   "events": [
+    {
+     "date": "2002-12-03",
+     "deed_no": "RECON-55-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-11-16",
+     "deed_no": "RECON-55-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 420000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-10-02",
+     "deed_no": "RECON-55-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 830000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-10-12",
+     "deed_no": "RECON-55-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अजीत सिंह",
+      "अजीपाल",
+      "अशोक",
+      "ओमकारसिह",
+      "कमल",
+      "कमलसिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "कंवल सिंह",
+      "कु0 सोनिका",
+      "कुलदीपसिह",
+      "चवलसिह",
+      "जगदीश",
+      "जगवीर",
+      "जगेश"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "58": {
+   "plot_no": "58",
+   "khata_no": "00073",
+   "events": [
+    {
+     "date": "2003-03-09",
+     "deed_no": "RECON-58-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-01-20",
+     "deed_no": "RECON-58-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-11-03",
+     "deed_no": "RECON-58-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "नाली"
+     ],
+     "share": "1/1",
+     "consideration_inr": 20000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "60": {
+   "plot_no": "60",
+   "khata_no": "00037",
+   "events": [
+    {
+     "date": "2005-11-01",
+     "deed_no": "RECON-60-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-10-14",
+     "deed_no": "RECON-60-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "कालूराम",
+      "जगत सिंह",
+      "बाबूराम",
+      "राजपाल",
+      "विजेन्‍द्र",
+      "उमेश",
+      "ऊषा",
+      "ब्रजेश",
+      "महेश",
+      "मुकेश",
+      "वीरेश",
+      "ललिता"
+     ],
+     "share": "1/12 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "62": {
+   "plot_no": "62",
+   "khata_no": "00073",
+   "events": [
+    {
+     "date": "2007-07-04",
+     "deed_no": "RECON-62-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-06-14",
+     "deed_no": "RECON-62-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 50000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-10-19",
+     "deed_no": "RECON-62-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 100000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-12-01",
+     "deed_no": "RECON-62-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "नाली"
+     ],
+     "share": "1/1",
+     "consideration_inr": 130000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "63": {
+   "plot_no": "63",
+   "khata_no": "00050",
+   "events": [
+    {
+     "date": "2006-02-25",
+     "deed_no": "RECON-63-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-10-27",
+     "deed_no": "RECON-63-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अंकुर जैन",
+      "चारवी इन्फ्राहोम्स प्रा0 लि0",
+      "जितेन्‍द्र",
+      "श्रीमती दयावती",
+      "सिद्वांत जैन",
+      "सुरेन्‍द्र कुमार",
+      "सुशिल कुमार"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "64": {
+   "plot_no": "64",
+   "khata_no": "00015",
+   "events": [
+    {
+     "date": "2010-06-18",
+     "deed_no": "RECON-64-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-11-27",
+     "deed_no": "RECON-64-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2860000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-12-02",
+     "deed_no": "RECON-64-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4920000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-07-14",
+     "deed_no": "RECON-64-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "जगत सिंह",
+      "जगत सिंह",
+      "सागर",
+      "सुमित सिंह",
+      "हरिश चौहान"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "66": {
+   "plot_no": "66",
+   "khata_no": "00066",
+   "events": [
+    {
+     "date": "2013-05-15",
+     "deed_no": "RECON-66-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-06-26",
+     "deed_no": "RECON-66-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1310000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-04-02",
+     "deed_no": "RECON-66-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "जगवीर",
+      "जगेश",
+      "ब्रहमसिह",
+      "मु.सुन्हैरी",
+      "रामनिवास",
+      "सतपालसिह",
+      "सरदारसिह"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "69": {
+   "plot_no": "69",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2002-12-06",
+     "deed_no": "RECON-69-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-03-28",
+     "deed_no": "RECON-69-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 580000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-06-07",
+     "deed_no": "RECON-69-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "कु0 सोनिका",
+      "परवीन डेविड",
+      "प्रवेश",
+      "श्रीमती उर्मिला",
+      "श्रीमती विदया",
+      "सन्‍नी डेढा",
+      "ओमवीर",
+      "कर्मवीर",
+      "महेश",
+      "श्रीमती शकुन्तला",
+      "संजय",
+      "हरेन्द्र",
+      "नरेश कुमार",
+      "पैमराज",
+      "लालाराम"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "71": {
+   "plot_no": "71",
+   "khata_no": "00012",
+   "events": [
+    {
+     "date": "2015-07-27",
+     "deed_no": "RECON-71-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-03-16",
+     "deed_no": "RECON-71-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 710000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-12-26",
+     "deed_no": "RECON-71-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अजीत सिंह",
+      "अजीपाल",
+      "अशोक",
+      "ओमकारसिह",
+      "कमल सिंह",
+      "कमलसिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "कंवल सिंह",
+      "कु0 सोनिका",
+      "कुलदीपसिह",
+      "चवलसिह",
+      "जगदीश",
+      "जगवीर",
+      "जगेश"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "72": {
+   "plot_no": "72",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2011-01-26",
+     "deed_no": "RECON-72-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-08-23",
+     "deed_no": "RECON-72-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अजीत सिंह",
+      "अजीपाल",
+      "अशोक",
+      "ओमकारसिह",
+      "कमल सिंह",
+      "कमलसिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "कंवल सिंह",
+      "कु0 सोनिका",
+      "कुलदीपसिह",
+      "चवलसिह",
+      "जगदीश",
+      "जगवीर",
+      "जगेश"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "75": {
+   "plot_no": "75",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2015-03-03",
+     "deed_no": "RECON-75-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-01-08",
+     "deed_no": "RECON-75-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4830000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-07-16",
+     "deed_no": "RECON-75-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "उमेश",
+      "ऊषा",
+      "कालूराम",
+      "ब्रजेश",
+      "महेश",
+      "मुकेश",
+      "विजेन्द्र सिंह",
+      "वीरेश",
+      "श्रीमति जगवती"
+     ],
+     "share": "1/9 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "76": {
+   "plot_no": "76",
+   "khata_no": "00064",
+   "events": [
+    {
+     "date": "2005-03-21",
+     "deed_no": "RECON-76-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-12-25",
+     "deed_no": "RECON-76-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "उमेश",
+      "ऊषा",
+      "कालूराम",
+      "ब्रजेश",
+      "महेश",
+      "मुकेश",
+      "विजेन्द्र सिंह",
+      "वीरेश",
+      "श्रीमति जगवती"
+     ],
+     "share": "1/9 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "88": {
+   "plot_no": "88",
+   "khata_no": "00073",
+   "events": [
+    {
+     "date": "2013-02-05",
+     "deed_no": "RECON-88-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-09-17",
+     "deed_no": "RECON-88-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 190000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-01-08",
+     "deed_no": "RECON-88-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 300000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-06-02",
+     "deed_no": "RECON-88-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "नाली"
+     ],
+     "share": "1/1",
+     "consideration_inr": 680000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "90": {
+   "plot_no": "90",
+   "khata_no": "00058",
+   "events": [
+    {
+     "date": "2005-09-02",
+     "deed_no": "RECON-90-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-12-11",
+     "deed_no": "RECON-90-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 220000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-07-15",
+     "deed_no": "RECON-90-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "रामपाल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "103": {
+   "plot_no": "103",
+   "khata_no": "00035",
+   "events": [
+    {
+     "date": "2014-02-28",
+     "deed_no": "RECON-103-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-11-03",
+     "deed_no": "RECON-103-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "प्रभात ना0वा0 आयु 13 वर्ष",
+      "प्रेमराजसिह",
+      "ब्रहमपाल सिह",
+      "श्रीमती राजवाला"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "120": {
+   "plot_no": "120",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2008-08-22",
+     "deed_no": "RECON-120-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-05-14",
+     "deed_no": "RECON-120-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 310000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-07-08",
+     "deed_no": "RECON-120-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 400000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "123": {
+   "plot_no": "123",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2012-09-25",
+     "deed_no": "RECON-123-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-04-16",
+     "deed_no": "RECON-123-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 460000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "128": {
+   "plot_no": "128",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2006-09-20",
+     "deed_no": "RECON-128-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-12-27",
+     "deed_no": "RECON-128-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 640000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "138": {
+   "plot_no": "138",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2004-05-22",
+     "deed_no": "RECON-138-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-06-22",
+     "deed_no": "RECON-138-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 460000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-12-10",
+     "deed_no": "RECON-138-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1010000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "141": {
+   "plot_no": "141",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2010-12-18",
+     "deed_no": "RECON-141-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-08-11",
+     "deed_no": "RECON-141-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 370000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "144": {
+   "plot_no": "144",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2002-04-07",
+     "deed_no": "RECON-144-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-01-12",
+     "deed_no": "RECON-144-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 120000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-08-11",
+     "deed_no": "RECON-144-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 250000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-05-20",
+     "deed_no": "RECON-144-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 410000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "152": {
+   "plot_no": "152",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2013-10-09",
+     "deed_no": "RECON-152-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-04-21",
+     "deed_no": "RECON-152-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2540000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-11-05",
+     "deed_no": "RECON-152-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5850000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-07-03",
+     "deed_no": "RECON-152-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 8840000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "154": {
+   "plot_no": "154",
+   "khata_no": "00075",
+   "events": [
+    {
+     "date": "2013-12-22",
+     "deed_no": "RECON-154-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-12-13",
+     "deed_no": "RECON-154-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1940000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-03-13",
+     "deed_no": "RECON-154-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "खुदाने"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2420000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "170": {
+   "plot_no": "170",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2014-11-21",
+     "deed_no": "RECON-170-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-06-06",
+     "deed_no": "RECON-170-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2700000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-01-18",
+     "deed_no": "RECON-170-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 6970000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "173": {
+   "plot_no": "173",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2015-07-16",
+     "deed_no": "RECON-173-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-04-13",
+     "deed_no": "RECON-173-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3470000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-02-14",
+     "deed_no": "RECON-173-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 8400000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "176": {
+   "plot_no": "176",
+   "khata_no": "00075",
+   "events": [
+    {
+     "date": "2006-07-14",
+     "deed_no": "RECON-176-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-10-07",
+     "deed_no": "RECON-176-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "खुदाने"
+     ],
+     "share": "1/1",
+     "consideration_inr": 500000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "18": {
+   "plot_no": "18",
+   "khata_no": "00061",
+   "events": [
+    {
+     "date": "2002-04-16",
+     "deed_no": "RECON-18-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-04-25",
+     "deed_no": "RECON-18-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अंजनी कुमार",
+      "अजयदास",
+      "अनिल कुमार चौहान",
+      "आदित्य श्रीवास्तव",
+      "आशीष श्रीवास्तव",
+      "उमेश कुमार रावत",
+      "उमेश प्रसाद सिंह",
+      "ओमप्रकाश",
+      "कविन्द्र",
+      "गोपीचन्द",
+      "चमन सिंह",
+      "डा0 उपेन्द्र तिवारी",
+      "नरेश",
+      "निशान्त रंजन",
+      "मनोज शर्मा"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "43": {
+   "plot_no": "43",
+   "khata_no": "00009",
+   "events": [
+    {
+     "date": "2007-11-11",
+     "deed_no": "RECON-43-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-12-02",
+     "deed_no": "RECON-43-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "कल्याणसिह",
+      "धनेशकुमार",
+      "विरेन्द्र सिंह",
+      "विवेक सिंह",
+      "सुरेन्द तौगड",
+      "सुरेन्द्र वैसोया"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "70": {
+   "plot_no": "70",
+   "khata_no": "00012",
+   "events": [
+    {
+     "date": "2014-02-21",
+     "deed_no": "RECON-70-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-02-15",
+     "deed_no": "RECON-70-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3610000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-02-14",
+     "deed_no": "RECON-70-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अजीत सिंह",
+      "अजीपाल",
+      "अशोक",
+      "ओमकारसिह",
+      "कमल सिंह",
+      "कमलसिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "कंवल सिंह",
+      "कु0 सोनिका",
+      "कुलदीपसिह",
+      "चवलसिह",
+      "जगदीश",
+      "जगवीर",
+      "जगेश"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "74": {
+   "plot_no": "74",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2015-09-23",
+     "deed_no": "RECON-74-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-12-15",
+     "deed_no": "RECON-74-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4030000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-12-07",
+     "deed_no": "RECON-74-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "उमेश",
+      "ऊषा",
+      "कालूराम",
+      "ब्रजेश",
+      "महेश",
+      "मुकेश",
+      "विजेन्द्र सिंह",
+      "वीरेश",
+      "श्रीमति जगवती"
+     ],
+     "share": "1/9 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "77": {
+   "plot_no": "77",
+   "khata_no": "00023",
+   "events": [
+    {
+     "date": "2012-03-11",
+     "deed_no": "RECON-77-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-03-27",
+     "deed_no": "RECON-77-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4190000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-05-12",
+     "deed_no": "RECON-77-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "देवेन्द्र",
+      "प्रमोद चन्द गुप्ता",
+      "मनोज"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "78": {
+   "plot_no": "78",
+   "khata_no": "00059",
+   "events": [
+    {
+     "date": "2009-01-27",
+     "deed_no": "RECON-78-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-10-23",
+     "deed_no": "RECON-78-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1560000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-11-06",
+     "deed_no": "RECON-78-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2620000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-04-03",
+     "deed_no": "RECON-78-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अरुण कुमार सिंह",
+      "अशोक कुमार",
+      "धर्मवीर",
+      "धर्मेन्द्र कुमार सिंह",
+      "भूपेन्द्र कुमार सिंह",
+      "मती लक्ष्मीना देवी",
+      "मोहित",
+      "रविन्द्र",
+      "रोहताश",
+      "ललित",
+      "विजेन्द्र सिंह भारती",
+      "श्रीमती तेजपाली",
+      "श्रीमती धनेश्‍वरी",
+      "श्रीमती पूजा कुमारी",
+      "श्रीमती लक्ष्मी"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "100": {
+   "plot_no": "100",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2015-07-03",
+     "deed_no": "RECON-100-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-07-27",
+     "deed_no": "RECON-100-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 340000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "105": {
+   "plot_no": "105",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2013-12-19",
+     "deed_no": "RECON-105-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-06-22",
+     "deed_no": "RECON-105-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1770000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-05-24",
+     "deed_no": "RECON-105-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3090000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "106": {
+   "plot_no": "106",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2003-06-21",
+     "deed_no": "RECON-106-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-01-13",
+     "deed_no": "RECON-106-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 220000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "126": {
+   "plot_no": "126",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2005-10-18",
+     "deed_no": "RECON-126-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-08-10",
+     "deed_no": "RECON-126-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 830000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-12-23",
+     "deed_no": "RECON-126-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1600000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "155": {
+   "plot_no": "155",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2008-06-07",
+     "deed_no": "RECON-155-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-07-27",
+     "deed_no": "RECON-155-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1500000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-02-25",
+     "deed_no": "RECON-155-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2800000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "157": {
+   "plot_no": "157",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2008-09-24",
+     "deed_no": "RECON-157-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-02-08",
+     "deed_no": "RECON-157-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1430000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-05-26",
+     "deed_no": "RECON-157-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1850000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-05-11",
+     "deed_no": "RECON-157-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3140000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "164": {
+   "plot_no": "164",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2014-06-03",
+     "deed_no": "RECON-164-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-12-09",
+     "deed_no": "RECON-164-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 140000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-12-01",
+     "deed_no": "RECON-164-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-01-22",
+     "deed_no": "RECON-164-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 490000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "166": {
+   "plot_no": "166",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2007-01-13",
+     "deed_no": "RECON-166-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-03-22",
+     "deed_no": "RECON-166-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 350000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "185": {
+   "plot_no": "185",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2006-05-19",
+     "deed_no": "RECON-185-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-11-18",
+     "deed_no": "RECON-185-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 140000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-05-04",
+     "deed_no": "RECON-185-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 160000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-04-13",
+     "deed_no": "RECON-185-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 290000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "187": {
+   "plot_no": "187",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2008-02-26",
+     "deed_no": "RECON-187-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-08-17",
+     "deed_no": "RECON-187-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 320000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "192": {
+   "plot_no": "192",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2012-07-02",
+     "deed_no": "RECON-192-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-06-28",
+     "deed_no": "RECON-192-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2700000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-11-16",
+     "deed_no": "RECON-192-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3050000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-05-02",
+     "deed_no": "RECON-192-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4690000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "203": {
+   "plot_no": "203",
+   "khata_no": "00071",
+   "events": [
+    {
+     "date": "2011-11-23",
+     "deed_no": "RECON-203-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-05-21",
+     "deed_no": "RECON-203-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सीलिग"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1200000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  }
+ }
+}
