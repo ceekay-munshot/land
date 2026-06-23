@@ -424,3 +424,31 @@ document.getElementById('btn-nalgadha').onclick =
   const tog = document.getElementById('schemes-toggle');
   head.onclick = () => { tog.textContent = panel.classList.toggle('collapsed') ? '▸' : '▾'; };
 })();
+
+// ---- Growth Hubs panel (city/district GSDP growth signals; compiled, not live) ----
+(async function renderGrowth() {
+  const panel = document.getElementById('growth');
+  if (!panel) return;
+  let data;
+  try { data = await fetch('./data/growth_signals.json').then((r) => (r.ok ? r.json() : null)); }
+  catch (e) { panel.style.display = 'none'; return; }
+  if (!data || !Array.isArray(data.hubs) || !data.hubs.length) { panel.style.display = 'none'; return; }
+  const esc = (s) => (s == null ? '' : String(s)).replace(/[&<>"]/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const hubs = [...data.hubs].sort((a, b) => b.gsdp_growth - a.gsdp_growth);
+  const max = Math.max(...hubs.map((h) => h.gsdp_growth));
+  document.getElementById('growth-list').innerHTML = hubs.map((h) => {
+    const w = Math.round((h.gsdp_growth / max) * 100);
+    const g = `${h.approx ? '~' : ''}${h.gsdp_growth}%`;
+    return `<div class="hub${h.focus ? ' focus' : ''}">
+      <div class="hub-top"><span class="hub-city">${esc(h.city)}</span><span class="hub-g">${g}</span></div>
+      <div class="hub-bar"><span style="width:${w}%"></span></div>
+      <div class="hub-note">${esc(h.state)} · ${esc(h.note || '')}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('growth-foot').textContent = `${data.note} (${data.sources || ''})`;
+  panel.classList.add('collapsed');
+  const ghead = document.getElementById('growth-head');
+  const gtog = document.getElementById('growth-toggle');
+  ghead.onclick = () => { gtog.textContent = panel.classList.toggle('collapsed') ? '▸' : '▾'; };
+})();

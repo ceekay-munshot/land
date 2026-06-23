@@ -1,0 +1,15 @@
+{
+  "title": "Growth Hubs",
+  "note": "Growth signal = state GSDP real growth (FY2023-24); plus a notable city metric. Compiled v1 from public sources — not a live feed.",
+  "updated": "2026-06",
+  "sources": "statisticstimes.com · Economic Survey 2024-25 · indiadatamap.com",
+  "hubs": [
+    {"city": "Surat", "state": "Gujarat", "gsdp_growth": 8.94, "approx": false, "note": "Fastest-growing tier-2 (textiles, diamonds)"},
+    {"city": "Ahmedabad", "state": "Gujarat", "gsdp_growth": 8.94, "approx": false, "note": "Industrial + GIFT City"},
+    {"city": "Gautam Buddh Nagar — Noida", "state": "Uttar Pradesh", "gsdp_growth": 8.51, "approx": false, "focus": true, "note": "Our pilot · GDP/capita ₹8.48L (top district) · Jewar airport"},
+    {"city": "Visakhapatnam", "state": "Andhra Pradesh", "gsdp_growth": 8.21, "approx": false, "note": "Port + emerging tech hub"},
+    {"city": "Pune", "state": "Maharashtra", "gsdp_growth": 7.96, "approx": false, "note": "Auto + IT hub"},
+    {"city": "Gurugram", "state": "Haryana", "gsdp_growth": 7.5, "approx": true, "note": "Top NCR corporate hub"},
+    {"city": "Bengaluru", "state": "Karnataka", "gsdp_growth": 7.5, "approx": true, "note": "India's tech-GDP leader"}
+  ]
+}
