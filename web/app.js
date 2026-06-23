@@ -79,27 +79,32 @@ const featCentroid = (ft) => {
 };
 const ngEsc = (t) => (t == null ? '' : String(t)).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+// Stable per-gata identity across villages: gata numbers repeat in every village,
+// so owner/history records key on village+plot_no (uid), not plot_no alone.
+const uidOf = (p) => p.uid || ((p.village || '').trim() + '|' + p.plot_no);
 
 // ---- Shared state across loaders + UI ----
 let rates = {};               // village -> circle-rate row
-let nalgadhaOwners = {};       // plot_no -> [owner names]
-let nalgadhaHistory = {};      // plot_no -> { events: [...] }  (reconstructed chain-of-title)
+let nalgadhaOwners = {};       // uid (village|plot_no) -> [owner names]
+let nalgadhaHistory = {};      // uid (village|plot_no) -> { events: [...] }  (reconstructed chain-of-title)
 const searchIndex = [];        // { source, id, khata, village, owners, centroid, feature, hay }
 let selected = { source: null, id: null };
 
 // ---- Selected-parcel highlight (bright outline that persists after the popup) ----
+// match on uid where present (gata numbers repeat across villages), else fall back to plot_no
+const SELECT_KEY = ['coalesce', ['get', 'uid'], ['get', 'plot_no']];
 function selectFeature(source, id) {
   selected = { source, id: String(id) };
   for (const s of ['nalgadha', 'parcels']) {
     const lyr = s + '-highlight';
-    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', ['get', 'plot_no'], s === source ? String(id) : '__none__']);
+    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', SELECT_KEY, s === source ? String(id) : '__none__']);
   }
 }
 function clearSelection() {
   selected = { source: null, id: null };
   for (const s of ['nalgadha', 'parcels']) {
     const lyr = s + '-highlight';
-    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', ['get', 'plot_no'], '__none__']);
+    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', SELECT_KEY, '__none__']);
   }
   updateHash();
 }
@@ -167,12 +172,13 @@ function parcelPopupHTML(p, feature) {
 }
 
 function nalgadhaPopupHTML(p) {
-  const owners = nalgadhaOwners[String(p.plot_no)] || [];
-  const events = (nalgadhaHistory[String(p.plot_no)] || {}).events || [];
+  const key = uidOf(p);
+  const owners = nalgadhaOwners[key] || [];
+  const events = (nalgadhaHistory[key] || {}).events || [];
   const transfers = events.filter((e) => TL_TYPE[e.type]).length;
   return `
     <div class="pop">
-      <h3>Gata ${p.plot_no} <small>Nalgadha</small></h3>
+      <h3>Gata ${p.plot_no} <small>${ngEsc(p.village || 'Nalgadha')}</small></h3>
       <table>
         <tr><td>Khata</td><td>${p.khata_no || '—'}</td></tr>
         <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
@@ -260,8 +266,8 @@ function openDrawerFor(rec) {
     <div class="dhead"><h3>${label}</h3>
       <div class="dsub">${ngEsc(village)}${p.source ? ' · ' + ngEsc(p.source) : ''}</div></div>
     <div class="dsec">${metaTable}</div>
-    ${isNg ? ownerListHTML(p.plot_no) : ''}
-    ${isNg ? timelineHTML(p.plot_no) : ''}
+    ${isNg ? ownerListHTML(uidOf(p)) : ''}
+    ${isNg ? timelineHTML(uidOf(p)) : ''}
     <div class="dfoot">${isNg
       ? 'title reconstruction · UP Bhu-Naksha · history is reconstructed (synthetic)'
       : 'parcel: Bhu-Naksha · price: IGRSUP · catalyst: OSM'}</div>`;
@@ -276,7 +282,7 @@ function closeDrawer() {
 }
 function recFromFeature(source, feature) {
   const centroid = feature.geometry ? (polygonCentroid(feature.geometry) || featCentroid(feature)) : null;
-  return { source, id: String(feature.properties.plot_no), feature, centroid };
+  return { source, id: uidOf(feature.properties), feature, centroid };
 }
 function flyToFeature(rec) {
   if (rec.centroid) map.flyTo({ center: rec.centroid, zoom: 16, duration: 1200 });
@@ -320,7 +326,8 @@ function updateHash() {
   hashTimer = setTimeout(() => {
     const c = map.getCenter();
     let h = `#${map.getZoom().toFixed(2)}/${c.lat.toFixed(5)}/${c.lng.toFixed(5)}`;
-    if (selected.source && selected.id) h += '/' + (selected.source === 'parcels' ? 'p' : 'g') + selected.id;
+    if (selected.source && selected.id)
+      h += '/' + (selected.source === 'parcels' ? 'p' : 'g') + encodeURIComponent(selected.id);
     history.replaceState(null, '', h);
   }, 250);
 }
@@ -333,8 +340,8 @@ function parseHash() {
     out.zoom = parseFloat(parts[0]); out.lat = parseFloat(parts[1]); out.lng = parseFloat(parts[2]);
   }
   for (const part of parts) {
-    const m = /^([gp])(\d.*)$/.exec(part);
-    if (m) out.sel = { source: m[1] === 'p' ? 'parcels' : 'nalgadha', id: m[2] };
+    const m = /^([gp])(.+)$/.exec(part);
+    if (m) out.sel = { source: m[1] === 'p' ? 'parcels' : 'nalgadha', id: decodeURIComponent(m[2]) };
   }
   return out;
 }
@@ -360,7 +367,7 @@ function indexFeatures(source, features, ownersOf) {
     const p = ft.properties;
     const owners = (ownersOf ? ownersOf(p) : []) || [];
     searchIndex.push({
-      source, id: String(p.plot_no), khata: String(p.khata_no || ''),
+      source, id: uidOf(p), plot_no: String(p.plot_no), khata: String(p.khata_no || ''),
       village: p.village || '', owners,
       centroid: polygonCentroid(ft.geometry) || featCentroid(ft),
       feature: ft,
@@ -376,9 +383,9 @@ function searchParcels(query) {
   for (const rec of searchIndex) {
     let rank = null;
     if (digits) {
-      const idn = rec.id.replace(/^0+/, ''), khn = rec.khata.replace(/^0+/, '');
-      if (rec.id === q || idn === q) rank = 0;
-      else if (rec.id.startsWith(q)) rank = 1;
+      const idn = rec.plot_no.replace(/^0+/, ''), khn = rec.khata.replace(/^0+/, '');
+      if (rec.plot_no === q || idn === q) rank = 0;
+      else if (rec.plot_no.startsWith(q)) rank = 1;
       else if (rec.khata === q || khn === q) rank = 2;
       else if (rec.khata.startsWith(q) || (khn && khn.startsWith(q))) rank = 3;
     } else {
@@ -391,7 +398,7 @@ function searchParcels(query) {
   // ties: Nalgadha (the showcase, has owner + history data) ranks above GBN parcels
   const srcRank = (s) => (s === 'nalgadha' ? 0 : 1);
   hits.sort((a, b) => a.rank - b.rank || srcRank(a.rec.source) - srcRank(b.rec.source)
-    || a.rec.id.localeCompare(b.rec.id, undefined, { numeric: true }));
+    || a.rec.plot_no.localeCompare(b.rec.plot_no, undefined, { numeric: true }));
   return hits.slice(0, 8).map((h) => h.rec);
 }
 function setupSearch() {
@@ -404,9 +411,9 @@ function setupSearch() {
     if (!recs.length) { box.innerHTML = ''; box.style.display = 'none'; return; }
     box.innerHTML = recs.map((r, i) => {
       const sub = r.source === 'nalgadha'
-        ? `Gata · Khata ${ngEsc(r.khata || '—')}${r.owners.length ? ' · ' + r.owners.length + ' owner' + (r.owners.length > 1 ? 's' : '') : ''}`
+        ? `${ngEsc(r.village || 'Nalgadha')} · Khata ${ngEsc(r.khata || '—')}${r.owners.length ? ' · ' + r.owners.length + ' owner' + (r.owners.length > 1 ? 's' : '') : ''}`
         : `Plot · ${ngEsc(r.village)} · Khata ${ngEsc(r.khata || '—')}`;
-      return `<div class="sr-row" data-i="${i}"><b>${r.source === 'nalgadha' ? 'Gata' : 'Plot'} ${ngEsc(r.id)}</b><span>${sub}</span></div>`;
+      return `<div class="sr-row" data-i="${i}"><b>${r.source === 'nalgadha' ? 'Gata' : 'Plot'} ${ngEsc(r.plot_no)}</b><span>${sub}</span></div>`;
     }).join('');
     box.style.display = 'block';
   };
@@ -415,13 +422,13 @@ function setupSearch() {
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       const recs = (box.__recs && box.__recs.length) ? box.__recs : searchParcels(input.value);
-      if (recs.length) { const r = recs[0]; pick(r, (r.source === 'nalgadha' ? 'Gata ' : 'Plot ') + r.id); input.blur(); }
+      if (recs.length) { const r = recs[0]; pick(r, (r.source === 'nalgadha' ? 'Gata ' : 'Plot ') + r.plot_no); input.blur(); }
     } else if (e.key === 'Escape') { box.style.display = 'none'; input.blur(); }
   });
   box.addEventListener('click', (e) => {
     const row = e.target.closest('.sr-row'); if (!row) return;
     const rec = (box.__recs || [])[+row.getAttribute('data-i')];
-    if (rec) pick(rec, (rec.source === 'nalgadha' ? 'Gata ' : 'Plot ') + rec.id);
+    if (rec) pick(rec, (rec.source === 'nalgadha' ? 'Gata ' : 'Plot ') + rec.plot_no);
   });
   document.addEventListener('click', (e) => { if (!e.target.closest('#search')) box.style.display = 'none'; });
 }
@@ -548,7 +555,7 @@ map.on('load', async () => {
         paint: { 'line-color': '#333', 'line-width': 0.5 } });
       map.addLayer({ id: 'parcels-highlight', type: 'line', source: 'parcels',
         paint: { 'line-color': '#f59e0b', 'line-width': 3, 'line-opacity': 0.95 },
-        filter: ['==', ['get', 'plot_no'], '__none__'] });
+        filter: ['==', SELECT_KEY, '__none__'] });
       map.addLayer({ id: 'parcels-labels', type: 'symbol', source: 'parcels', minzoom: 15,
         layout: { 'text-field': ['get', 'plot_no'], 'text-size': 11, 'text-font': ['Open Sans Regular'],
                   'text-allow-overlap': false },
@@ -636,7 +643,7 @@ map.on('load', async () => {
         paint: { 'line-color': '#4c1d95', 'line-width': 0.5 } });
       map.addLayer({ id: 'nalgadha-highlight', type: 'line', source: 'nalgadha',
         paint: { 'line-color': '#f59e0b', 'line-width': 3.5, 'line-opacity': 0.97 },
-        filter: ['==', ['get', 'plot_no'], '__none__'] });
+        filter: ['==', SELECT_KEY, '__none__'] });
       map.addLayer({ id: 'nalgadha-labels', type: 'symbol', source: 'nalgadha', minzoom: 15.5,
         layout: { 'text-field': ['get', 'plot_no'], 'text-size': 11, 'text-font': ['Open Sans Regular'],
                   'text-allow-overlap': false },
@@ -645,13 +652,19 @@ map.on('load', async () => {
       map.on('mouseenter', 'nalgadha-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'nalgadha-fill', () => { map.getCanvas().style.cursor = ''; });
 
-      indexFeatures('nalgadha', ng.features, (p) => nalgadhaOwners[String(p.plot_no)] || []);
+      indexFeatures('nalgadha', ng.features, (p) => nalgadhaOwners[uidOf(p)] || []);
 
       const nb = new maplibregl.LngLatBounds();
       for (const ft of ng.features) for (const c of ft.geometry.coordinates[0]) nb.extend(c);
       nalgadhaBounds = nb;
       const nbtn = document.getElementById('btn-nalgadha');
-      if (nbtn) { nbtn.style.display = 'inline-block'; nbtn.textContent = `🧬 Nalgadha (${ng.features.length})`; }
+      if (nbtn) {
+        const vcount = new Set(ng.features.map((f) => f.properties.village)).size;
+        nbtn.style.display = 'inline-block';
+        nbtn.textContent = vcount > 1
+          ? `🧬 Ownership (${ng.features.length} · ${vcount} villages)`
+          : `🧬 Nalgadha (${ng.features.length})`;
+      }
     }
   } catch (e) { /* no nalgadha data yet */ }
 

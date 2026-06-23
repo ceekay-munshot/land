@@ -42,8 +42,8 @@ INCLUDE_OWNERS = os.environ.get("INCLUDE_OWNERS", "0") == "1"
 OUT = os.environ.get("OUT", "web/data/gbn_parcels.geojson")
 VILLAGE_CODE = os.environ.get("VILLAGE_CODE", "")  # if set, fetch only this village (gata-register mode)
 REQ_TIMEOUT = float(os.environ.get("REQ_TIMEOUT", "20"))  # per-request timeout (lower = fail fast on empty points)
-OWNERS_OUT = os.environ.get("OWNERS_OUT", "")  # if set, write {gata: [owner names]} here (kept OUT of the public geojson, for separate encryption)
-OWNER_NAMES = {}  # gata -> [names], collected this run when OWNERS_OUT is set
+OWNERS_OUT = os.environ.get("OWNERS_OUT", "")  # if set, write {uid: [owner names]} here (kept OUT of the public geojson)
+OWNER_NAMES = {}  # uid -> [names], collected this run when OWNERS_OUT is set
 ENUM_MAX = int(os.environ.get("ENUM_MAX", "0"))  # >0: enumerate gatas by number 1..ENUM_MAX (complete coverage, vs grid sampling)
 
 s = requests.Session()
@@ -74,6 +74,12 @@ def level(n, codes=""):
 
 def find(items, needle):
     return next((it for it in items if needle in (it.get("value") or "")), None)
+
+
+def uid_of(village, plot_no):
+    """Stable per-gata identity across villages: gata numbers repeat in every village,
+    so owner/history records key on village+plot_no, not plot_no alone."""
+    return f"{(village or '').strip()}|{plot_no}"
 
 
 def haversine(a, b):
@@ -141,9 +147,10 @@ def fetch_village(dc, tc, v, start_y=None):
                         covered.append(bb)
                         khata, area_ha, owners = plot_info(gis_code, j["kide"])
                         time.sleep(SLEEP)
+                        uid = uid_of(v["value"], j["kide"])
                         if OWNERS_OUT and owners:
-                            OWNER_NAMES[str(j["kide"])] = owners
-                        props = {"plot_no": j["kide"], "khata_no": khata, "area_ha": area_ha,
+                            OWNER_NAMES[uid] = owners
+                        props = {"plot_no": j["kide"], "uid": uid, "khata_no": khata, "area_ha": area_ha,
                                  "owner_count": len(owners), "village": v["value"],
                                  "gis_code": gis_code, "source": "UP Bhu-Naksha"}
                         if INCLUDE_OWNERS:
@@ -159,9 +166,10 @@ def fetch_village(dc, tc, v, start_y=None):
     return feats, y, (y >= ymax)
 
 
-def fetch_village_by_plotno(dc, tc, v, max_plotno):
-    """Enumerate gatas by plot NUMBER (1..max_plotno) via getPlotByPlotNo — complete coverage,
-    no grid-sampling gaps. Returns bbox features (+ owners collected when OWNERS_OUT is set)."""
+def fetch_village_by_plotno(dc, tc, v, max_plotno, start_pn=1):
+    """Enumerate gatas by plot NUMBER (start_pn..max_plotno) via getPlotByPlotNo — complete
+    coverage, no grid-sampling gaps. Resumable: returns (feats, completed, next_pn) so a run
+    that runs out of budget mid-village can pick up where it left off next time."""
     ext = None
     for i in range(5):
         try:
@@ -171,32 +179,36 @@ def fetch_village_by_plotno(dc, tc, v, max_plotno):
         except Exception:
             time.sleep(3 * (i + 1))
     if not ext:
-        return []
+        return [], False, start_pn
     gis_code, crs = ext["gisCode"], ext.get("crs", "EPSG:32644")
     tr = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
     feats = []
-    for pn in range(1, max_plotno + 1):
+    pn = max(1, start_pn)
+    while pn <= max_plotno:
         if not budget_left():
-            break
+            return feats, False, pn  # resume from pn next run
         try:
             j = s.post(f"{BASE}/MapInfo/getPlotByPlotNo",
                        data={"giscode": gis_code, "plotno": str(pn)}, headers=FORM, timeout=REQ_TIMEOUT).json()
         except Exception:
             time.sleep(0.3)
+            pn += 1
             continue
         if j.get("kide") and j.get("minx") is not None:
             bb = (j["minx"], j["miny"], j["maxx"], j["maxy"])
             khata, area_ha, owners = plot_info(gis_code, j["kide"])
+            uid = uid_of(v["value"], j["kide"])
             if OWNERS_OUT and owners:
-                OWNER_NAMES[str(j["kide"])] = owners
-            props = {"plot_no": j["kide"], "khata_no": khata, "area_ha": area_ha,
+                OWNER_NAMES[uid] = owners
+            props = {"plot_no": j["kide"], "uid": uid, "khata_no": khata, "area_ha": area_ha,
                      "owner_count": len(owners), "village": v["value"],
                      "gis_code": gis_code, "source": "UP Bhu-Naksha"}
             feats.append({"type": "Feature", "properties": props,
                           "geometry": {"type": "Polygon",
                                        "coordinates": [[list(tr.transform(px, py)) for px, py in rect(bb)]]}})
         time.sleep(SLEEP)
-    return feats
+        pn += 1
+    return feats, True, max_plotno
 
 
 def main():
@@ -234,38 +246,46 @@ def main():
 
     T0 = time.time()
     new_feats = []
-    if ENUM_MAX and villages:
-        # COMPLETE coverage: enumerate gatas by NUMBER (1..ENUM_MAX) via getPlotByPlotNo —
-        # finds gatas the grid sampling missed. Merged with existing below; names backfilled.
-        v = villages[0]
-        new_feats = fetch_village_by_plotno(d["code"], t["code"], v, ENUM_MAX)
-        done_codes.add(v["code"])
-        scan.pop(v["code"], None)
-        print(f"{d['value']}/{t['value']}: enum {v['value']} plotno 1..{ENUM_MAX} -> {len(new_feats)} gatas")
-    else:
-        remaining = [v for v in villages if v["code"] not in done_codes]
-        # opt-in: fetch villages nearest a catalyst first (TARGET_LATLNG) instead of alphabetically.
-        target = os.environ.get("TARGET_LATLNG")
-        if target:
-            try:
-                tlat, tlng = (float(x) for x in target.split(","))
-                for v in remaining:
-                    if v["code"] not in village_xy and budget_left():
-                        c = village_centroid(d["code"], t["code"], v)
-                        if c:
-                            village_xy[v["code"]] = c
-                        time.sleep(SLEEP)
-                remaining.sort(key=lambda v: haversine(village_xy[v["code"]], (tlat, tlng))
-                               if v["code"] in village_xy else 1e9)
-                print(f"prioritized villages by distance to {tlat},{tlng}")
-            except Exception as e:
-                print("prioritization skipped:", e)
-        batch = remaining[:MAX_VILLAGES]
-        print(f"{d['value']}/{t['value']}: {len(villages)} villages, "
-              f"{len(done_codes)} done, {len(remaining)} remaining, fetching {len(batch)} now")
-        for v in batch:
-            if not budget_left() or len(existing) + len(new_feats) >= MAX_TOTAL_PLOTS:
+    remaining = [v for v in villages if v["code"] not in done_codes]
+    # opt-in: fetch villages nearest a catalyst first (TARGET_LATLNG) instead of alphabetically.
+    # Centroids are cached in meta.village_xy, so the (one-off) sweep only pays its cost once.
+    target = os.environ.get("TARGET_LATLNG")
+    if target and remaining:
+        try:
+            tlat, tlng = (float(x) for x in target.split(","))
+            for v in remaining:
+                if v["code"] not in village_xy and budget_left():
+                    c = village_centroid(d["code"], t["code"], v)
+                    if c:
+                        village_xy[v["code"]] = c
+                    time.sleep(SLEEP)
+            remaining.sort(key=lambda v: haversine(village_xy[v["code"]], (tlat, tlng))
+                           if v["code"] in village_xy else 1e9)
+            print(f"prioritized villages by distance to {tlat},{tlng}")
+        except Exception as e:
+            print("prioritization skipped:", e)
+    batch = remaining[:MAX_VILLAGES]
+    mode = "enum" if ENUM_MAX else "grid"
+    print(f"{d['value']}/{t['value']}: {len(villages)} villages, {len(done_codes)} done, "
+          f"{len(remaining)} remaining, fetching {len(batch)} now ({mode})")
+    for v in batch:
+        if not budget_left() or len(existing) + len(new_feats) >= MAX_TOTAL_PLOTS:
+            break
+        if ENUM_MAX:
+            # COMPLETE coverage: enumerate gatas by NUMBER (1..ENUM_MAX) via getPlotByPlotNo —
+            # finds gatas the grid sampling misses. Resumable per-village via scan[code].
+            feats, completed, next_pn = fetch_village_by_plotno(
+                d["code"], t["code"], v, ENUM_MAX, scan.get(v["code"], 1) if resume else 1)
+            new_feats.extend(feats)
+            if completed:
+                done_codes.add(v["code"]); scan.pop(v["code"], None)
+                print(f"  {v['value']}: enum +{len(feats)} DONE (total {len(existing) + len(new_feats)}, {int(time.time() - T0)}s)")
+            else:
+                if resume:
+                    scan[v["code"]] = next_pn
+                print(f"  {v['value']}: enum +{len(feats)} partial (next gata #{next_pn}) — resume next run")
                 break
+        else:
             feats, last_y, completed = fetch_village(d["code"], t["code"], v,
                                                       scan.get(v["code"]) if resume else None)
             new_feats.extend(feats)
@@ -310,12 +330,13 @@ def main():
         for ft in all_feats:
             if time.time() - nb_start > nb_budget:
                 break
-            pn = str(ft["properties"]["plot_no"])
-            if pn in OWNER_NAMES:
+            pr = ft["properties"]
+            uid = pr.get("uid") or uid_of(pr.get("village"), pr["plot_no"])
+            if uid in OWNER_NAMES:
                 continue
-            _, _, owners = plot_info(ft["properties"]["gis_code"], pn)
+            _, _, owners = plot_info(pr["gis_code"], pr["plot_no"])
             if owners:
-                OWNER_NAMES[pn] = owners
+                OWNER_NAMES[uid] = owners
             fetched += 1
             time.sleep(SLEEP)
         os.makedirs(os.path.dirname(OWNERS_OUT) or ".", exist_ok=True)

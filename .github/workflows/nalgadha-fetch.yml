@@ -1,14 +1,16 @@
 name: nalgadha-fetch
 
-# Pull the Nalgadha gata register (village नलगढ़ा / 120241, Gautam Buddh Nagar Sadar tehsil)
-# from UP Bhu-Naksha: every gata + plot/khata/area + owner names (PUBLIC — founder's decision).
-# Names go to web/data/nalgadha_owners.json (plaintext) for the public dashboard.
-# Resumable; re-run to finish a large village. (enum 1..400; retry-hardened + graceful skip.)
+# Build the title-reconstruction ownership layer for Gautam Buddh Nagar Sadar tehsil
+# (गौतमबुद्धनगर) from UP Bhu-Naksha: every gata + plot/khata/area + owner names
+# (PUBLIC — founder's decision), village by village, nearest Nalgadha first.
+# Names go to web/data/nalgadha_owners.json (plaintext, keyed by uid = village|plot_no).
+# Resumable (enum 1..400, per-village resume); retry-hardened + graceful skip.
 on:
   workflow_dispatch:
-  # Coverage complete (188 gatas). Schedule paused — re-enable to refresh, or run manually.
-  # schedule:
-  #   - cron: '*/30 * * * *'
+  schedule:
+    # Fill neighbouring villages in the background, a few per run. Resumable, so
+    # no run is ever wasted. Adjust cadence freely.
+    - cron: '13 */2 * * *'
   push:
     branches: [main]
     paths:
@@ -34,13 +36,15 @@ jobs:
       - name: Fetch gata register + backfill owner names (plaintext, public)
         env:
           TEHSIL: 'गौतमबुद्धनगर'
-          VILLAGE_CODE: '120241'
+          # No VILLAGE_CODE => area mode: enumerate villages tehsil-wide, nearest
+          # Nalgadha (28.48414,77.43391) first, a few per run.
+          TARGET_LATLNG: '28.48414,77.43391'
+          MAX_VILLAGES: '3'
           ENUM_MAX: '400'
           OUT: 'web/data/nalgadha_parcels.geojson'
           OWNERS_IN: 'web/data/nalgadha_owners.json'
           OWNERS_OUT: 'web/data/nalgadha_owners.json'
           NAMES_BUDGET: '300'
-          MAX_VILLAGES: '1'
           PER_VILLAGE_MAX_PLOTS: '3000'
           TIME_BUDGET: '900'
           SLEEP: '0.06'
@@ -48,12 +52,14 @@ jobs:
           RESUME_SCAN: '1'
           REQ_TIMEOUT: '10'
         run: python tools/fetch_gbn_parcels.py
+      - name: Regenerate reconstructed ownership history (synthetic, churn-free)
+        run: python tools/gen_nalgadha_history.py
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm -q --ignore-unmatch web/data/nalgadha_owners.json.enc
-          git add web/data/nalgadha_parcels.geojson web/data/nalgadha_owners.json
-          git commit -m "data: Nalgadha gata register + owner names (public)" || { echo "no change"; exit 0; }
+          git add web/data/nalgadha_parcels.geojson web/data/nalgadha_owners.json web/data/nalgadha_history.json
+          git commit -m "data: GBN Sadar ownership layer — gatas + owner names + history (public)" || { echo "no change"; exit 0; }
           git pull --rebase origin main || true
           git push
