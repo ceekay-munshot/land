@@ -1,0 +1,196 @@
+{
+  "page_len": 68717,
+  "form_actions": [
+    "/igrsup/newPropertySearchAction;jsessionid=90A106804E7EB209DD61C1065C8B00B6",
+    "/igrsup/newPropertySearchAction;jsessionid=90A106804E7EB209DD61C1065C8B00B6",
+    "/igrsup/newPropertySearchAction;jsessionid=90A106804E7EB209DD61C1065C8B00B6",
+    "/igrsup/newPropertySearchAction;jsessionid=90A106804E7EB209DD61C1065C8B00B6",
+    "/igrsup/newPropertySearchAction;jsessionid=90A106804E7EB209DD61C1065C8B00B6"
+  ],
+  "selects": [
+    "districtCode",
+    "sroCode",
+    "villageCode3",
+    "taxDistrictCode"
+  ],
+  "onchange": [
+    "getDistrictNameEng(this.value,",
+    "getSroList(",
+    "return checkComoboValue(&quot;villageCode3&quot;,&quot;villageCode3Msg&quot;)",
+    "return getGaonOderedNEWlist("
+  ],
+  "onclick": [
+    "return CERSAI_DetailsForRular();",
+    "return CERSAI_DetailsForUrban();",
+    "return checkALL(",
+    "return checkALLRevenueCase();",
+    "return checkCadastalMap();",
+    "return checkCivilCourt_Rural();",
+    "return checkCivilCourt_Urban();",
+    "return checkElectricitylinkId_Rural();",
+    "return checkElectricitylinkId_Urban();",
+    "return checkForProperty(",
+    "return checkPrernaPropery()",
+    "return checkPrernaProperySearchById()",
+    "return checkPropertGISALL()",
+    "return checkPropertTaxALL()",
+    "return checkROR();",
+    "return checkRuralProperties(",
+    "return checkUrbanProperties("
+  ],
+  "ajax_urls": [],
+  "endpoints_in_html": [
+    " action=",
+    "&Khasra_Number=",
+    ").action = ",
+    ").submit();\r\n\r\n\t}\r\n\r\n\tfunction getGaonOderedNEWlist11111(element1, element2, element3) {\r\n\r\n\t\tvar dropdown1 = document.getElementById(element1);\r\n\t\tvar dropdown2 = document.getElementById(element2);\r\n\t\tvar dropdown3 = document.getElementById(element3);\r\n\t\t//alert(dropdown1.value+",
+    "+span.value);\r\n\t\t\r\n\t\tgetDistrictNameEng(dropdown1.value,",
+    "/igrsup/newPropertySearchAction;jsessionid=90A106804E7EB209DD61C1065C8B00B6",
+    ";\r\n\t\t\treturn false;\r\n\r\n\t\t}\r\n\t}\r\n\tfunction checkPrernaProperySearchById() {\r\n\r\n\t\tvar districtCode = document.getElementById(",
+    ";\r\n\t\t\treturn false;\r\n\r\n\t\t}\r\n\r\n\t}\r\n\r\n\tfunction getDistrictNameEng(districtCode, districtNameEngId) {\r\n\r\n\t\tvar districtName = ",
+    ";\r\n\t\t}\r\n\t}\r\n\r\n\tfunction getDistrictList(element1, element2, element3, element4) {\r\n\r\n\t\tvar dropdown1 = document.getElementById(element1);\r\n\t\tvar dropdown2 = document.getElementById(element2);\r\n\t\tvar span = document.getElementById(element3);\r\n\t\tvar dropdown3 = document.getElementById(element4);\r\n\t\t//alert(dropdown1.value+",
+    ";\r\n\t\t}\r\n\t}\r\n\r\n\tfunction getGaonOderedNEWlist(element) {\r\n\r\n\t\tvar propNEWAddres = document.getElementById(",
+    ";\r\n\t    \treturn true;\r\n\t\t}\r\n\t}\r\n\tfunction getSroList(element1,element2,element3) {\r\n\t\t\r\n\t\tvar dropdown1 = document.getElementById(element1);\r\n\t\tvar dropdown2 = document.getElementById(element2);\r\n\t\tvar span = document.getElementById(element3);\r\n\t\t//alert(dropdown1.value+",
+    "; \r\n   margin: 5px;\r\n   padding: 5px;      \r\n}\r\ntextArea{\r\n\r\n    width: 100%; \r\n    max-width: 100%; \r\n    max-height: 50%; \r\n    min-height: 50px; \r\n    min-width: 100%; \r\n    resize:none;\r\n}\r\n.spinner {\r\n    position:fixed;\r\n    top: 0%;\r\n    left: 0%;\r\n    margin-left: 0px; /* half width of the spinner gif */\r\n    margin-top: 0px; /* half height of the spinner gif */\r\n    text-align:center;\r\n    z-index:1001;\r\n    width:100%; /* width of the spinner gif */\r\n    height: 100%; /*hight of the spinner gif +2px to fix IE8 issue */\r\n}\r\n.spinnerCir {\r\n    position:fixed;\r\n    top: 0%;\r\n    left: 0%;\r\n    margin-left: 0px; /* half width of the spinner gif */\r\n    margin-top: 0px; /* half height of the spinner gif */\r\n    text-align:center;\r\n    z-index:1001;\r\n    width:100%; /* width of the spinner gif */\r\n    height: 100%; /*hight of the spinner gif +2px to fix IE8 issue */\r\n}\r\n .content{\r\nfloat:left;\r\nwidth: 100%;\r\nheight: auto;\r\ntext-align: center;\r\n\r\nborder-right: 1px solid silver;\r\nborder-left: 1px solid silver;\r\n}\r\n\r\n </style>\r\n</head>\r\n<body>\r\n\r\n\r\n\t\r\n\t\r\n\t<h2>\r\n\t\tसम्पत्ति विवरण(Property Search)\r\n\t</h2>\r\n\t\r\n\t<center>\r\n\r\n\t\t<div class=",
+    "PropertyDeedSearch",
+    "PropertyDeedSearchById",
+    "PropertyDeedSearchByPropertyId",
+    "PropertyDeedSearchS",
+    "action:getPropertyAndGISinfo",
+    "action:getPropertyDeedDetailBYPropertyId",
+    "action:getPropertyDeedSearchDetail",
+    "action:getPropertyTaxDuesDetail",
+    "defaultAction",
+    "getDistrictListJson",
+    "getDistrictNameEng(this.value,",
+    "getDistrictNameEngJson",
+    "getSroList(",
+    "getSroListJson",
+    "http://jtp.uppcl.org/online/public/frmPropertySearch.aspx?",
+    "return checkPrernaProperySearchById()",
+    "return getGaonOderedNEWlist("
+  ],
+  "js_files": [
+    "/igrsup/js/jquery-3.7.1.js",
+    "/igrsup/js/jquery-ui.js",
+    "/igrsup/js/kb.js",
+    "/igrsup/js/keyboard.js",
+    "/igrsup/js/prernaUser.js",
+    "/igrsup/js/sessionListner.js"
+  ],
+  "js_scan": [
+    {
+      "url": "https://igrsup.gov.in/igrsup/js/jquery-3.7.1.js",
+      "len": 296030,
+      "endpoints": [
+        " &&\r\n\t\t\t\tcontext.nodeType === 9 && documentIsHTML && Expr.relative[ tokens[ 1 ].type ] ) {\r\n\r\n\t\t\tcontext = ( Expr.find.ID(\r\n\t\t\t\ttoken.matches[ 0 ].replace( runescape, funescape ),\r\n\t\t\t\tcontext\r\n\t\t\t) || [] )[ 0 ];\r\n\t\t\tif ( !context ) {\r\n\t\t\t\treturn results;\r\n\r\n\t\t\t// Precompiled matchers will still verify ancestry, so step up a level\r\n\t\t\t} else if ( compiled ) {\r\n\t\t\t\tcontext = context.parentNode;\r\n\t\t\t}\r\n\r\n\t\t\tselector = selector.slice( tokens.shift().value.length );\r\n\t\t}\r\n\r\n\t\t// Fetch a seed set for right-to-left matching\r\n\t\ti = matchExpr.needsContext.test( selector ) ? 0 : tokens.length;\r\n\t\twhile ( i-- ) {\r\n\t\t\ttoken = tokens[ i ];\r\n\r\n\t\t\t// Abort if we hit a combinator\r\n\t\t\tif ( Expr.relative[ ( type = token.type ) ] ) {\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tif ( ( find = Expr.find[ type ] ) ) {\r\n\r\n\t\t\t\t// Search, expanding context for leading sibling combinators\r\n\t\t\t\tif ( ( seed = find(\r\n\t\t\t\t\ttoken.matches[ 0 ].replace( runescape, funescape ),\r\n\t\t\t\t\trsibling.test( tokens[ 0 ].type ) &&\r\n\t\t\t\t\t\ttestContext( context.parentNode ) || context\r\n\t\t\t\t) ) ) {\r\n\r\n\t\t\t\t\t// If seed is empty or no tokens remain, we can return early\r\n\t\t\t\t\ttokens.splice( i, 1 );\r\n\t\t\t\t\tselector = seed.length && toSelector( tokens );\r\n\t\t\t\t\tif ( !selector ) {\r\n\t\t\t\t\t\tpush.apply( results, seed );\r\n\t\t\t\t\t\treturn results;\r\n\t\t\t\t\t}\r\n\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\t// Compile and execute a filtering function if one is not provided\r\n\t// Provide `match` to avoid retokenization if we modified the selector above\r\n\t( compiled || compile( selector, match ) )(\r\n\t\tseed,\r\n\t\tcontext,\r\n\t\t!documentIsHTML,\r\n\t\tresults,\r\n\t\t!context || rsibling.test( selector ) && testContext( context.parentNode ) || context\r\n\t);\r\n\treturn results;\r\n}\r\n\r\n// One-time assignments\r\n\r\n// Support: Android <=4.0 - 4.1+\r\n// Sort stability\r\nsupport.sortStable = expando.split( ",
+        " );\r\n\t\t\tif ( handle ) {\r\n\t\t\t\thandle.apply( cur, data );\r\n\t\t\t}\r\n\r\n\t\t\t// Native handler\r\n\t\t\thandle = ontype && cur[ ontype ];\r\n\t\t\tif ( handle && handle.apply && acceptData( cur ) ) {\r\n\t\t\t\tevent.result = handle.apply( cur, data );\r\n\t\t\t\tif ( event.result === false ) {\r\n\t\t\t\t\tevent.preventDefault();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\tevent.type = type;\r\n\r\n\t\t// If nobody prevented the default action, do it now\r\n\t\tif ( !onlyHandlers && !event.isDefaultPrevented() ) {\r\n\r\n\t\t\tif ( ( !special._default ||\r\n\t\t\t\tspecial._default.apply( eventPath.pop(), data ) === false ) &&\r\n\t\t\t\tacceptData( elem ) ) {\r\n\r\n\t\t\t\t// Call a native DOM method on the target with the same name as the event.\r\n\t\t\t\t// Don",
+        ")\r\n\t\t// subtraction forces infinities to NaN\r\n\t\t!isNaN( obj - parseFloat( obj ) );\r\n};\r\n\r\njQuery.trim = function( text ) {\r\n\treturn text == null ?\r\n\t\t",
+        "search",
+        "t unwrap thenables, we can skip the extra checks appearing in\r\n\t// Deferred#then to conditionally suppress rejection.\r\n\t} catch ( value ) {\r\n\r\n\t\t// Support: Android 4.0 only\r\n\t\t// Strict mode functions invoked without .call/.apply get global-object context\r\n\t\treject.apply( undefined, [ value ] );\r\n\t}\r\n}\r\n\r\njQuery.extend( {\r\n\r\n\tDeferred: function( func ) {\r\n\t\tvar tuples = [\r\n\r\n\t\t\t\t// action, add listener, callbacks,\r\n\t\t\t\t// ... .then handlers, argument index, [final state]\r\n\t\t\t\t[ "
+      ],
+      "ajax": []
+    },
+    {
+      "url": "https://igrsup.gov.in/igrsup/js/jquery-ui.js",
+      "len": 529159,
+      "endpoints": [
+        "\n\t\t},\n\t\tsource: null,\n\n\t\t// Callbacks\n\t\tchange: null,\n\t\tclose: null,\n\t\tfocus: null,\n\t\topen: null,\n\t\tresponse: null,\n\t\tsearch: null,\n\t\tselect: null\n\t},\n\n\trequestIndex: 0,\n\tpending: 0,\n\tliveRegionTimer: null,\n\n\t_create: function() {\n\n\t\t// Some browsers only repeat keydown events, not keypress events,\n\t\t// so we use the suppressKeyPress flag to determine if we",
+        " ) && inst.currentDay ) {\n\t\t\tinst.selectedDay = inst.currentDay;\n\t\t\tinst.drawMonth = inst.selectedMonth = inst.currentMonth;\n\t\t\tinst.drawYear = inst.selectedYear = inst.currentYear;\n\t\t} else {\n\t\t\tdate = new Date();\n\t\t\tinst.selectedDay = date.getDate();\n\t\t\tinst.drawMonth = inst.selectedMonth = date.getMonth();\n\t\t\tinst.drawYear = inst.selectedYear = date.getFullYear();\n\t\t}\n\t\tthis._notifyChange( inst );\n\t\tthis._adjustDate( target );\n\t},\n\n\t/* Action for selecting a new month/year. */\n\t_selectMonthYear: function( id, select, period ) {\n\t\tvar target = $( id ),\n\t\t\tinst = this._getInst( target[ 0 ] );\n\n\t\tinst[ ",
+        " ) ) {\n\t\t\t\t\t\tif ( !this.isMultiLine ) {\n\t\t\t\t\t\t\tthis._value( this.term );\n\t\t\t\t\t\t}\n\t\t\t\t\t\tthis.close( event );\n\n\t\t\t\t\t\t// Different browsers have different default behavior for escape\n\t\t\t\t\t\t// Single press can mean undo or clear\n\t\t\t\t\t\t// Double press in IE means clear the whole form\n\t\t\t\t\t\tevent.preventDefault();\n\t\t\t\t\t}\n\t\t\t\t\tbreak;\n\t\t\t\tdefault:\n\t\t\t\t\tsuppressKeyPressRepeat = true;\n\n\t\t\t\t\t// search timeout should be triggered before the input value is changed\n\t\t\t\t\tthis._searchTimeout( event );\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t},\n\t\t\tkeypress: function( event ) {\n\t\t\t\tif ( suppressKeyPress ) {\n\t\t\t\t\tsuppressKeyPress = false;\n\t\t\t\t\tif ( !this.isMultiLine || this.menu.element.is( ",
+        " ) ) {\n\t\t\t\t\tevent.preventDefault();\n\t\t\t\t}\n\t\t\t} )\n\n\t\t\t// Support: IE <9\n\t\t\t// Preventing the default action in mousedown doesn",
+        " ) ) {\n\t\t\tthis.search( null, event );\n\t\t\treturn;\n\t\t}\n\t\tif ( this.menu.isFirstItem() && /^previous/.test( direction ) ||\n\t\t\t\tthis.menu.isLastItem() && /^next/.test( direction ) ) {\n\n\t\t\tif ( !this.isMultiLine ) {\n\t\t\t\tthis._value( this.term );\n\t\t\t}\n\n\t\t\tthis.menu.blur();\n\t\t\treturn;\n\t\t}\n\t\tthis.menu[ direction ]( event );\n\t},\n\n\twidget: function() {\n\t\treturn this.menu.element;\n\t},\n\n\t_value: function() {\n\t\treturn this.valueMethod.apply( this.element, arguments );\n\t},\n\n\t_keyEvent: function( keyEvent, event ) {\n\t\tif ( !this.isMultiLine || this.menu.element.is( ",
+        " ) ] =\n\t\t\tparseInt( select.options[ select.selectedIndex ].value, 10 );\n\n\t\tthis._notifyChange( inst );\n\t\tthis._adjustDate( target );\n\t},\n\n\t/* Action for selecting a day. */\n\t_selectDay: function( id, month, year, td ) {\n\t\tvar inst,\n\t\t\ttarget = $( id );\n\n\t\tif ( $( td ).hasClass( this._unselectableClass ) || this._isDisabledDatepicker( target[ 0 ] ) ) {\n\t\t\treturn;\n\t\t}\n\n\t\tinst = this._getInst( target[ 0 ] );\n\t\tinst.selectedDay = inst.currentDay = parseInt( $( ",
+        " ) {\n\t\t\t\treturn {\n\t\t\t\t\tlabel: item,\n\t\t\t\t\tvalue: item\n\t\t\t\t};\n\t\t\t}\n\t\t\treturn $.extend( {}, item, {\n\t\t\t\tlabel: item.label || item.value,\n\t\t\t\tvalue: item.value || item.label\n\t\t\t} );\n\t\t} );\n\t},\n\n\t_suggest: function( items ) {\n\t\tvar ul = this.menu.element.empty();\n\t\tthis._renderMenu( ul, items );\n\t\tthis.isNewMenu = true;\n\t\tthis.menu.refresh();\n\n\t\t// Size and position menu\n\t\tul.show();\n\t\tthis._resizeMenu();\n\t\tul.position( $.extend( {\n\t\t\tof: this.element\n\t\t}, this.options.position ) );\n\n\t\tif ( this.options.autoFocus ) {\n\t\t\tthis.menu.next();\n\t\t}\n\n\t\t// Listen for interactions outside of the widget (#6642)\n\t\tthis._on( this.document, {\n\t\t\tmousedown: ",
+        " ) {\n\t\t\t\tthis.uiDialog\n\t\t\t\t\t.removeClass( this.options.dialogClass )\n\t\t\t\t\t.addClass( value );\n\t\t\t}\n\t\t\tthis._superApply( arguments );\n\t\t}\n\t} );\n}\n\nvar widgetsDialog = $.ui.dialog;\n\n\n/*!\n * jQuery UI Droppable 1.13.2\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n */\n\n//>>label: Droppable\n//>>group: Interactions\n//>>description: Enables drop targets for draggable elements.\n//>>docs: http://api.jqueryui.com/droppable/\n//>>demos: http://jqueryui.com/droppable/\n\n\n$.widget( ",
+        " ),\n\t\t\t\tmodifierKey = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;\n\n\t\t\tif ( !equalValues || ( equalValues && !menuVisible && !modifierKey ) ) {\n\t\t\t\tthis.selectedItem = null;\n\t\t\t\tthis.search( null, event );\n\t\t\t}\n\t\t}, this.options.delay );\n\t},\n\n\tsearch: function( value, event ) {\n\t\tvalue = value != null ? value : this._value();\n\n\t\t// Always save the actual value, not the one passed as an argument\n\t\tthis.term = this._value();\n\n\t\tif ( value.length < this.options.minLength ) {\n\t\t\treturn this.close( event );\n\t\t}\n\n\t\tif ( this._trigger( ",
+        " ).addBack() : animated;\n\n\t\t// Map the animated objects to store the original styles.\n\t\tallAnimations = allAnimations.map( function() {\n\t\t\tvar el = $( this );\n\t\t\treturn {\n\t\t\t\tel: el,\n\t\t\t\tstart: getElementStyles( this )\n\t\t\t};\n\t\t} );\n\n\t\t// Apply class change\n\t\tapplyClassChange = function() {\n\t\t\t$.each( classAnimationActions, function( i, action ) {\n\t\t\t\tif ( value[ action ] ) {\n\t\t\t\t\tanimated[ action + ",
+        " );\n\t\t\t}\n\t\t}\n\t}\n} );\n\n\n/*!\n * jQuery UI Sortable 1.13.2\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n */\n\n//>>label: Sortable\n//>>group: Interactions\n//>>description: Enables items in a list to be sorted using the mouse.\n//>>docs: http://api.jqueryui.com/sortable/\n//>>demos: http://jqueryui.com/sortable/\n//>>css.structure: ../../themes/base/sortable.css\n\n\nvar widgetsSortable = $.widget( ",
+        " );\n\t\t\t}\n\t\t} );\n\t},\n\n\t_destroy: function() {\n\t\tclearTimeout( this.searching );\n\t\tthis.element.removeAttr( ",
+        " );\n\t\tthis.cancelSearch = false;\n\n\t\tthis.source( { term: value }, this._response() );\n\t},\n\n\t_response: function() {\n\t\tvar index = ++this.requestIndex;\n\n\t\treturn function( content ) {\n\t\t\tif ( index === this.requestIndex ) {\n\t\t\t\tthis.__response( content );\n\t\t\t}\n\n\t\t\tthis.pending--;\n\t\t\tif ( !this.pending ) {\n\t\t\t\tthis._removeClass( ",
+        " );\n\t\t}\n\t}\n} );\n\n\n/*!\n * jQuery UI Selectable 1.13.2\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n */\n\n//>>label: Selectable\n//>>group: Interactions\n//>>description: Allows groups of elements to be selected with the mouse.\n//>>docs: http://api.jqueryui.com/selectable/\n//>>demos: http://jqueryui.com/selectable/\n//>>css.structure: ../../themes/base/selectable.css\n\n\nvar widgetsSelectable = $.widget( ",
+        " );\n\t}\n};\n\n\n/*!\n * jQuery UI Draggable 1.13.2\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n */\n\n//>>label: Draggable\n//>>group: Interactions\n//>>description: Enables dragging functionality for any element.\n//>>docs: http://api.jqueryui.com/draggable/\n//>>demos: http://jqueryui.com/draggable/\n//>>css.structure: ../../themes/base/draggable.css\n\n\n$.widget( ",
+        " );\n\n\t\t\tthis.activeMenu = currentMenu;\n\t\t}, all ? 0 : this.delay );\n\t},\n\n\t// With no arguments, closes the currently active menu - if nothing is active\n\t// it closes all menus.  If passed an argument, it will search for menus BELOW\n\t_close: function( startMenu ) {\n\t\tif ( !startMenu ) {\n\t\t\tstartMenu = this.active ? this.active.parent() : this.element;\n\t\t}\n\n\t\tstartMenu.find( ",
+        " + $.datepicker._triggerClass ).length &&\n\t\t\t\t$.datepicker._datepickerShowing && !( $.datepicker._inDialog && $.blockUI ) ) ) ||\n\t\t\t( $target.hasClass( $.datepicker.markerClassName ) && $.datepicker._curInst !== inst ) ) {\n\t\t\t\t$.datepicker._hideDatepicker();\n\t\t}\n\t},\n\n\t/* Adjust one of the date sub-fields. */\n\t_adjustDate: function( id, offset, period ) {\n\t\tvar target = $( id ),\n\t\t\tinst = this._getInst( target[ 0 ] );\n\n\t\tif ( this._isDisabledDatepicker( target[ 0 ] ) ) {\n\t\t\treturn;\n\t\t}\n\t\tthis._adjustInstDate( inst, offset, period );\n\t\tthis._updateDatepicker( inst );\n\t},\n\n\t/* Action for current link. */\n\t_gotoToday: function( id ) {\n\t\tvar date,\n\t\t\ttarget = $( id ),\n\t\t\tinst = this._getInst( target[ 0 ] );\n\n\t\tif ( this._get( inst, ",
+        " + // actions\n\t\t\t\t\t\t\t( otherMonth && !showOtherMonths ? ",
+        " ]( value[ action ] );\n\t\t\t\t}\n\t\t\t} );\n\t\t};\n\t\tapplyClassChange();\n\n\t\t// Map all animated objects again - calculate new styles and diff\n\t\tallAnimations = allAnimations.map( function() {\n\t\t\tthis.end = getElementStyles( this.el[ 0 ] );\n\t\t\tthis.diff = styleDifference( this.start, this.end );\n\t\t\treturn this;\n\t\t} );\n\n\t\t// Apply original class\n\t\tanimated.attr( ",
+        " can cause\n\t\t\t// the placeholder to jitter between the outer and inner container.\n\t\t\tif ( item.instance !== this.currentContainer ) {\n\t\t\t\tcontinue;\n\t\t\t}\n\n\t\t\t// Cannot intersect with itself\n\t\t\t// no useless actions that have been done before\n\t\t\t// no action if the item moved is the parent of the item checked\n\t\t\tif ( itemElement !== this.currentItem[ 0 ] &&\n\t\t\t\tthis.placeholder[ intersection === 1 ?\n\t\t\t\t",
+        ",\n\t\t\t\t\tsuccess: function( data ) {\n\t\t\t\t\t\tresponse( data );\n\t\t\t\t\t},\n\t\t\t\t\terror: function() {\n\t\t\t\t\t\tresponse( [] );\n\t\t\t\t\t}\n\t\t\t\t} );\n\t\t\t};\n\t\t} else {\n\t\t\tthis.source = this.options.source;\n\t\t}\n\t},\n\n\t_searchTimeout: function( event ) {\n\t\tclearTimeout( this.searching );\n\t\tthis.searching = this._delay( function() {\n\n\t\t\t// Search if the value has changed, or if the user retypes the same value (see #7434)\n\t\t\tvar equalValues = this.term === this._value(),\n\t\t\t\tmenuVisible = this.menu.element.is( ",
+        ",\n\t\t\t\t\twidth: iframe.outerWidth(),\n\t\t\t\t\theight: iframe.outerHeight()\n\t\t\t\t} )\n\t\t\t\t.appendTo( iframe.parent() )\n\t\t\t\t.offset( iframe.offset() )[ 0 ];\n\t\t} );\n\t},\n\n\t_unblockFrames: function() {\n\t\tif ( this.iframeBlocks ) {\n\t\t\tthis.iframeBlocks.remove();\n\t\t\tdelete this.iframeBlocks;\n\t\t}\n\t},\n\n\t_allowInteraction: function( event ) {\n\t\tif ( $( event.target ).closest( ",
+        ", event ) !== false ) {\n\t\t\t\tthis._clear();\n\t\t\t}\n\t\t}\n\n\t\treturn false;\n\t},\n\n\t_mouseUp: function( event ) {\n\t\tthis._unblockFrames();\n\n\t\t// If the ddmanager is used for droppables, inform the manager that dragging has stopped\n\t\t// (see #5003)\n\t\tif ( $.ui.ddmanager ) {\n\t\t\t$.ui.ddmanager.dragStop( this, event );\n\t\t}\n\n\t\t// Only need to focus if the event occurred on the draggable itself, see #10527\n\t\tif ( this.handleElement.is( event.target ) ) {\n\n\t\t\t// The interaction is over; whether or not the click resulted in a drag,\n\t\t\t// focus the element\n\t\t\tthis.element.trigger( ",
+        ", event ) === false ) {\n\t\t\treturn;\n\t\t}\n\n\t\treturn this._search( value );\n\t},\n\n\t_search: function( value ) {\n\t\tthis.pending++;\n\t\tthis._addClass( ",
+        ", event );\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t},\n\t\t\tinput: function( event ) {\n\t\t\t\tif ( suppressInput ) {\n\t\t\t\t\tsuppressInput = false;\n\t\t\t\t\tevent.preventDefault();\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tthis._searchTimeout( event );\n\t\t\t},\n\t\t\tfocus: function() {\n\t\t\t\tthis.selectedItem = null;\n\t\t\t\tthis.previous = this._value();\n\t\t\t},\n\t\t\tblur: function( event ) {\n\t\t\t\tclearTimeout( this.searching );\n\t\t\t\tthis.close( event );\n\t\t\t\tthis._change( event );\n\t\t\t}\n\t\t} );\n\n\t\tthis._initSource();\n\t\tthis.menu = $( ",
+        ", function( event ) {\n\t\t\t\tif ( isOpening ) {\n\t\t\t\t\treturn;\n\t\t\t\t}\n\n\t\t\t\tvar instance = this._trackingInstances()[ 0 ];\n\t\t\t\tif ( !instance._allowInteraction( event ) ) {\n\t\t\t\t\tevent.preventDefault();\n\t\t\t\t\tinstance._focusTabbable();\n\n\t\t\t\t\t// Support: jQuery >=3.4 <3.6 only\n\t\t\t\t\t// Focus re-triggering in jQuery 3.4/3.5 makes the original element\n\t\t\t\t\t// have its focus event propagated last, breaking the re-targeting.\n\t\t\t\t\t// Trigger focus in a delay in addition if needed to avoid the issue\n\t\t\t\t\t// See https://github.com/jquery/jquery/issues/4382\n\t\t\t\t\tif ( jqMinor === ",
+        ", null, { content: content } );\n\t\tif ( !this.options.disabled && content && content.length && !this.cancelSearch ) {\n\t\t\tthis._suggest( content );\n\t\t\tthis._trigger( ",
+        ", o._zIndex );\n\t\t}\n\t}\n} );\n\nvar widgetsDraggable = $.ui.draggable;\n\n\n/*!\n * jQuery UI Resizable 1.13.2\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n */\n\n//>>label: Resizable\n//>>group: Interactions\n//>>description: Enables resize functionality for any element.\n//>>docs: http://api.jqueryui.com/resizable/\n//>>demos: http://jqueryui.com/resizable/\n//>>css.structure: ../../themes/base/core.css\n//>>css.structure: ../../themes/base/resizable.css\n//>>css.theme: ../../themes/base/theme.css\n\n\n$.widget( ",
+        ";\n\t\t\t}\n\t\t}\n\t},\n\n\t__response: function( content ) {\n\t\tvar message;\n\t\tthis._superApply( arguments );\n\t\tif ( this.options.disabled || this.cancelSearch ) {\n\t\t\treturn;\n\t\t}\n\t\tif ( content && content.length ) {\n\t\t\tmessage = this.options.messages.results( content.length );\n\t\t} else {\n\t\t\tmessage = this.options.messages.noResults;\n\t\t}\n\t\tclearTimeout( this.liveRegionTimer );\n\t\tthis.liveRegionTimer = this._delay( function() {\n\t\t\tthis.liveRegion.html( $( ",
+        ";\n\t\t\t} );\n\t\t}\n\n\t\tthis._off( this.anchors.add( this.tabs ).add( this.panels ) );\n\n\t\t// Always prevent the default action, even when disabled\n\t\tthis._on( true, this.anchors, {\n\t\t\tclick: function( event ) {\n\t\t\t\tevent.preventDefault();\n\t\t\t}\n\t\t} );\n\t\tthis._on( this.anchors, events );\n\t\tthis._on( this.tabs, { keydown: ",
+        ";\n\n$.effects = {\n\teffect: {}\n};\n\n/******************************************************************************/\n/****************************** CLASS ANIMATIONS ******************************/\n/******************************************************************************/\n( function() {\n\nvar classAnimationActions = [ ",
+        ";\n\nvar widgetsDatepicker = $.datepicker;\n\n\n\n// This file is deprecated\nvar ie = $.ui.ie = !!/msie [\\w.]+/.exec( navigator.userAgent.toLowerCase() );\n\n/*!\n * jQuery UI Mouse 1.13.2\n * http://jqueryui.com\n *\n * Copyright jQuery Foundation and other contributors\n * Released under the MIT license.\n * http://jquery.org/license\n */\n\n//>>label: Mouse\n//>>group: Widgets\n//>>description: Abstracts mouse-based interactions to assist in creating certain widgets.\n//>>docs: http://api.jqueryui.com/mouse/\n\n\nvar mouseHandled = false;\n$( document ).on( ",
+        "No search results.",
+        "s offset\n\t\tthis.offset = this.element.offset();\n\n\t\t//Initialize mouse events for interaction\n\t\tthis._mouseInit();\n\n\t\tthis._setHandleClassName();\n\n\t\t//We",
+        "t cancel future searches\n\t\t\tthis._close();\n\t\t}\n\t},\n\n\tclose: function( event ) {\n\t\tthis.cancelSearch = true;\n\t\tthis._close( event );\n\t},\n\n\t_close: function( event ) {\n\n\t\t// Remove the handler that closes the menu on outside clicks\n\t\tthis._off( this.document, ",
+        "t search against the document in case the element\n\t\t// is disconnected from the DOM\n\t\tancestor = this.eq( 0 ).parents().last();\n\n\t\t// Get a full set of top level ancestors\n\t\tancestors = ancestor.add( ancestor.length ? ancestor.siblings() : this.siblings() );\n\n\t\t// Create a selector for the label based on the id\n\t\tselector = "
+      ],
+      "ajax": []
+    },
+    {
+      "url": "https://igrsup.gov.in/igrsup/js/kb.js",
+      "len": 34635,
+      "endpoints": [],
+      "ajax": []
+    },
+    {
+      "url": "https://igrsup.gov.in/igrsup/js/keyboard.js",
+      "len": 48704,
+      "endpoints": [
+        ", function(e) { self.VKI_close(); }, false);\n  }\n\n\n  /* ****************************************************************\n   * Common mouse event actions\n   *\n   */\n  function VKI_mouseEvents(elem) {\n    if (elem.nodeName == "
+      ],
+      "ajax": []
+    },
+    {
+      "url": "https://igrsup.gov.in/igrsup/js/prernaUser.js",
+      "len": 100664,
+      "endpoints": [
+        "#close_estamp_varifaction_div",
+        "#close_form_10a_varifaction_div",
+        "#close_stamp_varifaction_div",
+        ").value = value;\r\n\t\t                \t   }\r\n\t                \t   */\r\n\t                \t   \r\n\t                \t   \r\n\t                   \r\n\t      });\r\n\t                  \r\n\t      });\r\n    \t\t     \r\n    \t\t\r\n    \t\t\r\n    \t}\r\n \t\r\n \r\n \r\n \r\n\t\t\t \tfunction callForForm60Preview(element){\r\n\t\t\t\t\t\r\n\t\t\t\t\tgetTransactionModeMapJson(",
+        ").value).search(consVal) ==  - 1) {\r\n                \t document.getElementById(",
+        ");\t\t\r\n    \t\t\t\tgetForm_10aDetail();\r\n    \t\t\t\tshowElementById(form_10a_varifaction_div);\r\n    \t\t\t}\r\n\r\n\t\t\t\t\r\n\t\t\t\tfunction getForm_10aDetail(){\r\n\t\t\t\t\t\r\n\t\t\t\t\tvar statusToReturn=false;\r\n\t\t\t\t\t\r\n\t\t\t\t\tvar iCnt = 0; \r\n\t\t\t    \tvar initial_id=",
+        ");\t\t\r\n    \t\t\t\tgetStampDetail();\r\n    \t\t\t\tshowElementById(stamp_varifaction_div);\r\n    \t\t\t}\r\n    \t\t\t\r\n    \t\t\tfunction getStampDetail(){\r\n    \t\t\t\t\r\n    \t\t\t\tvar statusToReturn=false;\r\n    \t\t\t\t\r\n    \t\t\t\tvar iCnt = 0; \r\n    \t\t    \tvar initial_id=",
+        ");\r\n    \t\t\t        \r\n    \t\t\t        \r\n    \t\t\t        \r\n    \t\t\t        statusToReturn=true;\r\n    \t\t        \r\n    \t\t        \r\n    \t\t    \t}catch (e) {\r\n    \t\t    \t\tstatusToReturn=false;\r\n    \t\t\t\t}\r\n    \t\t    \t\r\n    \t\t    \t\r\n    \t\t    \treturn statusToReturn;\r\n    \t\t        \r\n    \t\t    \t\r\n    \t\t    }\r\n\r\n\r\n\r\n    \t\t\tfunction payStampDutyUsingForm10a(form_10a_varifaction_div){\r\n    \t\t\t\t\r\n    \t\t\t\tshowTempSpinner(",
+        ");\r\n    \t\t\t        \r\n    \t\t\t        \r\n    \t\t\t        \r\n    \t\t\t        statusToReturn=true;\r\n    \t\t        \r\n    \t\t        \r\n    \t\t    \t}catch (e) {\r\n    \t\t    \t\tstatusToReturn=false;\r\n    \t\t\t\t}\r\n    \t\t    \t\r\n    \t\t    \t\r\n    \t\t    \treturn statusToReturn;\r\n    \t\t        \r\n    \t\t    \t\r\n    \t\t    }\r\n\r\n    \t\t\tfunction payStampDutyUsingStamp(stamp_varifaction_div){\r\n    \t\t\t\t\r\n    \t\t\t\tshowTempSpinner(",
+        ");\r\n         \t\treturn false;\r\n         }\r\n\r\n         \t\tfunction assignValue(from){\r\n         \t\r\n         \treturn document.getElementById(from).value;\r\n         }\r\n         \r\n         \t\tfunction assignDropDownValueValue(from){\r\n          \t\r\n          \treturn document.getElementById(from);\r\n          }\r\n\r\n         \t\tfunction callForForm60(){\r\n    \t\t\r\n    \t\tgetTransactionModeMapJson(",
+        ";\r\n    \t\t\t          \r\n    \t\t\t}\r\n    \t\t\t\r\n    \t\t\tfunction isAllDigitForForm60(evt){\r\n    \t\t\t\t  var charCode = (evt.which) ? evt.which : event.keyCode\r\n    \t\t\t    \t\t   // alert(charCode);\r\n    \t\t\t    \t\t         if ((charCode >= 48 && charCode <= 57) || (charCode >= 33 && charCode <= 47) || (charCode >= 91 && charCode <= 96)\r\n    \t\t\t    \t\t         || (charCode >= 58 && charCode <= 64) || (charCode >= 123 && charCode <= 126))\r\n    \t\t\t    \t\t            return true;\r\n    \t\t\t    \t\t            \r\n    \t\t\t    \t\t            return false;\r\n    \t\t\t}\r\n    \r\n    \t\t\t\r\n    \t\t\t\r\n    \t\t\t\r\n    \t\t\t function callForForm60UserPreview(element){\r\n    \t\t\t\t\r\n    \t\t\t\t//getTransactionModeMapJson(",
+        ";\r\n    \t\t}\r\n    \t}\r\n    \t\r\n    \t \t\tfunction getTransactionModeMapJson(element1){\r\n    \t\t\r\n    \t\t//alert(element1);\r\n    \t\r\n    \t\tvar dropdown1=document.getElementById(element1);\r\n    \t\t\r\n    \t \tif(true){\r\n    \t \t\t\r\n    \t \t\twhile(dropdown1.options.length)\r\n    \t \t    {\r\n    \t \t\t\tdropdown1.remove(0);\r\n    \t \t\t\r\n    \t \t    }\r\n    \t \t\t\r\n    \t\t\t\r\n    \t\t\t //$(",
+        "estamp_varifaction_div",
+        "estamp_varifaction_div_spinner",
+        "form_10aVarifactionCountId",
+        "form_10a_varifaction_div",
+        "form_10a_varifaction_div_spinner",
+        "getCatchaAction",
+        "getDocProfMapJsonAction",
+        "getForm60DetailJsonAction",
+        "getForm60PreviewJsonAction",
+        "getForm60UserPreviewJsonAction",
+        "getTransactionModeMapJsonAction",
+        "getTreasuryNameAction",
+        "partyImageAction?partyCode=",
+        "saveForm60DetailAction",
+        "stampVarifactionCountId",
+        "stamp_varifaction_div",
+        "stamp_varifaction_div_spinner"
+      ],
+      "ajax": []
+    },
+    {
+      "url": "https://igrsup.gov.in/igrsup/js/sessionListner.js",
+      "len": 1965,
+      "endpoints": [
+        "defaultAction"
+      ],
+      "ajax": []
+    }
+  ]
+}
