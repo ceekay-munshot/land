@@ -5,7 +5,7 @@ let parcelBounds = null;
 let nalgadhaBounds = null;
 let airportCentroid = null;
 let locatedSchemes = [];   // YEIDA schemes we could place (pins + parcel proximity)
-const schemePins = {};     // scheme code -> Marker (panel <-> map linking)
+const schemePins = {};     // scheme code -> { lngLat, open() } (panel <-> map linking)
 const SQFT = 10.7639;      // 1 m² in sq ft — plot rates/sizes shown in sq ft (familiar unit)
 const sqft = (m2) => Math.round(m2 * SQFT).toLocaleString('en-IN');
 const ratePsf = (psm) => Math.round(psm / SQFT).toLocaleString('en-IN');
@@ -31,6 +31,27 @@ const map = new maplibregl.Map({
   maxZoom: 18
 });
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
+
+// ---- Single shared popup -------------------------------------------------
+// Every feature and pin reuses ONE popup instance, so clicking around the map
+// can never stack overlapping cards on top of each other. This matters because
+// parcels & gatas are drawn *on top of* the broad tehsil fill, so one click
+// lands on several layers at once — previously each opened its own popup and
+// they piled up. With a singleton, the last (most specific) layer wins and only
+// one card is ever shown.
+const INTERACTIVE_LAYERS = ['parcels-fill', 'nalgadha-fill', 'gbn-fill', 'osm-airport'];
+const infoPopup = new maplibregl.Popup({ closeButton: true, closeOnClick: false, maxWidth: '320px' });
+
+function showPopup(lngLat, html, maxWidth = '320px', offset = 0) {
+  infoPopup.setOffset(offset).setMaxWidth(maxWidth).setLngLat(lngLat).setHTML(html);
+  if (!infoPopup.isOpen()) infoPopup.addTo(map);   // reuse if already open (no re-stacking)
+}
+
+// Click on empty map (nothing interactive underneath) dismisses the open card.
+map.on('click', (e) => {
+  const layers = INTERACTIVE_LAYERS.filter((l) => map.getLayer(l));
+  if (layers.length && !map.queryRenderedFeatures(e.point, { layers }).length) infoPopup.remove();
+});
 
 // rough centroid = mean of the first ring's vertices (good enough for a label)
 function polygonCentroid(geometry) {
@@ -100,9 +121,7 @@ map.on('load', async () => {
   // Tehsil click → scorecard popup
   map.on('click', 'gbn-fill', (e) => {
     const p = e.features[0].properties;
-    new maplibregl.Popup({ maxWidth: '300px' })
-      .setLngLat(e.lngLat)
-      .setHTML(`
+    showPopup(e.lngLat, `
         <div class="pop">
           <h3>${p.tehsil} <small>tehsil</small></h3>
           <div class="badge" style="background:${scoreColor(+p.mock_score)}">
@@ -115,8 +134,7 @@ map.on('load', async () => {
           </table>
           <div class="driver">▶ ${p.mock_driver}</div>
           <div class="mock">PLACEHOLDER · LGD ${p.lgd_code} · real scores in Phase 4</div>
-        </div>`)
-      .addTo(map);
+        </div>`, '300px');
   });
   map.on('mouseenter', 'gbn-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'gbn-fill', () => { map.getCanvas().style.cursor = ''; });
@@ -144,10 +162,10 @@ map.on('load', async () => {
         paint: { 'circle-radius': 11, 'circle-color': '#1d4ed8', 'circle-opacity': 0.35,
                  'circle-stroke-color': '#1d4ed8', 'circle-stroke-width': 2 } });
       map.on('click', 'osm-airport', (e) => {
-        new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+        showPopup(e.lngLat,
           `<div class="pop"><h3>${e.features[0].properties.name}</h3>
            <div class="ctype">${e.features[0].properties.status || ''}</div>
-           <div class="mock">real footprint · OpenStreetMap</div></div>`).addTo(map);
+           <div class="mock">real footprint · OpenStreetMap</div></div>`, '260px');
       });
     }
   } catch (e) { /* no osm catalysts yet */ }
@@ -228,7 +246,7 @@ map.on('load', async () => {
         const band = sc == null ? '—' : sc >= 67 ? 'High 🟢' : sc >= 40 ? 'Medium 🟠' : 'Low 🔴';
         const scoreHdr = sc == null ? '' :
           `<div class="badge" style="background:${col}">Growth score ${sc}/100 · ${band}</div>`;
-        new maplibregl.Popup({ maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(`
+        showPopup(e.lngLat, `
           <div class="pop">
             <h3>Plot ${p.plot_no} <small>${p.village || ''}</small></h3>
             ${scoreHdr}
@@ -242,7 +260,7 @@ map.on('load', async () => {
             </table>
             <div class="driver">score v1 = 65% airport proximity + 35% price headroom · heuristic, not a guarantee</div>
             <div class="mock">parcel: Bhu-Naksha · price: IGRSUP · catalyst: OSM</div>
-          </div>`).addTo(map);
+          </div>`, '320px');
       });
       map.on('mouseenter', 'parcels-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'parcels-fill', () => { map.getCanvas().style.cursor = ''; });
@@ -283,17 +301,21 @@ map.on('load', async () => {
         el.className = 'scheme-pin' + (loc.approx ? ' approx' : '');
         el.style.background = col;
         el.title = s.title;
-        const pop = new maplibregl.Popup({ offset: 16 }).setHTML(`
+        const schemeHTML = `
           <div class="pop">
             <h3>${esc(s.title)}</h3>
             <div class="ctype" style="color:${col}">${esc(s.category)}${s.code ? ' · ' + esc(s.code) : ''}</div>
             ${price ? `<div class="badge" style="background:#047857">${price}</div>` : ''}
             ${s.deadline ? `<div class="note">⏰ ${esc(s.deadline)}</div>` : ''}
             <div class="mock">${loc.approx ? '~ ' + esc(loc.display_name) + ' (approx)' : 'YEIDA Sector ' + esc(key) + ' · OSM'}</div>
-          </div>`);
-        const mk = new maplibregl.Marker({ element: el, anchor: 'center' })
-          .setLngLat([loc.lng, loc.lat]).setPopup(pop).addTo(map);
-        if (s.code) schemePins[s.code] = mk;
+          </div>`;
+        const at = [loc.lng, loc.lat];
+        const openScheme = () => showPopup(at, schemeHTML, '300px', 16);
+        // stopPropagation so a pin click doesn't also fire the parcel/tehsil
+        // click underneath it (which would immediately replace this card).
+        el.addEventListener('click', (ev) => { ev.stopPropagation(); openScheme(); });
+        new maplibregl.Marker({ element: el, anchor: 'center' }).setLngLat(at).addTo(map);
+        if (s.code) schemePins[s.code] = { lngLat: at, open: openScheme };
       }
     }
   } catch (e) { /* no scheme pins yet */ }
@@ -321,7 +343,7 @@ map.on('load', async () => {
         paint: { 'line-color': '#4c1d95', 'line-width': 0.5 } });
       map.on('click', 'nalgadha-fill', (e) => {
         const p = e.features[0].properties;
-        new maplibregl.Popup({ maxWidth: '280px' }).setLngLat(e.lngLat).setHTML(`
+        showPopup(e.lngLat, `
           <div class="pop">
             <h3>Gata ${p.plot_no} <small>Nalgadha</small></h3>
             <table>
@@ -331,7 +353,7 @@ map.on('load', async () => {
             </table>
             ${(ngOwners[String(p.plot_no)] || []).length ? `<div class="owners"><b>Owners</b><br>${(ngOwners[String(p.plot_no)] || []).map(ngEsc).join('<br>')}</div>` : ''}
             <div class="mock">title reconstruction · UP Bhu-Naksha</div>
-          </div>`).addTo(map);
+          </div>`, '280px');
       });
       map.on('mouseenter', 'nalgadha-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'nalgadha-fill', () => { map.getCanvas().style.cursor = ''; });
@@ -408,8 +430,8 @@ document.getElementById('btn-nalgadha').onclick =
   document.querySelectorAll('#schemes-list .scheme').forEach((el) => {
     el.addEventListener('click', (ev) => {
       if (ev.target.closest('a')) return;            // let the real links work
-      const mk = schemePins[el.getAttribute('data-code')];
-      if (mk) { map.flyTo({ center: mk.getLngLat(), zoom: 12, duration: 1200 }); mk.togglePopup(); }
+      const pin = schemePins[el.getAttribute('data-code')];
+      if (pin) { map.flyTo({ center: pin.lngLat, zoom: 12, duration: 1200 }); pin.open(); }
     });
   });
 
