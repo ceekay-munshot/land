@@ -59,7 +59,7 @@ jobs:
       - run: pip install requests pyproj
       - name: Run vector fetch/validate
         env:
-          MODE: ${{ github.event.inputs.mode || 'validate' }}
+          MODE: ${{ github.event.inputs.mode || 'token' }}
           GIS: ${{ github.event.inputs.gis || '14100743120241' }}
           DISTRICT: ${{ github.event.inputs.district || 'गौतम' }}
           TEHSIL: ${{ github.event.inputs.tehsil || 'जेवर' }}
