@@ -11,9 +11,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'validate (probe one village) or fetch (write polygons)'
+        description: 'token (hunt guest token) | validate (probe one village) | fetch (write polygons)'
         type: choice
-        options: [validate, fetch]
+        options: [token, validate, fetch]
         default: validate
       gis:
         description: 'validate: village giscode to probe'

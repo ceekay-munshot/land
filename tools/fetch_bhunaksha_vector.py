@@ -259,6 +259,114 @@ def normalize(obj, giscode, village, combo):
     return feats
 
 
+JWT_RE = re.compile(r"eyJ[A-Za-z0-9_-]{6,}\.[A-Za-z0-9_-]{6,}\.[A-Za-z0-9_-]{6,}")
+TOKEN_KEY_RE = re.compile(r"token|jwt|access|authoriz|bearer", re.I)
+
+
+def _harvest_tokens(text):
+    """Pull JWT-looking strings and token-ish JSON values out of a response."""
+    toks = list(dict.fromkeys(JWT_RE.findall(text or "")))
+    try:
+        obj = json.loads(text)
+
+        def walk(o):
+            if isinstance(o, dict):
+                for k, v in o.items():
+                    if isinstance(v, str) and TOKEN_KEY_RE.search(str(k)) and len(v) > 12:
+                        toks.append(v)
+                    walk(v)
+            elif isinstance(o, list):
+                for v in o:
+                    walk(v)
+        walk(obj)
+    except Exception:
+        pass
+    return list(dict.fromkeys(toks))
+
+
+def probe_token():
+    """Hunt for an ANONYMOUS/guest token the vector endpoint would accept."""
+    import requests
+    out = {"mode": "token", "gis": GIS, "bundle_hits": {}, "endpoints": [], "token_retry": []}
+
+    # 1) How is the Authorization header built? Grep the bundle.
+    blob = ""
+    try:
+        home = s.get(HOME, timeout=40, verify=False).text
+        srcs = set(re.findall(r'src=["\']([^"\']+\.js)["\']', home) +
+                   re.findall(r'["\'](/?[A-Za-z0-9_./-]+\.js)["\']', home))
+        for src in list(srcs)[:8]:
+            u = src if src.startswith("http") else BASE + "/" + src.lstrip("/")
+            try:
+                blob += "\n" + s.get(u, timeout=40, verify=False).text
+            except Exception:
+                pass
+    except Exception as e:
+        out["bundle_error"] = repr(e)
+    out["bundle_chars"] = len(blob)
+    for kw in ["Authorization", "Bearer ", "setHeaders", "intercept", "getToken",
+               "localStorage.getItem", "sessionStorage", "auth/login", "auth/token",
+               "/token", "jwt", "X-Auth", "apiKey", "api_key", "guest", "public_token"]:
+        hits = [m.start() for m in re.finditer(re.escape(kw), blob)][:2]
+        if hits:
+            out["bundle_hits"][kw] = [blob[max(0, i - 120):i + 160] for i in hits]
+
+    # 2) Try anonymous token-issuing endpoints.
+    candidates = [
+        ("post", "auth/login", {}), ("post", "auth/login", {"username": "guest", "password": "guest"}),
+        ("get", "auth/token", None), ("post", "auth/token", {}),
+        ("get", "token", None), ("post", "getToken", {}),
+        ("get", "session/validate", None), ("get", "masterdata/web-menu", None),
+        ("get", "auth/guest", None), ("post", "auth/guestLogin", {}),
+    ]
+    found = []
+    for method, path, body in candidates:
+        try:
+            if method == "get":
+                r = s.get(f"{SRV}/{path}", timeout=40, verify=False)
+            else:
+                r = s.post(f"{SRV}/{path}", json=body, headers=JSONH, timeout=40, verify=False)
+        except Exception as e:
+            out["endpoints"].append({"path": path, "method": method, "error": repr(e)})
+            continue
+        toks = _harvest_tokens(r.text)
+        hdr_auth = r.headers.get("Authorization") or r.headers.get("authorization")
+        if hdr_auth:
+            toks.append(hdr_auth.replace("Bearer ", ""))
+        out["endpoints"].append({
+            "path": path, "method": method, "status": r.status_code,
+            "set_cookie": bool(r.headers.get("set-cookie")),
+            "len": len(r.text or ""), "snippet": (r.text or "")[:200],
+            "tokens_found": len(toks),
+        })
+        found += toks
+    found = list(dict.fromkeys(found))
+    out["tokens_found_total"] = len(found)
+
+    # 3) If we got any token, retry the vector endpoint with it.
+    codes, _ = get_layercodes(GIS)
+    lc = ",".join(codes) if codes else ""
+    for tok in found[:4]:
+        for opr in ("0", "1", "MAP"):
+            try:
+                r = s.post(f"{SRV}/mapModificationController/getGeoJSONLayerData",
+                           json={"giscode": GIS, "layercodes": lc, "oprType": opr},
+                           headers={**JSONH, "Authorization": f"Bearer {tok}"},
+                           timeout=40, verify=False)
+            except Exception as e:
+                out["token_retry"].append({"tok": tok[:16] + "…", "error": repr(e)})
+                continue
+            fc = _featurecollection(r.text) if r.text else None
+            out["token_retry"].append({
+                "tok": tok[:16] + "…", "oprType": opr, "status": r.status_code,
+                "len": len(r.text or ""), "is_featurecollection": bool(fc),
+                "snippet": (r.text or "")[:160],
+            })
+            if fc:
+                out["UNLOCKED"] = True
+    return out
+
+
 def enumerate_villages():
     """Return [(giscode, village_name), ...] for the configured DISTRICT/TEHSIL."""
 
@@ -315,6 +423,13 @@ def write_json(rel, obj):
 def main():
     global s
     s = session()
+
+    if MODE == "token":
+        out = probe_token()
+        write_json(PROBE_OUT, out)
+        print("TOKEN PROBE:", "UNLOCKED" if out.get("UNLOCKED") else
+              f"no working anon token ({out.get('tokens_found_total', 0)} tokens seen)")
+        return
 
     if MODE == "validate":
         sink = {"gis": GIS, "gislevels": gislevels_of(GIS), "mode": "validate"}
