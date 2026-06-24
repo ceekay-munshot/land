@@ -111,13 +111,18 @@ try:
         gm = get(f"{BASE}/WMS", params={
             "SERVICE": "WMS", "VERSION": "1.1.1", "REQUEST": "GetMap",
             "LAYERS": "DERIVED_LAYER", "SRS": crs, "BBOX": vb,
-            "WIDTH": "1024", "HEIGHT": "1024", "FORMAT": "image/png",
+            "WIDTH": "2048", "HEIGHT": "2048", "FORMAT": "image/png",
             "TRANSPARENT": "true", "gis_code": gis, "state": "", "layercodes": ""})
         out["getmap_session"] = {
             "status": gm.status_code, "ct": gm.headers.get("content-type"),
             "len": len(gm.content),
             "is_image": gm.headers.get("content-type", "").startswith("image"),
             "looks_blank": len(gm.content) < 2000}
+        # Save the actual render so it can be eyeballed (committed by the workflow).
+        if gm.headers.get("content-type", "").startswith("image"):
+            os.makedirs("_probe", exist_ok=True)
+            with open("_probe/bhunaksha_getmap_session.png", "wb") as fh:
+                fh.write(gm.content)
     except Exception as e:
         out["getmap_session"] = {"error": str(e)[:150]}
 except Exception as e:
