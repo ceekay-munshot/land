@@ -72,5 +72,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add web/data/*.geojson
           git commit -m "data: real parcel polygons (VILLAGE_MAP raster->vector, batch)" || { echo "no change"; exit 0; }
-          git pull --rebase origin main || true
-          git push
+          # Robust against concurrent bbox-batchers pushing to main: fetch+merge
+          # (our traced geometry wins on conflict) then push, retrying on rejection,
+          # so a 25-min trace is never lost to a push race.
+          ok=0
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch origin main || { sleep $((i*3)); continue; }
+            git merge -X ours --no-edit origin/main || { git merge --abort 2>/dev/null || true; sleep $((i*3)); continue; }
+            if git push origin HEAD:main; then ok=1; break; fi
+            echo "push rejected, retry $i"; sleep $((i*3))
+          done
+          [ "$ok" = 1 ] || { echo "FAILED to push after retries"; exit 1; }
