@@ -100,6 +100,26 @@ try:
                                  "body": r.text[:1200]})
         except Exception as e:
             out["tries"].append({"name": name, "error": str(e)[:150]})
+
+    # GetMap-with-session: recon's bare probe got a 588-byte blank PNG for EVERY
+    # layer. Re-test DERIVED_LAYER now that we hold a session cookie (s.get(HOME))
+    # and send the real village extent + gis_code. A multi-KB PNG = real boundary
+    # render (raster->vector via geom-fetch is viable); a few-hundred-byte PNG =
+    # still blank (the cadastre is session/auth-gated and geom-fetch must NOT run).
+    try:
+        vb = f'{ext["xmin"]},{ext["ymin"]},{ext["xmax"]},{ext["ymax"]}'
+        gm = get(f"{BASE}/WMS", params={
+            "SERVICE": "WMS", "VERSION": "1.1.1", "REQUEST": "GetMap",
+            "LAYERS": "DERIVED_LAYER", "SRS": crs, "BBOX": vb,
+            "WIDTH": "1024", "HEIGHT": "1024", "FORMAT": "image/png",
+            "TRANSPARENT": "true", "gis_code": gis, "state": "", "layercodes": ""})
+        out["getmap_session"] = {
+            "status": gm.status_code, "ct": gm.headers.get("content-type"),
+            "len": len(gm.content),
+            "is_image": gm.headers.get("content-type", "").startswith("image"),
+            "looks_blank": len(gm.content) < 2000}
+    except Exception as e:
+        out["getmap_session"] = {"error": str(e)[:150]}
 except Exception as e:
     out["fatal_error"] = repr(e)[:300]
 
@@ -109,4 +129,5 @@ print("extent keys:", list(out.get("extent_full", {}).keys()))
 for tr in out.get("tries", []):
     print(tr.get("name"), "|", tr.get("status"), tr.get("ct"), tr.get("len"),
           "| geometry?", tr.get("has_geometry"), "| err:", tr.get("error", ""))
+print("getmap_session:", out.get("getmap_session"))
 print("fatal_error:", out.get("fatal_error"))
