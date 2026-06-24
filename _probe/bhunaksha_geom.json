@@ -42,5 +42,12 @@
       "has_geometry": false,
       "body": "{\"error\": \"Missing or invalid Authorization header\"}"
     }
-  ]
+  ],
+  "getmap_session": {
+    "status": 200,
+    "ct": "image/png",
+    "len": 4144,
+    "is_image": true,
+    "looks_blank": false
+  }
 }
