@@ -72,8 +72,15 @@ def get_extent(s, gis_levels):
 
 
 def get_map(s, bbox, W, H, layers, gis_code, tile_px=2048):
-    """GetMap the rendered cadastre into a single H x W x3 BGR array, tiling if big."""
+    """GetMap the rendered cadastre into a single H x W x3 BGR array, tiling if big.
+
+    The boundary raster renders anonymously only from LAYERS=VILLAGE_MAP via the
+    /WMS/tile endpoint with STYLES=VILLAGE_MAP (validated 2026-06-24, see
+    docs/bhunaksha_api.md); DERIVED_LAYER returns a ~4 KB blank. Endpoint/styles
+    are env-overridable for other states' portals."""
     import cv2
+    wms_path = os.environ.get("WMS_PATH", "WMS/tile")
+    styles = os.environ.get("WMS_STYLES", "VILLAGE_MAP")
     xmin, ymin, xmax, ymax = bbox
     out = np.full((H, W, 3), 255, np.uint8)
     nx = max(1, math.ceil(W / tile_px))
@@ -88,14 +95,14 @@ def get_map(s, bbox, W, H, layers, gis_code, tile_px=2048):
             by1 = ymax - (y0 / H) * (ymax - ymin)   # row0 = north
             by0 = ymax - (y1 / H) * (ymax - ymin)
             params = {"SERVICE": "WMS", "VERSION": "1.1.1", "REQUEST": "GetMap",
-                      "LAYERS": layers, "SRS": "EPSG:32644",
+                      "LAYERS": layers, "STYLES": styles, "SRS": "EPSG:32644",
                       "BBOX": f"{bx0},{by0},{bx1},{by1}", "WIDTH": tw, "HEIGHT": th,
-                      "FORMAT": "image/png", "TRANSPARENT": "true",
+                      "FORMAT": "image/png", "TRANSPARENT": "false",
                       "gis_code": gis_code, "state": "", "layercodes": ""}
             r = None
             for i in range(4):
                 try:
-                    r = s.get(f"{BASE}/WMS", params=params, timeout=60, verify=False)
+                    r = s.get(f"{BASE}/{wms_path}", params=params, timeout=60, verify=False)
                     break
                 except Exception:
                     time.sleep(2 * (i + 1))
@@ -206,7 +213,7 @@ def main():
         return
 
     # NETWORK: per village, getVVVVExtentGeoref + GetMap + vectorise.
-    layers = os.environ.get("GEOM_LAYERS", "DERIVED_LAYER")
+    layers = os.environ.get("GEOM_LAYERS", "VILLAGE_MAP")
     mpp = float(os.environ.get("MPP", "0.25"))
     tile_px = int(os.environ.get("TILE_PX", "2048"))
     margin = float(os.environ.get("MARGIN_M", "30"))

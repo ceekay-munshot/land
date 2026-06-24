@@ -1,0 +1,81 @@
+name: bhunaksha-trace
+
+# Public raster->vector: GetMap the VILLAGE_MAP cadastre (renders anonymously,
+# unlike DERIVED_LAYER) and trace it into real tessellating polygons via
+# cadastre_core. Validated path — see docs/bhunaksha_api.md.
+#
+# Push runs a ONE-VILLAGE validation to a NEW file (web/data/nalgadha_parcels_traced.geojson)
+# so nothing existing is overwritten. workflow_dispatch can target any scope.
+on:
+  workflow_dispatch:
+    inputs:
+      out:
+        description: 'GeoJSON to read plots from and rewrite (geometry only)'
+        type: string
+        default: 'web/data/gbn_parcels.geojson'
+      village_code:
+        description: 'Village code to rebuild; blank = every village in the file'
+        type: string
+        default: ''
+      geom_layers:
+        description: 'WMS LAYERS that renders boundaries'
+        type: string
+        default: 'VILLAGE_MAP'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bhunaksha-trace.yml'
+      - 'tools/fetch_bhunaksha_geom.py'
+      - 'tools/cadastre_core.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bhunaksha-trace
+  cancel-in-progress: false
+
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests pyproj numpy opencv-python-headless scikit-image shapely
+      - name: Self-test the vectorizer (offline gate)
+        run: python tools/selftest_geom.py
+      - name: Prepare target (push = safe one-village copy; dispatch = chosen file)
+        id: prep
+        run: |
+          if [ -n "${{ github.event.inputs.out }}" ]; then
+            echo "out=${{ github.event.inputs.out }}" >> "$GITHUB_OUTPUT"
+            echo "village=${{ github.event.inputs.village_code }}" >> "$GITHUB_OUTPUT"
+          else
+            cp web/data/nalgadha_parcels.geojson web/data/nalgadha_parcels_traced.geojson
+            echo "out=web/data/nalgadha_parcels_traced.geojson" >> "$GITHUB_OUTPUT"
+            echo "village=120241" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Trace real polygons (VILLAGE_MAP raster -> vector)
+        env:
+          OUT: ${{ steps.prep.outputs.out }}
+          VILLAGE_CODE: ${{ steps.prep.outputs.village }}
+          GEOM_LAYERS: ${{ github.event.inputs.geom_layers || 'VILLAGE_MAP' }}
+          WMS_PATH: 'WMS/tile'
+          WMS_STYLES: 'VILLAGE_MAP'
+          MPP: '0.25'
+          TILE_PX: '2048'
+        run: python tools/fetch_bhunaksha_geom.py
+      - name: Graph-colour adjacent parcels
+        env:
+          IN: ${{ steps.prep.outputs.out }}
+        run: python tools/add_cidx.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/data/*.geojson
+          git commit -m "data: real parcel polygons (VILLAGE_MAP raster->vector trace)" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
