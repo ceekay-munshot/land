@@ -1,0 +1,34 @@
+name: bhunaksha-frontend
+
+# Deep-extract the Bhu-Naksha Angular bundles to find the real plot-geometry
+# endpoint + GetMap LAYERS/layercodes. Runs on a GitHub runner (open egress to
+# upbhunaksha.gov.in) and commits _probe/bhunaksha_frontend.json.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bhunaksha-frontend.yml'
+      - 'tools/probe_bhunaksha_frontend.py'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python tools/probe_bhunaksha_frontend.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A _probe/
+          git commit -m "probe: Bhu-Naksha frontend deep-extract (geometry endpoint + layercodes)" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push
