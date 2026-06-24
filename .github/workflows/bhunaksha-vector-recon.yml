@@ -1,0 +1,34 @@
+name: bhunaksha-vector-recon
+
+# Branch A: discover whether Bhu-Naksha exposes real plot VECTOR geometry and
+# which WMS LAYERS renders plot boundaries. Cheap (fetch SPA + JS, grep, probe).
+# Runs on a GitHub runner (open egress to upbhunaksha.gov.in) and commits the
+# findings so the vector-vs-raster decision + GetMap layer are auditable.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bhunaksha-vector-recon.yml'
+      - 'tools/recon_bhunaksha_vector.py'
+
+permissions:
+  contents: write
+
+jobs:
+  recon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - run: python tools/recon_bhunaksha_vector.py
+      - name: Commit findings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _probe/bhunaksha_vector_recon.json
+          git commit -m "probe: Bhu-Naksha vector-endpoint recon + GetMap layers" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push

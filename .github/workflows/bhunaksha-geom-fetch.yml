@@ -1,0 +1,68 @@
+name: bhunaksha-geom-fetch
+
+# Replace bounding-box parcel geometry with REAL tessellating polygons traced
+# from Bhu-Naksha's rendered cadastre (tools/fetch_bhunaksha_geom.py), then
+# graph-colour adjacent parcels (tools/add_cidx.py). Heavier than the bbox
+# fetchers (image processing), so it is a SEPARATE, manual workflow — the light
+# bbox schedules are untouched. Run after recon confirms GEOM_LAYERS.
+on:
+  workflow_dispatch:
+    inputs:
+      village_code:
+        description: 'Village code to rebuild (e.g. 120241 = Nalgadha); blank = every village in the file'
+        type: string
+        default: '120241'
+      geom_layers:
+        description: 'WMS LAYERS that renders plot boundaries (from recon)'
+        type: string
+        default: 'DERIVED_LAYER'
+      out:
+        description: 'GeoJSON to rebuild in place'
+        type: string
+        default: 'web/data/nalgadha_parcels.geojson'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bhunaksha-geom-fetch.yml'
+      - 'tools/fetch_bhunaksha_geom.py'
+      - 'tools/cadastre_core.py'
+      - 'tools/add_cidx.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bhunaksha-geom
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12', cache: 'pip' }
+      - run: pip install requests pyproj numpy opencv-python-headless scikit-image shapely
+      - name: Self-test the vectorizer (offline gate)
+        run: python tools/selftest_geom.py
+      - name: Fetch real parcel polygons (raster->vector)
+        env:
+          OUT: ${{ github.event.inputs.out || 'web/data/nalgadha_parcels.geojson' }}
+          VILLAGE_CODE: ${{ github.event.inputs.village_code }}
+          GEOM_LAYERS: ${{ github.event.inputs.geom_layers || 'DERIVED_LAYER' }}
+          MPP: '0.25'
+          TILE_PX: '2048'
+        run: python tools/fetch_bhunaksha_geom.py
+      - name: Graph-colour adjacent parcels
+        env:
+          IN: ${{ github.event.inputs.out || 'web/data/nalgadha_parcels.geojson' }}
+        run: python tools/add_cidx.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/data/*.geojson
+          git commit -m "data: real parcel polygons (raster->vector) + cidx" || { echo "no change"; exit 0; }
+          git pull --rebase origin main || true
+          git push

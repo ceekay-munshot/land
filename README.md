@@ -40,6 +40,7 @@ deploy's root / output directory at `web/`.
 | **4 ✅ v1** | Growth score → real parcel colours | — |
 | **5 ✅** | **Parcel explorer** — search (gata/khata/owner), click-to-highlight, on-map gata labels, detail drawer, satellite toggle, URL permalinks, mobile sheets | — |
 | **6 🟢** | **Ownership history (chain-of-title)** — per-gata timeline of how land changed hands. Reconstructed seed shipped (synthetic, clearly labelled — `tools/gen_nalgadha_history.py`); real deeds scaffolded via IGRSUP `newPropertySearchAction` (`tools/fetch_igrsup_deeds.py` + Actions, pending deed parser + captcha) | Actions |
+| **7 🟢** | **Real parcel polygons** — the bbox geometry (overlapping rectangles) is replaced by true tessellating boundaries traced from Bhu-Naksha's rendered cadastre (`tools/fetch_bhunaksha_geom.py` + `cadastre_core.py`, raster→vector, plot tagged by bbox centroid), then graph-coloured so adjacent parcels differ (`tools/add_cidx.py`). Offline-proven (`tools/selftest_geom.py`); live fetch runs on Actions / once egress is allowlisted. Branch A (`recon_bhunaksha_vector.py`) checks for a direct vector endpoint first. | Actions |
 | 7 | Claude routines (refresh / alerts) + CRM owner-join | India |
 
 ## 🧠 Growth score (Phase 4 v1)

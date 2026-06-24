@@ -93,6 +93,15 @@ let selected = { source: null, id: null };
 // ---- Selected-parcel highlight (bright outline that persists after the popup) ----
 // match on uid where present (gata numbers repeat across villages), else fall back to plot_no
 const SELECT_KEY = ['coalesce', ['get', 'uid'], ['get', 'plot_no']];
+
+// Cadastre colouring. Once real polygon geometry exists, a build step (tools/add_cidx.py)
+// tags each parcel with a graph-colour index `cidx` so adjacent parcels are coloured
+// differently (a proper cadastre look). Until then there is no `cidx` and we fall back to
+// the existing thematic colour/opacity — so this is safe to ship before the geometry lands.
+const CIDX_PALETTE = ['match', ['get', 'cidx'],
+  0, '#fdd8d8', 1, '#d8f5dd', 2, '#fff5d8', 3, '#d8ebff', 4, '#f0d8ff', 5, '#ffe8d8', '#e5e5e5'];
+const cidxFill = (fallback) => ['case', ['has', 'cidx'], CIDX_PALETTE, fallback];
+const ifCidx = (withCidx, without) => ['case', ['has', 'cidx'], withCidx, without];
 function selectFeature(source, id) {
   selected = { source, id: String(id) };
   for (const s of ['nalgadha', 'parcels']) {
@@ -547,19 +556,21 @@ map.on('load', async () => {
       map.addSource('parcels', { type: 'geojson', data: parcels });
       map.addLayer({ id: 'parcels-fill', type: 'fill', source: 'parcels',
         paint: {
-          'fill-color': ['case', ['has', 'score'],
-            ['step', ['get', 'score'], '#e74c3c', 40, '#f39c12', 67, '#2ecc71'], '#9ca3af'],
-          'fill-opacity': 0.6
+          'fill-color': cidxFill(['case', ['has', 'score'],
+            ['step', ['get', 'score'], '#e74c3c', 40, '#f39c12', 67, '#2ecc71'], '#9ca3af']),
+          'fill-opacity': ifCidx(0.5, 0.6)
         } });
       map.addLayer({ id: 'parcels-line', type: 'line', source: 'parcels',
-        paint: { 'line-color': '#333', 'line-width': 0.5 } });
+        paint: { 'line-color': '#333', 'line-width': ifCidx(1.1, 0.5) } });
       map.addLayer({ id: 'parcels-highlight', type: 'line', source: 'parcels',
         paint: { 'line-color': '#f59e0b', 'line-width': 3, 'line-opacity': 0.95 },
         filter: ['==', SELECT_KEY, '__none__'] });
       map.addLayer({ id: 'parcels-labels', type: 'symbol', source: 'parcels', minzoom: 15,
-        layout: { 'text-field': ['get', 'plot_no'], 'text-size': 11, 'text-font': ['Open Sans Regular'],
-                  'text-allow-overlap': false },
-        paint: { 'text-color': '#111827', 'text-halo-color': '#ffffff', 'text-halo-width': 1.4 } });
+        layout: { 'text-field': ['get', 'plot_no'],
+                  'text-size': ['interpolate', ['linear'], ['zoom'], 14, 9, 16, 12, 18, 15],
+                  'text-font': ['Open Sans Bold'], 'text-allow-overlap': false },
+        paint: { 'text-color': '#111827', 'text-halo-color': '#ffffff', 'text-halo-width': 1.8,
+                 'text-opacity': ['interpolate', ['linear'], ['zoom'], 14, 0.4, 16, 1] } });
 
       map.on('mouseenter', 'parcels-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'parcels-fill', () => { map.getCanvas().style.cursor = ''; });
@@ -634,20 +645,22 @@ map.on('load', async () => {
       map.addLayer({
         id: 'nalgadha-fill', type: 'fill', source: 'nalgadha',
         paint: {
-          'fill-color': ['step', ['get', 'owner_count'],
-            '#ddd6fe', 1, '#c4b5fd', 3, '#a78bfa', 6, '#8b5cf6', 10, '#6d28d9'],
-          'fill-opacity': 0.8
+          'fill-color': cidxFill(['step', ['get', 'owner_count'],
+            '#ddd6fe', 1, '#c4b5fd', 3, '#a78bfa', 6, '#8b5cf6', 10, '#6d28d9']),
+          'fill-opacity': ifCidx(0.5, 0.8)
         }
       });
       map.addLayer({ id: 'nalgadha-line', type: 'line', source: 'nalgadha',
-        paint: { 'line-color': '#4c1d95', 'line-width': 0.5 } });
+        paint: { 'line-color': ifCidx('#333333', '#4c1d95'), 'line-width': ifCidx(1.1, 0.5) } });
       map.addLayer({ id: 'nalgadha-highlight', type: 'line', source: 'nalgadha',
         paint: { 'line-color': '#f59e0b', 'line-width': 3.5, 'line-opacity': 0.97 },
         filter: ['==', SELECT_KEY, '__none__'] });
-      map.addLayer({ id: 'nalgadha-labels', type: 'symbol', source: 'nalgadha', minzoom: 15.5,
-        layout: { 'text-field': ['get', 'plot_no'], 'text-size': 11, 'text-font': ['Open Sans Regular'],
-                  'text-allow-overlap': false },
-        paint: { 'text-color': '#1e1b4b', 'text-halo-color': '#ffffff', 'text-halo-width': 1.4 } });
+      map.addLayer({ id: 'nalgadha-labels', type: 'symbol', source: 'nalgadha', minzoom: 15,
+        layout: { 'text-field': ['get', 'plot_no'],
+                  'text-size': ['interpolate', ['linear'], ['zoom'], 14, 9, 16, 12, 18, 15],
+                  'text-font': ['Open Sans Bold'], 'text-allow-overlap': false },
+        paint: { 'text-color': '#1e1b4b', 'text-halo-color': '#ffffff', 'text-halo-width': 1.8,
+                 'text-opacity': ['interpolate', ['linear'], ['zoom'], 14, 0.4, 16, 1] } });
 
       map.on('mouseenter', 'nalgadha-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'nalgadha-fill', () => { map.getCanvas().style.cursor = ''; });
