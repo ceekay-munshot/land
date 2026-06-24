@@ -213,24 +213,44 @@ def main():
         return
 
     # NETWORK: per village, getVVVVExtentGeoref + GetMap + vectorise.
+    # Resumable + bounded: skip villages already traced (geometry_method set),
+    # process at most MAX_VILLAGES new ones, and stop before TIME_BUDGET so a
+    # schedule fills a whole tehsil over several runs without hitting the timeout.
     layers = os.environ.get("GEOM_LAYERS", "VILLAGE_MAP")
-    mpp = float(os.environ.get("MPP", "0.25"))
+    mpp = float(os.environ.get("MPP", "0.5"))
     tile_px = int(os.environ.get("TILE_PX", "2048"))
     margin = float(os.environ.get("MARGIN_M", "30"))
+    max_villages = int(os.environ.get("MAX_VILLAGES", "6"))
+    time_budget = float(os.environ.get("TIME_BUDGET", "2400"))
+    done = {ft["properties"].get("gis_code") for ft in geo.get("features", [])
+            if ft["properties"].get("geometry_method") in ("raster_vector", "bbox_fallback")}
+    todo = [(gc, grp) for gc, grp in groups.items() if gc not in done]
+    print(f"{len(done)} villages already traced; {len(todo)} to go "
+          f"(this run: <= {max_villages} villages, <= {time_budget:.0f}s)")
     s = _session()
     rebuilt = {}
-    for gc, grp in groups.items():
+    t0 = time.time()
+    for gc, grp in todo:
+        if len(rebuilt) >= max_villages or (time.time() - t0) > time_budget:
+            print("batch limit reached — stopping (resume next run)")
+            break
         gis_levels = f"{gc[:3]},{gc[3:8]},{gc[8:]}"          # district,tehsil,village
-        bbox, crs, _ = get_extent(s, gis_levels)
-        bbox = (bbox[0] - margin, bbox[1] - margin, bbox[2] + margin, bbox[3] + margin)
-        W = int(round((bbox[2] - bbox[0]) / mpp))
-        H = int(round((bbox[3] - bbox[1]) / mpp))
-        print(f"{gc}: extent {bbox} crs {crs} -> {W}x{H}px @ {mpp} m/px")
-        img = get_map(s, bbox, W, H, layers, gc, tile_px)
-        new, npoly, nfb = vectorize_village(img, bbox, crs, grp["feats"], simplify_m)
-        print(f"  traced {npoly} polys -> {len(new)-nfb} matched, {nfb} bbox-fallback")
-        rebuilt[gc] = new
-    _write(out_path, geo, rebuilt)
+        try:
+            bbox, crs, _ = get_extent(s, gis_levels)
+            bbox = (bbox[0] - margin, bbox[1] - margin, bbox[2] + margin, bbox[3] + margin)
+            W = int(round((bbox[2] - bbox[0]) / mpp))
+            H = int(round((bbox[3] - bbox[1]) / mpp))
+            print(f"{gc}: extent {bbox} crs {crs} -> {W}x{H}px @ {mpp} m/px")
+            img = get_map(s, bbox, W, H, layers, gc, tile_px)
+            new, npoly, nfb = vectorize_village(img, bbox, crs, grp["feats"], simplify_m)
+            print(f"  traced {npoly} polys -> {len(new)-nfb} matched, {nfb} bbox-fallback")
+            rebuilt[gc] = new
+        except Exception as e:
+            print(f"  {gc}: FAILED ({e!r}) — skipping this run", file=sys.stderr)
+    if rebuilt:
+        _write(out_path, geo, rebuilt)
+    else:
+        print("nothing rebuilt this run (all done or all failed)")
 
 
 def _write(out_path, geo, rebuilt):
