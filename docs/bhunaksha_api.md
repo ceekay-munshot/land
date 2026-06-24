@@ -80,6 +80,13 @@ Standard OpenLayers WMS params: `REQUEST=GetMap, SERVICE=WMS, FORMAT=image/png, 
 plus `BBOX`/`CRS`. GetFeatureInfo uses `QUERY_LAYERS` + `INFO_FORMAT=application/json`.
 `serverType: "geoserver"` ⇒ the backend is GeoServer (so WFS may also be reachable — untested).
 
+### WMS render — which layer is non-blank anonymously (VALIDATED 2026-06-24, `MODE=wms`)
+Probed the real village extent BBOX + `gis_code` at 1024² for Nalgadha:
+- **`LAYERS=VILLAGE_MAP` renders the cadastre** — `/WMS/tile` ≈ **220 KB**, `/WMS` + `STYLES=VILLAGE_MAP` ≈ 69 KB, `/WMS` + `STYLES=""` ≈ 13 KB. This is the boundary raster the tracer needs.
+- `DERIVED_LAYER`, `OVERLAY_LAYER`, `MAP_PLOT` → **~4 KB blank** anonymously (auth-gated/empty).
+- ⚠️ `tools/fetch_bhunaksha_geom.py` currently requests `DERIVED_LAYER` via `/WMS` → blank. **Fix:
+  use `/WMS/tile` (or `/WMS`) with `LAYERS=VILLAGE_MAP`, `STYLES=VILLAGE_MAP`.**
+
 ## Shape import/edit (admin side, for reference)
 `/shape/isVillageImported {gisLevels}` · `/shape/importVillage {geoJson,crs,parcelId,gisLevels}` ·
 `/shape/deleteVillage`.

@@ -414,6 +414,49 @@ def probe_wms():
     return out
 
 
+def probe_render():
+    """Save the VILLAGE_MAP raster so we can confirm it shows real plot boundaries
+    (the input the raster->vector tracer needs)."""
+    out = {"mode": "render", "gis": GIS, "saved": []}
+    gl = gislevels_of(GIS)
+    ext = post("MapInfo/getVVVVExtentGeoref", data={"gisLevels": gl})
+    try:
+        j = ext.json()
+    except Exception:
+        j = {}
+    out["extent"] = j
+    try:
+        xmin, ymin, xmax, ymax = j["xmin"], j["ymin"], j["xmax"], j["ymax"]
+    except Exception:
+        out["error"] = "no extent"
+        return out
+    gis_code = j.get("gisCode", GIS)
+    W = 2048
+    H = max(256, min(4096, int(W * (ymax - ymin) / (xmax - xmin))))
+    base = {"SERVICE": "WMS", "VERSION": "1.1.1", "REQUEST": "GetMap", "SRS": "EPSG:32644",
+            "BBOX": f"{xmin},{ymin},{xmax},{ymax}", "WIDTH": W, "HEIGHT": H,
+            "FORMAT": "image/png", "TRANSPARENT": "false", "gis_code": gis_code, "state": ""}
+    for endpoint, layers, styles, tag in [
+        ("WMS/tile", "VILLAGE_MAP", "VILLAGE_MAP", "village_tile"),
+        ("WMS", "VILLAGE_MAP", "VILLAGE_MAP", "village_wms"),
+    ]:
+        params = dict(base, LAYERS=layers, STYLES=styles, layercodes="")
+        try:
+            r = s.get(f"{SRV}/{endpoint}", params=params, timeout=90, verify=False)
+        except Exception as e:
+            out["saved"].append({"tag": tag, "error": repr(e)})
+            continue
+        if r is not None and "image" in (r.headers.get("content-type") or ""):
+            rel = f"_probe/render_{tag}.png"
+            with open(os.path.join(ROOT, rel), "wb") as fh:
+                fh.write(r.content)
+            out["saved"].append({"tag": tag, "bytes": len(r.content), "W": W, "H": H, "file": rel})
+        else:
+            out["saved"].append({"tag": tag, "status": getattr(r, "status_code", None),
+                                 "ct": (r.headers.get("content-type") if r is not None else None)})
+    return out
+
+
 def enumerate_villages():
     """Return [(giscode, village_name), ...] for the configured DISTRICT/TEHSIL."""
 
@@ -485,6 +528,12 @@ def main():
         print(f"WMS PROBE: {len(cands)} non-blank combo(s); blank sizes={out.get('blank_byte_sizes')}")
         for c in cands[:6]:
             print("  CANDIDATE:", c)
+        return
+
+    if MODE == "render":
+        out = probe_render()
+        write_json(PROBE_OUT, out)
+        print("RENDER:", json.dumps(out.get("saved"), ensure_ascii=False))
         return
 
     if MODE == "validate":

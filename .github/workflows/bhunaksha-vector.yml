@@ -11,9 +11,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'wms (find boundary render) | token | validate | fetch'
+        description: 'render (save VILLAGE_MAP png) | wms | token | validate | fetch'
         type: choice
-        options: [wms, token, validate, fetch]
+        options: [render, wms, token, validate, fetch]
         default: validate
       gis:
         description: 'validate: village giscode to probe'
@@ -59,7 +59,7 @@ jobs:
       - run: pip install requests pyproj
       - name: Run vector fetch/validate
         env:
-          MODE: ${{ github.event.inputs.mode || 'wms' }}
+          MODE: ${{ github.event.inputs.mode || 'render' }}
           GIS: ${{ github.event.inputs.gis || '14100743120241' }}
           DISTRICT: ${{ github.event.inputs.district || 'गौतम' }}
           TEHSIL: ${{ github.event.inputs.tehsil || 'जेवर' }}
@@ -70,7 +70,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _probe/bhunaksha_vector_live.json web/data/*.geojson 2>/dev/null || true
+          git add _probe/bhunaksha_vector_live.json _probe/render_*.png web/data/*.geojson 2>/dev/null || true
           git commit -m "data: Bhu-Naksha vector ${{ github.event.inputs.mode || 'validate' }} (real polygons via getGeoJSONLayerData)" || { echo "no change"; exit 0; }
           git pull --rebase origin main || true
           git push
