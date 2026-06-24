@@ -52,7 +52,7 @@ def find(items, n):
 
 out = {}
 try:
-    s.get(HOME, timeout=40)
+    get(HOME)  # establish session cookie (retried; a bare get drops the whole run)
     d = find(level(1, ""), "गौतम")
     t = find(level(2, d["code"]), "गौतमबुद्धनगर")
     v = next(x for x in level(3, f'{d["code"]},{t["code"]}') if x["code"] == "120241")
