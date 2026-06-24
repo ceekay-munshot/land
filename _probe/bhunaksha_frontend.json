@@ -1,0 +1,329 @@
+{
+  "base": "https://upbhunaksha.gov.in",
+  "errors": [],
+  "bundles": [
+    {
+      "url": "https://upbhunaksha.gov.in/main-76RVRF3Z.js",
+      "status": 200,
+      "len": 2972633
+    },
+    {
+      "url": "https://upbhunaksha.gov.in/polyfills-RM666RQK.js",
+      "status": 200,
+      "len": 35922
+    },
+    {
+      "url": "https://upbhunaksha.gov.in/scripts-BZQBXHEN.js",
+      "status": 200,
+      "len": 2162278
+    }
+  ],
+  "home_status": 200,
+  "scripts_on_page": [
+    "main-76RVRF3Z.js",
+    "polyfills-RM666RQK.js",
+    "scripts-BZQBXHEN.js"
+  ],
+  "blob_chars": 5170907,
+  "string_paths": [
+    "AM/PM",
+    "Edit/View",
+    "Layers/getLayers",
+    "M/d/yy",
+    "PDF/UA",
+    "application/json",
+    "application/pdf",
+    "application/xml",
+    "application/zip",
+    "dd/MM/yy",
+    "error/message",
+    "image/bmp",
+    "image/gif",
+    "image/jpeg",
+    "image/png",
+    "image/tiff",
+    "m/d/yy",
+    "ol/style/Style",
+    "text/css",
+    "text/csv",
+    "text/html",
+    "text/plain",
+    "text/xml",
+    "worksheets/sheet",
+    "xl/comments",
+    "xl/drawings/vmlDrawing",
+    "xl/threadedComments/threadedComment",
+    "xl/worksheets/sheet"
+  ],
+  "urls": [
+    "http://docs.oasis-open.org/ns/office/1.2/meta/",
+    "http://docs.oasis-open.org/ns/office/1.2/meta/pkg",
+    "http://eligrey.com",
+    "http://macVmlSchemaUri",
+    "http://ns.adobe.com/pdf/1.3/",
+    "http://ns.adobe.com/xap/1.0/",
+    "http://openoffice.org/2004/calc",
+    "http://openoffice.org/2004/office",
+    "http://openoffice.org/2004/writer",
+    "http://openoffice.org/2005/report",
+    "http://openoffice.org/2009/table",
+    "http://openoffice.org/2010/draw",
+    "http://pdfmake.org",
+    "http://purl.oclc.org/ooxml/officeDocument/relationships/worksheet",
+    "http://purl.oclc.org/ooxml/spreadsheetml/main",
+    "http://purl.org/dc/dcmitype/",
+    "http://purl.org/dc/elements/1.1/",
+    "http://purl.org/dc/terms/",
+    "http://schemas.microsoft.com/office/2006/relationships/vbaProject",
+    "http://schemas.microsoft.com/office/2006/relationships/xlExternalLinkPath/xlPathMissing",
+    "http://schemas.microsoft.com/office/2006/relationships/xlMacrosheet",
+    "http://schemas.microsoft.com/office/2014/relationships/chartEx",
+    "http://schemas.microsoft.com/office/2017/10/relationships/person",
+    "http://schemas.microsoft.com/office/2017/10/relationships/threadedComment",
+    "http://schemas.microsoft.com/office/excel/2006/2",
+    "http://schemas.microsoft.com/office/excel/2006/main",
+    "http://schemas.microsoft.com/office/mac/excel/2008/main",
+    "http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac",
+    "http://schemas.microsoft.com/office/spreadsheetml/2017/dynamicarray",
+    "http://schemas.microsoft.com/office/spreadsheetml/2017/richdata",
+    "http://schemas.microsoft.com/office/spreadsheetml/2018/threadedcomments",
+    "http://schemas.openxmlformats.org/drawingml/2006/main",
+    "http://schemas.openxmlformats.org/markup-compatibility/2006",
+    "http://schemas.openxmlformats.org/officeDocument/2006/custom-properties",
+    "http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes",
+    "http://schemas.openxmlformats.org/officeDocument/2006/extended-properties",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/chartsheet",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/comments",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/custom-properties",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXmlProps",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/dialogsheet",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/externalLink",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/externalLinkPath",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/sheetMetadata",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/vmlDrawing",
+    "http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet",
+    "http://schemas.openxmlformats.org/package/2006/content-types",
+    "http://schemas.openxmlformats.org/package/2006/metadata/core-properties",
+    "http://schemas.openxmlformats.org/package/2006/relationships",
+    "http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties",
+    "http://schemas.openxmlformats.org/package/2006/sheetjs/core-properties",
+    "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
+    "http://sheetjs.openxmlformats.org/officeDocument/2006/relationships/officeDocument",
+    "http://stuartk.com/jszip",
+    "http://www.aiim.org/pdfa/ns/id/",
+    "http://www.aiim.org/pdfua/ns/id/",
+    "http://www.opengis.net/def/crs/EPSG/0/3857",
+    "http://www.opengis.net/def/crs/EPSG/0/4326",
+    "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+    "http://www.opengis.net/gml/srs/epsg.xml",
+    "http://www.w3.org/1998/Math/MathML",
+    "http://www.w3.org/1998/MathML/",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "http://www.w3.org/1999/xhtml",
+    "http://www.w3.org/1999/xlink",
+    "http://www.w3.org/2000/svg",
+    "http://www.w3.org/2000/xmlns/",
+    "http://www.w3.org/2001/XMLSchema",
+    "http://www.w3.org/2001/XMLSchema-instance"
+  ],
+  "context": {
+    "readFeatures": [
+      "tus>=200&&a.status<300){let c=e.getType();try{let A;c==\"text\"||c==\"json\"?A=a.responseText:c==\"xml\"?A=a.responseXML||a.responseText:c==\"arraybuffer\"&&(A=a.response),A?o(e.readFeatures(A,{extent:t,featureProjection:r}),e.readProjection(A)):s()}catch{s()}}else s()},a.onerror=s,a.send()}function jk(i,e){return function(t,n,r,o,s){Fme(i,e,t,n,r,(a,l)=>{this.addFeatures(a),o!==void 0",
+      "{dataProjection:this.dataProjection,featureProjection:this.defaultFeatureProjection,featureClass:this.featureClass},e)}getType(){return Ct()}readFeature(e,t){return Ct()}readFeatures(e,t){return Ct()}readGeometry(e,t){return Ct()}readProjection(e){return Ct()}writeFeature(e,t){return Ct()}writeFeatures(e,t){return Ct()}writeGeometry(e,t){return Ct()}},HD=VQ;function Tm(i,e,t){l",
+      "XY\",i.ends),!1,e)}var WQ=class extends HD{constructor(){super()}getType(){return\"json\"}readFeature(e,t){return this.readFeatureFromObject(zD(e),this.getReadOptions(e,t))}readFeatures(e,t){return this.readFeaturesFromObject(zD(e),this.getReadOptions(e,t))}readFeatureFromObject(e,t){return Ct()}readFeaturesFromObject(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFrom",
+      "extends HD{constructor(){super()}getType(){return\"json\"}readFeature(e,t){return this.readFeatureFromObject(zD(e),this.getReadOptions(e,t))}readFeatures(e,t){return this.readFeaturesFromObject(zD(e),this.getReadOptions(e,t))}readFeatureFromObject(e,t){return Ct()}readFeaturesFromObject(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromObject(zD(e),this.getReadOptio",
+      "ureFromObject(zD(e),this.getReadOptions(e,t))}readFeatures(e,t){return this.readFeaturesFromObject(zD(e),this.getReadOptions(e,t))}readFeatureFromObject(e,t){return Ct()}readFeaturesFromObject(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromObject(zD(e),this.getReadOptions(e,t))}readGeometryFromObject(e,t){return Ct()}readProjection(e){return this.readProjectionF",
+      "extractGeometryName_&&n.geometry_name&&o.setGeometryName(n.geometry_name),o.setGeometry(VD(r,t)),\"id\"in n&&o.setId(n.id),n.properties&&o.setProperties(n.properties,!0),o}readFeaturesFromObject(e,t){let n=e,r=null;if(n.type===\"FeatureCollection\"){let o=e;r=[];let s=o.features;for(let a=0,l=s.length;a<l;++a){let c=this.readFeatureFromObject(s[a],t);c&&r.push(c)}}else r=[this.read",
+      "extends HD{constructor(){super()}getType(){return\"text\"}readFeature(e,t){return this.readFeatureFromText(gT(e),this.adaptOptions(t))}readFeatureFromText(e,t){return Ct()}readFeatures(e,t){return this.readFeaturesFromText(gT(e),this.adaptOptions(t))}readFeaturesFromText(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromText(gT(e),this.adaptOptions(t))}readGeometryFr",
+      "()}getType(){return\"text\"}readFeature(e,t){return this.readFeatureFromText(gT(e),this.adaptOptions(t))}readFeatureFromText(e,t){return Ct()}readFeatures(e,t){return this.readFeaturesFromText(gT(e),this.adaptOptions(t))}readFeaturesFromText(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromText(gT(e),this.adaptOptions(t))}readGeometryFromText(e,t){return Ct()}readPr"
+    ],
+    "GeoJSON": [
+      "ta(t){this.dataSource.next(t)}getLayers(t){let n=new Ei;return n.set(\"layerType\",t),this.httpClient.post(\"${this.baseUrl}/\"+\"Layers/getLayers\",n,{withCredentials:!0})}getGeoJSONLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,oprType:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONLayerData`,o,{withCrede",
+      "erData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,oprType:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,divId:r};return yield Ji(this.httpClient.post(`${thi",
+      "codes:n,oprType:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,divId:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONTempLayerData`,o,{wit",
+      "ayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,divId:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONTempLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}forwardTransaction(t,n,r){let o={giscode:t,comments:n,id:r};return this.httpClient.post(`${this.baseUrl}/mapModificationController/forwardTra",
+      "ultiPolygon\"],N_=class{constructor(e){this.geometryFactory=e||new qi}read(e){let t;typeof e==\"string\"?t=JSON.parse(e):t=e;let n=t.type;if(!uc[n])throw new Error(\"Unknown GeoJSON type: \"+t.type);return Uwe.indexOf(n)!==-1?uc[n].call(this,t.coordinates):n===\"GeometryCollection\"?uc[n].call(this,t.geometries):uc[n].call(this,t)}write(e){let t=e.getGeometryType();if(!Ed[t])throw new",
+      "orted\");return Ed[t].call(this,e)}};var uc={Feature:function(i){let e={};for(let t in i)e[t]=i[t];if(i.geometry){let t=i.geometry.type;if(!uc[t])throw new Error(\"Unknown GeoJSON type: \"+i.type);e.geometry=this.read(i.geometry)}return i.bbox&&(e.bbox=uc.bbox.call(this,i.bbox)),e},FeatureCollection:function(i){let e={};if(i.features){e.features=[];for(let t=0;t<i.features.length;",
+      "t\":{t=Jwe(i);break}case\"MultiLineString\":{t=Wwe(i);break}case\"MultiPolygon\":{t=Kwe(i);break}case\"GeometryCollection\":{t=Hwe(i);break}default:throw new Error(\"Unsupported GeoJSON type: \"+i.type)}return t}function Gwe(i,e){let t=XQ(i,e);return VD(t,e)}function Hwe(i,e){return i.geometries.map(function(n){return XQ(n,e)})}function Vwe(i){let e=i.coordinates;return{type:\"Point\",fla",
+      "params:{LAYERS:\"SAME_OWNER_PLOT_LIST\",state:\"\",giscode:t,plot_no:n,CRS:\"\",STYLES:\"OWNER_PLOTS\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getGeoJSONLayerData(t,n,r){return te(this,null,function*(){return this.http.getGeoJSONLayerData(t,n,r)})}getGeoJSONTempLayerData(t,n,r){return te(this,null,function*(){return this.http.getGeoJSONTempLayerData(t,n,"
+    ],
+    "readGeometry": [
+      "ction,featureProjection:this.defaultFeatureProjection,featureClass:this.featureClass},e)}getType(){return Ct()}readFeature(e,t){return Ct()}readFeatures(e,t){return Ct()}readGeometry(e,t){return Ct()}readProjection(e){return Ct()}writeFeature(e,t){return Ct()}writeFeatures(e,t){return Ct()}writeGeometry(e,t){return Ct()}},HD=VQ;function Tm(i,e,t){let n=t?ui(t.featureProjection)",
+      "e,t))}readFeatures(e,t){return this.readFeaturesFromObject(zD(e),this.getReadOptions(e,t))}readFeatureFromObject(e,t){return Ct()}readFeaturesFromObject(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromObject(zD(e),this.getReadOptions(e,t))}readGeometryFromObject(e,t){return Ct()}readProjection(e){return this.readProjectionFromObject(zD(e))}readProjectionFromObjec",
+      "this.readFeaturesFromObject(zD(e),this.getReadOptions(e,t))}readFeatureFromObject(e,t){return Ct()}readFeaturesFromObject(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromObject(zD(e),this.getReadOptions(e,t))}readGeometryFromObject(e,t){return Ct()}readProjection(e){return this.readProjectionFromObject(zD(e))}readProjectionFromObject(e){return Ct()}writeFeature(",
+      "e,t))}readFeatureFromObject(e,t){return Ct()}readFeaturesFromObject(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromObject(zD(e),this.getReadOptions(e,t))}readGeometryFromObject(e,t){return Ct()}readProjection(e){return this.readProjectionFromObject(zD(e))}readProjectionFromObject(e){return Ct()}writeFeature(e,t){return JSON.stringify(this.writeFeatureObject(e,t)",
+      "o=e;r=[];let s=o.features;for(let a=0,l=s.length;a<l;++a){let c=this.readFeatureFromObject(s[a],t);c&&r.push(c)}}else r=[this.readFeatureFromObject(e,t)];return r.flat()}readGeometryFromObject(e,t){return Gwe(e,t)}readProjectionFromObject(e){let t=e.crs,n;if(t)if(t.type==\"name\")n=ui(t.properties.name);else if(t.type===\"EPSG\")n=ui(\"EPSG:\"+t.properties.code);else throw new Error(",
+      "r.write(t)}getIntersection(t,n){return ji.intersection(t,n)}getDifference(t,n){return ji.difference(t,n)}convertJstsToFeature(t){let n=this.writer.write(t),r=this.format.readGeometry(n);return new Bt({geometry:r})}convertFeatureToJSTS(t){return this.convertGeometryToJSTS(t.getGeometry())}convertGeometryToJSTS(t){let n=this.format.writeGeometryObject(t);return this.reader.read(n",
+      "daptOptions(t))}readFeatureFromText(e,t){return Ct()}readFeatures(e,t){return this.readFeaturesFromText(gT(e),this.adaptOptions(t))}readFeaturesFromText(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromText(gT(e),this.adaptOptions(t))}readGeometryFromText(e,t){return Ct()}readProjection(e){return this.readProjectionFromText(gT(e))}readProjectionFromText(e){return",
+      "mText(e,t){return Ct()}readFeatures(e,t){return this.readFeaturesFromText(gT(e),this.adaptOptions(t))}readFeaturesFromText(e,t){return Ct()}readGeometry(e,t){return this.readGeometryFromText(gT(e),this.adaptOptions(t))}readGeometryFromText(e,t){return Ct()}readProjection(e){return this.readProjectionFromText(gT(e))}readProjectionFromText(e){return this.dataProjection}writeFeatu"
+    ],
+    "WKT": [
+      "e.includes(\"PROJCRS\")||e.includes(\"GEOGCRS\")||e.includes(\"BOUNDCRS\")||e.includes(\"VERTCRS\")||e.includes(\"LENGTHUNIT\")||e.includes(\"ANGLEUNIT\")||e.includes(\"SCALEUNIT\")?\"WKT2\":(e.includes(\"PROJCS\")||e.includes(\"GEOGCS\")||e.includes(\"LOCAL_CS\")||e.includes(\"VERT_CS\")||e.includes(\"UNIT\"),\"WKT1\")}var S7=Jpe,yx=1,T7=2,B7=3,OM=4,F7=5,b4=-1,Vpe=/\\s/,zpe=/[A-Za-z]/,Wpe=/[A-Za-z84_]/,k",
+      "||e.includes(\"ANGLEUNIT\")||e.includes(\"SCALEUNIT\")?\"WKT2\":(e.includes(\"PROJCS\")||e.includes(\"GEOGCS\")||e.includes(\"LOCAL_CS\")||e.includes(\"VERT_CS\")||e.includes(\"UNIT\"),\"WKT1\")}var S7=Jpe,yx=1,T7=2,B7=3,OM=4,F7=5,b4=-1,Vpe=/\\s/,zpe=/[A-Za-z]/,Wpe=/[A-Za-z84_]/,kM=/[,\\]]/,P7=/[\\d\\.E\\-\\+]/;function Bu(i){if(typeof i!=\"string\")throw new Error(\"not a string\");this.text=i.trim(),thi",
+      "ac],[\"azimuth\",\"Azimuth\"],[\"alpha\",\"azimuth\",ac],[\"srsCode\",\"name\"]];c.forEach(l),LM(i)}function K0(i){if(typeof i==\"object\")return vx(i);let e=D7(i);var t=S7(i);if(e===\"WKT2\"){let o=M7(t);return vx(o)}var n=t[0],r={};return lm(t,r),k7(r),r[n]}function Wa(i){var e=this;if(arguments.length===2){var t=arguments[1];typeof t==\"string\"?t.charAt(0)===\"+\"?Wa[i]=_x(arguments[1]):Wa[i]=",
+      "sNaN(this.es)||this.es<=0))throw new Error('Incorrect elliptical usage. Try using the +approx option in the proj string, or PROJECTION[\"Fast_Transverse_Mercator\"] in the WKT.');this.approx&&(n_.init.apply(this),this.forward=n_.forward,this.inverse=n_.inverse),this.x0=this.x0!==void 0?this.x0:0,this.y0=this.y0!==void 0?this.y0:0,this.long0=this.long0!==void 0?this.long0:0,this.l",
+      "sNaN(this.es)||this.es<=0))throw new Error('Incorrect elliptical usage. Try using the +approx option in the proj string, or PROJECTION[\"Fast_Transverse_Mercator\"] in the WKT.');this.approx&&(ge.init.apply(this),this.forward=ge.forward,this.inverse=ge.inverse),this.x0=this.x0!==void 0?this.x0:0,this.y0=this.y0!==void 0?this.y0:0,this.long0=this.long0!==void 0?this.long0:0,this.l"
+    ],
+    "format:": [
+      "t(a),A=parseFloat(l);if(isNaN(c)||isNaN(A)){r.push(`Line ${o+1}: \"${s}\"`);continue}this.parsedPoints.push({x:c,y:A})}return r.length>0?(this.validationError=`Invalid CSV format: `+r.join(` `),!1):(this.validationError=\"\",!0)}onFileChange(t){let n=t.target;if(n.files?.length){let r=n.files[0],o=new FileReader;o.onload=()=>{let s=o.result;this.points=s,this.validateCsv(s)},o.read",
+      "):hMe(i);case\"undefined\":return\"\";case\"object\":if(i==null)return\"\";if(i instanceof Date)return zf(14,V$(i,e&&e.date1904),e)}throw new Error(\"unsupported value in General format: \"+i)}function fMe(i,e){e[0]-=581;var t=i.getDay();return i<60&&(t=(t+6)%7),t}function gMe(i,e,t,n){var r=\"\",o=0,s=0,a=t.y,l,c=0;switch(i){case 98:a=t.y+543;case 121:switch(e.length){case 1:case 2:l=a%10",
+      "c=e.length;break;case 3:return s$[t.q][0];default:return s$[t.q][1]}break;case 104:switch(e.length){case 1:case 2:l=1+(t.H+11)%12,c=e.length;break;default:throw\"bad hour format: \"+e}break;case 72:switch(e.length){case 1:case 2:l=t.H,c=e.length;break;default:throw\"bad hour format: \"+e}break;case 77:switch(e.length){case 1:case 2:l=t.M,c=e.length;break;default:throw\"bad minute fo",
+      "e 1:case 2:l=1+(t.H+11)%12,c=e.length;break;default:throw\"bad hour format: \"+e}break;case 72:switch(e.length){case 1:case 2:l=t.H,c=e.length;break;default:throw\"bad hour format: \"+e}break;case 77:switch(e.length){case 1:case 2:l=t.M,c=e.length;break;default:throw\"bad minute format: \"+e}break;case 115:if(e!=\"s\"&&e!=\"ss\"&&e!=\".0\"&&e!=\".00\"&&e!=\".000\")throw\"bad second format: \"+e;",
+      "gth){case 1:case 2:l=t.H,c=e.length;break;default:throw\"bad hour format: \"+e}break;case 77:switch(e.length){case 1:case 2:l=t.M,c=e.length;break;default:throw\"bad minute format: \"+e}break;case 115:if(e!=\"s\"&&e!=\"ss\"&&e!=\".0\"&&e!=\".00\"&&e!=\".000\")throw\"bad second format: \"+e;return t.u===0&&(e==\"s\"||e==\"ss\")?xA(t.S,e.length):(n>=2?s=n===3?1e3:100:s=n===1?10:1,o=Math.round(s*(t.S",
+      "itch(e.length){case 1:case 2:l=t.M,c=e.length;break;default:throw\"bad minute format: \"+e}break;case 115:if(e!=\"s\"&&e!=\"ss\"&&e!=\".0\"&&e!=\".00\"&&e!=\".000\")throw\"bad second format: \"+e;return t.u===0&&(e==\"s\"||e==\"ss\")?xA(t.S,e.length):(n>=2?s=n===3?1e3:100:s=n===1?10:1,o=Math.round(s*(t.S+t.u)),o>=60*s&&(o=0),e===\"s\"?o===0?\"0\":\"\"+o/s:(r=xA(o,2+n),e===\"ss\"?r.substr(0,2):\".\"+r.subs",
+      "\":l=t.D*24+t.H;break;case\"[m]\":case\"[mm]\":l=(t.D*24+t.H)*60+t.M;break;case\"[s]\":case\"[ss]\":l=((t.D*24+t.H)*60+t.M)*60+Math.round(t.S+t.u);break;default:throw\"bad abstime format: \"+e}c=e.length===3?1:2;break;case 101:l=a,c=1;break}var A=c>0?xA(l,c):\"\";return A}function Vf(i){var e=3;if(i.length<=e)return i;for(var t=i.length%e,n=i.substr(0,t);t!=i.length;t+=e)n+=(n.length>0?\",\":",
+      "d\",h[4]=\"\"+b,h[5]=f.w||zf(f.z||Jr[14],b);break;case\"e\":continue}u.push(h.join(\":\"))}return u.push(\"sheet:c:\"+(p.e.c-p.s.c+1)+\":r:\"+(p.e.r-p.s.r+1)+\":tvf:1\"),u.push(\"valueformat:1:text-wiki\"),u.join(` `)}function A(d){return[o,s,a,s,c(d),l].join(` `)}return{to_workbook:r,to_sheet:n,from_sheet:A}}(),uSe=function(){function i(A,d,u,h,f){f.raw?d[u][h]=A:A===\"\"||(A===\"TRUE\"?d[u][h]="
+    ],
+    "getMap": [
+      "ut(){return this.httpClient.get(`${zi.apiUrl}/session/logout`,{withCredentials:!0})}getVsrLevelCount(){return this.httpClient.get(`${this.baseUrl}/Levels/vsrLevelCount`)}getMapLevelCount(){return this.httpClient.get(`${this.baseUrl}/Levels/mapLevelCount`)}validateSession(){return this.httpClient.get(`${this.baseUrl}/session/validate`,{withCredentials:!0,responseType:\"json\"})}ge",
+      "})}getDuplicatePlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/duplicatePlotsInMap`,null,{params:s})}getMapRorAreaComparisonList(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/mapAndRORAreaComparisonList`,null,{params:s})}getMapRorAreaMatchingList(t,n,",
+      "reaComparisonList(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/mapAndRORAreaComparisonList`,null,{params:s})}getMapRorAreaMatchingList(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/mapAndRORAreaMatchingList`,null,{params:s})}getPlotCountListTehsilWise(t,n,r){",
+      "dROR`,null,{params:s})}getPendingInfo(t){let n=new Ei().set(\"gisCode\",t);return this.httpClient.post(`${this.baseUrl}/Dashboard/missingPlotsICountInMap`,null,{params:n})}getMapRorAreaNotMatchingList(t,n){let r={gisCode:t},o=new Ei().set(\"gisCode\",t);return this.httpClient.post(`${this.baseUrl}/Reports/mapAndRORAreaNotMatchingList`,null,{params:o})}getLocationInfo(t){return this",
+      "el labels\",t),this.loginLevelCount=Number(yield Ji(this.http.getLoginLevels())),console.log(\"loginLevelCount\",this.loginLevelCount),this.gisLevelCount=yield Ji(this.http.getMapLevelCount());let n=[],r=\"\";for(let o=0;o<this.loginLevelCount;o++){this.levelLabels[o]=t[o];let s=\"\";yield this.http.fetchLevelValues(o+1,r).then(a=>{a=a.filter(A=>A.extraParams.hasData),a.length>0&&(s=a",
+      "ectConfigs=n}))}setLevelLabels(t){return te(this,null,function*(){this.loginLevelCount=Number(yield Ji(this.http.getLoginLevels())),this.gisLevelCount=yield Ji(this.http.getMapLevelCount());let n=[],r=\"\";for(let o=0;o<this.loginLevelCount;o++){this.levelLabels[o]=t[o];let s=\"\";yield this.http.fetchLevelValues(o+1,r).then(a=>{a=a.filter(A=>A.extraParams.hasData),a.length>0&&(s=a",
+      "viewState,a=this.getLayer(),l=a.getRenderSource(),c=l.getTileGridForProjection(s.projection),A=Tt(l);A in e.wantedTiles||(e.wantedTiles[A]={});let d=e.wantedTiles[A],u=a.getMapInternal(),h=Math.max(n-o,c.getMinZoom(),c.getZForResolution(Math.min(a.getMaxResolution(),u?u.getView().getResolutionForZoom(Math.max(a.getMinZoom(),0)):c.getResolution(0)),l.zDirection)),f=s.rotation,g=",
+      "his.renderer_?this.renderer_.getFeatures(e):Promise.resolve([])}getData(e){return!this.renderer_||!this.rendered?null:this.renderer_.getData(e)}isVisible(e){let t,n=this.getMapInternal();!e&&n&&(e=n.getView()),e instanceof yn?t={viewState:e.getState(),extent:e.calculateExtent()}:t=e,!t.layerStatesArray&&n&&(t.layerStatesArray=n.getLayerGroup().getLayerStatesArray());let r;if(t."
+    ],
+    "GetMap": [
+      "0;r[s?\"CRS\":\"SRS\"]=n.getCode();let a=s&&o.startsWith(\"ne\")?[e[1],e[0],e[3],e[2]]:e;return r.BBOX=a.join(\",\"),Vv(i,r)}function rL(i,e,t,n,r,o,s){o=Object.assign({REQUEST:\"GetMap\"},o);let a=e/t,l=[$N(jt(i)/a,4),$N(un(i)/a,4)];if(t!=1)switch(s){case\"geoserver\":let A=90*t+.5|0;\"FORMAT_OPTIONS\"in o?o.FORMAT_OPTIONS+=\";dpi:\"+A:o.FORMAT_OPTIONS=\"dpi:\"+A;break;case\"mapserver\":o.MAP_RES",
+      "\"EPSG:3857\"),n=i.ratio||1.5,r=i.load||vI,o=i.crossOrigin??null;return(s,a,l)=>{s=nL(s,a,l,n),l!=1&&(!e||i.serverType===void 0)&&(l=1);let c=rL(s,a,l,t,i.url,$v(i.params,\"GetMap\"),i.serverType),A=new Image;return A.crossOrigin=o,r(A,c).then(d=>({image:d,extent:s,pixelRatio:l}))}}function r9(i,e,t){if(i.url===void 0)return;let n=ui(i.projection||\"EPSG:3857\"),r=pu(e,t,0,t9),o={QUE",
+      "ype_===void 0)&&(t=1);let o=r.getResolution(e[0]),s=r.getTileCoordExtent(e,this.tmpExtent_),a=this.gutter_;a!==0&&(s=zc(s,o*a,s));let l=Object.assign({},$v(this.params_,\"GetMap\"));return this.getRequestUrl_(e,s,t,n,l)}},tx=uL;var hL=class{drawCustom(e,t,n,r,o){}drawGeometry(e){}setStyle(e){}drawCircle(e,t,n){}drawFeature(e,t,n){}drawGeometryCollection(e,t,n){}drawLineString(e,t"
+    ],
+    "LAYERS": [
+      "is.httpClient.post(`${this.baseUrl}/MapInfo/getVVVVExtentGeoref`,n))})}fetchDerivedLayers(){return te(this,null,function*(){let t=new Ei().set(\"layerType\",\"TABLE_DERIVED_LAYERS\");return yield Ji(this.httpClient.post(`${this.baseUrl}/Layers/getLayers`,t))})}fetchCustomLayers(t){return te(this,null,function*(){let n=new Ei().set(\"layerType\",\"TABLE_LAYER_MASTER\").set(\"giscode\",t);",
+      ".crossOrigin=o,r(A,c).then(d=>({image:d,extent:s,pixelRatio:l}))}}function r9(i,e,t){if(i.url===void 0)return;let n=ui(i.projection||\"EPSG:3857\"),r=pu(e,t,0,t9),o={QUERY_LAYERS:i.params.LAYERS,INFO_FORMAT:\"application/json\"};Object.assign(o,$v(i.params,\"GetFeatureInfo\"),i.params);let s=Qh((e[0]-r[0])/t,4),a=Qh((r[3]-e[1])/t,4),l=Mv(o.VERSION,\"1.3\")>=0;return o[l?\"I\":\"X\"]=s,o[l?",
+      "(A,c).then(d=>({image:d,extent:s,pixelRatio:l}))}}function r9(i,e,t){if(i.url===void 0)return;let n=ui(i.projection||\"EPSG:3857\"),r=pu(e,t,0,t9),o={QUERY_LAYERS:i.params.LAYERS,INFO_FORMAT:\"application/json\"};Object.assign(o,$v(i.params,\"GetFeatureInfo\"),i.params);let s=Qh((e[0]-r[0])/t,4),a=Qh((r[3]-e[1])/t,4),l=Mv(o.VERSION,\"1.3\")>=0;return o[l?\"I\":\"X\"]=s,o[l?\"J\":\"Y\"]=a,i9(i.",
+      ";if(e!==void 0){let n=ui(i.projection||\"EPSG:3857\").getMetersPerUnit()||1,r=28e-5;t.SCALE=e*n/r}if(Object.assign(t,i.params),i.params!==void 0&&t.LAYER===void 0){let n=t.LAYERS;if(!(!Array.isArray(n)||n.length!==1))return;t.LAYER=n}return Vv(i.url,t)}var oL=class extends e9{constructor(e){e=e||{},super({attributions:e.attributions,interpolate:e.interpolate,projection:e.projecti",
+      ".getTileCoordForCoordAndZ(l,A);if(a.getResolutions().length<=u[0])return;let h=a.getTileCoordExtent(u,this.tmpExtent_),f=this.gutter_;f!==0&&(h=zc(h,d*f,h));let g={QUERY_LAYERS:this.params_.LAYERS};Object.assign(g,$v(this.params_,\"GetFeatureInfo\"),r);let p=Math.floor((l[0]-h[0])/d),v=Math.floor((h[3]-l[1])/d);return g[this.v13_?\"I\":\"X\"]=p,g[this.v13_?\"J\":\"Y\"]=v,this.getRequestU",
+      "dAndZ(l,A);if(a.getResolutions().length<=u[0])return;let h=a.getTileCoordExtent(u,this.tmpExtent_),f=this.gutter_;f!==0&&(h=zc(h,d*f,h));let g={QUERY_LAYERS:this.params_.LAYERS};Object.assign(g,$v(this.params_,\"GetFeatureInfo\"),r);let p=Math.floor((l[0]-h[0])/d),v=Math.floor((h[3]-l[1])/d);return g[this.v13_?\"I\":\"X\"]=p,g[this.v13_?\"J\":\"Y\"]=v,this.getRequestUrl_(u,h,1,s||o,g)}ge",
+      "l(e,t){if(this.urls[0]===void 0)return;let n={SERVICE:\"WMS\",VERSION:qv,REQUEST:\"GetLegendGraphic\",FORMAT:\"image/png\"};if(t===void 0||t.LAYER===void 0){let r=this.params_.LAYERS;if(!(!Array.isArray(r)||r.length===1))return;n.LAYER=r}if(e!==void 0){let r=this.getProjection()?this.getProjection().getMetersPerUnit():1,o=28e-5;n.SCALE=e*r/o}return Object.assign(n,t),Vv(this.urls[0],",
+      ":!0)&&e.push(new r7({duration:i.zoomDuration})),e}var uf={ADDLAYER:\"addlayer\",REMOVELAYER:\"removelayer\"},tA=class extends nr{constructor(e,t){super(e),this.layer=t}},h4={LAYERS:\"layers\"},f4=class i extends uM{constructor(e){e=e||{};let t=Object.assign({},e);delete t.layers;let n=e.layers;super(t),this.on,this.once,this.un,this.layersListenerKeys_=[],this.listenerKeys_={},this.a"
+    ],
+    "layercodes": [
+      "erType\",t),this.httpClient.post(\"${this.baseUrl}/\"+\"Layers/getLayers\",n,{withCredentials:!0})}getGeoJSONLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,oprType:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,r){return",
+      "odificationController/getGeoJSONLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,divId:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONTempLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}forwardTransaction(t,n,r){let o={gis",
+      "w Sf}getDerivedLayerWMS(t,n,r){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"DERIVED_LAYER\",state:\"\",gis_code:t,layercodes:n,plotId:r},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getWMSTileLayer(t){return te(this,null,function*(){return new Qr({source:new tx({url:`${this.baseUrl}/WMS/tile`,para"
+    ],
+    "getVVVV": [
+      "terdata/levelvalue`,r))})}fetchMapInfo(t){return te(this,null,function*(){let n=new Ei().set(\"gisLevels\",t);return yield Ji(this.httpClient.post(`${this.baseUrl}/MapInfo/getVVVVExtentGeoref`,n))})}fetchDerivedLayers(){return te(this,null,function*(){let t=new Ei().set(\"layerType\",\"TABLE_DERIVED_LAYERS\");return yield Ji(this.httpClient.post(`${this.baseUrl}/Layers/getLayers`,t))"
+    ],
+    "gis_code": [
+      "s.format=new Sf}getDerivedLayerWMS(t,n,r){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"DERIVED_LAYER\",state:\"\",gis_code:t,layercodes:n,plotId:r},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getWMSTileLayer(t){return te(this,null,function*(){return new Qr({source:new tx({url:`${this.baseUrl}/WMS",
+      "})})}getWMSTileLayer(t){return te(this,null,function*(){return new Qr({source:new tx({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",CRS:\"\",STYLES:\"VILLAGE_MAP\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getWMSTileLayerTransparent(t){return te(this,null,function*(){return new nm({source:new tf({u",
+      "TileLayerTransparent(t){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"VILLAGE_MAP_TRANSPARENT\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getStateBoundaryLayer(){return te(this,null,function*(){return",
+      "edentials\"})})})}getCustomLayerWMS(t,n,r){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"OVERLAY_LAYER\",state:\"\",gis_code:t,overlay_codes:n,oprType:r},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getVillageMapWMS(t){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl",
+      ")})}getVillageMapWMS(t){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",CRS:\"\",STYLES:\"VILLAGE_MAP\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getPlotLayerWMS(t,n){return te(this,null,function*(){return new nm({source:new tf({url:`${thi",
+      "ls\"})})})}getPlotLayerWMS(t,n){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"PLOT_LIST\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",plot_id:n,CRS:\"\",STYLES:\"PLOT_SELECTION\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getSameOwnerWMS(t,n){return te(this,null,function*(){return new nm({source:new t",
+      "gisCode,this.resetLayers(),this.map.setView(n),this.plotLayer!=null?(this.plotListLayer!=null&&this.plotListLayer.setVisible(!1),this.plotLayer.getSource().updateParams({gis_code:t.gisCode})):(this.plotLayer=yield this.mapService.getWMSTileLayer(this.currentGisCode),this.map.addLayer(this.plotLayer)),this.map.getView().fit([t.xmin,t.ymin,t.xmax,t.ymax],{padding:[50,50,50,50]}),",
+      "xx||t.maxx===\"NaN\")return;if(Cl([t.minx,t.miny,t.maxx,t.maxy]).scale(1.6),this.selectedplotId=t.id,this.plotListLayer!=null){this.plotListLayer.getSource().updateParams({gis_code:this.currentGisCode,plot_id:t.id}),this.plotListLayer.setVisible(!0);return}this.plotListLayer=yield this.mapService.getPlotLayerWMS(this.currentGisCode,t.id),this.plotListLayer.setVisible(!0),this.map"
+    ],
+    "giscode": [
+      "n.set(\"layerType\",t),this.httpClient.post(\"${this.baseUrl}/\"+\"Layers/getLayers\",n,{withCredentials:!0})}getGeoJSONLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,oprType:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,",
+      "eUrl}/mapModificationController/getGeoJSONLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,divId:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONTempLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}forwardTransaction(t,n,r){",
+      "(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONTempLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}forwardTransaction(t,n,r){let o={giscode:t,comments:n,id:r};return this.httpClient.post(`${this.baseUrl}/mapModificationController/forwardTransaction`,o,{withCredentials:!0,responseType:\"text\"})}sendBackTransaction(t,n,r){let o={giscode:t,comm",
+      ";return this.httpClient.post(`${this.baseUrl}/mapModificationController/forwardTransaction`,o,{withCredentials:!0,responseType:\"text\"})}sendBackTransaction(t,n,r){let o={giscode:t,comments:n,id:r};return this.httpClient.post(`${this.baseUrl}/mapModificationController/sendBackTransaction`,o,{withCredentials:!0,responseType:\"text\"})}approveTransaction(t,n,r,o){let s={giscode:t,pl",
+      "eturn this.httpClient.post(`${this.baseUrl}/mapModificationController/sendBackTransaction`,o,{withCredentials:!0,responseType:\"text\"})}approveTransaction(t,n,r,o){let s={giscode:t,plotId:n,comments:r,id:o};return this.httpClient.post(`${this.baseUrl}/mapModificationController/approveTransaction`,s,{withCredentials:!0,responseType:\"text\"})}approveLayerTransaction(t,n,r){let o={g",
+      "urn this.httpClient.post(`${this.baseUrl}/mapModificationController/approveTransaction`,s,{withCredentials:!0,responseType:\"text\"})}approveLayerTransaction(t,n,r){let o={giscode:t,comments:r,id:n};return this.httpClient.post(`${this.baseUrl}/mapModificationController/approveLayerTransaction`,o,{withCredentials:!0,responseType:\"text\"})}approveAllTransactions(t,n,r,o){let s={gisc",
+      "is.httpClient.post(`${this.baseUrl}/mapModificationController/approveLayerTransaction`,o,{withCredentials:!0,responseType:\"text\"})}approveAllTransactions(t,n,r,o){let s={giscode:t,plotIds:n,comments:o,ids:r};return this.httpClient.post(`${this.baseUrl}/mapModificationController/approveAllTransactions`,s,{withCredentials:!0,responseType:\"text\"})}constructor(){this.dataSource=new",
+      "n this.httpClient.post(`${this.baseUrl}/shape/importVillage`,s,{responseType:\"text\"})}deleteVillage(t){return this.httpClient.post(`${this.baseUrl}/shape/deleteVillage`,{giscode:t},{responseType:\"text\"})}importLayer(t){let n=$t(W({},t),{features:typeof t.features==\"string\"?t.features:JSON.stringify(t.features)});return this.httpClient.post(`${this.baseUrl}/shape/importLayer`,n,"
+    ],
+    "gisCode": [
+      "0})}getPlotByPlotNo(t,n){let r=new Ei().set(\"giscode\",t).set(\"plotno\",n);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotByPlotNo`,r)}getPlotInfo(t,n){let r={gisCode:t,plotNo:n};return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotInfo`,r,{responseType:\"text\"})}getPlotByPlotId(t,n){let r=new Ei().set(\"bhucode\",t).set(\"id\",n);return this.httpClient.post(`${thi",
+      "ttpClient.post(`${this.baseUrl}/Levels/getGisCodeFromLevels?gisLevels=${encodeURIComponent(t)}`,{},{responseType:\"text\"}))}getVsrNoFromFromGisCode(t){let n=new Ei().set(\"gisCode\",t);return Ji(this.httpClient.post(`${this.baseUrl}/Levels/createVsrnoFromGisCode`,n))}getMissingPlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseU",
+      "oFromFromGisCode(t){let n=new Ei().set(\"gisCode\",t);return Ji(this.httpClient.post(`${this.baseUrl}/Levels/createVsrnoFromGisCode`,n))}getMissingPlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInMap`,null,{params:s})}getMissingPlotsInROR(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return t",
+      "ew Ei().set(\"gisCode\",t);return Ji(this.httpClient.post(`${this.baseUrl}/Levels/createVsrnoFromGisCode`,n))}getMissingPlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInMap`,null,{params:s})}getMissingPlotsInROR(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this",
+      "let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInMap`,null,{params:s})}getMissingPlotsInROR(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInROR`,null,{params:s})}getDuplicatePlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return",
+      ").set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInMap`,null,{params:s})}getMissingPlotsInROR(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInROR`,null,{params:s})}getDuplicatePlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${th",
+      "t o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInROR`,null,{params:s})}getDuplicatePlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/duplicatePlotsInMap`,null,{params:s})}getMapRorAreaComparisonList(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n)",
+      "set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/missingPlotsInROR`,null,{params:s})}getDuplicatePlotsInMap(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/duplicatePlotsInMap`,null,{params:s})}getMapRorAreaComparisonList(t,n,r){let o={gisCode:n},s=new Ei().set(\"gisCode\",n);return this.httpClient.pos"
+    ],
+    "gisLevels": [
+      "onstructor(){this.dataSource=new _t(null),this.data$=this.dataSource.asObservable(),this.baseUrl=zi.apiUrl,this.httpClient=q(Lc)}isVillageImported(t){let n=new Ei().set(\"gisLevels\",t);return this.httpClient.post(`${this.baseUrl}/shape/isVillageImported`,n,{withCredentials:!0,responseType:\"text\"})}importVillage(t,n,r,o){let s={geoJson:t,crs:n,parcelId:r,gisLevels:o,fixRingSelfIn",
+      "eturn this.httpClient.post(`${this.baseUrl}/shape/isVillageImported`,n,{withCredentials:!0,responseType:\"text\"})}importVillage(t,n,r,o){let s={geoJson:t,crs:n,parcelId:r,gisLevels:o,fixRingSelfIntersection:\"Y\"};return this.httpClient.post(`${this.baseUrl}/shape/importVillage`,s,{responseType:\"text\"})}deleteVillage(t){return this.httpClient.post(`${this.baseUrl}/shape/deleteVill",
+      ",t).set(\"codes\",n);return yield Ji(this.httpClient.post(`${this.baseUrl}/masterdata/levelvalue`,r))})}fetchMapInfo(t){return te(this,null,function*(){let n=new Ei().set(\"gisLevels\",t);return yield Ji(this.httpClient.post(`${this.baseUrl}/MapInfo/getVVVVExtentGeoref`,n))})}fetchDerivedLayers(){return te(this,null,function*(){let t=new Ei().set(\"layerType\",\"TABLE_DERIVED_LAYERS\")",
+      "{responseType:\"text\"})}getLoginLevels(){return this.httpClient.get(`${this.baseUrl}/Levels/loginLevel`,{responseType:\"text\"})}getGisCodeFromLevels(t){let n=new Ei().set(\"gisLevels\",t);return Ji(this.httpClient.post(`${this.baseUrl}/Levels/getGisCodeFromLevels?gisLevels=${encodeURIComponent(t)}`,{},{responseType:\"text\"}))}getVsrNoFromFromGisCode(t){let n=new Ei().set(\"gisCode\",t",
+      "/loginLevel`,{responseType:\"text\"})}getGisCodeFromLevels(t){let n=new Ei().set(\"gisLevels\",t);return Ji(this.httpClient.post(`${this.baseUrl}/Levels/getGisCodeFromLevels?gisLevels=${encodeURIComponent(t)}`,{},{responseType:\"text\"}))}getVsrNoFromFromGisCode(t){let n=new Ei().set(\"gisCode\",t);return Ji(this.httpClient.post(`${this.baseUrl}/Levels/createVsrnoFromGisCode`,n))}getMi"
+    ],
+    "geoserver": [
+      "2]]:e;return r.BBOX=a.join(\",\"),Vv(i,r)}function rL(i,e,t,n,r,o,s){o=Object.assign({REQUEST:\"GetMap\"},o);let a=e/t,l=[$N(jt(i)/a,4),$N(un(i)/a,4)];if(t!=1)switch(s){case\"geoserver\":let A=90*t+.5|0;\"FORMAT_OPTIONS\"in o?o.FORMAT_OPTIONS+=\";dpi:\"+A:o.FORMAT_OPTIONS=\"dpi:\"+A;break;case\"mapserver\":o.MAP_RESOLUTION=90*t;break;case\"carmentaserver\":case\"qgis\":o.DPI=90*t;break;default:t",
+      "rn te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"DERIVED_LAYER\",state:\"\",gis_code:t,layercodes:n,plotId:r},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getWMSTileLayer(t){return te(this,null,function*(){return new Qr({source:new tx({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparen",
+      "({source:new tx({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",CRS:\"\",STYLES:\"VILLAGE_MAP\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getWMSTileLayerTransparent(t){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparen",
+      "seUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"VILLAGE_MAP_TRANSPARENT\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getStateBoundaryLayer(){return te(this,null,function*(){return new Qr({source:new tx({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"STATE_BOUNDARY\",transparent:!",
+      "x({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"STATE_BOUNDARY\",transparent:!0,state:\"\",overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"STATE_BOUNDARY\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getCustomLayerWMS(t,n,r){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"OVERLAY_LAYER\",state:\"\",gis_code:",
+      "e(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"OVERLAY_LAYER\",state:\"\",gis_code:t,overlay_codes:n,oprType:r},serverType:\"geoserver\",crossOrigin:\"user-credentials\"}),opacity:.8})})}getVillageMapWMS(t){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transpare",
+      "({source:new tf({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",CRS:\"\",STYLES:\"VILLAGE_MAP\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getPlotLayerWMS(t,n){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"PLOT_LIST\",transparent:!0,state:\"\",gi",
+      "ce:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"PLOT_LIST\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",plot_id:n,CRS:\"\",STYLES:\"PLOT_SELECTION\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getSameOwnerWMS(t,n){return te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS`,params:{LAYERS:\"SAME_OWNER_PLOT_LIST\",state:\"\",giscod"
+    ],
+    "TRANSPARENT": [
+      "new Error(\"Unknown `serverType` configured\")}return i9(r,i,l,n,o)}function $v(i,e){return Object.assign({REQUEST:e,SERVICE:\"WMS\",VERSION:qv,FORMAT:\"image/png\",STYLES:\"\",TRANSPARENT:\"TRUE\"},i)}function n9(i){let e=i.hidpi===void 0?!0:i.hidpi,t=ui(i.projection||\"EPSG:3857\"),n=i.ratio||1.5,r=i.load||vI,o=i.crossOrigin??null;return(s,a,l)=>{s=nL(s,a,l,n),l!=1&&(!e||i.serverType===",
+      "rn te(this,null,function*(){return new nm({source:new tf({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"VILLAGE_MAP_TRANSPARENT\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getStateBoundaryLayer(){return te(this,null,function*(){return new Qr({source:new tx({url:",
+      "rce:new tf({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"VILLAGE_MAP\",transparent:!0,state:\"\",gis_code:t,overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"VILLAGE_MAP_TRANSPARENT\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getStateBoundaryLayer(){return te(this,null,function*(){return new Qr({source:new tx({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"STA",
+      "r(){return te(this,null,function*(){return new Qr({source:new tx({url:`${this.baseUrl}/WMS/tile`,params:{LAYERS:\"STATE_BOUNDARY\",transparent:!0,state:\"\",overlay_codes:\"\",TRANSPARENT:\"true\",CRS:\"\",STYLES:\"STATE_BOUNDARY\"},serverType:\"geoserver\",crossOrigin:\"user-credentials\"})})})}getCustomLayerWMS(t,n,r){return te(this,null,function*(){return new nm({source:new tf({url:`${this."
+    ],
+    "getPlotReport": [
+      "eportForSplitPlot(t,n){let r={gisCode:n},o=new Ei().set(\"gisCode\",n);return this.httpClient.post(`${this.baseUrl}/Reports/getMutationReportForSplitPlot`,null,{params:o})}getPlotReport(t,n){let r=`${this.baseUrl}/api/plots?gisCode=${encodeURIComponent(t)}&plotNo=${encodeURIComponent(n)}`;return this.httpClient.get(r)}getUserId(){return this.httpClient.get(`${this.baseUrl}/Levels",
+      ",this.fetchLocation(),this.fetchPlotInfo()}fetchPlotImage(){console.log(\"\\u{1F7E2} fetchPlotImage called\"),this.plotImageUrl=null,this.errorMessage=null,this.httpService.getPlotReport(this.gisCode,this.plotNo).subscribe({next:t=>{let n=t.imageBase64;if(this.scale=t.scale,console.log(\"\\u{1F7E2} Received base64:\",n?.substring(0,30)+\"...\"),console.log(\"\\u{1F4CF} Map Scale:\",this.s"
+    ],
+    "getPlotInfo": [
+      "ls`,r,{withCredentials:!0})}getPlotByPlotNo(t,n){let r=new Ei().set(\"giscode\",t).set(\"plotno\",n);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotByPlotNo`,r)}getPlotInfo(t,n){let r={gisCode:t,plotNo:n};return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotInfo`,r,{responseType:\"text\"})}getPlotByPlotId(t,n){let r=new Ei().set(\"bhucode\",t).set(\"id\",n);return thi",
+      "return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotByPlotNo`,r)}getPlotInfo(t,n){let r={gisCode:t,plotNo:n};return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotInfo`,r,{responseType:\"text\"})}getPlotByPlotId(t,n){let r=new Ei().set(\"bhucode\",t).set(\"id\",n);return this.httpClient.post(`${this.baseUrl}/v1/khasramap/plot`,{},{params:r})}getMenusMasterData(){return",
+      "ByPlotNo(t,n){return this.http.getPlotByPlotNo(t,n)}getPlotByPlotId(t,n){return this.http.getPlotByPlotId(t,n)}getPlotsByDivid(t,n){return this.http.getPlotsByDivid(t,n)}getPlotInfo(t,n){return this.http.getPlotInfo(t,n)}getLocationInfo(t){this.http.getLocationInfo(t).subscribe(n=>{this.dataService.changeAttribution(JSON.parse(n).attribution)})}getDisclaimerInfo(t){this.http.ge",
+      "PlotByPlotNo(t,n)}getPlotByPlotId(t,n){return this.http.getPlotByPlotId(t,n)}getPlotsByDivid(t,n){return this.http.getPlotsByDivid(t,n)}getPlotInfo(t,n){return this.http.getPlotInfo(t,n)}getLocationInfo(t){this.http.getLocationInfo(t).subscribe(n=>{this.dataService.changeAttribution(JSON.parse(n).attribution)})}getDisclaimerInfo(t){this.http.getDisclaimer(t).subscribe(n=>{this.",
+      "n[0],n[1],this.plotno).subscribe(r=>{this.createOverLayPlotsLayer(r.kide),this.createPlotListLayer(r);let o=r.kide;this.dataService.changePlotId(r.id),o&&this.mapService.getPlotInfo(this.currentGisCode,o).subscribe({next:s=>{this.dataService.changePlotInfo(s)},error:s=>{console.error(\"Error occurred:\",s.message),this.dataService.changePlotInfo(\"ROR information not available.\")}",
+      "gth!==0?(this.createOverLayPlotsLayer(t),this.createPlotListLayer(r),this.dataService.changePlotId(r.id)):this.toastr.error(\"no plot found\")});let n=t;n&&this.mapService.getPlotInfo(this.currentGisCode,n).subscribe({next:r=>{this.dataService.changePlotInfo(r)},error:r=>{console.error(\"Error occurred:\",r.message),this.dataService.changePlotInfo(\"ROR information not available.\")}",
+      "} Error fetching plot image:\",t),this.errorMessage=\"Failed to load plot image.\",this.cd.detectChanges()}})}fetchPlotInfo(){this.loading=!0,this.error=\"\",this.httpService.getPlotInfo(this.gisCode,this.plotNo).subscribe({next:t=>{this.plotInfo=t,this.loading=!1},error:t=>{this.error=\"Failed to load plot info\",this.loading=!1}})}fetchLocation(){this.httpService.getLocationInfo(thi"
+    ],
+    "getPlotAtXY": [
+      "Layers/getLayers`,n))})}fetchPlotAtXY(t,n,r,o){let s=new Ei().set(\"giscode\",t).set(\"x\",n).set(\"y\",r).set(\"plotno\",o);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotAtXY`,s)}getPlotsByDivid(t,n){let r=new Ei().set(\"bhucode\",t).set(\"divId\",n);return this.httpClient.post(`${this.baseUrl}/tempdivision/fetchDivIdDetails`,r,{withCredentials:!0})}getPlotByPlotNo(t,n){let",
+      "function*(){return this.http.getGeoJSONTempLayerData(t,n,r)})}setExtent(t,n){return te(this,null,function*(){t.getView().fit([n.xmin,n.ymin,n.xmax,n.ymax],t.getSize())})}getPlotAtXY(t,n,r,o){return this.http.fetchPlotAtXY(t,n,r,o)}getPloyByPlotNo(t,n){return this.http.getPlotByPlotNo(t,n)}getPlotByPlotId(t,n){return this.http.getPlotByPlotId(t,n)}getPlotsByDivid(t,n){return thi",
+      "his.attribution=t,this.cdr.detectChanges(),this.session.setStorageItem(\"attribution\",this.attribution)}),this.map.on(\"singleclick\",t=>{let n=t.coordinate;this.mapService.getPlotAtXY(this.currentGisCode,n[0],n[1],this.plotno).subscribe(r=>{this.createOverLayPlotsLayer(r.kide),this.createPlotListLayer(r);let o=r.kide;this.dataService.changePlotId(r.id),o&&this.mapService.getPlotI"
+    ],
+    "MapInfo/": [
+      "Url}/masterdata/levelvalue`,r))})}fetchMapInfo(t){return te(this,null,function*(){let n=new Ei().set(\"gisLevels\",t);return yield Ji(this.httpClient.post(`${this.baseUrl}/MapInfo/getVVVVExtentGeoref`,n))})}fetchDerivedLayers(){return te(this,null,function*(){let t=new Ei().set(\"layerType\",\"TABLE_DERIVED_LAYERS\");return yield Ji(this.httpClient.post(`${this.baseUrl}/Layers/getLay",
+      "aseUrl}/Layers/getLayers`,n))})}fetchPlotAtXY(t,n,r,o){let s=new Ei().set(\"giscode\",t).set(\"x\",n).set(\"y\",r).set(\"plotno\",o);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotAtXY`,s)}getPlotsByDivid(t,n){let r=new Ei().set(\"bhucode\",t).set(\"divId\",n);return this.httpClient.post(`${this.baseUrl}/tempdivision/fetchDivIdDetails`,r,{withCredentials:!0})}getPlotByPlotNo(t",
+      "tempdivision/fetchDivIdDetails`,r,{withCredentials:!0})}getPlotByPlotNo(t,n){let r=new Ei().set(\"giscode\",t).set(\"plotno\",n);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotByPlotNo`,r)}getPlotInfo(t,n){let r={gisCode:t,plotNo:n};return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotInfo`,r,{responseType:\"text\"})}getPlotByPlotId(t,n){let r=new Ei().set(\"bhucod",
+      "tno\",n);return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotByPlotNo`,r)}getPlotInfo(t,n){let r={gisCode:t,plotNo:n};return this.httpClient.post(`${this.baseUrl}/MapInfo/getPlotInfo`,r,{responseType:\"text\"})}getPlotByPlotId(t,n){let r=new Ei().set(\"bhucode\",t).set(\"id\",n);return this.httpClient.post(`${this.baseUrl}/v1/khasramap/plot`,{},{params:r})}getMenusMasterData()"
+    ],
+    "masterdata/": [
+      "ls/levelLabels`)}fetchLevelValues(t,n){return te(this,null,function*(){let r=new Ei().set(\"level\",t).set(\"codes\",n);return yield Ji(this.httpClient.post(`${this.baseUrl}/masterdata/levelvalue`,r))})}fetchMapInfo(t){return te(this,null,function*(){let n=new Ei().set(\"gisLevels\",t);return yield Ji(this.httpClient.post(`${this.baseUrl}/MapInfo/getVVVVExtentGeoref`,n))})}fetchDeriv",
+      "(\"bhucode\",t).set(\"id\",n);return this.httpClient.post(`${this.baseUrl}/v1/khasramap/plot`,{},{params:r})}getMenusMasterData(){return this.httpClient.get(`${this.baseUrl}/masterdata/web-menu`)}login(t){return this.httpClient.post(`${this.baseUrl}/auth/login`,t,{withCredentials:!0})}logout(){return this.httpClient.get(`${zi.apiUrl}/session/logout`,{withCredentials:!0})}getVsrLeve",
+      "e\",t);return this.httpClient.post(`${this.baseUrl}/Reports/mapAndRORAreaNotMatchingList`,null,{params:o})}getLocationInfo(t){return this.httpClient.post(`${this.baseUrl}/masterdata/getAttributionInfo?gisCode=${encodeURIComponent(t)}`,{},{responseType:\"text\"})}getCustomLocationInfo(t){return te(this,null,function*(){return(yield Ji(this.httpClient.post(`${this.baseUrl}/masterdat",
+      "isCode=${encodeURIComponent(t)}`,{},{responseType:\"text\"})}getCustomLocationInfo(t){return te(this,null,function*(){return(yield Ji(this.httpClient.post(`${this.baseUrl}/masterdata/getCustomAttributionInfo?gisCode=${encodeURIComponent(t)}`,{}))).attribution})}getDisclaimer(t){return this.httpClient.post(`${this.baseUrl}/Levels/getDisclaimer`,{})}getImportedVillagesList(t,n){let",
+      "tPendingTransList?giscode=${encodeURIComponent(t)}&operationType=${encodeURIComponent(n)}`,{withCredentials:!0})}loadButton(){return this.httpClient.get(`${this.baseUrl}/masterdata/forWebModuleAndGroup`)}userActivityLog(){return this.httpClient.get(`${this.baseUrl}/auth/userActivityLog`,{withCredentials:!0})}validateCookie(){return this.httpClient.get(`${this.baseUrl}/auth/cook"
+    ],
+    "baseUrl": [
+      "ies:[bt],encapsulation:2,changeDetection:0})}return i})(),WGe=$t(W({},Sz),{toastComponent:mfe});var zi={production:!1,apiUrl:\"https://upbhunaksha.gov.in/bhunakshaserver\",baseUrl:\"https://upbhunaksha.gov.in\"};var vt=(()=>{class i{sendData(t){this.dataSource.next(t)}getLayers(t){let n=new Ei;return n.set(\"layerType\",t),this.httpClient.post(\"${this.baseUrl}/\"+\"Layers/getLayers\",n,",
+      "\"https://upbhunaksha.gov.in\"};var vt=(()=>{class i{sendData(t){this.dataSource.next(t)}getLayers(t){let n=new Ei;return n.set(\"layerType\",t),this.httpClient.post(\"${this.baseUrl}/\"+\"Layers/getLayers\",n,{withCredentials:!0})}getGeoJSONLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,oprType:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/ma",
+      ",n,{withCredentials:!0})}getGeoJSONLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,oprType:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,divId:r};retur",
+      "sponseType:\"text\"}))})}getGeoJSONTempLayerData(t,n,r){return te(this,null,function*(){let o={giscode:t,layercodes:n,divId:r};return yield Ji(this.httpClient.post(`${this.baseUrl}/mapModificationController/getGeoJSONTempLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}forwardTransaction(t,n,r){let o={giscode:t,comments:n,id:r};return this.httpClient.post(`${this.baseUrl",
+      "r/getGeoJSONTempLayerData`,o,{withCredentials:!0,responseType:\"text\"}))})}forwardTransaction(t,n,r){let o={giscode:t,comments:n,id:r};return this.httpClient.post(`${this.baseUrl}/mapModificationController/forwardTransaction`,o,{withCredentials:!0,responseType:\"text\"})}sendBackTransaction(t,n,r){let o={giscode:t,comments:n,id:r};return this.httpClient.post(`${this.baseUrl}/mapMo",
+      "ntroller/forwardTransaction`,o,{withCredentials:!0,responseType:\"text\"})}sendBackTransaction(t,n,r){let o={giscode:t,comments:n,id:r};return this.httpClient.post(`${this.baseUrl}/mapModificationController/sendBackTransaction`,o,{withCredentials:!0,responseType:\"text\"})}approveTransaction(t,n,r,o){let s={giscode:t,plotId:n,comments:r,id:o};return this.httpClient.post(`${this.bas",
+      "ndBackTransaction`,o,{withCredentials:!0,responseType:\"text\"})}approveTransaction(t,n,r,o){let s={giscode:t,plotId:n,comments:r,id:o};return this.httpClient.post(`${this.baseUrl}/mapModificationController/approveTransaction`,s,{withCredentials:!0,responseType:\"text\"})}approveLayerTransaction(t,n,r){let o={giscode:t,comments:r,id:n};return this.httpClient.post(`${this.baseUrl}/m",
+      "ller/approveTransaction`,s,{withCredentials:!0,responseType:\"text\"})}approveLayerTransaction(t,n,r){let o={giscode:t,comments:r,id:n};return this.httpClient.post(`${this.baseUrl}/mapModificationController/approveLayerTransaction`,o,{withCredentials:!0,responseType:\"text\"})}approveAllTransactions(t,n,r,o){let s={giscode:t,plotIds:n,comments:o,ids:r};return this.httpClient.post(`"
+    ],
+    "apiUrl": [
+      "tml),w(),D(\"ngIf\",r.options.progressBar))},dependencies:[bt],encapsulation:2,changeDetection:0})}return i})(),WGe=$t(W({},Sz),{toastComponent:mfe});var zi={production:!1,apiUrl:\"https://upbhunaksha.gov.in/bhunakshaserver\",baseUrl:\"https://upbhunaksha.gov.in\"};var vt=(()=>{class i{sendData(t){this.dataSource.next(t)}getLayers(t){let n=new Ei;return n.set(\"layerType\",t),this.http",
+      "/approveAllTransactions`,s,{withCredentials:!0,responseType:\"text\"})}constructor(){this.dataSource=new _t(null),this.data$=this.dataSource.asObservable(),this.baseUrl=zi.apiUrl,this.httpClient=q(Lc)}isVillageImported(t){let n=new Ei().set(\"gisLevels\",t);return this.httpClient.post(`${this.baseUrl}/shape/isVillageImported`,n,{withCredentials:!0,responseType:\"text\"})}importVillag",
+      "${this.baseUrl}/masterdata/web-menu`)}login(t){return this.httpClient.post(`${this.baseUrl}/auth/login`,t,{withCredentials:!0})}logout(){return this.httpClient.get(`${zi.apiUrl}/session/logout`,{withCredentials:!0})}getVsrLevelCount(){return this.httpClient.get(`${this.baseUrl}/Levels/vsrLevelCount`)}getMapLevelCount(){return this.httpClient.get(`${this.baseUrl}/Levels/mapLevel",
+      "ken:i,factory:i.\\u0275fac,providedIn:\"root\"})}}return i})();var Ft=(()=>{class i{constructor(t,n,r){this.http=t,this.mapStyleService=n,this.dataService=r,this.baseUrl=zi.apiUrl,this.geometryFactory=new qi,this.reader=new rw(this.geometryFactory),this.writer=new ow,this.format=new Sf}getDerivedLayerWMS(t,n,r){return te(this,null,function*(){return new nm({source:new tf({url:`${t",
+      "0%);pointer-events:none} /*# sourceMappingURL=importvillage.component-XC5OVNN4.css.map */`]})}}return i})();var Tr=(i,e)=>{let t=q(Lc),n=q(Qi),r=q(Dt);return t.get(`${zi.apiUrl}/session/validate`).pipe(Et(()=>!0),cl(o=>(r.endSession(),dt(!1))))};var Nq=\"AAEAAAAQAQAABAAAR0RFRiLPGhsAAAI8AAADCkdQT1NaLT/cAAB2dAAATixHU1VCiRPvIQAAxKAAAPvkT1MvMgE91TYAAAHcAAAAYFNUQVT1w940AAABmAAAAERjbW",
+      "ula:YPe,consts:{SHEET_VISIBLE:0,SHEET_HIDDEN:1,SHEET_VERY_HIDDEN:2}};var jzt=Nw.version;var bB=(()=>{class i{constructor(t){this.http=t,this.stateId=\"16\",this.baseUrl=zi.apiUrl,this.districtMapUrl=`${this.baseUrl}/Dashboard`}getDistrictRorPlotCount(){return this.http.post(`${this.districtMapUrl}/district-ror-plot-count`,{})}getDistrictPlotSummary(){return this.http.post(`${this",
+      "immer{to{transform:translate(100%)}} /*# sourceMappingURL=dashboard.component-RJFF3YNX.css.map */`]})}}return i})();var eie=(()=>{class i{constructor(t){this.http=t,this.apiUrl=`${zi.apiUrl}/auth/reset-password`}resetPassword(t){return this.http.post(this.apiUrl,t)}static{this.\\u0275fac=function(n){return new(n||i)(K(Lc))}}static{this.\\u0275prov=ie({token:i,factory:i.\\u0275fac,",
+      "sform:translate(100%)}} /*# sourceMappingURL=dashboard.component-RJFF3YNX.css.map */`]})}}return i})();var eie=(()=>{class i{constructor(t){this.http=t,this.apiUrl=`${zi.apiUrl}/auth/reset-password`}resetPassword(t){return this.http.post(this.apiUrl,t)}static{this.\\u0275fac=function(n){return new(n||i)(K(Lc))}}static{this.\\u0275prov=ie({token:i,factory:i.\\u0275fac,providedIn:\"r"
+    ],
+    "bhunakshaserver": [
+      "sBar))},dependencies:[bt],encapsulation:2,changeDetection:0})}return i})(),WGe=$t(W({},Sz),{toastComponent:mfe});var zi={production:!1,apiUrl:\"https://upbhunaksha.gov.in/bhunakshaserver\",baseUrl:\"https://upbhunaksha.gov.in\"};var vt=(()=>{class i{sendData(t){this.dataSource.next(t)}getLayers(t){let n=new Ei;return n.set(\"layerType\",t),this.httpClient.post(\"${this.baseUrl}/\"+\"Lay"
+    ]
+  }
+}
