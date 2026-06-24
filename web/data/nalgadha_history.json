@@ -1,13 +1,14 @@
 {
  "meta": {
   "villages": [
+   "गुलावली",
    "नलगढ़ा",
    "मोहियापुर"
   ],
-  "village_count": 2,
+  "village_count": 3,
   "district_code": "141",
   "generated_by": "tools/gen_nalgadha_history.py",
-  "generated_at": "2026-06-24T07:36:15Z",
+  "generated_at": "2026-06-24T11:35:11Z",
   "schema_version": 2,
   "disclaimer": "RECONSTRUCTED / SYNTHETIC chain-of-title for UX demonstration. NOT registry-verified. Parties shown as 'prior holder' are placeholders; only current owners are real (public Bhu-Naksha data). Real deeds to come from IGRSUP newPropertySearchAction (districtCode=141, Khasra_Number=<plot_no>)."
  },
@@ -9863,6 +9864,5563 @@
      ],
      "share": "1/5 each",
      "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|84": {
+   "uid": "मोहियापुर|84",
+   "plot_no": "84",
+   "village": "मोहियापुर",
+   "khata_no": "00005",
+   "events": [
+    {
+     "date": "2011-08-13",
+     "deed_no": "RECON-84-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-02-03",
+     "deed_no": "RECON-84-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3480000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-09-16",
+     "deed_no": "RECON-84-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 7520000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-02-23",
+     "deed_no": "RECON-84-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अमित कुमार",
+      "नरेश",
+      "विजय सिंह",
+      "शिवानन्‍द",
+      "संजीव कुमार"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|85": {
+   "uid": "मोहियापुर|85",
+   "plot_no": "85",
+   "village": "मोहियापुर",
+   "khata_no": "00007",
+   "events": [
+    {
+     "date": "2004-01-07",
+     "deed_no": "RECON-85-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-01-06",
+     "deed_no": "RECON-85-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 470000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-09-03",
+     "deed_no": "RECON-85-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "आजाद सिंह",
+      "देवेन्‍द्र",
+      "संजय सिंह",
+      "धीरसिह",
+      "बीरसिह",
+      "सत्यवीर"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|86": {
+   "uid": "मोहियापुर|86",
+   "plot_no": "86",
+   "village": "मोहियापुर",
+   "khata_no": "00032",
+   "events": [
+    {
+     "date": "2011-11-20",
+     "deed_no": "RECON-86-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-04-09",
+     "deed_no": "RECON-86-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "उदयवीर",
+      "शिव कुमार",
+      "समीर गौतम",
+      "सिरदारी"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|87": {
+   "uid": "मोहियापुर|87",
+   "plot_no": "87",
+   "village": "मोहियापुर",
+   "khata_no": "00020",
+   "events": [
+    {
+     "date": "2011-02-12",
+     "deed_no": "RECON-87-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-12-25",
+     "deed_no": "RECON-87-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अजबसिंह भाटी",
+      "किशनवीर",
+      "नवलसिह",
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण",
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण",
+      "महाराजसिह",
+      "वेगराज",
+      "वेदपाल",
+      "श्रीमती शीला देवी"
+     ],
+     "share": "1/9 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|88": {
+   "uid": "मोहियापुर|88",
+   "plot_no": "88",
+   "village": "मोहियापुर",
+   "khata_no": "00052",
+   "events": [
+    {
+     "date": "2014-08-27",
+     "deed_no": "RECON-88-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-08-08",
+     "deed_no": "RECON-88-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3840000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-07-06",
+     "deed_no": "RECON-88-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण",
+      "प्रेमचन्द",
+      "राखी",
+      "वन्दना",
+      "विनय कुमार"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|89": {
+   "uid": "मोहियापुर|89",
+   "plot_no": "89",
+   "village": "मोहियापुर",
+   "khata_no": "00059",
+   "events": [
+    {
+     "date": "2006-09-03",
+     "deed_no": "RECON-89-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-03-22",
+     "deed_no": "RECON-89-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1370000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-09-19",
+     "deed_no": "RECON-89-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "उमेश",
+      "मनोज",
+      "श्रीमती राजवती"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|91": {
+   "uid": "मोहियापुर|91",
+   "plot_no": "91",
+   "village": "मोहियापुर",
+   "khata_no": "00081",
+   "events": [
+    {
+     "date": "2007-12-13",
+     "deed_no": "RECON-91-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-04-20",
+     "deed_no": "RECON-91-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4820000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-01-12",
+     "deed_no": "RECON-91-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 5890000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-09-05",
+     "deed_no": "RECON-91-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "प्रमोद",
+      "रामनिवास",
+      "श्रीनिवास"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|92": {
+   "uid": "मोहियापुर|92",
+   "plot_no": "92",
+   "village": "मोहियापुर",
+   "khata_no": "00042",
+   "events": [
+    {
+     "date": "2014-09-06",
+     "deed_no": "RECON-92-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-06-13",
+     "deed_no": "RECON-92-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "दयाराम"
+     ],
+     "share": "1/1",
+     "consideration_inr": 9370000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|94": {
+   "uid": "मोहियापुर|94",
+   "plot_no": "94",
+   "village": "मोहियापुर",
+   "khata_no": "00109",
+   "events": [
+    {
+     "date": "2014-05-23",
+     "deed_no": "RECON-94-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-09-26",
+     "deed_no": "RECON-94-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "उमेश देवी",
+      "काजी अंसारी",
+      "कालूराम",
+      "के0सी0 शर्मा",
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण",
+      "नुरुल बसर",
+      "मनोज",
+      "मनोज",
+      "महाराजसिह",
+      "मै0आशा रियल स्टेट डवलपर्स",
+      "राजवीर सिंह",
+      "रूखसार",
+      "रोहित",
+      "वासिम वारिस",
+      "विजेन्द्र"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|95": {
+   "uid": "मोहियापुर|95",
+   "plot_no": "95",
+   "village": "मोहियापुर",
+   "khata_no": "00043",
+   "events": [
+    {
+     "date": "2014-05-24",
+     "deed_no": "RECON-95-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-09-22",
+     "deed_no": "RECON-95-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "जितेन्‍द्र",
+      "ज्ञानेन्द्र",
+      "दयाराम",
+      "देवेन्द्र",
+      "धर्मेन्द्र",
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण",
+      "मनोज कुमार",
+      "राजेन्द्र",
+      "शशि प्रभा",
+      "श्रीमति जितेन्द्री",
+      "श्रीमती केला देवी",
+      "श्रीमती जितेन्द्री"
+     ],
+     "share": "1/12 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|97": {
+   "uid": "मोहियापुर|97",
+   "plot_no": "97",
+   "village": "मोहियापुर",
+   "khata_no": "00060",
+   "events": [
+    {
+     "date": "2005-05-19",
+     "deed_no": "RECON-97-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-07-08",
+     "deed_no": "RECON-97-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अन्जुम शहनाज",
+      "अफरोज आलम",
+      "अब्दुल सलाम",
+      "अर्जुन सिंह",
+      "अवुल हसन खान",
+      "अहमद सईद",
+      "अहमद हसन",
+      "आवेज अहमद",
+      "इमरान अख्तर",
+      "खुर्शीद आलम",
+      "जुगरन बीबी",
+      "डा0 अकील अख्तर रिजवी",
+      "नगेन्द्र कुमार",
+      "नसीम अहमद सिददीकी",
+      "मनोज कुमार"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|98": {
+   "uid": "मोहियापुर|98",
+   "plot_no": "98",
+   "village": "मोहियापुर",
+   "khata_no": "00101",
+   "events": [
+    {
+     "date": "2014-05-18",
+     "deed_no": "RECON-98-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-08-09",
+     "deed_no": "RECON-98-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 610000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-05-06",
+     "deed_no": "RECON-98-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 990000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-09-18",
+     "deed_no": "RECON-98-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "श्रीमति राजवती"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1690000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|99": {
+   "uid": "मोहियापुर|99",
+   "plot_no": "99",
+   "village": "मोहियापुर",
+   "khata_no": "00044",
+   "events": [
+    {
+     "date": "2008-12-03",
+     "deed_no": "RECON-99-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-10-27",
+     "deed_no": "RECON-99-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "देवीराम",
+      "नवीन",
+      "प्रवीन कुमार",
+      "मन्जू सिंह",
+      "श्रीमती बेगवती",
+      "श्रीमती राजवती",
+      "सुजान"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|100": {
+   "uid": "मोहियापुर|100",
+   "plot_no": "100",
+   "village": "मोहियापुर",
+   "khata_no": "00046",
+   "events": [
+    {
+     "date": "2011-11-09",
+     "deed_no": "RECON-100-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-01-25",
+     "deed_no": "RECON-100-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "जगत सिंह",
+      "जीत राम",
+      "जीतराम",
+      "देशराज",
+      "भीम",
+      "भीम",
+      "वचन",
+      "वचन सिंह",
+      "श्रीमती जगनो",
+      "धीरसिह",
+      "बीरसिह",
+      "सत्यवीर",
+      "ईनामुददीन खान",
+      "रविन्द्र कुमार",
+      "राजवीर सिंह"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|101": {
+   "uid": "मोहियापुर|101",
+   "plot_no": "101",
+   "village": "मोहियापुर",
+   "khata_no": "00048",
+   "events": [
+    {
+     "date": "2003-06-21",
+     "deed_no": "RECON-101-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-07-08",
+     "deed_no": "RECON-101-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "धीरसिह",
+      "बीरसिह",
+      "सत्यवीर"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|102": {
+   "uid": "मोहियापुर|102",
+   "plot_no": "102",
+   "village": "मोहियापुर",
+   "khata_no": "00042",
+   "events": [
+    {
+     "date": "2014-06-15",
+     "deed_no": "RECON-102-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-10-11",
+     "deed_no": "RECON-102-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 520000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-10-02",
+     "deed_no": "RECON-102-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "दयाराम"
+     ],
+     "share": "1/1",
+     "consideration_inr": 990000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|103": {
+   "uid": "मोहियापुर|103",
+   "plot_no": "103",
+   "village": "मोहियापुर",
+   "khata_no": "00090",
+   "events": [
+    {
+     "date": "2010-12-05",
+     "deed_no": "RECON-103-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-10-08",
+     "deed_no": "RECON-103-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "शहीदभगतसिहजूुनियरहाईस्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1230000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|104": {
+   "uid": "मोहियापुर|104",
+   "plot_no": "104",
+   "village": "मोहियापुर",
+   "khata_no": "00090",
+   "events": [
+    {
+     "date": "2008-06-10",
+     "deed_no": "RECON-104-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-08-17",
+     "deed_no": "RECON-104-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 110000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-10-16",
+     "deed_no": "RECON-104-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 140000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-10-28",
+     "deed_no": "RECON-104-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "शहीदभगतसिहजूुनियरहाईस्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 240000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|105": {
+   "uid": "मोहियापुर|105",
+   "plot_no": "105",
+   "village": "मोहियापुर",
+   "khata_no": "00129",
+   "events": [
+    {
+     "date": "2014-01-04",
+     "deed_no": "RECON-105-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-04-06",
+     "deed_no": "RECON-105-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 410000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-07-10",
+     "deed_no": "RECON-105-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 870000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-05-23",
+     "deed_no": "RECON-105-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "स्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|106": {
+   "uid": "मोहियापुर|106",
+   "plot_no": "106",
+   "village": "मोहियापुर",
+   "khata_no": null,
+   "events": [
+    {
+     "date": "2013-05-09",
+     "deed_no": "RECON-106-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-12-23",
+     "deed_no": "RECON-106-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2740000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-04-15",
+     "deed_no": "RECON-106-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "शहीदभगतसिहजूुनियरहाईस्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 6910000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|107": {
+   "uid": "मोहियापुर|107",
+   "plot_no": "107",
+   "village": "मोहियापुर",
+   "khata_no": "00129",
+   "events": [
+    {
+     "date": "2015-11-03",
+     "deed_no": "RECON-107-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-07-06",
+     "deed_no": "RECON-107-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "स्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 610000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|108": {
+   "uid": "मोहियापुर|108",
+   "plot_no": "108",
+   "village": "मोहियापुर",
+   "khata_no": "00011",
+   "events": [
+    {
+     "date": "2007-11-12",
+     "deed_no": "RECON-108-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-07-28",
+     "deed_no": "RECON-108-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 410000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-08-27",
+     "deed_no": "RECON-108-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "ओमप्रकाश",
+      "देवेन्‍द्र सिंह",
+      "धर्मपाल",
+      "ब्रहमप्रकाश",
+      "रामपाल",
+      "लोकेन्‍द्र",
+      "श्रीमती ब्रहमवती",
+      "सन्‍दीप कुमार"
+     ],
+     "share": "1/8 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|109": {
+   "uid": "मोहियापुर|109",
+   "plot_no": "109",
+   "village": "मोहियापुर",
+   "khata_no": "00123",
+   "events": [
+    {
+     "date": "2004-01-18",
+     "deed_no": "RECON-109-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-02-14",
+     "deed_no": "RECON-109-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "खाई"
+     ],
+     "share": "1/1",
+     "consideration_inr": 340000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|110": {
+   "uid": "मोहियापुर|110",
+   "plot_no": "110",
+   "village": "मोहियापुर",
+   "khata_no": "00129",
+   "events": [
+    {
+     "date": "2007-01-17",
+     "deed_no": "RECON-110-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-04-19",
+     "deed_no": "RECON-110-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "स्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|112": {
+   "uid": "मोहियापुर|112",
+   "plot_no": "112",
+   "village": "मोहियापुर",
+   "khata_no": "00129",
+   "events": [
+    {
+     "date": "2007-09-27",
+     "deed_no": "RECON-112-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-08-17",
+     "deed_no": "RECON-112-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 190000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-04-16",
+     "deed_no": "RECON-112-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "स्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 230000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|113": {
+   "uid": "मोहियापुर|113",
+   "plot_no": "113",
+   "village": "मोहियापुर",
+   "khata_no": "00090",
+   "events": [
+    {
+     "date": "2011-06-03",
+     "deed_no": "RECON-113-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-02-03",
+     "deed_no": "RECON-113-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "शहीदभगतसिहजूुनियरहाईस्कूल"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|115": {
+   "uid": "मोहियापुर|115",
+   "plot_no": "115",
+   "village": "मोहियापुर",
+   "khata_no": "00063",
+   "events": [
+    {
+     "date": "2003-01-14",
+     "deed_no": "RECON-115-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-04-09",
+     "deed_no": "RECON-115-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "उमेश",
+      "धीरेश",
+      "ब्रजेश",
+      "महेश",
+      "श्रीमती अलका"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|116": {
+   "uid": "मोहियापुर|116",
+   "plot_no": "116",
+   "village": "मोहियापुर",
+   "khata_no": "00095",
+   "events": [
+    {
+     "date": "2008-01-20",
+     "deed_no": "RECON-116-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-11-23",
+     "deed_no": "RECON-116-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 240000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-11-03",
+     "deed_no": "RECON-116-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 550000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-06-12",
+     "deed_no": "RECON-116-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "राजेन्द्र",
+      "श्यामी",
+      "सुन्दर"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|117": {
+   "uid": "मोहियापुर|117",
+   "plot_no": "117",
+   "village": "मोहियापुर",
+   "khata_no": "00108",
+   "events": [
+    {
+     "date": "2015-01-28",
+     "deed_no": "RECON-117-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-10-03",
+     "deed_no": "RECON-117-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 780000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-11-16",
+     "deed_no": "RECON-117-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "प्रेमराजसिह",
+      "मनोज",
+      "विजेन्द्र",
+      "श्रीमती कविता",
+      "श्रीमती जगवती",
+      "संजीव कुमार",
+      "सुखवीर"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|118": {
+   "uid": "मोहियापुर|118",
+   "plot_no": "118",
+   "village": "मोहियापुर",
+   "khata_no": "00023",
+   "events": [
+    {
+     "date": "2013-01-22",
+     "deed_no": "RECON-118-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-07-27",
+     "deed_no": "RECON-118-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 850000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-01-25",
+     "deed_no": "RECON-118-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "गजराजसिह",
+      "गोपीचन्द",
+      "महाराजसिह",
+      "रविन्‍द्र चौधरी",
+      "श्रीमती ब्रहमा",
+      "हरेन्‍द्र सिंह लोहिया"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|119": {
+   "uid": "मोहियापुर|119",
+   "plot_no": "119",
+   "village": "मोहियापुर",
+   "khata_no": "00065",
+   "events": [
+    {
+     "date": "2002-07-08",
+     "deed_no": "RECON-119-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-05-07",
+     "deed_no": "RECON-119-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 180000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-05-01",
+     "deed_no": "RECON-119-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "धीरेश",
+      "महेश"
+     ],
+     "share": "1/2 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|120": {
+   "uid": "मोहियापुर|120",
+   "plot_no": "120",
+   "village": "मोहियापुर",
+   "khata_no": "00064",
+   "events": [
+    {
+     "date": "2015-07-11",
+     "deed_no": "RECON-120-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-09-07",
+     "deed_no": "RECON-120-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 720000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-04-15",
+     "deed_no": "RECON-120-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2050000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-01-23",
+     "deed_no": "RECON-120-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "इन्द्र सिंह",
+      "धन सिंह",
+      "धीरेश",
+      "बलराज सिंह",
+      "महेश",
+      "रघुराज",
+      "रविन्द्रसिंह",
+      "वीरपाल",
+      "श्रीमती रामरती"
+     ],
+     "share": "1/9 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|121": {
+   "uid": "मोहियापुर|121",
+   "plot_no": "121",
+   "village": "मोहियापुर",
+   "khata_no": "00100",
+   "events": [
+    {
+     "date": "2012-02-17",
+     "deed_no": "RECON-121-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-06-16",
+     "deed_no": "RECON-121-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-06-14",
+     "deed_no": "RECON-121-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 320000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-12-04",
+     "deed_no": "RECON-121-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "श्रीमति जगरती"
+     ],
+     "share": "1/1",
+     "consideration_inr": 580000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|122": {
+   "uid": "मोहियापुर|122",
+   "plot_no": "122",
+   "village": "मोहियापुर",
+   "khata_no": "00054",
+   "events": [
+    {
+     "date": "2009-12-23",
+     "deed_no": "RECON-122-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-10-23",
+     "deed_no": "RECON-122-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अमित कुमार",
+      "पिन्‍टू",
+      "बलजीत सिंह",
+      "श्रीमती मूर्ति"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|123": {
+   "uid": "मोहियापुर|123",
+   "plot_no": "123",
+   "village": "मोहियापुर",
+   "khata_no": "00098",
+   "events": [
+    {
+     "date": "2009-11-11",
+     "deed_no": "RECON-123-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-02-27",
+     "deed_no": "RECON-123-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 320000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-11-27",
+     "deed_no": "RECON-123-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 470000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-01-27",
+     "deed_no": "RECON-123-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अमित",
+      "राजवती",
+      "श्रीपाल",
+      "सदीप",
+      "सुनील",
+      "हरीश"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|124": {
+   "uid": "मोहियापुर|124",
+   "plot_no": "124",
+   "village": "मोहियापुर",
+   "khata_no": "00031",
+   "events": [
+    {
+     "date": "2004-02-11",
+     "deed_no": "RECON-124-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-02-26",
+     "deed_no": "RECON-124-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 170000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-06-03",
+     "deed_no": "RECON-124-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "गजराज सिह",
+      "जगदीश",
+      "जयकरन",
+      "महाराजसिह",
+      "श्रीमती कान्ति"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|125": {
+   "uid": "मोहियापुर|125",
+   "plot_no": "125",
+   "village": "मोहियापुर",
+   "khata_no": "00100",
+   "events": [
+    {
+     "date": "2013-03-21",
+     "deed_no": "RECON-125-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-01-14",
+     "deed_no": "RECON-125-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2250000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-10-17",
+     "deed_no": "RECON-125-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2700000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-06-07",
+     "deed_no": "RECON-125-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "श्रीमति जगरती"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3890000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|127": {
+   "uid": "मोहियापुर|127",
+   "plot_no": "127",
+   "village": "मोहियापुर",
+   "khata_no": "00100",
+   "events": [
+    {
+     "date": "2012-03-23",
+     "deed_no": "RECON-127-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-03-05",
+     "deed_no": "RECON-127-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 440000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-11-03",
+     "deed_no": "RECON-127-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "श्रीमति जगरती"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1070000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|128": {
+   "uid": "मोहियापुर|128",
+   "plot_no": "128",
+   "village": "मोहियापुर",
+   "khata_no": "00100",
+   "events": [
+    {
+     "date": "2013-01-12",
+     "deed_no": "RECON-128-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-07-09",
+     "deed_no": "RECON-128-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 560000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-09-06",
+     "deed_no": "RECON-128-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "श्रीमति जगरती"
+     ],
+     "share": "1/1",
+     "consideration_inr": 780000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|129": {
+   "uid": "मोहियापुर|129",
+   "plot_no": "129",
+   "village": "मोहियापुर",
+   "khata_no": "00103",
+   "events": [
+    {
+     "date": "2012-02-28",
+     "deed_no": "RECON-129-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-10-24",
+     "deed_no": "RECON-129-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "सरूपा"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|130": {
+   "uid": "मोहियापुर|130",
+   "plot_no": "130",
+   "village": "मोहियापुर",
+   "khata_no": "00103",
+   "events": [
+    {
+     "date": "2005-02-27",
+     "deed_no": "RECON-130-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-03-02",
+     "deed_no": "RECON-130-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 230000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-11-21",
+     "deed_no": "RECON-130-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 340000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-10-23",
+     "deed_no": "RECON-130-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "सरूपा"
+     ],
+     "share": "1/1",
+     "consideration_inr": 520000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|132": {
+   "uid": "मोहियापुर|132",
+   "plot_no": "132",
+   "village": "मोहियापुर",
+   "khata_no": "00033",
+   "events": [
+    {
+     "date": "2012-11-08",
+     "deed_no": "RECON-132-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-10-26",
+     "deed_no": "RECON-132-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "जयप्रकाश",
+      "प्रमोद कुमार",
+      "श्रीमती जगरती",
+      "श्रीमती बबीता",
+      "श्रीमती संतरादेवी",
+      "श्रीमती सन्तोष",
+      "सुदेश अवाना"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|133": {
+   "uid": "मोहियापुर|133",
+   "plot_no": "133",
+   "village": "मोहियापुर",
+   "khata_no": "00029",
+   "events": [
+    {
+     "date": "2015-08-25",
+     "deed_no": "RECON-133-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-12-07",
+     "deed_no": "RECON-133-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1340000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-04-26",
+     "deed_no": "RECON-133-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2810000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-12-03",
+     "deed_no": "RECON-133-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "जगत सिंह",
+      "धर्मपाल उर्फ धर्मी",
+      "जगत सिंह",
+      "निर्दोश लोहिया",
+      "प्रशान्त",
+      "शेखर लोहिया",
+      "संगम लोहिया"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|134": {
+   "uid": "मोहियापुर|134",
+   "plot_no": "134",
+   "village": "मोहियापुर",
+   "khata_no": "00123",
+   "events": [
+    {
+     "date": "2009-12-17",
+     "deed_no": "RECON-134-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-02-04",
+     "deed_no": "RECON-134-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 600000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-12-22",
+     "deed_no": "RECON-134-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "खाई"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1440000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|135": {
+   "uid": "मोहियापुर|135",
+   "plot_no": "135",
+   "village": "मोहियापुर",
+   "khata_no": "00128",
+   "events": [
+    {
+     "date": "2014-01-02",
+     "deed_no": "RECON-135-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-08-08",
+     "deed_no": "RECON-135-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 4510000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-10-26",
+     "deed_no": "RECON-135-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सडक खाम"
+     ],
+     "share": "1/1",
+     "consideration_inr": 12600000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|138": {
+   "uid": "मोहियापुर|138",
+   "plot_no": "138",
+   "village": "मोहियापुर",
+   "khata_no": "00015",
+   "events": [
+    {
+     "date": "2013-03-01",
+     "deed_no": "RECON-138-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-12-23",
+     "deed_no": "RECON-138-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अंकित लोहिया",
+      "अनुभव लोहिया",
+      "अभिराज लोहिया",
+      "ऋषिराज",
+      "कमल",
+      "कमल सिंह",
+      "कर्मवीर",
+      "कर्मवीर",
+      "धर्मवती",
+      "बलवीर",
+      "बलवीर",
+      "राजकुमार",
+      "श्रीमती सुमित्रा देवी",
+      "हर्ष लोहिया",
+      "हिमांशु लोहिया"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|139": {
+   "uid": "मोहियापुर|139",
+   "plot_no": "139",
+   "village": "मोहियापुर",
+   "khata_no": "00125",
+   "events": [
+    {
+     "date": "2006-12-11",
+     "deed_no": "RECON-139-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-05-02",
+     "deed_no": "RECON-139-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 60000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-01-27",
+     "deed_no": "RECON-139-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "नाली"
+     ],
+     "share": "1/1",
+     "consideration_inr": 140000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|141": {
+   "uid": "मोहियापुर|141",
+   "plot_no": "141",
+   "village": "मोहियापुर",
+   "khata_no": "00039",
+   "events": [
+    {
+     "date": "2011-08-14",
+     "deed_no": "RECON-141-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-10-23",
+     "deed_no": "RECON-141-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 6460000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-07-20",
+     "deed_no": "RECON-141-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 10170000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2023-06-20",
+     "deed_no": "RECON-141-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "कंवल भाटी",
+      "कृष्णपाल",
+      "गिर्राज",
+      "तेजपाल",
+      "दिनेश",
+      "ब्रहम सिंह",
+      "ब्रहमसिंह",
+      "मनोज",
+      "महेन्द्र सिह",
+      "महेश",
+      "यशपाल",
+      "रामवती",
+      "श्रीमती किरन",
+      "सचिन भाटी"
+     ],
+     "share": "1/14 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|142": {
+   "uid": "मोहियापुर|142",
+   "plot_no": "142",
+   "village": "मोहियापुर",
+   "khata_no": "00089",
+   "events": [
+    {
+     "date": "2010-04-08",
+     "deed_no": "RECON-142-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-04-08",
+     "deed_no": "RECON-142-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2180000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-12-21",
+     "deed_no": "RECON-142-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "वेदपाल यादव",
+      "ओमवीर",
+      "कर्मवीर",
+      "मोहित कुमार भाटी नावा0 10 वर्ष",
+      "विनय कुमार भाटी नावा0 12वर्ष",
+      "श्रीपाल",
+      "श्रीमती सावित्री",
+      "हरीशचन्द"
+     ],
+     "share": "1/8 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|144": {
+   "uid": "मोहियापुर|144",
+   "plot_no": "144",
+   "village": "मोहियापुर",
+   "khata_no": "00077",
+   "events": [
+    {
+     "date": "2006-08-04",
+     "deed_no": "RECON-144-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-02-25",
+     "deed_no": "RECON-144-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 330000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-05-08",
+     "deed_no": "RECON-144-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 390000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-11-09",
+     "deed_no": "RECON-144-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "राजसिह"
+     ],
+     "share": "1/1",
+     "consideration_inr": 700000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|145": {
+   "uid": "मोहियापुर|145",
+   "plot_no": "145",
+   "village": "मोहियापुर",
+   "khata_no": "00006",
+   "events": [
+    {
+     "date": "2011-07-12",
+     "deed_no": "RECON-145-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-07-05",
+     "deed_no": "RECON-145-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 390000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-03-19",
+     "deed_no": "RECON-145-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "श्री अतर सिंह",
+      "श्रीमती रेशम"
+     ],
+     "share": "1/2 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|146": {
+   "uid": "मोहियापुर|146",
+   "plot_no": "146",
+   "village": "मोहियापुर",
+   "khata_no": "00004",
+   "events": [
+    {
+     "date": "2005-05-11",
+     "deed_no": "RECON-146-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-05-15",
+     "deed_no": "RECON-146-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अंकित लोहिया",
+      "अतरसिह",
+      "अनुज लाहिया",
+      "चतरसिह",
+      "मनुज लो‍हिया",
+      "राजसिह",
+      "श्रीमती रेशम"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|147": {
+   "uid": "मोहियापुर|147",
+   "plot_no": "147",
+   "village": "मोहियापुर",
+   "khata_no": "00002",
+   "events": [
+    {
+     "date": "2003-09-26",
+     "deed_no": "RECON-147-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-04-27",
+     "deed_no": "RECON-147-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अंकित लोहिया",
+      "अतरसिह",
+      "अनुज लाहिया",
+      "चतरसिह",
+      "मनुज लो‍हिया",
+      "राजसिह",
+      "श्रीमती रेशम"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|148": {
+   "uid": "मोहियापुर|148",
+   "plot_no": "148",
+   "village": "मोहियापुर",
+   "khata_no": "00064",
+   "events": [
+    {
+     "date": "2008-06-03",
+     "deed_no": "RECON-148-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-05-23",
+     "deed_no": "RECON-148-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 390000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-08-10",
+     "deed_no": "RECON-148-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "इन्द्र सिंह",
+      "धन सिंह",
+      "धीरेश",
+      "बलराज सिंह",
+      "महेश",
+      "रघुराज",
+      "रविन्द्रसिंह",
+      "वीरपाल",
+      "श्रीमती रामरती"
+     ],
+     "share": "1/9 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|149": {
+   "uid": "मोहियापुर|149",
+   "plot_no": "149",
+   "village": "मोहियापुर",
+   "khata_no": "00065",
+   "events": [
+    {
+     "date": "2013-02-23",
+     "deed_no": "RECON-149-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-12-01",
+     "deed_no": "RECON-149-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "धीरेश",
+      "महेश",
+      "धीरेश",
+      "महेश",
+      "रामरती",
+      "श्रीमती श्यामवती",
+      "श्रीमती सन्तरा"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|150": {
+   "uid": "मोहियापुर|150",
+   "plot_no": "150",
+   "village": "मोहियापुर",
+   "khata_no": "00064",
+   "events": [
+    {
+     "date": "2007-10-04",
+     "deed_no": "RECON-150-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-05-12",
+     "deed_no": "RECON-150-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "इन्द्र सिंह",
+      "धन सिंह",
+      "धीरेश",
+      "बलराज सिंह",
+      "महेश",
+      "रघुराज",
+      "रविन्द्रसिंह",
+      "वीरपाल",
+      "श्रीमती रामरती"
+     ],
+     "share": "1/9 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|151": {
+   "uid": "मोहियापुर|151",
+   "plot_no": "151",
+   "village": "मोहियापुर",
+   "khata_no": "00042",
+   "events": [
+    {
+     "date": "2009-06-21",
+     "deed_no": "RECON-151-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-06-12",
+     "deed_no": "RECON-151-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 710000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-08-22",
+     "deed_no": "RECON-151-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "दयाराम"
+     ],
+     "share": "1/1",
+     "consideration_inr": 720000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|153": {
+   "uid": "मोहियापुर|153",
+   "plot_no": "153",
+   "village": "मोहियापुर",
+   "khata_no": "00120",
+   "events": [
+    {
+     "date": "2003-04-28",
+     "deed_no": "RECON-153-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-06-24",
+     "deed_no": "RECON-153-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 100000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-08-11",
+     "deed_no": "RECON-153-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "कूप"
+     ],
+     "share": "1/1",
+     "consideration_inr": 190000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|154": {
+   "uid": "मोहियापुर|154",
+   "plot_no": "154",
+   "village": "मोहियापुर",
+   "khata_no": "00106",
+   "events": [
+    {
+     "date": "2003-10-24",
+     "deed_no": "RECON-154-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-07-06",
+     "deed_no": "RECON-154-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 70000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-10-23",
+     "deed_no": "RECON-154-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "देशराज",
+      "नेतराम",
+      "प्रेमराज",
+      "श्रीमती सीमा",
+      "सुखवीर"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|155": {
+   "uid": "मोहियापुर|155",
+   "plot_no": "155",
+   "village": "मोहियापुर",
+   "khata_no": "00022",
+   "events": [
+    {
+     "date": "2008-09-21",
+     "deed_no": "RECON-155-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-02-12",
+     "deed_no": "RECON-155-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "खचेडू",
+      "दयाराम",
+      "भगवत",
+      "रविन्द्र",
+      "राजेन्द्र",
+      "श्यामी",
+      "सुन्दर",
+      "अमित कुमार",
+      "इन्द्र सिंह",
+      "धन सिंह",
+      "पिन्‍टू",
+      "बलराज सिंह",
+      "रघुराज",
+      "रविन्द्रसिंह",
+      "राम निवास"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|157": {
+   "uid": "मोहियापुर|157",
+   "plot_no": "157",
+   "village": "मोहियापुर",
+   "khata_no": "00074",
+   "events": [
+    {
+     "date": "2003-10-28",
+     "deed_no": "RECON-157-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-04-04",
+     "deed_no": "RECON-157-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 20000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-06-12",
+     "deed_no": "RECON-157-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "देवेन्द्र",
+      "नरेन्द्र सिंह",
+      "प्रेमसिह",
+      "महेन्द्र सिंह",
+      "रविन्द्र",
+      "श्रीमती वतनी",
+      "कूप"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|160": {
+   "uid": "मोहियापुर|160",
+   "plot_no": "160",
+   "village": "मोहियापुर",
+   "khata_no": "00012",
+   "events": [
+    {
+     "date": "2005-12-22",
+     "deed_no": "RECON-160-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-11-23",
+     "deed_no": "RECON-160-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "इन्द्रजीत",
+      "ओमप्रकाश",
+      "देवेन्‍द्र सिंह",
+      "धर्मपाल",
+      "ब्रहमप्रकाश",
+      "राजेन्द्र सिंह",
+      "रामपाल",
+      "लोकेन्‍द्र",
+      "विजेन्द्र",
+      "श्रीमती ब्रहमवती",
+      "सन्‍दीप कुमार"
+     ],
+     "share": "1/11 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|161": {
+   "uid": "मोहियापुर|161",
+   "plot_no": "161",
+   "village": "मोहियापुर",
+   "khata_no": "00037",
+   "events": [
+    {
+     "date": "2002-10-15",
+     "deed_no": "RECON-161-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-11-13",
+     "deed_no": "RECON-161-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "जीतराम",
+      "भीम",
+      "वचन",
+      "श्रीमती जगनो"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|162": {
+   "uid": "मोहियापुर|162",
+   "plot_no": "162",
+   "village": "मोहियापुर",
+   "khata_no": "00037",
+   "events": [
+    {
+     "date": "2015-11-24",
+     "deed_no": "RECON-162-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-12-04",
+     "deed_no": "RECON-162-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 660000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-06-19",
+     "deed_no": "RECON-162-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1020000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-08-04",
+     "deed_no": "RECON-162-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "जीतराम",
+      "भीम",
+      "वचन",
+      "श्रीमती जगनो"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|163": {
+   "uid": "मोहियापुर|163",
+   "plot_no": "163",
+   "village": "मोहियापुर",
+   "khata_no": "00067",
+   "events": [
+    {
+     "date": "2011-12-09",
+     "deed_no": "RECON-163-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-06-07",
+     "deed_no": "RECON-163-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2000000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-12-18",
+     "deed_no": "RECON-163-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "धीर सिंह",
+      "भिकारी",
+      "यशपाल",
+      "श्रीमति विद्या",
+      "सतवीर"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|164": {
+   "uid": "मोहियापुर|164",
+   "plot_no": "164",
+   "village": "मोहियापुर",
+   "khata_no": "00081",
+   "events": [
+    {
+     "date": "2003-01-17",
+     "deed_no": "RECON-164-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-10-19",
+     "deed_no": "RECON-164-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 260000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-04-10",
+     "deed_no": "RECON-164-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "प्रमोद",
+      "रामनिवास",
+      "श्रीनिवास"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|166": {
+   "uid": "मोहियापुर|166",
+   "plot_no": "166",
+   "village": "मोहियापुर",
+   "khata_no": "00012",
+   "events": [
+    {
+     "date": "2005-10-17",
+     "deed_no": "RECON-166-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-09-04",
+     "deed_no": "RECON-166-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "इन्द्रजीत",
+      "ओमप्रकाश",
+      "देवेन्‍द्र सिंह",
+      "धर्मपाल",
+      "ब्रहमप्रकाश",
+      "भूपेन्द्र लोहिया",
+      "राजेन्द्र सिंह",
+      "रामपाल",
+      "लोकेन्‍द्र",
+      "विजेन्द्र",
+      "श्रीमती ब्रहमवती",
+      "सन्‍दीप कुमार",
+      "सुमन",
+      "सोविन्द्र सिंह"
+     ],
+     "share": "1/14 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|167": {
+   "uid": "मोहियापुर|167",
+   "plot_no": "167",
+   "village": "मोहियापुर",
+   "khata_no": "00120",
+   "events": [
+    {
+     "date": "2015-01-22",
+     "deed_no": "RECON-167-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2019-01-26",
+     "deed_no": "RECON-167-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 310000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-12-18",
+     "deed_no": "RECON-167-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "कूप"
+     ],
+     "share": "1/1",
+     "consideration_inr": 510000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|168": {
+   "uid": "मोहियापुर|168",
+   "plot_no": "168",
+   "village": "मोहियापुर",
+   "khata_no": "00044",
+   "events": [
+    {
+     "date": "2012-10-16",
+     "deed_no": "RECON-168-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-07-13",
+     "deed_no": "RECON-168-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "देवीराम",
+      "धीरसिह",
+      "बीरसिह",
+      "सत्यवीर",
+      "सुखवीरसिह"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|169": {
+   "uid": "मोहियापुर|169",
+   "plot_no": "169",
+   "village": "मोहियापुर",
+   "khata_no": "00044",
+   "events": [
+    {
+     "date": "2002-02-20",
+     "deed_no": "RECON-169-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-07-16",
+     "deed_no": "RECON-169-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 90000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-10-28",
+     "deed_no": "RECON-169-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "देवीराम"
+     ],
+     "share": "1/1",
+     "consideration_inr": 170000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|170": {
+   "uid": "मोहियापुर|170",
+   "plot_no": "170",
+   "village": "मोहियापुर",
+   "khata_no": "00072",
+   "events": [
+    {
+     "date": "2015-10-15",
+     "deed_no": "RECON-170-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-10-04",
+     "deed_no": "RECON-170-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "रणबीर सिंह",
+      "राजवीर",
+      "सरदार सिंह"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|171": {
+   "uid": "मोहियापुर|171",
+   "plot_no": "171",
+   "village": "मोहियापुर",
+   "khata_no": "00001",
+   "events": [
+    {
+     "date": "2015-08-10",
+     "deed_no": "RECON-171-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-09-17",
+     "deed_no": "RECON-171-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2010000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2025-06-18",
+     "deed_no": "RECON-171-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अंकित लोहिया",
+      "अतरसिह",
+      "अनुज लाहिया",
+      "चतरसिह",
+      "चरनसिंह",
+      "टीकम सिंह",
+      "मनुज लो‍हिया",
+      "राज सिह",
+      "श्रीमती ज्ञानो",
+      "श्रीमती रेशम"
+     ],
+     "share": "1/10 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|172": {
+   "uid": "मोहियापुर|172",
+   "plot_no": "172",
+   "village": "मोहियापुर",
+   "khata_no": "00001",
+   "events": [
+    {
+     "date": "2012-05-09",
+     "deed_no": "RECON-172-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-09-13",
+     "deed_no": "RECON-172-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 950000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-04-20",
+     "deed_no": "RECON-172-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1980000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2026-10-16",
+     "deed_no": "RECON-172-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अंकित लोहिया",
+      "अतरसिह",
+      "अनुज लाहिया",
+      "चतरसिह",
+      "चरनसिंह",
+      "टीकम सिंह",
+      "मनुज लो‍हिया",
+      "राज सिह",
+      "श्रीमती ज्ञानो",
+      "श्रीमती रेशम"
+     ],
+     "share": "1/10 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|173": {
+   "uid": "मोहियापुर|173",
+   "plot_no": "173",
+   "village": "मोहियापुर",
+   "khata_no": "00021",
+   "events": [
+    {
+     "date": "2013-11-04",
+     "deed_no": "RECON-173-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-05-20",
+     "deed_no": "RECON-173-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "एक्सटैशन शाहदरादिल्ली द्वारा",
+      "कैसमास कालिज आफ एजुकेशन",
+      "चेयरमैन  छैलेशचन्द",
+      "मेमोरियल एजुकेशन सोसाइटी",
+      "रजि . कार्यालय 1/3250 रामनगर",
+      "सचालित श्रीमति बलदेई देवी"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|176": {
+   "uid": "मोहियापुर|176",
+   "plot_no": "176",
+   "village": "मोहियापुर",
+   "khata_no": "00082",
+   "events": [
+    {
+     "date": "2008-05-23",
+     "deed_no": "RECON-176-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-09-11",
+     "deed_no": "RECON-176-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1400000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-11-07",
+     "deed_no": "RECON-176-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अमन",
+      "रामपाल",
+      "श्वेता सिधंल"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|178": {
+   "uid": "मोहियापुर|178",
+   "plot_no": "178",
+   "village": "मोहियापुर",
+   "khata_no": "00049",
+   "events": [
+    {
+     "date": "2013-10-12",
+     "deed_no": "RECON-178-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-11-28",
+     "deed_no": "RECON-178-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 7470000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2021-07-17",
+     "deed_no": "RECON-178-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "चिराग आशियाना प्रा0लि0ए",
+      "दिनेश यादव",
+      "नरेश यादव",
+      "श्रीमती जयवती",
+      "श्रीमती सन्तोष",
+      "कु0 रिंकी",
+      "भूपेन्‍द्र",
+      "राजेन्द्र सिंह",
+      "विजेन्द्र",
+      "श्रीमती सुमन",
+      "सोविन्‍द्र सिंह"
+     ],
+     "share": "1/11 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|183": {
+   "uid": "मोहियापुर|183",
+   "plot_no": "183",
+   "village": "मोहियापुर",
+   "khata_no": "00099",
+   "events": [
+    {
+     "date": "2003-06-06",
+     "deed_no": "RECON-183-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-05-01",
+     "deed_no": "RECON-183-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1070000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-07-14",
+     "deed_no": "RECON-183-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1760000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-04-28",
+     "deed_no": "RECON-183-4",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "अमित",
+      "पूरण सिंह मेहरा",
+      "मनोज यादव",
+      "महेश शर्मा",
+      "राजवती",
+      "श्रीपाल",
+      "श्रीमती गीता शर्मा",
+      "श्रीमती शकुन्तला देवी",
+      "संजय यादव",
+      "सदीप",
+      "सुनील",
+      "हरीश"
+     ],
+     "share": "1/12 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|184": {
+   "uid": "मोहियापुर|184",
+   "plot_no": "184",
+   "village": "मोहियापुर",
+   "khata_no": "00102",
+   "events": [
+    {
+     "date": "2002-11-09",
+     "deed_no": "RECON-184-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-11-03",
+     "deed_no": "RECON-184-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 760000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-08-19",
+     "deed_no": "RECON-184-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1250000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-01-24",
+     "deed_no": "RECON-184-4",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "प्रमोद",
+      "रामनिवास",
+      "श्रीनिवास",
+      "श्रीमती कविता",
+      "श्रीमती प्रिसला",
+      "श्रीमती विमलेश",
+      "श्रीमती सावित्री"
+     ],
+     "share": "1/7 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|185": {
+   "uid": "मोहियापुर|185",
+   "plot_no": "185",
+   "village": "मोहियापुर",
+   "khata_no": "00044",
+   "events": [
+    {
+     "date": "2004-03-11",
+     "deed_no": "RECON-185-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-06-14",
+     "deed_no": "RECON-185-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2980000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2017-11-23",
+     "deed_no": "RECON-185-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अजब सिंह",
+      "अजीत सिंह नागर",
+      "चरन सिंह",
+      "जगत",
+      "देवेन्द्र सिंह",
+      "धर्मपाल",
+      "राज सिंह",
+      "लोकेन्द्र",
+      "श्रीमती जगवती",
+      "श्रीमती ब्रहमवती",
+      "सन्दीप कुमार",
+      "मनदीप कुमार",
+      "संदीप कुमार"
+     ],
+     "share": "1/13 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|189": {
+   "uid": "मोहियापुर|189",
+   "plot_no": "189",
+   "village": "मोहियापुर",
+   "khata_no": "00023",
+   "events": [
+    {
+     "date": "2011-10-01",
+     "deed_no": "RECON-189-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-08-14",
+     "deed_no": "RECON-189-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1560000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-12-09",
+     "deed_no": "RECON-189-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "गजराजसिह",
+      "गोपीचन्द",
+      "महाराजसिह",
+      "रविन्‍द्र चौधरी",
+      "श्रीमती ब्रहमा",
+      "हरेन्‍द्र सिंह लोहिया"
+     ],
+     "share": "1/6 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|192": {
+   "uid": "मोहियापुर|192",
+   "plot_no": "192",
+   "village": "मोहियापुर",
+   "khata_no": "00048",
+   "events": [
+    {
+     "date": "2010-09-26",
+     "deed_no": "RECON-192-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-01-25",
+     "deed_no": "RECON-192-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "धीरसिह",
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण",
+      "श्रीमती अनीता",
+      "श्रीमती कमलेश देवी",
+      "श्रीमती श्यामवती"
+     ],
+     "share": "1/5 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|193": {
+   "uid": "मोहियापुर|193",
+   "plot_no": "193",
+   "village": "मोहियापुर",
+   "khata_no": "00058",
+   "events": [
+    {
+     "date": "2002-06-03",
+     "deed_no": "RECON-193-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2005-03-22",
+     "deed_no": "RECON-193-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "मनदीप कुमार",
+      "संजय चौपडा",
+      "संदीप कुमार"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|195": {
+   "uid": "मोहियापुर|195",
+   "plot_no": "195",
+   "village": "मोहियापुर",
+   "khata_no": "00125",
+   "events": [
+    {
+     "date": "2005-02-19",
+     "deed_no": "RECON-195-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2008-02-08",
+     "deed_no": "RECON-195-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 110000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-06-22",
+     "deed_no": "RECON-195-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "नाली"
+     ],
+     "share": "1/1",
+     "consideration_inr": 260000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|196": {
+   "uid": "मोहियापुर|196",
+   "plot_no": "196",
+   "village": "मोहियापुर",
+   "khata_no": "00062",
+   "events": [
+    {
+     "date": "2006-08-28",
+     "deed_no": "RECON-196-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-11-23",
+     "deed_no": "RECON-196-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 3410000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-04-14",
+     "deed_no": "RECON-196-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "देवेन्द्र",
+      "नरेन्द्र सिंह",
+      "महेन्द्र सिंह",
+      "श्रीमती वतनी"
+     ],
+     "share": "1/4 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|197": {
+   "uid": "मोहियापुर|197",
+   "plot_no": "197",
+   "village": "मोहियापुर",
+   "khata_no": "00061",
+   "events": [
+    {
+     "date": "2015-06-15",
+     "deed_no": "RECON-197-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-04-19",
+     "deed_no": "RECON-197-2",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "देवेन्द्र",
+      "नरेन्द्र सिंह",
+      "महेन्द्र सिंह"
+     ],
+     "share": "1/3 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|198": {
+   "uid": "मोहियापुर|198",
+   "plot_no": "198",
+   "village": "मोहियापुर",
+   "khata_no": "00073",
+   "events": [
+    {
+     "date": "2002-09-16",
+     "deed_no": "RECON-198-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-02-14",
+     "deed_no": "RECON-198-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "रविन्द्र"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2070000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|199": {
+   "uid": "मोहियापुर|199",
+   "plot_no": "199",
+   "village": "मोहियापुर",
+   "khata_no": "00075",
+   "events": [
+    {
+     "date": "2011-05-07",
+     "deed_no": "RECON-199-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-06-22",
+     "deed_no": "RECON-199-2",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "अनीश",
+      "जयवीर",
+      "दीपक",
+      "नन्हे",
+      "नीरज कुमार",
+      "मनीष",
+      "राहुल",
+      "श्रीमती शीला"
+     ],
+     "share": "1/8 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|200": {
+   "uid": "मोहियापुर|200",
+   "plot_no": "200",
+   "village": "मोहियापुर",
+   "khata_no": "00018",
+   "events": [
+    {
+     "date": "2006-03-17",
+     "deed_no": "RECON-200-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-05-19",
+     "deed_no": "RECON-200-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1430000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-11-02",
+     "deed_no": "RECON-200-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अजय कुमार",
+      "अजय कुमार",
+      "अजीत गौतम",
+      "अजीत गौतम",
+      "अरविन्‍द कुमार",
+      "किशनलाल",
+      "धर्मबीर सिंह",
+      "धर्मवीर सिंह",
+      "नितिन कुमार",
+      "प्रशान्त कुमार गौतम",
+      "बलबीर सिंह",
+      "बलवीर  सिंह",
+      "बालकिशन",
+      "बालचन्द भारती",
+      "महीपाल"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|201": {
+   "uid": "मोहियापुर|201",
+   "plot_no": "201",
+   "village": "मोहियापुर",
+   "khata_no": "00014",
+   "events": [
+    {
+     "date": "2007-10-06",
+     "deed_no": "RECON-201-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-11-27",
+     "deed_no": "RECON-201-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 240000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2011-08-17",
+     "deed_no": "RECON-201-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "ओमकार",
+      "ओमवीर",
+      "महकार",
+      "कंवल सिंह भाटी",
+      "मुंशीराम",
+      "श्रीमती कमलेश देवी",
+      "श्रीमती नीलम",
+      "श्रीमती प्रेमलता",
+      "बेगराज",
+      "लेखराज",
+      "हसराज",
+      "होतेराम"
+     ],
+     "share": "1/12 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|203": {
+   "uid": "मोहियापुर|203",
+   "plot_no": "203",
+   "village": "मोहियापुर",
+   "khata_no": "00069",
+   "events": [
+    {
+     "date": "2010-04-24",
+     "deed_no": "RECON-203-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-11-18",
+     "deed_no": "RECON-203-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 6150000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-12-14",
+     "deed_no": "RECON-203-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अविनाश मिश्रा",
+      "आयुष चौधरी",
+      "आलोक कुमार",
+      "आशीष कुमार राय",
+      "इन्द्र सिंह",
+      "उमंग शर्मा",
+      "उषेन्द्रसिंह",
+      "कु0 साईशा अग्रवाल ना0 बा0 आयु 7 वर्ष",
+      "कुमारी तनु वर्मा",
+      "कुमारी प्रियंका",
+      "त्रिभुवन पाठक",
+      "दीपिका वर्मा",
+      "धन सिंह",
+      "नजिया खानम",
+      "नवीन कुमार"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|205": {
+   "uid": "मोहियापुर|205",
+   "plot_no": "205",
+   "village": "मोहियापुर",
+   "khata_no": "00131",
+   "events": [
+    {
+     "date": "2005-01-14",
+     "deed_no": "RECON-205-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-04-16",
+     "deed_no": "RECON-205-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 110000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-06-28",
+     "deed_no": "RECON-205-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "हडवार"
+     ],
+     "share": "1/1",
+     "consideration_inr": 140000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|206": {
+   "uid": "मोहियापुर|206",
+   "plot_no": "206",
+   "village": "मोहियापुर",
+   "khata_no": "00123",
+   "events": [
+    {
+     "date": "2015-10-27",
+     "deed_no": "RECON-206-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2020-08-13",
+     "deed_no": "RECON-206-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 820000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2022-07-06",
+     "deed_no": "RECON-206-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1200000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2024-02-05",
+     "deed_no": "RECON-206-4",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 3 (prior holder)"
+     ],
+     "to": [
+      "खाई"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1350000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|207": {
+   "uid": "मोहियापुर|207",
+   "plot_no": "207",
+   "village": "मोहियापुर",
+   "khata_no": "00128",
+   "events": [
+    {
+     "date": "2012-08-11",
+     "deed_no": "RECON-207-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-09-21",
+     "deed_no": "RECON-207-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 1890000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2018-11-01",
+     "deed_no": "RECON-207-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "सडक खाम"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2960000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|208": {
+   "uid": "मोहियापुर|208",
+   "plot_no": "208",
+   "village": "मोहियापुर",
+   "khata_no": "00123",
+   "events": [
+    {
+     "date": "2009-11-16",
+     "deed_no": "RECON-208-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-08-27",
+     "deed_no": "RECON-208-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 380000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2016-04-22",
+     "deed_no": "RECON-208-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "खाई"
+     ],
+     "share": "1/1",
+     "consideration_inr": 690000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|209": {
+   "uid": "मोहियापुर|209",
+   "plot_no": "209",
+   "village": "मोहियापुर",
+   "khata_no": "00092",
+   "events": [
+    {
+     "date": "2005-05-09",
+     "deed_no": "RECON-209-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-02-24",
+     "deed_no": "RECON-209-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 280000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2014-11-11",
+     "deed_no": "RECON-209-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अनिल कुमार",
+      "अनुराग प्रसाद",
+      "आदित्य सिंह",
+      "देवेन्द्र कुमार",
+      "धर्मेन्द्र प्रसाद उनियाल",
+      "वेदप्रकाश",
+      "शीला",
+      "श्रीमती अचला गुप्ता",
+      "श्रीमती दयावती",
+      "सुनील कुमार यादव"
+     ],
+     "share": "1/10 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|210": {
+   "uid": "मोहियापुर|210",
+   "plot_no": "210",
+   "village": "मोहियापुर",
+   "khata_no": "00038",
+   "events": [
+    {
+     "date": "2003-03-04",
+     "deed_no": "RECON-210-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-04-16",
+     "deed_no": "RECON-210-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 40000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-07-11",
+     "deed_no": "RECON-210-3",
+     "type": "inheritance",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "जीत राम",
+      "जीतराम",
+      "भीम",
+      "भीम",
+      "वचन",
+      "वचन सिंह",
+      "श्रीमती जगनो",
+      "श्रीमती सोनिका",
+      "शीला",
+      "श्रीमती दयावती"
+     ],
+     "share": "1/10 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|211": {
+   "uid": "मोहियापुर|211",
+   "plot_no": "211",
+   "village": "मोहियापुर",
+   "khata_no": "00019",
+   "events": [
+    {
+     "date": "2002-03-07",
+     "deed_no": "RECON-211-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2006-11-28",
+     "deed_no": "RECON-211-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 110000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2012-06-08",
+     "deed_no": "RECON-211-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अजय कुमार",
+      "अजीत गौतम",
+      "अरविन्‍द कुमार",
+      "ओमप्रकाश",
+      "किशन लाल",
+      "किशनवीर",
+      "जयपाल",
+      "जयवीर",
+      "दीपशिखा गौतम",
+      "धर्मबीर सिंह",
+      "नवलसिह",
+      "नितिन कुमार",
+      "प्रशांत गौतम",
+      "बलबीर सिंह",
+      "बालकिशन"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|213": {
+   "uid": "मोहियापुर|213",
+   "plot_no": "213",
+   "village": "मोहियापुर",
+   "khata_no": "00093",
+   "events": [
+    {
+     "date": "2003-07-01",
+     "deed_no": "RECON-213-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2007-05-06",
+     "deed_no": "RECON-213-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2060000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2013-06-08",
+     "deed_no": "RECON-213-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अनिल कुमार",
+      "अभिषेक सिंह राजावत",
+      "अमित कुमार",
+      "आनन्द गोपाल",
+      "आनन्द गोपाल",
+      "आर0पी0 साह",
+      "कुमार गौरव",
+      "कुमारी प्रियम",
+      "देवेन्द्र कुमार",
+      "नितिन वर्मा",
+      "रमेशचन्द चतुर्वेदी",
+      "वेदप्रकाश",
+      "शिवकुमार",
+      "शिवदयाल रतुडी",
+      "शीला"
+     ],
+     "share": "1/15 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|214": {
+   "uid": "मोहियापुर|214",
+   "plot_no": "214",
+   "village": "मोहियापुर",
+   "khata_no": "00004",
+   "events": [
+    {
+     "date": "2004-08-17",
+     "deed_no": "RECON-214-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2010-03-04",
+     "deed_no": "RECON-214-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 2240000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-06-18",
+     "deed_no": "RECON-214-3",
+     "type": "partition",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "अंकित लोहिया",
+      "अतरसिह",
+      "अनुज लाहिया",
+      "चतरसिह",
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण",
+      "मनुज लो‍हिया",
+      "राजसिह",
+      "श्रीमती रेशम"
+     ],
+     "share": "1/8 each",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|215": {
+   "uid": "मोहियापुर|215",
+   "plot_no": "215",
+   "village": "मोहियापुर",
+   "khata_no": "00003",
+   "events": [
+    {
+     "date": "2004-09-03",
+     "deed_no": "RECON-215-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-06-17",
+     "deed_no": "RECON-215-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 400000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2015-04-16",
+     "deed_no": "RECON-215-3",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 2 (prior holder)"
+     ],
+     "to": [
+      "नवीन ओखला औद्योगिक विकास प्राधिकरण"
+     ],
+     "share": "1/1",
+     "consideration_inr": 810000,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    }
+   ]
+  },
+  "मोहियापुर|216": {
+   "uid": "मोहियापुर|216",
+   "plot_no": "216",
+   "village": "मोहियापुर",
+   "khata_no": "00024",
+   "events": [
+    {
+     "date": "2005-02-25",
+     "deed_no": "RECON-216-1",
+     "type": "inheritance",
+     "from": [
+      "मूल खातेदार (original holder)"
+     ],
+     "to": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "share": "1/1",
+     "consideration_inr": 0,
+     "source": "reconstructed (synthetic)",
+     "confidence": "reconstructed"
+    },
+    {
+     "date": "2009-02-21",
+     "deed_no": "RECON-216-2",
+     "type": "sale",
+     "from": [
+      "पूर्व खातेदार 1 (prior holder)"
+     ],
+     "to": [
+      "चतरसिह"
+     ],
+     "share": "1/1",
+     "consideration_inr": 360000,
      "source": "reconstructed (synthetic)",
      "confidence": "reconstructed"
     }
