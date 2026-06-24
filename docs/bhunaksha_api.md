@@ -5,16 +5,23 @@ Angular bundle (`main-*.js`, 5.17 MB) by `tools/probe_bhunaksha_frontend.py`. Ra
 `_probe/bhunaksha_frontend.json`.
 
 ## TL;DR — the one that matters
-Real plot **geometry is available as direct GeoJSON** (vector polygons), not just a bbox and
-not only the rendered raster we currently trace in `fetch_bhunaksha_geom.py`:
+There is a direct vector-GeoJSON endpoint, BUT it is **authentication-gated**:
 
 ```
 POST  https://upbhunaksha.gov.in/bhunakshaserver/mapModificationController/getGeoJSONLayerData
-      body: { giscode, layercodes, oprType }     (cookies required; responseType: text → GeoJSON)
+      body: { giscode, layercodes, oprType }
+      → HTTP 401 {"error":"Missing or invalid Authorization header"}   (anonymous)
 ```
 
-If this returns true tessellating boundaries, it **replaces the raster→vector tracing pipeline**
-(Phase 7) with a direct download. Validate first (see "Open questions").
+**VALIDATED 2026-06-24** (run on Actions, `_probe/bhunaksha_vector_live.json`): all 140
+combinations of `oprType` × body-encoding × layercodes returned **401**. The endpoint lives on
+`mapModificationController` (the map *editor*) and needs a Bearer token from a surveyor/editor
+login (`POST /auth/login` → token attached by an HTTP interceptor). Cookies alone are not enough.
+
+**Consequence:** for *public* (anonymous) data this endpoint is **not** usable, so it does **not**
+replace the raster→vector tracing in `fetch_bhunaksha_geom.py`. That tracer (boundary WMS
+`DERIVED_LAYER`, confirmed 200/`image/png` anonymously) remains the public path to real polygons.
+The vector endpoint only becomes the better path **if** valid editor credentials are supplied.
 
 ## Base URLs
 From the bundle's environment object `zi`, and crucially the HTTP service sets
@@ -91,11 +98,13 @@ plus `BBOX`/`CRS`. GetFeatureInfo uses `QUERY_LAYERS` + `INFO_FORMAT=application
 - **Politeness.** Public record, but a govt server: rate-limit, cache, back off, run from Actions
   (matches the repo's egress model).
 
-## Open questions to validate (do these before scaling)
-1. Does `getGeoJSONLayerData` return **true tessellating parcel boundaries** (not bboxes)? If yes,
-   it supersedes `fetch_bhunaksha_geom.py`'s raster tracing.
-2. What `oprType` value does the live app send? (grep the bundle around the `getGeoJSONLayerData`
-   caller for the argument.)
-3. Is a logged-in session strictly required, or do read-only calls work anonymously?
-4. Same endpoint shape on **other states'** NIC Bhu-Naksha portals (Rajasthan, some Haryana)? If so,
-   one adapter parameterized by base URL covers most of NCR (see `docs/ncr_rollout.md`).
+## Validated / open questions
+1. ~~Is a logged-in session required?~~ **YES** — `getGeoJSONLayerData` returns 401 anonymously
+   (needs an `Authorization: Bearer <token>` from `/auth/login`). Confirmed 2026-06-24.
+2. **Open:** With valid editor credentials, what is the real cadastral plot `layercode`? (Anonymous
+   `Layers/getLayers` only returns derived layers — Vertices/Border Length/PNIU.)
+3. **Open:** does the app issue an *anonymous/guest* token anywhere (some NIC apps bootstrap one)?
+   If so the public path could still use the vector endpoint.
+4. **Public path stands:** real polygons for anonymous use come from the raster→vector tracer
+   (`fetch_bhunaksha_geom.py`, boundary WMS `DERIVED_LAYER`), already built and offline-proven.
+5. **Open:** same endpoint shape on other states' NIC portals (Rajasthan, some Haryana)? (`docs/ncr_rollout.md`)
