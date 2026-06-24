@@ -20,13 +20,9 @@ on:
         description: 'GeoJSON to rebuild in place'
         type: string
         default: 'web/data/nalgadha_parcels.geojson'
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/bhunaksha-geom-fetch.yml'
-      - 'tools/fetch_bhunaksha_geom.py'
-      - 'tools/cadastre_core.py'
-      - 'tools/add_cidx.py'
+  # MANUAL ONLY: never auto-run. The live trace depends on a verified GEOM_LAYERS
+  # (from bhunaksha-vector-recon) — running blind could overwrite good data with a
+  # bad trace. Run this only after recon confirms the boundary layer.
 
 permissions:
   contents: write
