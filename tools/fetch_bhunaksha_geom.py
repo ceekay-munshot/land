@@ -217,15 +217,21 @@ def main():
     # process at most MAX_VILLAGES new ones, and stop before TIME_BUDGET so a
     # schedule fills a whole tehsil over several runs without hitting the timeout.
     layers = os.environ.get("GEOM_LAYERS", "VILLAGE_MAP")
-    mpp = float(os.environ.get("MPP", "0.5"))
+    mpp = float(os.environ.get("MPP", "0.3"))
     tile_px = int(os.environ.get("TILE_PX", "2048"))
     margin = float(os.environ.get("MARGIN_M", "30"))
-    max_villages = int(os.environ.get("MAX_VILLAGES", "6"))
+    max_villages = int(os.environ.get("MAX_VILLAGES", "4"))
     time_budget = float(os.environ.get("TIME_BUDGET", "2400"))
-    done = {ft["properties"].get("gis_code") for ft in geo.get("features", [])
-            if ft["properties"].get("geometry_method") in ("raster_vector", "bbox_fallback")}
-    todo = [(gc, grp) for gc, grp in groups.items() if gc not in done]
-    print(f"{len(done)} villages already traced; {len(todo)} to go "
+    # A village is "done at this resolution" only if it was traced at an mpp <= target.
+    # Villages traced coarser (or with no recorded mpp, e.g. an earlier run) are
+    # re-traced so lowering MPP auto-upgrades them. Once all are at <= target, runs no-op.
+    done_mpp = {}
+    for ft in geo.get("features", []):
+        if ft["properties"].get("geometry_method") in ("raster_vector", "bbox_fallback"):
+            gc = ft["properties"].get("gis_code")
+            done_mpp[gc] = min(done_mpp.get(gc, 9e9), float(ft["properties"].get("mpp", 9e9)))
+    todo = [(gc, grp) for gc, grp in groups.items() if done_mpp.get(gc, 9e9) > mpp + 1e-9]
+    print(f"{len(groups)-len(todo)} villages already at <= {mpp} m/px; {len(todo)} to (re)trace "
           f"(this run: <= {max_villages} villages, <= {time_budget:.0f}s)")
     s = _session()
     rebuilt = {}
@@ -243,6 +249,8 @@ def main():
             print(f"{gc}: extent {bbox} crs {crs} -> {W}x{H}px @ {mpp} m/px")
             img = get_map(s, bbox, W, H, layers, gc, tile_px)
             new, npoly, nfb = vectorize_village(img, bbox, crs, grp["feats"], simplify_m)
+            for ft in new:                                   # record the resolution we traced at
+                ft["properties"]["mpp"] = mpp
             print(f"  traced {npoly} polys -> {len(new)-nfb} matched, {nfb} bbox-fallback")
             rebuilt[gc] = new
         except Exception as e:

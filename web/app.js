@@ -102,6 +102,11 @@ const CIDX_PALETTE = ['match', ['get', 'cidx'],
   0, '#fdd8d8', 1, '#d8f5dd', 2, '#fff5d8', 3, '#d8ebff', 4, '#f0d8ff', 5, '#ffe8d8', '#e5e5e5'];
 const cidxFill = (fallback) => ['case', ['has', 'cidx'], CIDX_PALETTE, fallback];
 const ifCidx = (withCidx, without) => ['case', ['has', 'cidx'], withCidx, without];
+// A feature has REAL traced geometry (vs an un-traced bbox box) when geometry_method
+// is 'raster_vector'. Used to de-emphasise boxes and to drive the Clean-view toggle.
+const IS_REAL = ['==', ['get', 'geometry_method'], 'raster_vector'];
+const REAL_ONLY = IS_REAL;            // filter applied when Clean view is on
+let cleanView = false;
 function selectFeature(source, id) {
   selected = { source, id: String(id) };
   for (const s of ['nalgadha', 'parcels']) {
@@ -558,10 +563,13 @@ map.on('load', async () => {
         paint: {
           'fill-color': cidxFill(['case', ['has', 'score'],
             ['step', ['get', 'score'], '#e74c3c', 40, '#f39c12', 67, '#2ecc71'], '#9ca3af']),
-          'fill-opacity': ifCidx(0.5, 0.6)
+          // real traced polygons solid; un-traced bbox boxes faint so overlap doesn't muddy the map
+          'fill-opacity': ['case', IS_REAL, ifCidx(0.5, 0.6), 0.12]
         } });
       map.addLayer({ id: 'parcels-line', type: 'line', source: 'parcels',
-        paint: { 'line-color': '#333', 'line-width': ifCidx(1.1, 0.5) } });
+        paint: { 'line-color': ['case', IS_REAL, '#333', '#6d28d9'],
+                 'line-width': ['case', IS_REAL, ifCidx(1.1, 0.5), 0.35],
+                 'line-opacity': ['case', IS_REAL, 0.9, 0.28] } });
       map.addLayer({ id: 'parcels-highlight', type: 'line', source: 'parcels',
         paint: { 'line-color': '#f59e0b', 'line-width': 3, 'line-opacity': 0.95 },
         filter: ['==', SELECT_KEY, '__none__'] });
@@ -647,11 +655,13 @@ map.on('load', async () => {
         paint: {
           'fill-color': cidxFill(['step', ['get', 'owner_count'],
             '#ddd6fe', 1, '#c4b5fd', 3, '#a78bfa', 6, '#8b5cf6', 10, '#6d28d9']),
-          'fill-opacity': ifCidx(0.5, 0.8)
+          'fill-opacity': ['case', IS_REAL, ifCidx(0.5, 0.8), 0.12]
         }
       });
       map.addLayer({ id: 'nalgadha-line', type: 'line', source: 'nalgadha',
-        paint: { 'line-color': ifCidx('#333333', '#4c1d95'), 'line-width': ifCidx(1.1, 0.5) } });
+        paint: { 'line-color': ['case', IS_REAL, ifCidx('#333333', '#4c1d95'), '#6d28d9'],
+                 'line-width': ['case', IS_REAL, ifCidx(1.1, 0.5), 0.35],
+                 'line-opacity': ['case', IS_REAL, 0.9, 0.28] } });
       map.addLayer({ id: 'nalgadha-highlight', type: 'line', source: 'nalgadha',
         paint: { 'line-color': '#f59e0b', 'line-width': 3.5, 'line-opacity': 0.97 },
         filter: ['==', SELECT_KEY, '__none__'] });
@@ -704,6 +714,24 @@ if (satBtn) satBtn.onclick = () => {
   if (map.getLayer('osm')) map.setLayoutProperty('osm', 'visibility', satOn ? 'none' : 'visible');
   satBtn.classList.toggle('active', satOn);
   satBtn.textContent = satOn ? '🗺️ Map' : '🛰️ Satellite';
+};
+
+// Clean view: hide everything that isn't a real traced polygon, so the map shows only
+// crisp tessellating parcels (no un-traced bbox boxes). Layers that may not exist yet are
+// guarded; the filter is (re)applied on demand.
+const CLEAN_TARGETS = ['parcels-fill', 'parcels-line', 'parcels-labels',
+                       'nalgadha-fill', 'nalgadha-line', 'nalgadha-labels'];
+function applyCleanView() {
+  for (const id of CLEAN_TARGETS) {
+    if (map.getLayer(id)) map.setFilter(id, cleanView ? REAL_ONLY : null);
+  }
+}
+const cleanBtn = document.getElementById('btn-clean');
+if (cleanBtn) cleanBtn.onclick = () => {
+  cleanView = !cleanView;
+  applyCleanView();
+  cleanBtn.classList.toggle('active', cleanView);
+  cleanBtn.textContent = cleanView ? '🟪 Show all' : '✨ Clean view';
 };
 
 document.getElementById('drawer-close')?.addEventListener('click', closeDrawer);

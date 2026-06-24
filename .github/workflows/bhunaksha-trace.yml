@@ -18,11 +18,11 @@ on:
       max_villages:
         description: 'Max new villages per file per run'
         type: string
-        default: '4'
+        default: '3'
       mpp:
         description: 'Metres/pixel (smaller = sharper + slower)'
         type: string
-        default: '0.5'
+        default: '0.3'
   schedule:
     - cron: '*/20 * * * *'          # continue filling until every village is traced
   push:
@@ -55,9 +55,9 @@ jobs:
           GEOM_LAYERS: 'VILLAGE_MAP'
           WMS_PATH: 'WMS/tile'
           WMS_STYLES: 'VILLAGE_MAP'
-          MPP: ${{ github.event.inputs.mpp || '0.5' }}
+          MPP: ${{ github.event.inputs.mpp || '0.3' }}
           TILE_PX: '2048'
-          MAX_VILLAGES: ${{ github.event.inputs.max_villages || '4' }}
+          MAX_VILLAGES: ${{ github.event.inputs.max_villages || '3' }}
           TIME_BUDGET: '1100'
           FILES: ${{ github.event.inputs.files || 'web/data/gbn_parcels.geojson web/data/nalgadha_parcels.geojson' }}
         run: |
