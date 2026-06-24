@@ -1,0 +1,174 @@
+{
+  "base": "https://upbhunaksha.gov.in/bhunakshaserver",
+  "gis": "14100743120241",
+  "errors": [],
+  "home_status": 200,
+  "scripts": [
+    "chunk-SFFPZX3Y.js",
+    "chunk-UFEAADAO.js",
+    "main-76RVRF3Z.js",
+    "polyfills-RM666RQK.js",
+    "scripts-BZQBXHEN.js"
+  ],
+  "bundles_fetched": [
+    "https://upbhunaksha.gov.in/chunk-SFFPZX3Y.js",
+    "https://upbhunaksha.gov.in/chunk-UFEAADAO.js",
+    "https://upbhunaksha.gov.in/main-76RVRF3Z.js",
+    "https://upbhunaksha.gov.in/polyfills-RM666RQK.js",
+    "https://upbhunaksha.gov.in/scripts-BZQBXHEN.js"
+  ],
+  "bundle_chars": 5219292,
+  "vector_hits": {
+    "readFeatures": 12
+  },
+  "raster_hits": {
+    "getMap": 44
+  },
+  "svg_hits": {
+    "<svg": 1,
+    "viewBox": 11,
+    "PlotReport": 3
+  },
+  "endpoints": [],
+  "layer_tokens": [
+    "DERIVED_LAYER",
+    "OVERLAY_LAYER",
+    "PlotNo",
+    "STATE_BOUNDARY",
+    "TABLE_DERIVED_LAYERS",
+    "TABLE_LAYER_MASTER",
+    "addlayer",
+    "boundaryElement",
+    "differencePlotCount",
+    "differencePlotList",
+    "gisnoplotno",
+    "layer",
+    "layerCodeDropdownId",
+    "layerCodeField",
+    "layerType",
+    "layerTypeSelection",
+    "layergroup",
+    "layers",
+    "mapPlotArea",
+    "mapPlotList",
+    "mapPlotNo",
+    "mutatedPlots",
+    "newPlotNo",
+    "notBlankNullPlotsCount",
+    "nullPlotsCount",
+    "plot",
+    "plotId",
+    "plotInfoHeader",
+    "plotNo",
+    "plotno",
+    "removelayer",
+    "rorPlotArea",
+    "rorPlotList",
+    "rorPlotNo",
+    "searchPlot",
+    "totalMapPlotCountInVillage",
+    "totalRORPlotCountInVillage",
+    "total_plots"
+  ],
+  "extent": {
+    "xmin": 149750.8841794433,
+    "ymin": 3155412.00702694,
+    "xmax": 153064.25490310282,
+    "ymax": 3157126.46502543,
+    "attribution": null,
+    "scaleFactor": 1.0,
+    "crs": "EPSG:32644",
+    "gisCode": "14100743120241"
+  },
+  "probe_plotno": "146",
+  "vector_probes": [
+    {
+      "path": "MapInfo/getPlotReport",
+      "status": 500,
+      "ct": "application/json",
+      "len": 215,
+      "has_svg_path": false,
+      "has_coords": false,
+      "snippet": ""
+    },
+    {
+      "path": "MapInfo/getMapData",
+      "status": 500,
+      "ct": "application/json",
+      "len": 209,
+      "has_svg_path": false,
+      "has_coords": false,
+      "snippet": ""
+    },
+    {
+      "path": "rest/MapInfo/getPlotReport",
+      "status": 401,
+      "ct": null,
+      "len": 52,
+      "has_svg_path": false,
+      "has_coords": false,
+      "snippet": ""
+    },
+    {
+      "path": "MapInfo/printPlot",
+      "status": 500,
+      "ct": "application/json",
+      "len": 207,
+      "has_svg_path": false,
+      "has_coords": false,
+      "snippet": ""
+    }
+  ],
+  "getmap_probes": [
+    {
+      "layers": "DERIVED_LAYER",
+      "status": 200,
+      "ct": "image/png",
+      "len": 588,
+      "is_image": true
+    },
+    {
+      "layers": "OVERLAY_LAYER",
+      "status": 200,
+      "ct": "image/png",
+      "len": 588,
+      "is_image": true
+    },
+    {
+      "layers": "TABLE_DERIVED_LAYERS",
+      "status": 200,
+      "ct": "image/png",
+      "len": 588,
+      "is_image": true
+    },
+    {
+      "layers": "TABLE_LAYER_MASTER",
+      "status": 200,
+      "ct": "image/png",
+      "len": 588,
+      "is_image": true
+    },
+    {
+      "layers": "addlayer",
+      "status": 200,
+      "ct": "image/png",
+      "len": 588,
+      "is_image": true
+    },
+    {
+      "layers": "layer",
+      "status": 200,
+      "ct": "image/png",
+      "len": 588,
+      "is_image": true
+    }
+  ],
+  "decision": {
+    "vector_endpoint_found": false,
+    "recommended_branch": "B (raster->vector)",
+    "recommended_getmap_layers": [
+      "DERIVED_LAYER"
+    ],
+    "note": "vector hits vs raster hits in bundles: 12 vs 44"
+  }
+}
