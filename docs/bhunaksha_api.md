@@ -103,8 +103,11 @@ plus `BBOX`/`CRS`. GetFeatureInfo uses `QUERY_LAYERS` + `INFO_FORMAT=application
    (needs an `Authorization: Bearer <token>` from `/auth/login`). Confirmed 2026-06-24.
 2. **Open:** With valid editor credentials, what is the real cadastral plot `layercode`? (Anonymous
    `Layers/getLayers` only returns derived layers — Vertices/Border Length/PNIU.)
-3. **Open:** does the app issue an *anonymous/guest* token anywhere (some NIC apps bootstrap one)?
-   If so the public path could still use the vector endpoint.
+3. ~~Does the app issue an anonymous/guest token?~~ **NO** (validated 2026-06-24,
+   `MODE=token`). The interceptor's `getToken()` reads the token **from a cookie** set only by a
+   real `POST /auth/login` (empty/guest body → 500 "id must not be null"); `auth/token`,
+   `auth/guest`, `auth/guestLogin` return 500 "No static resource" (don't exist). No public token
+   path exists — the vector endpoint requires genuine editor credentials, full stop.
 4. **Public path stands:** real polygons for anonymous use come from the raster→vector tracer
    (`fetch_bhunaksha_geom.py`, boundary WMS `DERIVED_LAYER`), already built and offline-proven.
 5. **Open:** same endpoint shape on other states' NIC portals (Rajasthan, some Haryana)? (`docs/ncr_rollout.md`)

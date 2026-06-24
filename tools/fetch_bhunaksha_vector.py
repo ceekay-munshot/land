@@ -367,6 +367,53 @@ def probe_token():
     return out
 
 
+def probe_wms():
+    """Find the WMS GetMap call that renders REAL boundary pixels anonymously.
+    The recon got identical 588-byte blank PNGs for every layer — so try the real
+    extent BBOX + gis_code across endpoint/layer/style/layercode combos and flag
+    any response far larger than a blank tile."""
+    out = {"mode": "wms", "gis": GIS, "combos": []}
+    gl = gislevels_of(GIS)
+    ext = post("MapInfo/getVVVVExtentGeoref", data={"gisLevels": gl})
+    try:
+        j = ext.json()
+    except Exception:
+        j = {}
+    out["extent"] = j
+    bbox = (j.get("xmin"), j.get("ymin"), j.get("xmax"), j.get("ymax"))
+    gis_code = j.get("gisCode", GIS)
+    if None in bbox:
+        out["error"] = "no extent (cannot probe WMS)"
+        return out
+    codes, _ = get_layercodes(GIS)
+    lc_join = ",".join(codes) if codes else ""
+    W = H = 1024
+    base = {"SERVICE": "WMS", "VERSION": "1.1.1", "REQUEST": "GetMap", "SRS": "EPSG:32644",
+            "BBOX": f"{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}", "WIDTH": W, "HEIGHT": H,
+            "FORMAT": "image/png", "TRANSPARENT": "true", "gis_code": gis_code, "state": ""}
+    layer_styles = [("DERIVED_LAYER", ""), ("VILLAGE_MAP", "VILLAGE_MAP"), ("VILLAGE_MAP", ""),
+                    ("OVERLAY_LAYER", ""), ("MAP_PLOT", ""), ("DERIVED_LAYER", "VILLAGE_MAP")]
+    for endpoint in ("WMS", "WMS/tile"):
+        for layers, styles in layer_styles:
+            for lc in ("", lc_join):
+                params = dict(base, LAYERS=layers, STYLES=styles, layercodes=lc)
+                try:
+                    r = s.get(f"{SRV}/{endpoint}", params=params, timeout=60, verify=False)
+                    n = len(r.content or b"")
+                    out["combos"].append({
+                        "endpoint": endpoint, "layers": layers, "styles": styles,
+                        "with_layercodes": bool(lc), "status": r.status_code,
+                        "ct": r.headers.get("content-type"), "bytes": n,
+                        "nonblank": n > 2000 and "image" in (r.headers.get("content-type") or ""),
+                    })
+                except Exception as e:
+                    out["combos"].append({"endpoint": endpoint, "layers": layers, "error": repr(e)})
+                time.sleep(0.1)
+    out["candidates"] = [c for c in out["combos"] if c.get("nonblank")]
+    out["blank_byte_sizes"] = sorted({c.get("bytes") for c in out["combos"] if c.get("bytes")})
+    return out
+
+
 def enumerate_villages():
     """Return [(giscode, village_name), ...] for the configured DISTRICT/TEHSIL."""
 
@@ -429,6 +476,15 @@ def main():
         write_json(PROBE_OUT, out)
         print("TOKEN PROBE:", "UNLOCKED" if out.get("UNLOCKED") else
               f"no working anon token ({out.get('tokens_found_total', 0)} tokens seen)")
+        return
+
+    if MODE == "wms":
+        out = probe_wms()
+        write_json(PROBE_OUT, out)
+        cands = out.get("candidates", [])
+        print(f"WMS PROBE: {len(cands)} non-blank combo(s); blank sizes={out.get('blank_byte_sizes')}")
+        for c in cands[:6]:
+            print("  CANDIDATE:", c)
         return
 
     if MODE == "validate":

@@ -11,9 +11,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'token (hunt guest token) | validate (probe one village) | fetch (write polygons)'
+        description: 'wms (find boundary render) | token | validate | fetch'
         type: choice
-        options: [token, validate, fetch]
+        options: [wms, token, validate, fetch]
         default: validate
       gis:
         description: 'validate: village giscode to probe'
@@ -59,7 +59,7 @@ jobs:
       - run: pip install requests pyproj
       - name: Run vector fetch/validate
         env:
-          MODE: ${{ github.event.inputs.mode || 'token' }}
+          MODE: ${{ github.event.inputs.mode || 'wms' }}
           GIS: ${{ github.event.inputs.gis || '14100743120241' }}
           DISTRICT: ${{ github.event.inputs.district || 'गौतम' }}
           TEHSIL: ${{ github.event.inputs.tehsil || 'जेवर' }}
