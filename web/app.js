@@ -189,19 +189,26 @@ const ifCidx = (withCidx, without) => ['case', ['has', 'cidx'], withCidx, withou
 const IS_REAL = ['==', ['get', 'geometry_method'], 'raster_vector'];
 const REAL_ONLY = IS_REAL;            // filter applied when placeholder boxes are hidden
 let cleanView = true;                 // default: show only real surveyed plots (boxes hidden)
-function selectFeature(source, id) {
-  selected = { source, id: String(id) };
+// Highlight filter for a source: the selected id, AND (when placeholders are hidden)
+// only if it is a real traced plot — so selecting a hidden bbox box via search or a
+// deep-link never draws a stray placeholder outline.
+function highlightFilter(s) {
+  const base = ['==', SELECT_KEY, (selected.source === s && selected.id) ? String(selected.id) : '__none__'];
+  return cleanView ? ['all', REAL_ONLY, base] : base;
+}
+function refreshHighlights() {
   for (const s of ['nalgadha', 'parcels']) {
     const lyr = s + '-highlight';
-    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', SELECT_KEY, s === source ? String(id) : '__none__']);
+    if (map.getLayer(lyr)) map.setFilter(lyr, highlightFilter(s));
   }
+}
+function selectFeature(source, id) {
+  selected = { source, id: String(id) };
+  refreshHighlights();
 }
 function clearSelection() {
   selected = { source: null, id: null };
-  for (const s of ['nalgadha', 'parcels']) {
-    const lyr = s + '-highlight';
-    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', SELECT_KEY, '__none__']);
-  }
+  refreshHighlights();
   updateHash();
 }
 
@@ -839,6 +846,7 @@ function applyCleanView() {
   for (const id of CLEAN_TARGETS) {
     if (map.getLayer(id)) map.setFilter(id, cleanView ? REAL_ONLY : null);
   }
+  refreshHighlights();   // keep the selection outline consistent with placeholder visibility
 }
 
 // ---- Layer / view popover (placeholder toggle + dataset visibility) ------
