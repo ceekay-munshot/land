@@ -226,11 +226,17 @@ def main():
     # Villages traced coarser (or with no recorded mpp, e.g. an earlier run) are
     # re-traced so lowering MPP auto-upgrades them. Once all are at <= target, runs no-op.
     done_mpp = {}
+    has_untraced = set()
     for ft in geo.get("features", []):
-        if ft["properties"].get("geometry_method") in ("raster_vector", "bbox_fallback"):
-            gc = ft["properties"].get("gis_code")
+        gm = ft["properties"].get("geometry_method")
+        gc = ft["properties"].get("gis_code")
+        if gm in ("raster_vector", "bbox_fallback"):
             done_mpp[gc] = min(done_mpp.get(gc, 9e9), float(ft["properties"].get("mpp", 9e9)))
-    todo = [(gc, grp) for gc, grp in groups.items() if done_mpp.get(gc, 9e9) > mpp + 1e-9]
+        elif not gm:
+            has_untraced.add(gc)            # village has plots with no geometry yet
+    # (Re)trace a village if it has any un-traced plot, or it was traced coarser than target.
+    todo = [(gc, grp) for gc, grp in groups.items()
+            if gc in has_untraced or done_mpp.get(gc, 9e9) > mpp + 1e-9]
     print(f"{len(groups)-len(todo)} villages already at <= {mpp} m/px; {len(todo)} to (re)trace "
           f"(this run: <= {max_villages} villages, <= {time_budget:.0f}s)")
     s = _session()
@@ -246,6 +252,8 @@ def main():
             bbox = (bbox[0] - margin, bbox[1] - margin, bbox[2] + margin, bbox[3] + margin)
             W = int(round((bbox[2] - bbox[0]) / mpp))
             H = int(round((bbox[3] - bbox[1]) / mpp))
+            if W < 8 or H < 8:
+                raise RuntimeError(f"degenerate extent {bbox}")
             print(f"{gc}: extent {bbox} crs {crs} -> {W}x{H}px @ {mpp} m/px")
             img = get_map(s, bbox, W, H, layers, gc, tile_px)
             new, npoly, nfb = vectorize_village(img, bbox, crs, grp["feats"], simplify_m)
@@ -254,7 +262,18 @@ def main():
             print(f"  traced {npoly} polys -> {len(new)-nfb} matched, {nfb} bbox-fallback")
             rebuilt[gc] = new
         except Exception as e:
-            print(f"  {gc}: FAILED ({e!r}) — skipping this run", file=sys.stderr)
+            # Render/extent failed — don't leave plots stuck as un-traced forever (it stalls the
+            # fill). Mark them bbox_fallback so the village is "done" (boxes, hidden by Clean view).
+            print(f"  {gc}: FAILED ({e!r}) -> marking {len(grp['feats'])} plots bbox_fallback",
+                  file=sys.stderr)
+            fb = []
+            for f in grp["feats"]:
+                props = dict(f["props"])
+                props["geometry_method"] = "bbox_fallback"
+                props["mpp"] = mpp
+                props["trace_status"] = "render_failed"
+                fb.append({"type": "Feature", "properties": props, "geometry": f["geometry"]})
+            rebuilt[gc] = fb
     if rebuilt:
         _write(out_path, geo, rebuilt)
     else:
