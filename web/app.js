@@ -10,29 +10,52 @@ const SQFT = 10.7639;      // 1 m² in sq ft — plot rates/sizes shown in sq ft
 const sqft = (m2) => Math.round(m2 * SQFT).toLocaleString('en-IN');
 const ratePsf = (psm) => Math.round(psm / SQFT).toLocaleString('en-IN');
 
-// ---- Georeference calibration nudge -------------------------------------
+// ---- Georeference calibration (align cadastre to satellite) --------------
 // The Bhu-Naksha cadastre is internally consistent but its absolute position can
-// drift a few metres from satellite imagery. CAL holds a per-dataset offset in
-// METRES (east, north); default 0 = no change. Tune live without a rebuild via
-// ?nudge=E,N (both layers) or ?nudge_p=E,N (parcels) & ?nudge_n=E,N (ownership).
-const CAL = { parcels: [0, 0], nalgadha: [0, 0] };
-(function readNudge() {
+// drift a few metres (and sometimes rotate) from satellite imagery. CALIB holds a
+// per-dataset offset in METRES (east dx, north dy) + a rotation in DEGREES, applied
+// live about the dataset's own centre. Tuned from the Layers ▸ "Align to satellite"
+// control, persisted to localStorage, and seedable via URL (?nudge=E,N for both, or
+// ?nudge_p / ?nudge_n per dataset). Default 0 = the data is shown exactly as fetched.
+const CALIB = { parcels: { dx: 0, dy: 0, rot: 0 }, nalgadha: { dx: 0, dy: 0, rot: 0 } };
+const origGeo = {};        // src -> pristine FeatureCollection (never mutated)
+const srcCentroid = {};    // src -> [lng,lat] rotation pivot (dataset centre)
+(function initCalib() {
   const q = new URLSearchParams(location.search);
   const parse = (s) => { const m = (s || '').split(',').map(Number); return (m.length === 2 && m.every((n) => !isNaN(n))) ? m : null; };
   const all = parse(q.get('nudge'));
-  if (all) { CAL.parcels = all.slice(); CAL.nalgadha = all.slice(); }
-  const p = parse(q.get('nudge_p')); if (p) CAL.parcels = p;
-  const n = parse(q.get('nudge_n')); if (n) CAL.nalgadha = n;
+  if (all) { CALIB.parcels.dx = all[0]; CALIB.parcels.dy = all[1]; CALIB.nalgadha.dx = all[0]; CALIB.nalgadha.dy = all[1]; }
+  const p = parse(q.get('nudge_p')); if (p) { CALIB.parcels.dx = p[0]; CALIB.parcels.dy = p[1]; }
+  const n = parse(q.get('nudge_n')); if (n) { CALIB.nalgadha.dx = n[0]; CALIB.nalgadha.dy = n[1]; }
+  try {
+    const ls = JSON.parse(localStorage.getItem('land_calib') || 'null');
+    if (ls) { if (ls.parcels) Object.assign(CALIB.parcels, ls.parcels); if (ls.nalgadha) Object.assign(CALIB.nalgadha, ls.nalgadha); }
+  } catch (e) { /* localStorage unavailable */ }
 })();
-function applyNudge(geojson, src) {
-  const off = CAL[src];
-  if (!geojson || !off || (off[0] === 0 && off[1] === 0)) return geojson;
-  const lat0 = 28.3 * Math.PI / 180;            // representative latitude for the pilot
-  const dLng = off[0] / (111320 * Math.cos(lat0));
-  const dLat = off[1] / 110540;
-  const shift = (c) => { if (typeof c[0] === 'number') { c[0] += dLng; c[1] += dLat; } else c.forEach(shift); };
-  for (const f of (geojson.features || [])) { if (f.geometry && f.geometry.coordinates) shift(f.geometry.coordinates); }
-  return geojson;
+const calibActive = (c) => c && (c.dx || c.dy || c.rot);
+// Build a transformed copy of a source (rotate about its centre, then offset).
+function transformGeo(src) {
+  const orig = origGeo[src], c = srcCentroid[src], cal = CALIB[src];
+  if (!orig || !c) return null;
+  const lat0 = c[1] * Math.PI / 180;
+  const mLng = 111320 * Math.cos(lat0), mLat = 110540;
+  const th = (cal.rot || 0) * Math.PI / 180, cs = Math.cos(th), sn = Math.sin(th);
+  const tx = (lng, lat) => {
+    const ex = (lng - c[0]) * mLng, ny = (lat - c[1]) * mLat;
+    const rx = ex * cs - ny * sn, ry = ex * sn + ny * cs;
+    return [c[0] + (rx + cal.dx) / mLng, c[1] + (ry + cal.dy) / mLat];
+  };
+  const walk = (co) => (typeof co[0] === 'number' ? tx(co[0], co[1]) : co.map(walk));
+  return { type: 'FeatureCollection', features: orig.features.map((f) => ({
+    type: 'Feature', properties: f.properties,
+    geometry: f.geometry ? { type: f.geometry.type, coordinates: walk(f.geometry.coordinates) } : null })) };
+}
+function applyCalibration(src) {
+  for (const s of (src ? [src] : ['parcels', 'nalgadha'])) {
+    const source = map.getSource && map.getSource(s);
+    if (!source || !origGeo[s]) continue;
+    source.setData(calibActive(CALIB[s]) ? (transformGeo(s) || origGeo[s]) : origGeo[s]);
+  }
 }
 
 // ---- Area selector model (built at runtime from the loaded datasets) -----
@@ -598,7 +621,7 @@ map.on('load', async () => {
   try {
     const parcels = await fetch('./data/gbn_parcels.geojson').then((r) => (r.ok ? r.json() : null));
     if (parcels && parcels.features && parcels.features.length) {
-      applyNudge(parcels, 'parcels');     // optional calibration offset (default no-op)
+      origGeo.parcels = parcels;          // pristine baseline for live calibration
       // circle rates (for price + score headroom)
       try {
         const rj = await fetch('./data/circle_rates.json').then((r) => (r.ok ? r.json() : null));
@@ -661,6 +684,7 @@ map.on('load', async () => {
       const pb = new maplibregl.LngLatBounds();
       for (const ft of parcels.features) for (const c of ft.geometry.coordinates[0]) pb.extend(c);
       parcelBounds = pb;
+      { const cc = pb.getCenter(); srcCentroid.parcels = [cc.lng, cc.lat]; }   // rotation pivot
       // Area selector: "all Jewar parcels" + one entry per village
       AREAS.push({ group: 'Overview', label: 'All Jewar parcels', sub: parcels.features.length + ' plots',
                    bounds: () => parcelBounds, opts: { padding: 40, maxZoom: 15 } });
@@ -729,7 +753,7 @@ map.on('load', async () => {
     nalgadhaOwners = ngOwners || {};
     nalgadhaHistory = (ngHist && ngHist.histories) || {};
     if (ng && ng.features && ng.features.length) {
-      applyNudge(ng, 'nalgadha');         // optional calibration offset (default no-op)
+      origGeo.nalgadha = ng;              // pristine baseline for live calibration
       map.addSource('nalgadha', { type: 'geojson', data: ng });
       map.addLayer({
         id: 'nalgadha-fill', type: 'fill', source: 'nalgadha',
@@ -761,6 +785,7 @@ map.on('load', async () => {
       const nb = new maplibregl.LngLatBounds();
       for (const ft of ng.features) for (const c of ft.geometry.coordinates[0]) nb.extend(c);
       nalgadhaBounds = nb;
+      { const cc = nb.getCenter(); srcCentroid.nalgadha = [cc.lng, cc.lat]; }    // rotation pivot
       // Area selector: "all ownership villages" + one entry per village (these have history data)
       const vcount = new Set(ng.features.map((f) => f.properties.village)).size;
       AREAS.push({ group: 'Overview', label: 'All ownership villages', sub: vcount + ' villages',
@@ -778,8 +803,11 @@ map.on('load', async () => {
 
   // Hide placeholder boxes by default (only real surveyed plots) + build the area menu.
   applyCleanView();
+  applySat();                 // satellite-first base map
+  applyCalibration();         // apply any saved/seeded alignment offset
   setupAreaSelector();
   setupLayerControls();
+  setupCalibration();
   renderLegendExtra();
 
   // Deep-link restore (after sources/search index exist) — else reveal on the GBN pilot.
@@ -788,17 +816,20 @@ map.on('load', async () => {
 });
 
 // ---- Controls ------------------------------------------------------------
-// Satellite toggle (street ⇄ Esri imagery) — keeps the icon + label in sync.
-let satOn = false;
+// Base map: satellite by default (a land tool should show the real ground); the
+// button flips to the OSM street map. applySat() keeps layer + icon + label in sync.
+let satOn = true;
 const satBtn = document.getElementById('btn-sat');
-if (satBtn) satBtn.onclick = () => {
-  satOn = !satOn;
+function applySat() {
   if (map.getLayer('esri-sat-layer')) map.setLayoutProperty('esri-sat-layer', 'visibility', satOn ? 'visible' : 'none');
   if (map.getLayer('osm')) map.setLayoutProperty('osm', 'visibility', satOn ? 'none' : 'visible');
-  satBtn.classList.toggle('active', satOn);
-  const lbl = satBtn.querySelector('.tb-label'); if (lbl) lbl.textContent = satOn ? 'Map' : 'Satellite';
-  const ico = satBtn.querySelector('.tb-ico'); if (ico) ico.textContent = satOn ? '🗺️' : '🛰️';
-};
+  if (satBtn) {
+    satBtn.classList.toggle('active', satOn);
+    const lbl = satBtn.querySelector('.tb-label'); if (lbl) lbl.textContent = satOn ? 'Street map' : 'Satellite';
+    const ico = satBtn.querySelector('.tb-ico'); if (ico) ico.textContent = satOn ? '🗺️' : '🛰️';
+  }
+}
+if (satBtn) satBtn.onclick = () => { satOn = !satOn; applySat(); };
 
 // "Real polygons only" filter: hide un-traced bbox boxes so every visible parcel is a
 // real surveyed plot — a click then always lands exactly on the parcel outline.
@@ -839,6 +870,38 @@ function setupLayerControls() {
   if (lp) lp.onchange = () => setLayerGroupVisible('parcels', lp.checked);
   const ln = document.getElementById('lyr-nalgadha');
   if (ln) ln.onchange = () => setLayerGroupVisible('nalgadha', ln.checked);
+}
+
+// ---- "Align to satellite" calibration control ----------------------------
+function saveCalib() { try { localStorage.setItem('land_calib', JSON.stringify(CALIB)); } catch (e) { /* */ } }
+function nearestDataset() {
+  if (!parcelBounds) return 'nalgadha';
+  if (!nalgadhaBounds) return 'parcels';
+  const c = map.getCenter();
+  const d = (b) => { const cc = b.getCenter(); return Math.hypot(cc.lng - c.lng, cc.lat - c.lat); };
+  return d(parcelBounds) <= d(nalgadhaBounds) ? 'parcels' : 'nalgadha';
+}
+function setupCalibration() {
+  const tgt = document.getElementById('calib-target'); if (!tgt) return;
+  const fmt = () => {
+    const c = CALIB[tgt.value] || { dx: 0, dy: 0, rot: 0 };
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    set('cal-dx', c.dx + ' m'); set('cal-dy', c.dy + ' m'); set('cal-rot', (Math.round(c.rot * 10) / 10) + '°');
+  };
+  tgt.value = nearestDataset();
+  fmt();
+  tgt.onchange = fmt;
+  let t = null;
+  document.querySelectorAll('#layers-menu .calib-row button').forEach((b) => {
+    b.onclick = () => {
+      const s = tgt.value, k = b.getAttribute('data-k'), d = parseFloat(b.getAttribute('data-d'));
+      CALIB[s][k] = Math.round((CALIB[s][k] + d) * 10) / 10;
+      fmt(); saveCalib();
+      clearTimeout(t); t = setTimeout(() => applyCalibration(s), 120);
+    };
+  });
+  const reset = document.getElementById('cal-reset');
+  if (reset) reset.onclick = () => { const s = tgt.value; CALIB[s] = { dx: 0, dy: 0, rot: 0 }; fmt(); saveCalib(); applyCalibration(s); };
 }
 
 // ---- Area selector (searchable, grouped: Overview · Tehsils · villages) --

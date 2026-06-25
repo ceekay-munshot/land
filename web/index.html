@@ -53,6 +53,21 @@
         <hr />
         <label class="dd-check"><input type="checkbox" id="lyr-placeholders" /> <span>Show placeholder boxes</span></label>
         <div class="dd-note">Off = only real surveyed plots are shown, so a click always lands on the exact parcel.</div>
+        <hr />
+        <div class="calib">
+          <div class="calib-head">
+            <span>🛰️ Align to satellite</span>
+            <select id="calib-target" aria-label="Dataset to align">
+              <option value="parcels">Jewar</option>
+              <option value="nalgadha">Ownership</option>
+            </select>
+          </div>
+          <div class="calib-row"><span>↔ East</span><button data-k="dx" data-d="-5" aria-label="west">−</button><b id="cal-dx">0 m</b><button data-k="dx" data-d="5" aria-label="east">+</button></div>
+          <div class="calib-row"><span>↕ North</span><button data-k="dy" data-d="-5" aria-label="south">−</button><b id="cal-dy">0 m</b><button data-k="dy" data-d="5" aria-label="north">+</button></div>
+          <div class="calib-row"><span>⟳ Rotate</span><button data-k="rot" data-d="-0.5" aria-label="rotate ccw">−</button><b id="cal-rot">0°</b><button data-k="rot" data-d="0.5" aria-label="rotate cw">+</button></div>
+          <button id="cal-reset" class="calib-reset">Reset alignment</button>
+          <div class="dd-note">Nudge the cadastre onto the imagery; saved on this device.</div>
+        </div>
       </div>
     </div>
   </div>
