@@ -50,10 +50,14 @@ function calibPoint(src, lng, lat) {
   return [c[0] + (rx + cal.dx) / mLng, c[1] + (ry + cal.dy) / mLat];
 }
 // A LngLatBounds with all four corners calibrated (so a rotated fit stays correct).
+// Accepts either a maplibregl.LngLatBounds or the [[w,s],[e,n]] array form used by the
+// area menu (asLngLatBounds), since fitBounds is fed both.
 function calibBounds(src, b) {
   if (!b || !calibActive(CALIB[src])) return b;
+  let w, s, e, n;
+  if (Array.isArray(b)) { w = b[0][0]; s = b[0][1]; e = b[1][0]; n = b[1][1]; }
+  else { w = b.getWest(); s = b.getSouth(); e = b.getEast(); n = b.getNorth(); }
   const nb = new maplibregl.LngLatBounds();
-  const w = b.getWest(), e = b.getEast(), s = b.getSouth(), n = b.getNorth();
   for (const [lng, lat] of [[w, s], [w, n], [e, s], [e, n]]) nb.extend(calibPoint(src, lng, lat));
   return nb;
 }
