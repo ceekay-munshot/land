@@ -10,6 +10,108 @@ const SQFT = 10.7639;      // 1 m² in sq ft — plot rates/sizes shown in sq ft
 const sqft = (m2) => Math.round(m2 * SQFT).toLocaleString('en-IN');
 const ratePsf = (psm) => Math.round(psm / SQFT).toLocaleString('en-IN');
 
+// ---- Georeference calibration (align cadastre to satellite) --------------
+// The Bhu-Naksha cadastre is internally consistent but its absolute position can
+// drift a few metres (and sometimes rotate) from satellite imagery. CALIB holds a
+// per-dataset offset in METRES (east dx, north dy) + a rotation in DEGREES, applied
+// live about the dataset's own centre. Tuned from the Layers ▸ "Align to satellite"
+// control, persisted to localStorage, and seedable via URL (?nudge=E,N for both, or
+// ?nudge_p / ?nudge_n per dataset). Default 0 = the data is shown exactly as fetched.
+const CALIB = { parcels: { dx: 0, dy: 0, rot: 0 }, nalgadha: { dx: 0, dy: 0, rot: 0 } };
+const origGeo = {};        // src -> pristine FeatureCollection (never mutated)
+const srcCentroid = {};    // src -> [lng,lat] rotation pivot (dataset centre)
+(function initCalib() {
+  // Saved calibration loads first; explicit URL params then override it, so a shared
+  // ?nudge / ?nudge_p / ?nudge_n link reproduces an alignment even on a device that
+  // has previously used the control.
+  try {
+    const ls = JSON.parse(localStorage.getItem('land_calib') || 'null');
+    if (ls) { if (ls.parcels) Object.assign(CALIB.parcels, ls.parcels); if (ls.nalgadha) Object.assign(CALIB.nalgadha, ls.nalgadha); }
+  } catch (e) { /* localStorage unavailable */ }
+  const q = new URLSearchParams(location.search);
+  const parse = (s) => { const m = (s || '').split(',').map(Number); return (m.length === 2 && m.every((n) => !isNaN(n))) ? m : null; };
+  const all = parse(q.get('nudge'));
+  if (all) { CALIB.parcels.dx = all[0]; CALIB.parcels.dy = all[1]; CALIB.nalgadha.dx = all[0]; CALIB.nalgadha.dy = all[1]; }
+  const p = parse(q.get('nudge_p')); if (p) { CALIB.parcels.dx = p[0]; CALIB.parcels.dy = p[1]; }
+  const n = parse(q.get('nudge_n')); if (n) { CALIB.nalgadha.dx = n[0]; CALIB.nalgadha.dy = n[1]; }
+})();
+const calibActive = (c) => c && (c.dx || c.dy || c.rot);
+// Transform a single [lng,lat] through a dataset's active calibration (rotate about its
+// centre, then offset). Returns the point unchanged when no calibration is active — used
+// for the geometry, AND for search / deep-link / area fly-to so navigation stays on the
+// shifted parcels instead of landing at the original (pre-calibration) centroid.
+function calibPoint(src, lng, lat) {
+  const c = srcCentroid[src], cal = CALIB[src];
+  if (!c || !calibActive(cal)) return [lng, lat];
+  const lat0 = c[1] * Math.PI / 180, mLng = 111320 * Math.cos(lat0), mLat = 110540;
+  const th = (cal.rot || 0) * Math.PI / 180, cs = Math.cos(th), sn = Math.sin(th);
+  const ex = (lng - c[0]) * mLng, ny = (lat - c[1]) * mLat;
+  const rx = ex * cs - ny * sn, ry = ex * sn + ny * cs;
+  return [c[0] + (rx + cal.dx) / mLng, c[1] + (ry + cal.dy) / mLat];
+}
+// A LngLatBounds with all four corners calibrated (so a rotated fit stays correct).
+// Accepts either a maplibregl.LngLatBounds or the [[w,s],[e,n]] array form used by the
+// area menu (asLngLatBounds), since fitBounds is fed both.
+function calibBounds(src, b) {
+  if (!b || !calibActive(CALIB[src])) return b;
+  let w, s, e, n;
+  if (Array.isArray(b)) { w = b[0][0]; s = b[0][1]; e = b[1][0]; n = b[1][1]; }
+  else { w = b.getWest(); s = b.getSouth(); e = b.getEast(); n = b.getNorth(); }
+  const nb = new maplibregl.LngLatBounds();
+  for (const [lng, lat] of [[w, s], [w, n], [e, s], [e, n]]) nb.extend(calibPoint(src, lng, lat));
+  return nb;
+}
+// Build a transformed copy of a source (rotate about its centre, then offset).
+function transformGeo(src) {
+  const orig = origGeo[src];
+  if (!orig || !srcCentroid[src]) return null;
+  const walk = (co) => (typeof co[0] === 'number' ? calibPoint(src, co[0], co[1]) : co.map(walk));
+  return { type: 'FeatureCollection', features: orig.features.map((f) => ({
+    type: 'Feature', properties: f.properties,
+    geometry: f.geometry ? { type: f.geometry.type, coordinates: walk(f.geometry.coordinates) } : null })) };
+}
+function applyCalibration(src) {
+  for (const s of (src ? [src] : ['parcels', 'nalgadha'])) {
+    const source = map.getSource && map.getSource(s);
+    if (!source || !origGeo[s]) continue;
+    source.setData(calibActive(CALIB[s]) ? (transformGeo(s) || origGeo[s]) : origGeo[s]);
+  }
+}
+
+// ---- Area selector model (built at runtime from the loaded datasets) -----
+const GROUP_ORDER = ['Overview', 'Tehsils', 'Jewar — live parcels', 'Ownership history'];
+const AREAS = [];          // { group, label, sub, bounds | ()=>bounds, opts }
+// axis-aligned bounds [minLng,minLat,maxLng,maxLat] for any GeoJSON geometry
+function geomBounds(geometry, b) {
+  b = b || [Infinity, Infinity, -Infinity, -Infinity];
+  const walk = (c) => {
+    if (typeof c[0] === 'number') {
+      if (c[0] < b[0]) b[0] = c[0]; if (c[1] < b[1]) b[1] = c[1];
+      if (c[0] > b[2]) b[2] = c[0]; if (c[1] > b[3]) b[3] = c[1];
+    } else c.forEach(walk);
+  };
+  if (geometry && geometry.coordinates) walk(geometry.coordinates);
+  return b;
+}
+// per-village bounds, skipping out-of-region junk coords (some centroids are [0, 76.5])
+function villageBoundsMap(features) {
+  const m = {};
+  for (const ft of features) {
+    const v = ft.properties && ft.properties.village; if (!v) continue;
+    const ring = ft.geometry && ft.geometry.coordinates && ft.geometry.coordinates[0]; if (!ring) continue;
+    for (const c of ring) {
+      const lng = c[0], lat = c[1];
+      if (!(lng > 76 && lng < 79 && lat > 27 && lat < 30)) continue;
+      const b = m[v] || (m[v] = [Infinity, Infinity, -Infinity, -Infinity]);
+      if (lng < b[0]) b[0] = lng; if (lat < b[1]) b[1] = lat;
+      if (lng > b[2]) b[2] = lng; if (lat > b[3]) b[3] = lat;
+    }
+  }
+  return m;
+}
+const validB = (b) => b && b.every((n) => isFinite(n)) && b[2] > b[0] && b[3] > b[1];
+const asLngLatBounds = (b) => [[b[0], b[1]], [b[2], b[3]]];
+
 const map = new maplibregl.Map({
   container: 'map',
   style: {
@@ -105,21 +207,28 @@ const ifCidx = (withCidx, without) => ['case', ['has', 'cidx'], withCidx, withou
 // A feature has REAL traced geometry (vs an un-traced bbox box) when geometry_method
 // is 'raster_vector'. Used to de-emphasise boxes and to drive the Clean-view toggle.
 const IS_REAL = ['==', ['get', 'geometry_method'], 'raster_vector'];
-const REAL_ONLY = IS_REAL;            // filter applied when Clean view is on
-let cleanView = false;
-function selectFeature(source, id) {
-  selected = { source, id: String(id) };
+const REAL_ONLY = IS_REAL;            // filter applied when placeholder boxes are hidden
+let cleanView = true;                 // default: show only real surveyed plots (boxes hidden)
+// Highlight filter for a source: the selected id, AND (when placeholders are hidden)
+// only if it is a real traced plot — so selecting a hidden bbox box via search or a
+// deep-link never draws a stray placeholder outline.
+function highlightFilter(s) {
+  const base = ['==', SELECT_KEY, (selected.source === s && selected.id) ? String(selected.id) : '__none__'];
+  return cleanView ? ['all', REAL_ONLY, base] : base;
+}
+function refreshHighlights() {
   for (const s of ['nalgadha', 'parcels']) {
     const lyr = s + '-highlight';
-    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', SELECT_KEY, s === source ? String(id) : '__none__']);
+    if (map.getLayer(lyr)) map.setFilter(lyr, highlightFilter(s));
   }
+}
+function selectFeature(source, id) {
+  selected = { source, id: String(id) };
+  refreshHighlights();
 }
 function clearSelection() {
   selected = { source: null, id: null };
-  for (const s of ['nalgadha', 'parcels']) {
-    const lyr = s + '-highlight';
-    if (map.getLayer(lyr)) map.setFilter(lyr, ['==', SELECT_KEY, '__none__']);
-  }
+  refreshHighlights();
   updateHash();
 }
 
@@ -299,7 +408,7 @@ function recFromFeature(source, feature) {
   return { source, id: uidOf(feature.properties), feature, centroid };
 }
 function flyToFeature(rec) {
-  if (rec.centroid) map.flyTo({ center: rec.centroid, zoom: 16, duration: 1200 });
+  if (rec.centroid) map.flyTo({ center: calibPoint(rec.source, rec.centroid[0], rec.centroid[1]), zoom: 16, duration: 1200 });
   selectFeature(rec.source, rec.id);
   openDrawerFor(rec);
   updateHash();
@@ -368,7 +477,7 @@ function restoreFromHash() {
     if (rec) {
       selectFeature(rec.source, rec.id);
       openDrawerFor(rec);
-      if (hv.lat == null && rec.centroid) map.jumpTo({ center: rec.centroid, zoom: 16 });
+      if (hv.lat == null && rec.centroid) map.jumpTo({ center: calibPoint(rec.source, rec.centroid[0], rec.centroid[1]), zoom: 16 });
     }
   }
   return true;
@@ -448,6 +557,12 @@ function setupSearch() {
 }
 
 map.on('load', async () => {
+  // Area selector — overview entries first (datasets/tehsils/villages appended as they load)
+  AREAS.push({ group: 'Overview', label: 'NCR — full region', sub: 'Delhi → Jewar',
+               bounds: NCR_BOUNDS, opts: { padding: 20, maxZoom: 11 } });
+  AREAS.push({ group: 'Overview', label: 'Gautam Buddh Nagar', sub: 'pilot district',
+               bounds: GBN_BOUNDS, opts: { padding: 60, maxZoom: 13 } });
+
   // Satellite/aerial base (Esri World Imagery, no key) — sits under all data layers,
   // hidden until toggled, so users can ground-truth parcel boundaries.
   map.addSource('esri-sat', {
@@ -489,7 +604,7 @@ map.on('load', async () => {
     paint: { 'line-color': '#111', 'line-width': 1.5 }
   });
 
-  // Tehsil name labels as HTML markers (no glyph/font dependency)
+  // Tehsil name labels as HTML markers (no glyph/font dependency) + area-selector entries
   for (const ft of gbn.features) {
     const c = polygonCentroid(ft.geometry);
     if (!c) continue;
@@ -497,6 +612,11 @@ map.on('load', async () => {
     el.className = 'tehsil-label';
     el.textContent = ft.properties.tehsil;
     new maplibregl.Marker({ element: el, anchor: 'center' }).setLngLat(c).addTo(map);
+    const tb = geomBounds(ft.geometry);
+    if (validB(tb) && ft.properties.tehsil) {
+      AREAS.push({ group: 'Tehsils', label: ft.properties.tehsil + ' tehsil',
+                   bounds: asLngLatBounds(tb), opts: { padding: 40, maxZoom: 13 } });
+    }
   }
   map.on('mouseenter', 'gbn-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'gbn-fill', () => { map.getCanvas().style.cursor = ''; });
@@ -528,6 +648,7 @@ map.on('load', async () => {
   try {
     const parcels = await fetch('./data/gbn_parcels.geojson').then((r) => (r.ok ? r.json() : null));
     if (parcels && parcels.features && parcels.features.length) {
+      origGeo.parcels = parcels;          // pristine baseline for live calibration
       // circle rates (for price + score headroom)
       try {
         const rj = await fetch('./data/circle_rates.json').then((r) => (r.ok ? r.json() : null));
@@ -590,8 +711,22 @@ map.on('load', async () => {
       const pb = new maplibregl.LngLatBounds();
       for (const ft of parcels.features) for (const c of ft.geometry.coordinates[0]) pb.extend(c);
       parcelBounds = pb;
-      const pbtn = document.getElementById('btn-parcels');
-      if (pbtn) { pbtn.style.display = 'inline-block'; pbtn.textContent = `🟣 Live parcels (${parcels.features.length})`; }
+      { const cc = pb.getCenter(); srcCentroid.parcels = [cc.lng, cc.lat]; }   // rotation pivot
+      // Area selector: "all Jewar parcels" + one entry per village
+      AREAS.push({ group: 'Overview', label: 'All Jewar parcels', sub: parcels.features.length + ' plots',
+                   src: 'parcels', bounds: () => parcelBounds, opts: { padding: 40, maxZoom: 15 } });
+      const pvb = villageBoundsMap(parcels.features);
+      const preal = {};
+      for (const f of parcels.features) { const v = f.properties.village; if (v && f.properties.geometry_method === 'raster_vector') preal[v] = (preal[v] || 0) + 1; }
+      const pcount = {};
+      for (const f of parcels.features) { const v = f.properties.village; if (v) pcount[v] = (pcount[v] || 0) + 1; }
+      for (const [v, b] of Object.entries(pvb)) {
+        if (!validB(b)) continue;
+        const real = preal[v] || 0;
+        AREAS.push({ group: 'Jewar — live parcels', label: v, src: 'parcels', boxesOnly: real === 0,
+                     sub: real ? real + ' plots' : (pcount[v] || 0) + ' (boxes only)',
+                     bounds: asLngLatBounds(b), opts: { padding: 50, maxZoom: 16 } });
+      }
       console.log(`parcels loaded + scored: ${parcels.features.length}`);
     }
   } catch (e) { /* no parcels yet — fetcher hasn't run */ }
@@ -649,6 +784,7 @@ map.on('load', async () => {
     nalgadhaOwners = ngOwners || {};
     nalgadhaHistory = (ngHist && ngHist.histories) || {};
     if (ng && ng.features && ng.features.length) {
+      origGeo.nalgadha = ng;              // pristine baseline for live calibration
       map.addSource('nalgadha', { type: 'geojson', data: ng });
       map.addLayer({
         id: 'nalgadha-fill', type: 'fill', source: 'nalgadha',
@@ -680,16 +816,36 @@ map.on('load', async () => {
       const nb = new maplibregl.LngLatBounds();
       for (const ft of ng.features) for (const c of ft.geometry.coordinates[0]) nb.extend(c);
       nalgadhaBounds = nb;
-      const nbtn = document.getElementById('btn-nalgadha');
-      if (nbtn) {
-        const vcount = new Set(ng.features.map((f) => f.properties.village)).size;
-        nbtn.style.display = 'inline-block';
-        nbtn.textContent = vcount > 1
-          ? `🧬 Ownership (${ng.features.length} · ${vcount} villages)`
-          : `🧬 Nalgadha (${ng.features.length})`;
+      { const cc = nb.getCenter(); srcCentroid.nalgadha = [cc.lng, cc.lat]; }    // rotation pivot
+      // Area selector: "all ownership villages" + one entry per village (these have history data)
+      const vcount = new Set(ng.features.map((f) => f.properties.village)).size;
+      AREAS.push({ group: 'Overview', label: 'All ownership villages', sub: vcount + ' villages',
+                   src: 'nalgadha', bounds: () => nalgadhaBounds, opts: { padding: 50, maxZoom: 14 } });
+      const nvb = villageBoundsMap(ng.features);
+      const ncount = {}, nreal = {};
+      for (const f of ng.features) {
+        const v = f.properties.village; if (!v) continue;
+        ncount[v] = (ncount[v] || 0) + 1;
+        if (f.properties.geometry_method === 'raster_vector') nreal[v] = (nreal[v] || 0) + 1;
+      }
+      for (const [v, b] of Object.entries(nvb)) {
+        if (!validB(b)) continue;
+        const real = nreal[v] || 0;
+        AREAS.push({ group: 'Ownership history', label: v, own: true, src: 'nalgadha', boxesOnly: real === 0,
+                     sub: real ? real + ' plots' : (ncount[v] || 0) + ' (boxes only)',
+                     bounds: asLngLatBounds(b), opts: { padding: 50, maxZoom: 16 } });
       }
     }
   } catch (e) { /* no nalgadha data yet */ }
+
+  // Hide placeholder boxes by default (only real surveyed plots) + build the area menu.
+  applyCleanView();
+  applySat();                 // satellite-first base map
+  applyCalibration();         // apply any saved/seeded alignment offset
+  setupAreaSelector();
+  setupLayerControls();
+  setupCalibration();
+  renderLegendExtra();
 
   // Deep-link restore (after sources/search index exist) — else reveal on the GBN pilot.
   const restored = restoreFromHash();
@@ -697,42 +853,165 @@ map.on('load', async () => {
 });
 
 // ---- Controls ------------------------------------------------------------
-document.getElementById('btn-india').onclick =
-  () => map.fitBounds(NCR_BOUNDS, { padding: 20, duration: 1500 });
-document.getElementById('btn-gbn').onclick =
-  () => map.fitBounds(GBN_BOUNDS, { padding: 60, duration: 1500 });
-document.getElementById('btn-parcels').onclick =
-  () => { if (parcelBounds) map.fitBounds(parcelBounds, { padding: 40, maxZoom: 17, duration: 1500 }); };
-document.getElementById('btn-nalgadha').onclick =
-  () => { if (nalgadhaBounds) map.fitBounds(nalgadhaBounds, { padding: 60, maxZoom: 16, duration: 1500 }); };
-
-let satOn = false;
+// Base map: satellite by default (a land tool should show the real ground); the
+// button flips to the OSM street map. applySat() keeps layer + icon + label in sync.
+let satOn = true;
 const satBtn = document.getElementById('btn-sat');
-if (satBtn) satBtn.onclick = () => {
-  satOn = !satOn;
+function applySat() {
   if (map.getLayer('esri-sat-layer')) map.setLayoutProperty('esri-sat-layer', 'visibility', satOn ? 'visible' : 'none');
   if (map.getLayer('osm')) map.setLayoutProperty('osm', 'visibility', satOn ? 'none' : 'visible');
-  satBtn.classList.toggle('active', satOn);
-  satBtn.textContent = satOn ? '🗺️ Map' : '🛰️ Satellite';
-};
+  if (satBtn) {
+    satBtn.classList.toggle('active', satOn);
+    const lbl = satBtn.querySelector('.tb-label'); if (lbl) lbl.textContent = satOn ? 'Street map' : 'Satellite';
+    const ico = satBtn.querySelector('.tb-ico'); if (ico) ico.textContent = satOn ? '🗺️' : '🛰️';
+  }
+}
+if (satBtn) satBtn.onclick = () => { satOn = !satOn; applySat(); };
 
-// Clean view: hide everything that isn't a real traced polygon, so the map shows only
-// crisp tessellating parcels (no un-traced bbox boxes). Layers that may not exist yet are
-// guarded; the filter is (re)applied on demand.
+// "Real polygons only" filter: hide un-traced bbox boxes so every visible parcel is a
+// real surveyed plot — a click then always lands exactly on the parcel outline.
 const CLEAN_TARGETS = ['parcels-fill', 'parcels-line', 'parcels-labels',
                        'nalgadha-fill', 'nalgadha-line', 'nalgadha-labels'];
 function applyCleanView() {
   for (const id of CLEAN_TARGETS) {
     if (map.getLayer(id)) map.setFilter(id, cleanView ? REAL_ONLY : null);
   }
+  refreshHighlights();   // keep the selection outline consistent with placeholder visibility
 }
-const cleanBtn = document.getElementById('btn-clean');
-if (cleanBtn) cleanBtn.onclick = () => {
-  cleanView = !cleanView;
+// Turn placeholder boxes back on (used when navigating to a village that has only boxes,
+// so the map isn't blank) and keep the Layers checkbox in sync.
+function revealPlaceholders() {
+  if (!cleanView) return;
+  cleanView = false;
+  const ph = document.getElementById('lyr-placeholders'); if (ph) ph.checked = true;
   applyCleanView();
-  cleanBtn.classList.toggle('active', cleanView);
-  cleanBtn.textContent = cleanView ? '🟪 Show all' : '✨ Clean view';
-};
+}
+
+// ---- Layer / view popover (placeholder toggle + dataset visibility) ------
+function setLayerGroupVisible(prefix, on) {
+  for (const suf of ['-fill', '-line', '-labels', '-highlight']) {
+    const id = prefix + suf;
+    if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+  }
+}
+function toggleableDropdown(id) {
+  const dd = document.getElementById(id); if (!dd) return;
+  const btn = dd.querySelector('button');
+  const menu = dd.querySelector('.dd-menu');
+  if (btn) btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  if (menu) menu.addEventListener('click', (e) => e.stopPropagation()); // stay open while toggling
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#' + id)) { dd.classList.remove('open'); if (btn) btn.setAttribute('aria-expanded', 'false'); }
+  });
+}
+function setupLayerControls() {
+  toggleableDropdown('layers');
+  const ph = document.getElementById('lyr-placeholders');
+  if (ph) { ph.checked = !cleanView; ph.onchange = () => { cleanView = !ph.checked; applyCleanView(); }; }
+  const lp = document.getElementById('lyr-parcels');
+  if (lp) lp.onchange = () => setLayerGroupVisible('parcels', lp.checked);
+  const ln = document.getElementById('lyr-nalgadha');
+  if (ln) ln.onchange = () => setLayerGroupVisible('nalgadha', ln.checked);
+}
+
+// ---- "Align to satellite" calibration control ----------------------------
+function saveCalib() { try { localStorage.setItem('land_calib', JSON.stringify(CALIB)); } catch (e) { /* */ } }
+function nearestDataset() {
+  if (!parcelBounds) return 'nalgadha';
+  if (!nalgadhaBounds) return 'parcels';
+  const c = map.getCenter();
+  const d = (b) => { const cc = b.getCenter(); return Math.hypot(cc.lng - c.lng, cc.lat - c.lat); };
+  return d(parcelBounds) <= d(nalgadhaBounds) ? 'parcels' : 'nalgadha';
+}
+function setupCalibration() {
+  const tgt = document.getElementById('calib-target'); if (!tgt) return;
+  const fmt = () => {
+    const c = CALIB[tgt.value] || { dx: 0, dy: 0, rot: 0 };
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    set('cal-dx', c.dx + ' m'); set('cal-dy', c.dy + ' m'); set('cal-rot', (Math.round(c.rot * 10) / 10) + '°');
+  };
+  tgt.value = nearestDataset();
+  fmt();
+  tgt.onchange = fmt;
+  let t = null;
+  document.querySelectorAll('#layers-menu .calib-row button').forEach((b) => {
+    b.onclick = () => {
+      const s = tgt.value, k = b.getAttribute('data-k'), d = parseFloat(b.getAttribute('data-d'));
+      CALIB[s][k] = Math.round((CALIB[s][k] + d) * 10) / 10;
+      fmt(); saveCalib();
+      clearTimeout(t); t = setTimeout(() => applyCalibration(s), 120);
+    };
+  });
+  const reset = document.getElementById('cal-reset');
+  if (reset) reset.onclick = () => { const s = tgt.value; CALIB[s] = { dx: 0, dy: 0, rot: 0 }; fmt(); saveCalib(); applyCalibration(s); };
+}
+
+// ---- Area selector (searchable, grouped: Overview · Tehsils · villages) --
+function goToArea(a) {
+  let b = typeof a.bounds === 'function' ? a.bounds() : a.bounds;
+  if (!b) return;
+  if (a.boxesOnly) revealPlaceholders();   // village has only un-traced boxes → don't fly to a blank map
+  if (a.src) b = calibBounds(a.src, b);     // honour live alignment so the fit lands on the shifted plots
+  map.fitBounds(b, Object.assign({ padding: 60, duration: 1400 }, a.opts || {}));
+  const lbl = document.getElementById('area-label'); if (lbl) lbl.textContent = a.label;
+}
+function setupAreaSelector() {
+  const dd = document.getElementById('area-select');
+  const btn = document.getElementById('area-btn');
+  const search = document.getElementById('area-search');
+  const list = document.getElementById('area-list');
+  if (!dd || !btn || !list) return;
+  const render = (q) => {
+    q = (q || '').trim().toLowerCase();
+    const groups = {};
+    AREAS.forEach((a, i) => {
+      if (q && !((a.label + ' ' + (a.sub || '') + ' ' + a.group).toLowerCase().includes(q))) return;
+      (groups[a.group] || (groups[a.group] = [])).push(i);
+    });
+    let html = '';
+    for (const g of GROUP_ORDER) {
+      const idxs = groups[g]; if (!idxs || !idxs.length) continue;
+      html += `<div class="dd-group">${ngEsc(g)}</div>`;
+      for (const i of idxs) {
+        const a = AREAS[i];
+        const sub = a.sub ? `<span class="dd-item-sub${a.own ? ' own' : ''}">${a.own ? '● ' : ''}${ngEsc(a.sub)}</span>` : '';
+        html += `<div class="dd-item" data-i="${i}" role="option"><span class="dd-item-label">${ngEsc(a.label)}</span>${sub}</div>`;
+      }
+    }
+    list.innerHTML = html || `<div class="dd-empty">No areas match “${ngEsc(q)}”.</div>`;
+  };
+  const open = () => { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); if (search) search.value = ''; render(''); setTimeout(() => search && search.focus(), 0); };
+  const close = () => { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+  btn.addEventListener('click', (e) => { e.stopPropagation(); dd.classList.contains('open') ? close() : open(); });
+  if (search) {
+    search.addEventListener('input', () => render(search.value));
+    search.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { close(); btn.focus(); }
+      else if (e.key === 'Enter') { const first = list.querySelector('.dd-item'); if (first) first.click(); }
+    });
+  }
+  list.addEventListener('click', (e) => {
+    const it = e.target.closest('.dd-item'); if (!it) return;
+    const a = AREAS[+it.getAttribute('data-i')]; if (a) { goToArea(a); close(); }
+  });
+  document.addEventListener('click', (e) => { if (!e.target.closest('#area-select')) close(); });
+  render('');
+}
+
+// ---- Legend: only show rows for layers that actually loaded ---------------
+function renderLegendExtra() {
+  const box = document.getElementById('legend-extra'); if (!box) return;
+  const rows = [];
+  if (map.getLayer('osm-airport') || map.getLayer('osm-roads'))
+    rows.push('<div class="row"><span class="dot"></span> ✈ airport · 🛣 expressways</div>');
+  if (locatedSchemes.length)
+    rows.push('<div class="row"><span class="schemesw"></span> ◆ YEIDA live schemes <span style="opacity:.6">(◇ approx)</span></div>');
+  box.innerHTML = rows.length ? '<hr>' + rows.join('') : '';
+}
 
 document.getElementById('drawer-close')?.addEventListener('click', closeDrawer);
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
