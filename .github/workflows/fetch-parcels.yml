@@ -16,8 +16,10 @@ on:
       include_owners:
         description: Include owner names (1=yes). Repo is public — keep 0 unless private.
         default: '0'
-  schedule:
-    - cron: '17 */3 * * *'   # every 3 hours
+  # schedule PAUSED so the village set stays fixed while bhunaksha-trace fills 100%.
+  # Re-enable (uncomment) once the trace has caught up, to discover more villages.
+  # schedule:
+  #   - cron: '17 */3 * * *'   # every 3 hours
   push:
     branches: [main]
     paths:

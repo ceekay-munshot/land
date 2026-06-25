@@ -7,10 +7,10 @@ name: nalgadha-fetch
 # Resumable (enum 1..400, per-village resume); retry-hardened + graceful skip.
 on:
   workflow_dispatch:
-  schedule:
-    # Fill neighbouring villages in the background, a few per run. Resumable, so
-    # no run is ever wasted. Adjust cadence freely.
-    - cron: '13 */2 * * *'
+  # schedule PAUSED so the village set stays fixed while bhunaksha-trace fills 100%.
+  # Re-enable (uncomment) once the trace has caught up, to discover more villages.
+  # schedule:
+  #   - cron: '13 */2 * * *'
   push:
     branches: [main]
     paths:
