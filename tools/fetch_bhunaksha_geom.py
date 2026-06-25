@@ -43,6 +43,8 @@ BASE = os.environ.get("BHUNAKSHA_BASE", "https://upbhunaksha.gov.in/bhunakshaser
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124 Safari/537.36")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Bump when the tracing algorithm changes so every village is re-traced with it.
+TRACE_ALGO = "v2-areagate"
 
 
 # --------------------------------------------------------------------------- #
@@ -137,8 +139,18 @@ def load_plots(out_path, village_code=None):
     return geo, groups
 
 
-def vectorize_village(img, bbox_utm, crs, feats, simplify_m=0.5):
-    """img (BGR), bbox in UTM, list of plot feats -> list of output GeoJSON features."""
+def vectorize_village(img, bbox_utm, crs, feats, simplify_m=0.5,
+                      area_min=float(os.environ.get("AREA_MIN_RATIO", "0.08")),
+                      area_max=float(os.environ.get("AREA_MAX_RATIO", "1.6"))):
+    """img (BGR), bbox in UTM, list of plot feats -> list of output GeoJSON features.
+
+    Accuracy gate: a traced polygon is accepted for a plot only when its area is
+    within [area_min, area_max] x the plot's known Bhu-Naksha bbox area. This
+    rejects a polygon that swallowed a road or neighbour (too big) or is a sliver
+    (too small) — those plots fall back to their (hidden) bbox box instead of
+    drawing a parcel on top of a road. Traced polygons tessellate by construction,
+    so accepted ones never overlap each other."""
+    from shapely.geometry import Polygon
     H, W = img.shape[:2]
     px_to_utm, _, _ = cc.affine_from_bbox(bbox_utm, W, H)
     to_wgs = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
@@ -151,25 +163,42 @@ def vectorize_village(img, bbox_utm, crs, feats, simplify_m=0.5):
         if sp.is_valid and sp.area > 1.0:
             polys.append(sp)
 
+    # expected area (m^2) of each plot from its Bhu-Naksha bbox, for the gate
+    exp_area = {}
+    for f in feats:
+        try:
+            exp_area[f["uid"]] = Polygon([to_utm.transform(x, y)
+                                          for x, y in f["geometry"]["coordinates"][0]]).area
+        except Exception:
+            exp_area[f["uid"]] = None
+
     centroids = [(f["uid"], to_utm.transform(*f["centroid_wgs"])) for f in feats]
     poly_id, unmatched = cc.assign_ids(polys, centroids)
     by_uid = {f["uid"]: f for f in feats}
+    unmatched = list(unmatched)
 
     out = []
     for idx, uid in enumerate(poly_id):
         if uid is None:
             continue                                  # traced region with no plot = furniture
+        a_exp = exp_area.get(uid)
+        if a_exp and not (area_min * a_exp <= polys[idx].area <= area_max * a_exp):
+            unmatched.append(uid)                     # implausible (road/merge/sliver) -> bbox
+            continue
         ring = [list(to_wgs.transform(x, y)) for x, y in polys[idx].exterior.coords]
         props = dict(by_uid[uid]["props"])
         props["geometry_method"] = "raster_vector"
+        props["trace_algo"] = TRACE_ALGO
         out.append({"type": "Feature", "properties": props,
                     "geometry": {"type": "Polygon", "coordinates": [ring]}})
+    nreal = len(out)
     for uid in unmatched:                              # keep bbox so no plot disappears
         f = by_uid[uid]
         props = dict(f["props"])
         props["geometry_method"] = "bbox_fallback"
+        props["trace_algo"] = TRACE_ALGO
         out.append({"type": "Feature", "properties": props, "geometry": f["geometry"]})
-    return out, len(polys), len(unmatched)
+    return out, len(polys), len(out) - nreal
 
 
 # --------------------------------------------------------------------------- #
@@ -226,17 +255,21 @@ def main():
     # Villages traced coarser (or with no recorded mpp, e.g. an earlier run) are
     # re-traced so lowering MPP auto-upgrades them. Once all are at <= target, runs no-op.
     done_mpp = {}
+    done_algo = {}
     has_untraced = set()
     for ft in geo.get("features", []):
         gm = ft["properties"].get("geometry_method")
         gc = ft["properties"].get("gis_code")
         if gm in ("raster_vector", "bbox_fallback"):
             done_mpp[gc] = min(done_mpp.get(gc, 9e9), float(ft["properties"].get("mpp", 9e9)))
+            done_algo[gc] = ft["properties"].get("trace_algo")
         elif not gm:
             has_untraced.add(gc)            # village has plots with no geometry yet
-    # (Re)trace a village if it has any un-traced plot, or it was traced coarser than target.
+    # (Re)trace a village if it has any un-traced plot, was traced coarser than target,
+    # or was traced by an older algorithm version (so accuracy fixes roll out everywhere).
     todo = [(gc, grp) for gc, grp in groups.items()
-            if gc in has_untraced or done_mpp.get(gc, 9e9) > mpp + 1e-9]
+            if gc in has_untraced or done_mpp.get(gc, 9e9) > mpp + 1e-9
+            or done_algo.get(gc) != TRACE_ALGO]
     print(f"{len(groups)-len(todo)} villages already at <= {mpp} m/px; {len(todo)} to (re)trace "
           f"(this run: <= {max_villages} villages, <= {time_budget:.0f}s)")
     s = _session()
@@ -271,6 +304,7 @@ def main():
                 props = dict(f["props"])
                 props["geometry_method"] = "bbox_fallback"
                 props["mpp"] = mpp
+                props["trace_algo"] = TRACE_ALGO
                 props["trace_status"] = "render_failed"
                 fb.append({"type": "Feature", "properties": props, "geometry": f["geometry"]})
             rebuilt[gc] = fb
