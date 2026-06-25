@@ -7,10 +7,8 @@ name: nalgadha-fetch
 # Resumable (enum 1..400, per-village resume); retry-hardened + graceful skip.
 on:
   workflow_dispatch:
-  # schedule PAUSED so the village set stays fixed while bhunaksha-trace fills 100%.
-  # Re-enable (uncomment) once the trace has caught up, to discover more villages.
-  # schedule:
-  #   - cron: '13 */2 * * *'
+  schedule:
+    - cron: '13 */2 * * *'   # every 2 hours — discover more Sadar villages
   push:
     branches: [main]
     paths:
@@ -20,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nalgadha-fetch
+  group: land-data-write          # shared by all web/data writers so commits never race
   cancel-in-progress: false
 
 jobs:

@@ -23,10 +23,10 @@ on:
         description: 'Metres/pixel (smaller = sharper + slower)'
         type: string
         default: '0.3'
-  # schedule PAUSED — all known GBN villages are traced. Re-enable to fill new
-  # villages after re-enabling the bbox-batchers (fetch-parcels / nalgadha-fetch).
-  # schedule:
-  #   - cron: '*/20 * * * *'
+  # schedule re-enabled to trace newly-discovered villages. Hourly, and shares the
+  # land-data-write concurrency group with the batchers so writes never race.
+  schedule:
+    - cron: '5 * * * *'
   push:
     branches: [main]
     paths:
@@ -38,7 +38,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: bhunaksha-trace
+  group: land-data-write          # shared by all web/data writers so commits never race
   cancel-in-progress: false
 
 jobs:

@@ -16,10 +16,8 @@ on:
       include_owners:
         description: Include owner names (1=yes). Repo is public — keep 0 unless private.
         default: '0'
-  # schedule PAUSED so the village set stays fixed while bhunaksha-trace fills 100%.
-  # Re-enable (uncomment) once the trace has caught up, to discover more villages.
-  # schedule:
-  #   - cron: '17 */3 * * *'   # every 3 hours
+  schedule:
+    - cron: '17 */3 * * *'   # every 3 hours — discover more Jewar villages
   push:
     branches: [main]
     paths:
@@ -30,7 +28,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: parcels-batcher
+  group: land-data-write          # shared by all web/data writers so commits never race
   cancel-in-progress: false
 
 jobs:
