@@ -24,7 +24,9 @@ deploy's root / output directory at `web/`.
 ## 🗺️ What's on the map
 - **India home view** → auto-flies to **Gautam Buddh Nagar** (3 tehsils: Dadri, Sadar, **Jewar**).
 - **Area selector** (top bar) — one searchable dropdown to jump to the NCR/GBN overview, any of the
-  3 tehsils, or any of the **29 villages** (grouped; ownership-history villages are flagged).
+  3 tehsils, or any of the **29 villages**, grouped by tehsil (Jewar / GBN-Sadar). Names show in
+  **English · हिन्दी** and search matches either script, so a village works in govt records and on
+  Google Maps; villages carrying ownership history are flagged ●.
 - **Real surveyed plots only by default** — un-traced bbox placeholders are hidden so a click always
   lands on the exact parcel; flip *Layers → Show placeholder boxes* to reveal them.
 - **Satellite by default** — opens on Esri imagery (street map one tap away) so plots sit on the real

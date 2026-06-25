@@ -79,7 +79,7 @@ function applyCalibration(src) {
 }
 
 // ---- Area selector model (built at runtime from the loaded datasets) -----
-const GROUP_ORDER = ['Overview', 'Tehsils', 'Jewar — live parcels', 'Ownership history'];
+const GROUP_ORDER = ['Overview', 'Tehsils', 'Jewar tehsil — villages', 'GBN Sadar tehsil — villages'];
 const AREAS = [];          // { group, label, sub, bounds | ()=>bounds, opts }
 // axis-aligned bounds [minLng,minLat,maxLng,maxLat] for any GeoJSON geometry
 function geomBounds(geometry, b) {
@@ -185,6 +185,14 @@ const ngEsc = (t) => (t == null ? '' : String(t)).replace(/[&<>"]/g,
 // so owner/history records key on village+plot_no (uid), not plot_no alone.
 const uidOf = (p) => p.uid || ((p.village || '').trim() + '|' + p.plot_no);
 
+// Official romanised names: Bhu-Naksha record name (Hindi) -> common English / Google-Maps
+// spelling, loaded from data/village_names.json. Villages are shown as "English · हिन्दी"
+// and made searchable in both scripts, so a name works in govt records and on Google Maps.
+let VILLAGE_EN = {};
+const vEn = (v) => VILLAGE_EN[(v || '').trim()] || '';
+const vLabel = (v) => { const e = vEn(v); return e ? e + ' · ' + v : (v || ''); };
+const vHay = (v) => { const e = vEn(v); return (e ? e + ' ' : '') + (v || ''); };
+
 // ---- Shared state across loaders + UI ----
 let rates = {};               // village -> circle-rate row
 let nalgadhaOwners = {};       // uid (village|plot_no) -> [owner names]
@@ -279,7 +287,7 @@ function parcelPopupHTML(p, feature) {
     `<div class="badge" style="background:${col}">Growth score ${sc}/100 · ${band}</div>`;
   return `
     <div class="pop">
-      <h3>Plot ${p.plot_no} <small>${p.village || ''}</small></h3>
+      <h3>Plot ${p.plot_no} <small>${ngEsc(vLabel(p.village))}</small></h3>
       ${scoreHdr}
       <table>
         <tr><td>Khata</td><td>${p.khata_no || '—'}</td></tr>
@@ -301,7 +309,7 @@ function nalgadhaPopupHTML(p) {
   const transfers = events.filter((e) => TL_TYPE[e.type]).length;
   return `
     <div class="pop">
-      <h3>Gata ${p.plot_no} <small>${ngEsc(p.village || 'Nalgadha')}</small></h3>
+      <h3>Gata ${p.plot_no} <small>${ngEsc(vLabel(p.village) || 'Nalgadha')}</small></h3>
       <table>
         <tr><td>Khata</td><td>${p.khata_no || '—'}</td></tr>
         <tr><td>Area</td><td>${p.area_ha != null ? p.area_ha + ' ha' : '—'}</td></tr>
@@ -369,7 +377,7 @@ function openDrawerFor(rec) {
   const p = rec.feature.properties;
   const isNg = rec.source === 'nalgadha';
   const label = (isNg ? 'Gata ' : 'Plot ') + p.plot_no;
-  const village = p.village || (isNg ? 'नलगढ़ा' : '');
+  const village = vLabel(p.village) || (isNg ? 'Nalgadha · नलगढ़ा' : '');
   let owners = p.owner_count;
   if (!isNg) { try { const o = JSON.parse(p.owners); if (Array.isArray(o)) owners = o.length; } catch { /* */ } }
   const rows = [];
@@ -494,7 +502,7 @@ function indexFeatures(source, features, ownersOf) {
       village: p.village || '', owners,
       centroid: polygonCentroid(ft.geometry) || featCentroid(ft),
       feature: ft,
-      hay: [p.plot_no, p.khata_no, p.village, ...owners].join(' ').toLowerCase()
+      hay: [p.plot_no, p.khata_no, vHay(p.village), ...owners].join(' ').toLowerCase()
     });
   }
 }
@@ -513,7 +521,7 @@ function searchParcels(query) {
       else if (rec.khata.startsWith(q) || (khn && khn.startsWith(q))) rank = 3;
     } else {
       if (rec.owners.some((o) => o.toLowerCase().includes(q))) rank = 1;
-      else if (rec.village.toLowerCase().includes(q)) rank = 2;
+      else if (rec.village.toLowerCase().includes(q) || vEn(rec.village).toLowerCase().includes(q)) rank = 2;
       else if (rec.hay.includes(q)) rank = 3;
     }
     if (rank != null) hits.push({ rec, rank });
@@ -534,8 +542,8 @@ function setupSearch() {
     if (!recs.length) { box.innerHTML = ''; box.style.display = 'none'; return; }
     box.innerHTML = recs.map((r, i) => {
       const sub = r.source === 'nalgadha'
-        ? `${ngEsc(r.village || 'Nalgadha')} · Khata ${ngEsc(r.khata || '—')}${r.owners.length ? ' · ' + r.owners.length + ' owner' + (r.owners.length > 1 ? 's' : '') : ''}`
-        : `Plot · ${ngEsc(r.village)} · Khata ${ngEsc(r.khata || '—')}`;
+        ? `${ngEsc(vLabel(r.village) || 'Nalgadha')} · Khata ${ngEsc(r.khata || '—')}${r.owners.length ? ' · ' + r.owners.length + ' owner' + (r.owners.length > 1 ? 's' : '') : ''}`
+        : `${ngEsc(vLabel(r.village))} · Khata ${ngEsc(r.khata || '—')}`;
       return `<div class="sr-row" data-i="${i}"><b>${r.source === 'nalgadha' ? 'Gata' : 'Plot'} ${ngEsc(r.plot_no)}</b><span>${sub}</span></div>`;
     }).join('');
     box.style.display = 'block';
@@ -571,6 +579,10 @@ map.on('load', async () => {
     attribution: 'Imagery © Esri, Maxar, Earthstar Geographics'
   });
   map.addLayer({ id: 'esri-sat-layer', type: 'raster', source: 'esri-sat', layout: { visibility: 'none' } });
+
+  // Romanised village names (loaded before the search index / area menu are built).
+  try { VILLAGE_EN = await fetch('./data/village_names.json').then((r) => (r.ok ? r.json() : {})); }
+  catch (e) { VILLAGE_EN = {}; }
 
   let india, gbn;
   try {
@@ -712,8 +724,8 @@ map.on('load', async () => {
       for (const ft of parcels.features) for (const c of ft.geometry.coordinates[0]) pb.extend(c);
       parcelBounds = pb;
       { const cc = pb.getCenter(); srcCentroid.parcels = [cc.lng, cc.lat]; }   // rotation pivot
-      // Area selector: "all Jewar parcels" + one entry per village
-      AREAS.push({ group: 'Overview', label: 'All Jewar parcels', sub: parcels.features.length + ' plots',
+      // Area selector: "all Jewar parcels" + one entry per village (real names, both scripts)
+      AREAS.push({ group: 'Overview', label: 'All Jewar tehsil parcels', sub: parcels.features.length + ' plots',
                    src: 'parcels', bounds: () => parcelBounds, opts: { padding: 40, maxZoom: 15 } });
       const pvb = villageBoundsMap(parcels.features);
       const preal = {};
@@ -723,7 +735,7 @@ map.on('load', async () => {
       for (const [v, b] of Object.entries(pvb)) {
         if (!validB(b)) continue;
         const real = preal[v] || 0;
-        AREAS.push({ group: 'Jewar — live parcels', label: v, src: 'parcels', boxesOnly: real === 0,
+        AREAS.push({ group: 'Jewar tehsil — villages', label: vLabel(v), src: 'parcels', boxesOnly: real === 0,
                      sub: real ? real + ' plots' : (pcount[v] || 0) + ' (boxes only)',
                      bounds: asLngLatBounds(b), opts: { padding: 50, maxZoom: 16 } });
       }
@@ -817,9 +829,9 @@ map.on('load', async () => {
       for (const ft of ng.features) for (const c of ft.geometry.coordinates[0]) nb.extend(c);
       nalgadhaBounds = nb;
       { const cc = nb.getCenter(); srcCentroid.nalgadha = [cc.lng, cc.lat]; }    // rotation pivot
-      // Area selector: "all ownership villages" + one entry per village (these have history data)
+      // Area selector: one entry per GBN/Sadar village (these also carry ownership-history data)
       const vcount = new Set(ng.features.map((f) => f.properties.village)).size;
-      AREAS.push({ group: 'Overview', label: 'All ownership villages', sub: vcount + ' villages',
+      AREAS.push({ group: 'Overview', label: 'All GBN Sadar villages', sub: vcount + ' villages · ● history',
                    src: 'nalgadha', bounds: () => nalgadhaBounds, opts: { padding: 50, maxZoom: 14 } });
       const nvb = villageBoundsMap(ng.features);
       const ncount = {}, nreal = {};
@@ -831,7 +843,7 @@ map.on('load', async () => {
       for (const [v, b] of Object.entries(nvb)) {
         if (!validB(b)) continue;
         const real = nreal[v] || 0;
-        AREAS.push({ group: 'Ownership history', label: v, own: true, src: 'nalgadha', boxesOnly: real === 0,
+        AREAS.push({ group: 'GBN Sadar tehsil — villages', label: vLabel(v), own: true, src: 'nalgadha', boxesOnly: real === 0,
                      sub: real ? real + ' plots' : (ncount[v] || 0) + ' (boxes only)',
                      bounds: asLngLatBounds(b), opts: { padding: 50, maxZoom: 16 } });
       }
@@ -979,7 +991,8 @@ function setupAreaSelector() {
       for (const i of idxs) {
         const a = AREAS[i];
         const sub = a.sub ? `<span class="dd-item-sub${a.own ? ' own' : ''}">${a.own ? '● ' : ''}${ngEsc(a.sub)}</span>` : '';
-        html += `<div class="dd-item" data-i="${i}" role="option"><span class="dd-item-label">${ngEsc(a.label)}</span>${sub}</div>`;
+        const tip = a.own ? ' title="● ownership / chain-of-title history available"' : '';
+        html += `<div class="dd-item" data-i="${i}" role="option"${tip}><span class="dd-item-label">${ngEsc(a.label)}</span>${sub}</div>`;
       }
     }
     list.innerHTML = html || `<div class="dd-empty">No areas match “${ngEsc(q)}”.</div>`;

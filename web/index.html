@@ -48,8 +48,8 @@
         <span class="tb-ico">⚙️</span><span class="tb-label">Layers</span><span class="caret">▾</span>
       </button>
       <div id="layers-menu" class="dd-menu">
-        <label class="dd-check"><input type="checkbox" id="lyr-parcels" checked /> <span>🟣 Jewar parcels</span></label>
-        <label class="dd-check"><input type="checkbox" id="lyr-nalgadha" checked /> <span>🧬 Ownership villages</span></label>
+        <label class="dd-check"><input type="checkbox" id="lyr-parcels" checked /> <span>🟣 Jewar tehsil parcels</span></label>
+        <label class="dd-check"><input type="checkbox" id="lyr-nalgadha" checked /> <span>🧬 GBN Sadar parcels <small>(● ownership history)</small></span></label>
         <hr />
         <label class="dd-check"><input type="checkbox" id="lyr-placeholders" /> <span>Show placeholder boxes</span></label>
         <div class="dd-note">Off = only real surveyed plots are shown, so a click always lands on the exact parcel.</div>
@@ -59,7 +59,7 @@
             <span>🛰️ Align to satellite</span>
             <select id="calib-target" aria-label="Dataset to align">
               <option value="parcels">Jewar</option>
-              <option value="nalgadha">Ownership</option>
+              <option value="nalgadha">GBN Sadar</option>
             </select>
           </div>
           <div class="calib-row"><span>↔ East</span><button data-k="dx" data-d="-5" aria-label="west">−</button><b id="cal-dx">0 m</b><button data-k="dx" data-d="5" aria-label="east">+</button></div>
