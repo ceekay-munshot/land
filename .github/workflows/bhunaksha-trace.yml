@@ -23,8 +23,10 @@ on:
         description: 'Metres/pixel (smaller = sharper + slower)'
         type: string
         default: '0.3'
-  schedule:
-    - cron: '*/20 * * * *'          # continue filling until every village is traced
+  # schedule PAUSED — all known GBN villages are traced. Re-enable to fill new
+  # villages after re-enabling the bbox-batchers (fetch-parcels / nalgadha-fetch).
+  # schedule:
+  #   - cron: '*/20 * * * *'
   push:
     branches: [main]
     paths:
