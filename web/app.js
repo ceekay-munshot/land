@@ -21,31 +21,47 @@ const CALIB = { parcels: { dx: 0, dy: 0, rot: 0 }, nalgadha: { dx: 0, dy: 0, rot
 const origGeo = {};        // src -> pristine FeatureCollection (never mutated)
 const srcCentroid = {};    // src -> [lng,lat] rotation pivot (dataset centre)
 (function initCalib() {
+  // Saved calibration loads first; explicit URL params then override it, so a shared
+  // ?nudge / ?nudge_p / ?nudge_n link reproduces an alignment even on a device that
+  // has previously used the control.
+  try {
+    const ls = JSON.parse(localStorage.getItem('land_calib') || 'null');
+    if (ls) { if (ls.parcels) Object.assign(CALIB.parcels, ls.parcels); if (ls.nalgadha) Object.assign(CALIB.nalgadha, ls.nalgadha); }
+  } catch (e) { /* localStorage unavailable */ }
   const q = new URLSearchParams(location.search);
   const parse = (s) => { const m = (s || '').split(',').map(Number); return (m.length === 2 && m.every((n) => !isNaN(n))) ? m : null; };
   const all = parse(q.get('nudge'));
   if (all) { CALIB.parcels.dx = all[0]; CALIB.parcels.dy = all[1]; CALIB.nalgadha.dx = all[0]; CALIB.nalgadha.dy = all[1]; }
   const p = parse(q.get('nudge_p')); if (p) { CALIB.parcels.dx = p[0]; CALIB.parcels.dy = p[1]; }
   const n = parse(q.get('nudge_n')); if (n) { CALIB.nalgadha.dx = n[0]; CALIB.nalgadha.dy = n[1]; }
-  try {
-    const ls = JSON.parse(localStorage.getItem('land_calib') || 'null');
-    if (ls) { if (ls.parcels) Object.assign(CALIB.parcels, ls.parcels); if (ls.nalgadha) Object.assign(CALIB.nalgadha, ls.nalgadha); }
-  } catch (e) { /* localStorage unavailable */ }
 })();
 const calibActive = (c) => c && (c.dx || c.dy || c.rot);
+// Transform a single [lng,lat] through a dataset's active calibration (rotate about its
+// centre, then offset). Returns the point unchanged when no calibration is active — used
+// for the geometry, AND for search / deep-link / area fly-to so navigation stays on the
+// shifted parcels instead of landing at the original (pre-calibration) centroid.
+function calibPoint(src, lng, lat) {
+  const c = srcCentroid[src], cal = CALIB[src];
+  if (!c || !calibActive(cal)) return [lng, lat];
+  const lat0 = c[1] * Math.PI / 180, mLng = 111320 * Math.cos(lat0), mLat = 110540;
+  const th = (cal.rot || 0) * Math.PI / 180, cs = Math.cos(th), sn = Math.sin(th);
+  const ex = (lng - c[0]) * mLng, ny = (lat - c[1]) * mLat;
+  const rx = ex * cs - ny * sn, ry = ex * sn + ny * cs;
+  return [c[0] + (rx + cal.dx) / mLng, c[1] + (ry + cal.dy) / mLat];
+}
+// A LngLatBounds with all four corners calibrated (so a rotated fit stays correct).
+function calibBounds(src, b) {
+  if (!b || !calibActive(CALIB[src])) return b;
+  const nb = new maplibregl.LngLatBounds();
+  const w = b.getWest(), e = b.getEast(), s = b.getSouth(), n = b.getNorth();
+  for (const [lng, lat] of [[w, s], [w, n], [e, s], [e, n]]) nb.extend(calibPoint(src, lng, lat));
+  return nb;
+}
 // Build a transformed copy of a source (rotate about its centre, then offset).
 function transformGeo(src) {
-  const orig = origGeo[src], c = srcCentroid[src], cal = CALIB[src];
-  if (!orig || !c) return null;
-  const lat0 = c[1] * Math.PI / 180;
-  const mLng = 111320 * Math.cos(lat0), mLat = 110540;
-  const th = (cal.rot || 0) * Math.PI / 180, cs = Math.cos(th), sn = Math.sin(th);
-  const tx = (lng, lat) => {
-    const ex = (lng - c[0]) * mLng, ny = (lat - c[1]) * mLat;
-    const rx = ex * cs - ny * sn, ry = ex * sn + ny * cs;
-    return [c[0] + (rx + cal.dx) / mLng, c[1] + (ry + cal.dy) / mLat];
-  };
-  const walk = (co) => (typeof co[0] === 'number' ? tx(co[0], co[1]) : co.map(walk));
+  const orig = origGeo[src];
+  if (!orig || !srcCentroid[src]) return null;
+  const walk = (co) => (typeof co[0] === 'number' ? calibPoint(src, co[0], co[1]) : co.map(walk));
   return { type: 'FeatureCollection', features: orig.features.map((f) => ({
     type: 'Feature', properties: f.properties,
     geometry: f.geometry ? { type: f.geometry.type, coordinates: walk(f.geometry.coordinates) } : null })) };
@@ -388,7 +404,7 @@ function recFromFeature(source, feature) {
   return { source, id: uidOf(feature.properties), feature, centroid };
 }
 function flyToFeature(rec) {
-  if (rec.centroid) map.flyTo({ center: rec.centroid, zoom: 16, duration: 1200 });
+  if (rec.centroid) map.flyTo({ center: calibPoint(rec.source, rec.centroid[0], rec.centroid[1]), zoom: 16, duration: 1200 });
   selectFeature(rec.source, rec.id);
   openDrawerFor(rec);
   updateHash();
@@ -457,7 +473,7 @@ function restoreFromHash() {
     if (rec) {
       selectFeature(rec.source, rec.id);
       openDrawerFor(rec);
-      if (hv.lat == null && rec.centroid) map.jumpTo({ center: rec.centroid, zoom: 16 });
+      if (hv.lat == null && rec.centroid) map.jumpTo({ center: calibPoint(rec.source, rec.centroid[0], rec.centroid[1]), zoom: 16 });
     }
   }
   return true;
@@ -694,13 +710,17 @@ map.on('load', async () => {
       { const cc = pb.getCenter(); srcCentroid.parcels = [cc.lng, cc.lat]; }   // rotation pivot
       // Area selector: "all Jewar parcels" + one entry per village
       AREAS.push({ group: 'Overview', label: 'All Jewar parcels', sub: parcels.features.length + ' plots',
-                   bounds: () => parcelBounds, opts: { padding: 40, maxZoom: 15 } });
+                   src: 'parcels', bounds: () => parcelBounds, opts: { padding: 40, maxZoom: 15 } });
       const pvb = villageBoundsMap(parcels.features);
+      const preal = {};
+      for (const f of parcels.features) { const v = f.properties.village; if (v && f.properties.geometry_method === 'raster_vector') preal[v] = (preal[v] || 0) + 1; }
       const pcount = {};
       for (const f of parcels.features) { const v = f.properties.village; if (v) pcount[v] = (pcount[v] || 0) + 1; }
       for (const [v, b] of Object.entries(pvb)) {
         if (!validB(b)) continue;
-        AREAS.push({ group: 'Jewar — live parcels', label: v, sub: (pcount[v] || 0) + ' plots',
+        const real = preal[v] || 0;
+        AREAS.push({ group: 'Jewar — live parcels', label: v, src: 'parcels', boxesOnly: real === 0,
+                     sub: real ? real + ' plots' : (pcount[v] || 0) + ' (boxes only)',
                      bounds: asLngLatBounds(b), opts: { padding: 50, maxZoom: 16 } });
       }
       console.log(`parcels loaded + scored: ${parcels.features.length}`);
@@ -796,14 +816,20 @@ map.on('load', async () => {
       // Area selector: "all ownership villages" + one entry per village (these have history data)
       const vcount = new Set(ng.features.map((f) => f.properties.village)).size;
       AREAS.push({ group: 'Overview', label: 'All ownership villages', sub: vcount + ' villages',
-                   bounds: () => nalgadhaBounds, opts: { padding: 50, maxZoom: 14 } });
+                   src: 'nalgadha', bounds: () => nalgadhaBounds, opts: { padding: 50, maxZoom: 14 } });
       const nvb = villageBoundsMap(ng.features);
-      const ncount = {};
-      for (const f of ng.features) { const v = f.properties.village; if (v) ncount[v] = (ncount[v] || 0) + 1; }
+      const ncount = {}, nreal = {};
+      for (const f of ng.features) {
+        const v = f.properties.village; if (!v) continue;
+        ncount[v] = (ncount[v] || 0) + 1;
+        if (f.properties.geometry_method === 'raster_vector') nreal[v] = (nreal[v] || 0) + 1;
+      }
       for (const [v, b] of Object.entries(nvb)) {
         if (!validB(b)) continue;
-        AREAS.push({ group: 'Ownership history', label: v, sub: (ncount[v] || 0) + ' plots',
-                     own: true, bounds: asLngLatBounds(b), opts: { padding: 50, maxZoom: 16 } });
+        const real = nreal[v] || 0;
+        AREAS.push({ group: 'Ownership history', label: v, own: true, src: 'nalgadha', boxesOnly: real === 0,
+                     sub: real ? real + ' plots' : (ncount[v] || 0) + ' (boxes only)',
+                     bounds: asLngLatBounds(b), opts: { padding: 50, maxZoom: 16 } });
       }
     }
   } catch (e) { /* no nalgadha data yet */ }
@@ -847,6 +873,14 @@ function applyCleanView() {
     if (map.getLayer(id)) map.setFilter(id, cleanView ? REAL_ONLY : null);
   }
   refreshHighlights();   // keep the selection outline consistent with placeholder visibility
+}
+// Turn placeholder boxes back on (used when navigating to a village that has only boxes,
+// so the map isn't blank) and keep the Layers checkbox in sync.
+function revealPlaceholders() {
+  if (!cleanView) return;
+  cleanView = false;
+  const ph = document.getElementById('lyr-placeholders'); if (ph) ph.checked = true;
+  applyCleanView();
 }
 
 // ---- Layer / view popover (placeholder toggle + dataset visibility) ------
@@ -914,8 +948,10 @@ function setupCalibration() {
 
 // ---- Area selector (searchable, grouped: Overview · Tehsils · villages) --
 function goToArea(a) {
-  const b = typeof a.bounds === 'function' ? a.bounds() : a.bounds;
+  let b = typeof a.bounds === 'function' ? a.bounds() : a.bounds;
   if (!b) return;
+  if (a.boxesOnly) revealPlaceholders();   // village has only un-traced boxes → don't fly to a blank map
+  if (a.src) b = calibBounds(a.src, b);     // honour live alignment so the fit lands on the shifted plots
   map.fitBounds(b, Object.assign({ padding: 60, duration: 1400 }, a.opts || {}));
   const lbl = document.getElementById('area-label'); if (lbl) lbl.textContent = a.label;
 }

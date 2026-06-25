@@ -99,7 +99,9 @@ body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; co
 .dd-empty { padding: 14px 13px; font-size: 12.5px; color: var(--muted); }
 
 /* layers menu */
-#layers-menu { padding: 8px 6px; width: 250px; max-width: 92vw; }
+/* Layers is the right-most toolbar control, so anchor its menu to the right edge —
+   otherwise the 250px panel overflows off-screen on narrow/mobile viewports. */
+#layers-menu { padding: 8px 6px; width: 250px; max-width: 92vw; left: auto; right: 0; }
 .dd-check { display: flex; align-items: center; gap: 9px; padding: 7px 10px; font-size: 13px; cursor: pointer; border-radius: 7px; }
 .dd-check:hover { background: var(--line-soft); }
 .dd-check input { width: 15px; height: 15px; accent-color: var(--brand); cursor: pointer; }
