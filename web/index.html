@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>LAND — NCR Land Intelligence (Phase 0)</title>
+  <title>LAND — NCR Land Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
@@ -10,9 +10,51 @@
 <body>
   <div id="map"></div>
 
-  <div id="title">
-    <h1>🏗️ LAND<span>· NCR Land Intelligence</span></h1>
-    <div class="phase">Phase 5 · Gautam Buddh Nagar · <b>parcel explorer</b> + <b>ownership history</b></div>
+  <!-- ===== Unified top toolbar: brand · search · area selector · view controls ===== -->
+  <div id="topbar">
+    <div id="brand">
+      <span class="brand-mark">🏗️</span>
+      <span class="brand-text">
+        <span class="brand-name">LAND</span>
+        <span class="brand-sub">Gautam Buddh Nagar</span>
+      </span>
+    </div>
+
+    <div id="search">
+      <input id="search-input" type="search" placeholder="🔎 Search gata / khata / owner…" autocomplete="off" />
+      <div id="search-results"></div>
+    </div>
+
+    <!-- Searchable, grouped area selector (replaces the old zoom buttons) -->
+    <div id="area-select" class="dropdown">
+      <button id="area-btn" class="tb-btn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="tb-ico">📍</span>
+        <span id="area-label" class="tb-label">Jump to area</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="area-menu" class="dd-menu" role="listbox" aria-label="Areas">
+        <input id="area-search" type="search" placeholder="Filter villages & regions…" autocomplete="off" />
+        <div id="area-list"></div>
+      </div>
+    </div>
+
+    <button id="btn-sat" class="tb-btn" title="Toggle satellite imagery">
+      <span class="tb-ico">🛰️</span><span class="tb-label">Satellite</span>
+    </button>
+
+    <!-- Layer / view control -->
+    <div id="layers" class="dropdown">
+      <button id="layers-btn" class="tb-btn" aria-haspopup="true" aria-expanded="false">
+        <span class="tb-ico">⚙️</span><span class="tb-label">Layers</span><span class="caret">▾</span>
+      </button>
+      <div id="layers-menu" class="dd-menu">
+        <label class="dd-check"><input type="checkbox" id="lyr-parcels" checked /> <span>🟣 Jewar parcels</span></label>
+        <label class="dd-check"><input type="checkbox" id="lyr-nalgadha" checked /> <span>🧬 Ownership villages</span></label>
+        <hr />
+        <label class="dd-check"><input type="checkbox" id="lyr-placeholders" /> <span>Show placeholder boxes</span></label>
+        <div class="dd-note">Off = only real surveyed plots are shown, so a click always lands on the exact parcel.</div>
+      </div>
+    </div>
   </div>
 
   <div id="growth">
@@ -34,28 +76,13 @@
     <div id="schemes-foot"></div>
   </div>
 
-  <div id="controls">
-    <div id="search">
-      <input id="search-input" type="search" placeholder="🔎 Gata / khata / owner…" autocomplete="off" />
-      <div id="search-results"></div>
-    </div>
-    <button id="btn-india">🗺️ NCR view</button>
-    <button id="btn-gbn">🔍 Zoom to GBN</button>
-    <button id="btn-parcels" style="display:none">🟣 Live parcels</button>
-    <button id="btn-nalgadha" style="display:none">🧬 Nalgadha</button>
-    <button id="btn-sat">🛰️ Satellite</button>
-    <button id="btn-clean" title="Show only real traced polygons (hide un-traced boxes)">✨ Clean view</button>
-  </div>
-
   <div id="legend">
     <div class="legend-title">Growth score <span>(parcels)</span></div>
     <div class="row"><span class="sw green"></span> High · 🟢 67–100</div>
     <div class="row"><span class="sw orange"></span> Medium · 🟠 40–66</div>
     <div class="row"><span class="sw red"></span> Low · 🔴 0–39</div>
-    <hr />
-    <div class="row"><span class="dot"></span> ✈ airport · 🛣 expressways</div>
-    <div class="row"><span class="schemesw"></span> ◆ YEIDA live schemes <span style="opacity:.6">(◇ approx)</span></div>
-    <div class="disclaimer">Parcel colours = real heuristic score (airport proximity + price headroom). Faint tehsil fills are a coarse placeholder.</div>
+    <div id="legend-extra"></div>
+    <div class="disclaimer">Parcel colours = heuristic growth score (airport proximity + price headroom). Boundaries traced from UP Bhu-Naksha.</div>
   </div>
 
   <aside id="drawer" class="closed" aria-hidden="true">

@@ -23,6 +23,13 @@ deploy's root / output directory at `web/`.
 
 ## 🗺️ What's on the map
 - **India home view** → auto-flies to **Gautam Buddh Nagar** (3 tehsils: Dadri, Sadar, **Jewar**).
+- **Area selector** (top bar) — one searchable dropdown to jump to the NCR/GBN overview, any of the
+  3 tehsils, or any of the **29 villages** (grouped; ownership-history villages are flagged).
+- **Real surveyed plots only by default** — un-traced bbox placeholders are hidden so a click always
+  lands on the exact parcel; flip *Layers → Show placeholder boxes* to reveal them.
+- **Map calibration nudge** — the Bhu-Naksha cadastre can drift a few metres from satellite; tune it
+  live without a rebuild via URL params `?nudge=E,N` (both layers) or `?nudge_p=E,N` / `?nudge_n=E,N`
+  (parcels / ownership), offsets in **metres** east,north. Default `0,0` = unchanged.
 - Tehsils coloured by a **mock growth score**; click one for its 6 / 12 / 24-month band + driver.
 - **Catalyst pins** (airport, Yamuna E-way, YEIDA, Noida / Gr. Noida) — approximate placeholders.
 - **🟢 Live YEIDA Schemes panel** — current plot-allotment schemes (residential / industrial /
