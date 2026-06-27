@@ -17,9 +17,12 @@ Real data arrives in Phases 1–4.
 python3 -m http.server 8000 --directory web
 # then open http://localhost:8000/
 ```
-The **`web/` folder is fully self-contained** (app + `web/data/` GeoJSON), so you can host that
-folder as-is on any static host — **Cloudflare Pages/Workers, GitHub Pages, Netlify…** Point the
-deploy's root / output directory at `web/`.
+The **`web/` folder is fully self-contained** (app + `web/data/` GeoJSON + the `web/vendor/`
+MapLibre GL library — no runtime CDN), so you can host that folder as-is on any static host —
+**Cloudflare Pages/Workers, GitHub Pages, Netlify…** Point the deploy's root / output directory at
+`web/`. The map library is vendored locally, so the app loads with no third-party JS round-trip and
+keeps working even when a CDN is slow, blocked, or offline; only the basemap *tiles* (OSM / Esri)
+and label glyphs are fetched live.
 
 ## 🗺️ What's on the map
 - **India home view** → auto-flies to **Gautam Buddh Nagar** (3 tehsils: Dadri, Sadar, **Jewar**).
@@ -76,6 +79,7 @@ Govt portals geo-fence foreign IPs and the build sandbox is allowlisted, so fetc
 web/            deployable site (self-contained)
   index.html  app.js  style.css
   data/         geojson the app loads (boundaries, GBN tehsils, catalysts)
+  vendor/       vendored MapLibre GL (js+css) — no runtime CDN dependency
 data_src/       large raw source (gitignored; re-downloaded by the script)
 scripts/        extract_gbn.py — rebuilds web/data/gbn_tehsils.geojson
 ```

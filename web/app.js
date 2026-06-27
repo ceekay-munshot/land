@@ -874,6 +874,7 @@ function applySat() {
   if (map.getLayer('osm')) map.setLayoutProperty('osm', 'visibility', satOn ? 'none' : 'visible');
   if (satBtn) {
     satBtn.classList.toggle('active', satOn);
+    satBtn.setAttribute('aria-pressed', String(satOn));
     const lbl = satBtn.querySelector('.tb-label'); if (lbl) lbl.textContent = satOn ? 'Street map' : 'Satellite';
     const ico = satBtn.querySelector('.tb-ico'); if (ico) ico.textContent = satOn ? '🗺️' : '🛰️';
   }
@@ -1096,7 +1097,12 @@ setupSearch();
 
   const head = document.getElementById('schemes-head');
   const tog = document.getElementById('schemes-toggle');
-  head.onclick = () => { tog.textContent = panel.classList.toggle('collapsed') ? '▸' : '▾'; };
+  head.onclick = () => {
+    const collapsed = panel.classList.toggle('collapsed');
+    tog.textContent = collapsed ? '▸' : '▾';
+    tog.setAttribute('aria-expanded', String(!collapsed));
+    tog.setAttribute('aria-label', collapsed ? 'Expand YEIDA schemes' : 'Collapse YEIDA schemes');
+  };
 })();
 
 // ---- Growth Hubs panel (city/district GSDP growth signals; compiled, not live) ----
@@ -1124,5 +1130,10 @@ setupSearch();
   panel.classList.add('collapsed');
   const ghead = document.getElementById('growth-head');
   const gtog = document.getElementById('growth-toggle');
-  ghead.onclick = () => { gtog.textContent = panel.classList.toggle('collapsed') ? '▸' : '▾'; };
+  ghead.onclick = () => {
+    const collapsed = panel.classList.toggle('collapsed');
+    gtog.textContent = collapsed ? '▸' : '▾';
+    gtog.setAttribute('aria-expanded', String(!collapsed));
+    gtog.setAttribute('aria-label', collapsed ? 'Expand growth hubs' : 'Collapse growth hubs');
+  };
 })();

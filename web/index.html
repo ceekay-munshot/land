@@ -4,16 +4,21 @@
   <meta charset="utf-8" />
   <title>LAND — NCR Land Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <meta name="description" content="LAND — a decision tool to find where to buy land in Gautam Buddh Nagar (Noida, Greater Noida, Jewar) before the market prices it in: real parcels, circle-rate price floor, live YEIDA schemes and a transparent growth score on one map." />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#14161c" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>" />
+  <link href="./vendor/maplibre-gl/maplibre-gl.css" rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
 </head>
 <body>
+  <h1 class="sr-only">LAND — Gautam Buddh Nagar land-intelligence map</h1>
   <div id="map"></div>
 
   <!-- ===== Unified top toolbar: brand · search · area selector · view controls ===== -->
   <div id="topbar">
     <div id="brand">
-      <span class="brand-mark">🏗️</span>
+      <span class="brand-mark" aria-hidden="true">🏗️</span>
       <span class="brand-text">
         <span class="brand-name">LAND</span>
         <span class="brand-sub">Gautam Buddh Nagar</span>
@@ -21,31 +26,31 @@
     </div>
 
     <div id="search">
-      <input id="search-input" type="search" placeholder="🔎 Search gata / khata / owner…" autocomplete="off" />
+      <input id="search-input" type="search" placeholder="🔎 Search gata / khata / owner…" aria-label="Search parcels by gata, khata or owner" autocomplete="off" />
       <div id="search-results"></div>
     </div>
 
     <!-- Searchable, grouped area selector (replaces the old zoom buttons) -->
     <div id="area-select" class="dropdown">
       <button id="area-btn" class="tb-btn" aria-haspopup="listbox" aria-expanded="false">
-        <span class="tb-ico">📍</span>
+        <span class="tb-ico" aria-hidden="true">📍</span>
         <span id="area-label" class="tb-label">Jump to area</span>
-        <span class="caret">▾</span>
+        <span class="caret" aria-hidden="true">▾</span>
       </button>
       <div id="area-menu" class="dd-menu" role="listbox" aria-label="Areas">
-        <input id="area-search" type="search" placeholder="Filter villages & regions…" autocomplete="off" />
+        <input id="area-search" type="search" placeholder="Filter villages & regions…" aria-label="Filter villages and regions" autocomplete="off" />
         <div id="area-list"></div>
       </div>
     </div>
 
-    <button id="btn-sat" class="tb-btn" title="Toggle satellite imagery">
-      <span class="tb-ico">🛰️</span><span class="tb-label">Satellite</span>
+    <button id="btn-sat" class="tb-btn" title="Toggle satellite imagery" aria-pressed="true">
+      <span class="tb-ico" aria-hidden="true">🛰️</span><span class="tb-label">Satellite</span>
     </button>
 
     <!-- Layer / view control -->
     <div id="layers" class="dropdown">
       <button id="layers-btn" class="tb-btn" aria-haspopup="true" aria-expanded="false">
-        <span class="tb-ico">⚙️</span><span class="tb-label">Layers</span><span class="caret">▾</span>
+        <span class="tb-ico" aria-hidden="true">⚙️</span><span class="tb-label">Layers</span><span class="caret" aria-hidden="true">▾</span>
       </button>
       <div id="layers-menu" class="dd-menu">
         <label class="dd-check"><input type="checkbox" id="lyr-parcels" checked /> <span>🟣 Jewar tehsil parcels</span></label>
@@ -62,9 +67,9 @@
               <option value="nalgadha">GBN Sadar</option>
             </select>
           </div>
-          <div class="calib-row"><span>↔ East</span><button data-k="dx" data-d="-5" aria-label="west">−</button><b id="cal-dx">0 m</b><button data-k="dx" data-d="5" aria-label="east">+</button></div>
-          <div class="calib-row"><span>↕ North</span><button data-k="dy" data-d="-5" aria-label="south">−</button><b id="cal-dy">0 m</b><button data-k="dy" data-d="5" aria-label="north">+</button></div>
-          <div class="calib-row"><span>⟳ Rotate</span><button data-k="rot" data-d="-0.5" aria-label="rotate ccw">−</button><b id="cal-rot">0°</b><button data-k="rot" data-d="0.5" aria-label="rotate cw">+</button></div>
+          <div class="calib-row"><span>↔ East</span><button data-k="dx" data-d="-5" aria-label="Nudge cadastre west">−</button><b id="cal-dx">0 m</b><button data-k="dx" data-d="5" aria-label="Nudge cadastre east">+</button></div>
+          <div class="calib-row"><span>↕ North</span><button data-k="dy" data-d="-5" aria-label="Nudge cadastre south">−</button><b id="cal-dy">0 m</b><button data-k="dy" data-d="5" aria-label="Nudge cadastre north">+</button></div>
+          <div class="calib-row"><span>⟳ Rotate</span><button data-k="rot" data-d="-0.5" aria-label="Rotate cadastre counter-clockwise">−</button><b id="cal-rot">0°</b><button data-k="rot" data-d="0.5" aria-label="Rotate cadastre clockwise">+</button></div>
           <button id="cal-reset" class="calib-reset">Reset alignment</button>
           <div class="dd-note">Nudge the cadastre onto the imagery; saved on this device.</div>
         </div>
@@ -74,8 +79,8 @@
 
   <div id="growth">
     <div id="growth-head">
-      <span class="gt">📈 Growth Hubs</span>
-      <button id="growth-toggle" aria-label="expand">▸</button>
+      <span class="gt" role="heading" aria-level="2">📈 Growth Hubs</span>
+      <button id="growth-toggle" aria-label="Expand growth hubs" aria-expanded="false">▸</button>
     </div>
     <div id="growth-list"></div>
     <div id="growth-foot"></div>
@@ -83,16 +88,16 @@
 
   <div id="schemes">
     <div id="schemes-head">
-      <span class="st">🟢 Live YEIDA Schemes</span>
+      <span class="st" role="heading" aria-level="2">🟢 Live YEIDA Schemes</span>
       <span id="schemes-count"></span>
-      <button id="schemes-toggle" aria-label="collapse">▾</button>
+      <button id="schemes-toggle" aria-label="Collapse YEIDA schemes" aria-expanded="true">▾</button>
     </div>
     <div id="schemes-list"></div>
     <div id="schemes-foot"></div>
   </div>
 
   <div id="legend">
-    <div class="legend-title">Growth score <span>(parcels)</span></div>
+    <div class="legend-title" role="heading" aria-level="2">Growth score <span>(parcels)</span></div>
     <div class="row"><span class="sw green"></span> High · 🟢 67–100</div>
     <div class="row"><span class="sw orange"></span> Medium · 🟠 40–66</div>
     <div class="row"><span class="sw red"></span> Low · 🔴 0–39</div>
@@ -100,12 +105,12 @@
     <div class="disclaimer">Parcel colours = heuristic growth score (airport proximity + price headroom). Boundaries traced from UP Bhu-Naksha.</div>
   </div>
 
-  <aside id="drawer" class="closed" aria-hidden="true">
+  <aside id="drawer" class="closed" aria-hidden="true" aria-label="Parcel details">
     <button id="drawer-close" aria-label="Close details">✕</button>
     <div id="drawer-body"></div>
   </aside>
 
-  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="./vendor/maplibre-gl/maplibre-gl.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
