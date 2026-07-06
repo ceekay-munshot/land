@@ -42,11 +42,7 @@ YEA/IND8000(2025-26)-14](https://yamunaexpresswayauthority.com/web/forms/final_e
 MLU/2025-26/11](https://yamunaexpresswayauthority.com/web/forms/final_mlu_allotment_status_06_05_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
 
-**Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
-
 ## Commercial
-
-**Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
 
 ## Industrial
 
@@ -62,8 +58,6 @@ YEA/IND-MDP(2026)-06 Scheme](https://yamunaexpresswayauthority.com/web/forms/mdp
 \\
 MLU/2025-26/11](https://yamunaexpresswayauthority.com/web/forms/final_mlu_allotment_status_06_05_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-
-**Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
 
 ## Institutional
 
@@ -86,8 +80,6 @@ Extended - 30-06-2026 - 5:00PM
 
 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://nacplots.yamunaexpresswayauthority.com/)
 
-**Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
-
 ## Residential
 
 - [RPS10/2026 Draw Result](https://yamunaexpresswayauthority.com/web/forms/rps10_draw_result_18_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
@@ -96,8 +88,6 @@ Extended - 30-06-2026 - 5:00PM
 \\
 RPS10/2026](https://yamunaexpresswayauthority.com/web/forms/rps10_04_06_2026.php)
 
-
-**Note : For any scheme related technical queries please connect us on WhatsApp - 79823 40212 (this is not calling number)**
 
 ## Services
 
