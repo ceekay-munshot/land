@@ -10,24 +10,13 @@ Live SchemeCommercialIndustrialInstitutionalResidentialServices
 
 - [RPS10/2026 Draw Result](https://yamunaexpresswayauthority.com/web/forms/rps10_draw_result_18_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-- [Eligibility Status of \\
-\\
-YEA/IND-MDP(2026)-06 Scheme](https://yamunaexpresswayauthority.com/web/forms/mdp_list_2026_01_06_2026.php)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
 - [Hospital, Child Welfare & Maternity Centre Plots \\
 \\
 YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-Extended - 30-06-2026 - 5:00PM
+Extended - 30-07-2026 - 5:00PM
 
 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://hpplots.yamunaexpresswayauthority.com/)
-- [Nursery School & CRECHE Plots \\
-\\
-YEA/INST 2025-2026/07](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/NURSERY-SCHOOL-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 30-06-2026 - 5:00PM
-
-[![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://nacplots.yamunaexpresswayauthority.com/)
 
 - [Final Status of \\
 \\
@@ -69,16 +58,9 @@ YEA/INST 2024-2025/07](https://yamunaexpresswayauthority.com/web/forms/YEA_INST_
 \\
 YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
 
-Extended - 30-06-2026 - 5:00PM
+Extended - 30-07-2026 - 5:00PM
 
 [![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://hpplots.yamunaexpresswayauthority.com/)
-- [Nursery School & CRECHE Plots \\
-\\
-YEA/INST 2025-2026/07](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2026/02/NURSERY-SCHOOL-BROCHURE.pdf)![](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/new_blink.gif)
-
-Extended - 30-06-2026 - 5:00PM
-
-[![](https://www.yamunaexpresswayauthority.com/arrow-1.webp) Apply now](https://nacplots.yamunaexpresswayauthority.com/)
 
 ## Residential
 
