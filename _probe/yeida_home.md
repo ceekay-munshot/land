@@ -26,18 +26,9 @@ Hon’ble State Minister, of Industrial Development, Uttar Pradesh
 
 Spotlight
 
-- [YEIDA Environmental Clearance Public Notice](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-07-20-at-62836-PM-600x355.jpeg "Click here to download")
-- [Office Order – Interest Rate on Deposits (YEIDA)](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-07-08-at-22839-PM-600x700.jpeg "Click here to download")
-- [YEIDA Office Order – Surcharge Rate Revision](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-07-01-at-15859-PM-600x824.jpeg "Click here to download")
-- [Extension Notice for Residential & Institutional Plots](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-18-at-112750-PM-600x635.jpeg "Click here to download")
-- [Residential Plot Scheme RPS10/2025](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-04-at-115103-AM-600x495.jpeg "Click here to download")
-- [Medical Device Park Allotment Scheme](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-03-at-40610-PM-600x563.jpeg "Click here to download")
-- [YEIDA Environmental Clearance Public Notice](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-07-20-at-62836-PM-600x355.jpeg "Click here to download")
-- [Office Order – Interest Rate on Deposits (YEIDA)](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-07-08-at-22839-PM-600x700.jpeg "Click here to download")
-- [YEIDA Office Order – Surcharge Rate Revision](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-07-01-at-15859-PM-600x824.jpeg "Click here to download")
-- [Extension Notice for Residential & Institutional Plots](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-18-at-112750-PM-600x635.jpeg "Click here to download")
-- [Residential Plot Scheme RPS10/2025](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-04-at-115103-AM-600x495.jpeg "Click here to download")
-- [Medical Device Park Allotment Scheme](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-03-at-40610-PM-600x563.jpeg "Click here to download")
+- [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://hpplots.yamunaexpresswayauthority.com/ "Click here to download")
+- [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://hpplots.yamunaexpresswayauthority.com/ "Click here to download")
+- [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://hpplots.yamunaexpresswayauthority.com/ "Click here to download")
 
 [View All](https://www.yamunaexpresswayauthority.com/Spotlight)
 
@@ -55,45 +46,29 @@ UP Government has enacted the UP Industrial Development Act, 1976 to ensure plan
 
 ### Public Announcement
 
-[Industry Lease Deed Executed But Map Not Applied – Above 1800 sqm](https://www.yamunaexpresswayauthority.com/uploads/2025/11/Industry-Lease-deed-executed-but-map-not-applied-above-1800-sqm.pdf)
+[Final Allotment Status of Mix Land use scheme MLU/2025-26/11](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11)
 
-24 Jun 26
-
-
-[Industry Checklist Issued but Lease Deed Not Executed List](https://www.yamunaexpresswayauthority.com/uploads/2025/11/List-forWebsite-Checklist-issued-but-LD-not-executed.pdf)
-
-30 Jun 26
-
-.pdf
-
-(30KB)
+02 Jul 26
 
 
-[OTS Policy 2025-2](https://www.yamunaexpresswayauthority.com/uploads/2025/12/ots-policy-2025-2.pdf)
+[RPS10/2026 Draw Result](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result)
 
-30 Jun 26
-
-.pdf
-
-(47KB)
+02 Jul 26
 
 
-[Industry List- lease deed 4 yrs completed but not applied for functional](https://www.yamunaexpresswayauthority.com/uploads/2026/02/List-lease-deed-4-yrs-completed-but-not-applied-for-functional.pdf)
+[Corrigendum](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/IMG-20260804-WA0001.jpg)
 
-30 Jun 26
-
-.pdf
-
-(108KB)
+04 Aug 26
 
 
-[Public Notice YEEA](https://www.yamunaexpresswayauthority.com/uploads/2026/02/Soochna-YEEA.pdf)
+[मेडिकल डिवाइस पार्क आवंटन योजना](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-03-at-40610-PM-600x563.jpeg)
 
-01 Jul 26
+04 Aug 26
 
-.pdf
 
-(19KB)
+[आवासीय भूखण्ड योजना RPS10/2025](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-04-at-115103-AM-600x495.jpeg)
+
+04 Aug 26
 
 
 [View All](https://www.yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
@@ -116,21 +91,9 @@ Pause News Slider
 ## Live Scheme
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-02-07-2026
-
-
-[RPS10/2026 Draw Result](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Extended -
 
-30-06-2026
+30-08-2026
 
 
 [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf)
@@ -138,42 +101,6 @@ Extended -
 [Apply now](https://hpplots.yamunaexpresswayauthority.com/)
 
 [click to view](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-02-07-2026
-
-
-[Final Status ofYEA/INST 2024-2025/07](https://www.yamunaexpresswayauthority.com/RpsDraw2/DrawResult?schemeName=Final%20Status%20ofYEA/INST%202024-2025/07)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw2/DrawResult?schemeName=Final%20Status%20ofYEA/INST%202024-2025/07)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw2/DrawResult?schemeName=Final%20Status%20ofYEA/INST%202024-2025/07 "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-02-07-2026
-
-
-[Final Status of Industrial plots ApplicationsYEA/IND8000(2025-26)-14](https://www.yamunaexpresswayauthority.com/RpsDraw3/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20ApplicationsYEA/IND8000(2025-26)-14)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw3/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20ApplicationsYEA/IND8000(2025-26)-14)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw3/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20ApplicationsYEA/IND8000(2025-26)-14 "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-02-07-2026
-
-
-[Final Allotment Status of Mix Land use scheme MLU/2025-26/11](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11 "click to view")
 
 ## Commercial
 
@@ -234,7 +161,7 @@ Date -
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Extended -
 
-30-06-2026
+30-08-2026
 
 
 [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf)
@@ -276,7 +203,31 @@ Date -
 06-07-2026
 
 
-[Sanction of Building Plan](https://bpms.yamunaexpresswayauthority.com/)
+[Online Allotte Payment Services/CCP](https://ccp.yamunaexpresswayauthority.com/)
+
+[View Details](https://ccp.yamunaexpresswayauthority.com/)
+
+[click to view](https://ccp.yamunaexpresswayauthority.com/ "click to view")
+
+![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
+Date -
+
+05-08-2026
+
+
+[Nivesh Mitra](https://niveshmitra.up.nic.in/)
+
+[Check Status](https://niveshmitra.up.nic.in/)
+
+[click to view](https://niveshmitra.up.nic.in/ "click to view")
+
+![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
+Date -
+
+06-07-2026
+
+
+[Building Plan Map Approval System](https://bpms.yamunaexpresswayauthority.com/)
 
 [View Details](https://bpms.yamunaexpresswayauthority.com/)
 
@@ -288,11 +239,23 @@ Date -
 06-07-2026
 
 
-[Online Allotte Payment Services](https://ccp.yamunaexpresswayauthority.com/)
+[Jaypee Sports City Homebuyers Information Collection Form](https://forms.jpscws.com/JPSCWS/form/InformationSubmissiontoYEIDA/formperma/DJWyfz6L78Qj4C7OAfReL7ulI1ng4K42U4HOyIlV_a8)
 
-[View Details](https://ccp.yamunaexpresswayauthority.com/)
+[View Details](https://forms.jpscws.com/JPSCWS/form/InformationSubmissiontoYEIDA/formperma/DJWyfz6L78Qj4C7OAfReL7ulI1ng4K42U4HOyIlV_a8)
 
-[click to view](https://ccp.yamunaexpresswayauthority.com/ "click to view")
+[click to view](https://forms.jpscws.com/JPSCWS/form/InformationSubmissiontoYEIDA/formperma/DJWyfz6L78Qj4C7OAfReL7ulI1ng4K42U4HOyIlV_a8 "click to view")
+
+![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
+Date -
+
+31-07-2026
+
+
+[Information Docket 2025](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/REVISED-_-Information-Docket-web.pdf)
+
+[View Details](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/REVISED-_-Information-Docket-web.pdf)
+
+[click to view](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/REVISED-_-Information-Docket-web.pdf "click to view")
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
@@ -312,39 +275,15 @@ Date -
 06-07-2026
 
 
-[Jaypee Sports City Homebuyers Information Collection Form](https://forms.jpscws.com/JPSCWS/form/InformationSubmissiontoYEIDA/formperma/DJWyfz6L78Qj4C7OAfReL7ulI1ng4K42U4HOyIlV_a8)
-
-[View Details](https://forms.jpscws.com/JPSCWS/form/InformationSubmissiontoYEIDA/formperma/DJWyfz6L78Qj4C7OAfReL7ulI1ng4K42U4HOyIlV_a8)
-
-[click to view](https://forms.jpscws.com/JPSCWS/form/InformationSubmissiontoYEIDA/formperma/DJWyfz6L78Qj4C7OAfReL7ulI1ng4K42U4HOyIlV_a8 "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-06-07-2026
-
-
 [Latest News & Updates](https://www.yamunaexpresswayauthority.com/Spotlight)
 
 [View Details](https://www.yamunaexpresswayauthority.com/Spotlight)
 
 [click to view](https://www.yamunaexpresswayauthority.com/Spotlight "click to view")
 
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
+![CEO Photo](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/ceo.png)
 
-31-07-2026
-
-
-[Information Docket 2025](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/REVISED-_-Information-Docket-web.pdf)
-
-[View Details](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/REVISED-_-Information-Docket-web.pdf)
-
-[click to view](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/REVISED-_-Information-Docket-web.pdf "click to view")
-
-![CEO Photo](https://www.yamunaexpresswayauthority.com/assets/images/about-us/CEO.png)
-
-Welcome to the official website of the Yamuna Expressway Industrial Development Authority (YEIDA). Established in 2001 under the Uttar Pradesh Industrial Development Act, 1976, YEIDA is the nodal agency responsible for the planned and sustainable development of the region along the Yamuna Expressway, covering notified areas across Gautam Buddh Nagar, Bulandshahr, Aligarh, Hathras, Mathura and Agra. Our mandate extends beyond infrastructure. It is about building a well planned industrial, residential and institutional... [Read More](https://www.yamunaexpresswayauthority.com/About-Us/Ceo-Message "CEO Message Read More")
+Welcome to the Official Website of the Yamuna Expressway Industrial Development Authority (YEIDA). Established in 2001 under the Uttar Pradesh Industrial Area Development Act, 1976, YEIDA is the nodal agency responsible for the planned and sustainable development of the region along the Yamuna Expressway, covering the notified areas of Gautam Buddh Nagar, Bulandshahr, Aligarh, Hathras, Mathura, and Agra. Our mandate extends beyond infrastructure—it is about creating a well-planned industrial, residential, institutional, and commercial ecosystem that generates lasting... [Read More](https://www.yamunaexpresswayauthority.com/About-Us/Ceo-Message "CEO Message Read More")
 
 **Shri Rakesh Kumar Singh (IAS)** Chief Executive Officer
 
@@ -398,45 +337,15 @@ Online Allottee
 
 Payment System
 
-[Kiosk Scheme](https://yeida.auctiontiger.net/EPROC/)
+[Kiosk Scheme](https://bpms.yamunaexpresswayauthority.com/)
 
 ![Kiosk Scheme icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/ISP-icon.png)
 
-Kiosk Scheme CK01-2021
+Building Plan Map Approval System
 
-Online e-Auctions
+Online sanction
 
-### Office Order & Circulars
-
-[View All](https://www.yamunaexpresswayauthority.com/News-and-Media/Office-Order)
-
-- [Office Order Regarding Time Extension For Lease Deed and Construction](https://www.yamunaexpresswayauthority.com/upload/important_link/586fa4a7-d7f3-43c8-9fef-72dd7965b823_Office-Folder.pdf)(0.01MB)English\|PDF
-- [Office Order Regarding Transfer Charges](https://www.yamunaexpresswayauthority.com/uploads/2022/09/WhatsApp-Image-2022-09-09-at-3.52.16-PM.jpeg)(0.06MB)English\|JPEG
-- [Office Order/Letter Number : YEA/Finance /446/2022](https://www.yamunaexpresswayauthority.com/upload/important_link/bc016f88-7716-4294-8882-1282dbb66f30_WhatsApp-Image-2022-07-04-at-10.53.37-AM.jpeg)(0.04MB)English\|JPEG
-
-### Important Link
-
-[View All](https://www.yamunaexpresswayauthority.com/News-and-Media/Important-Link)
-
-- [Qualified applicants for Kiosk Scheme CK-01/2021](https://www.yamunaexpresswayauthority.com/uploads/2022/04/Disqualified-Kiosk-Bid.pdf)(0.07MB)English\|
-- [Live Draw for RPS05/2021 Scheme](https://www.facebook.com/story.php?story_fbid=410175570474123&id=100055659774407&sfnsn=wiwspwa&_rdr)
-- [Kiosk Scheme CK01-2021](https://yeida.auctiontiger.net/EPROC/)
-- [Allottee Management System](http://yeida.kprsconsultants.com/login?from=%2F)
-- [Citizen Charter](https://ccp.yamunaexpresswayauthority.com/)
-- [RPS-06/2022 Brochure](https://www.yamunaexpresswayauthority.com/uploads/2022/09/RPS06-BROUCHER_compressed.pdf)(0.08MB)English\|
-- [GIS Portal](https://umd.nic.in/yeida/)
-- [Online Building Map Approval](https://bpms.yamunaexpresswayauthority.com/)
-- [OTS/ Citizen Charter Portal](https://ccp.yamunaexpresswayauthority.com/)
-- [NMSWP Cosole(View/Download/Challan/Payment)](http://yeida.disgenonline.in/NMPG/UDefault.aspx)
-- [How to Apply for YEIDA application through Nivesh Mitra](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2023/07/How-to-Apply-for-YEIDA-application-through-Nivesh-Mitra.pdf)(0.11MB)English\|
-- [Online Building Map Approval](http://aps.disgenonline.in/)
-- [Possession Schedule](https://www.yamunaexpresswayauthority.com/web/citizen-services/possession-schedule/)
-- [Single Window Portal- Industrial Nivesh Mitra Portal](https://niveshmitra.up.nic.in/)
-- [Customer Care YEIDA](https://www.yamunaexpresswayauthority.com/web/contact-us/)
-- [Online Services Grievance Tracking](http://sangwanweb.nkbssl.com:8092/)
-- [Fianl List of Successful Applicant](https://www.yamunaexpresswayauthority.com/upload/important_link/39e8cf9e-edcf-48c4-be2c-6ec1f8a32cd4_final-list-of-success-ful-applicant-and-allottee-1.pdf)(0.04MB)English\|PDF
-- [ELIGIBLE APPLICANTS LIST OF CK-01 KIOSK SCHEME](https://www.yamunaexpresswayauthority.com/upload/important_link/3508d47c-36dd-4bd6-b46c-abf8fc48610c_ELIGIBLE-APPLICANTS-LIST-OF-CK-01-KIOSK-SCHEME.pdf)(0.07MB)English\|PDF
-- [Disqualified applicants for Kiosk Scheme CK-01/202](https://www.yamunaexpresswayauthority.com/upload/important_link/09a2ecff-eb35-4ef8-822e-6c35453e6838_Eligible-EMD-List-of-Kiosk.pdf)(0.07MB)English\|PDF
+& completion plans
 
 Projects
 
@@ -459,10 +368,6 @@ Yamuna Expressway Industrial Development Authority (YEIDA) is driving major infr
 ![LOGISTICS PARK](https://www.yamunaexpresswayauthority.com/assets/images/projects/Logistics.jpg)
 
 [Logistics Park](https://www.yamunaexpresswayauthority.com/Projects/Logistics-Park)
-
-![heritage City Project](https://www.yamunaexpresswayauthority.com/assets/images/projects/pod.jpg)
-
-[Personal Rapid Transit(PRT)](https://www.yamunaexpresswayauthority.com/Projects/Personal-Rapid-Transit(PRT)--Pod-Taxi)
 
 ![pod Project](https://www.yamunaexpresswayauthority.com/assets/images/projects/heritage-city.jpg)
 
@@ -514,11 +419,9 @@ Pause Slider
 
 Screen Reader
 
-Bigger
-Text
+Bigger Text
 
-Small
-Text
+Small Text
 
 Line Height
 

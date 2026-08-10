@@ -1,16 +1,16 @@
 {
   "source": "YEIDA official portal — Live Scheme section, via Firecrawl (stealth + IN)",
   "url": "https://www.yamunaexpresswayauthority.com/",
-  "fetched_at": "2026-08-03T07:55:21.719775Z",
+  "fetched_at": "2026-08-10T05:51:05.417115Z",
   "count": 1,
   "schemes": [
     {
-      "title": "RPS10/2026 Draw Result",
-      "code": "RPS10/2026 Draw Result",
-      "category": "Residential",
+      "title": "Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06",
+      "code": "Hospital, Child Welfare & Maternity Centre YEA/INST 2025-2026/06",
+      "category": "Institutional",
       "sector": null,
-      "deadline": "30-06-2026",
-      "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result",
+      "deadline": "30-08-2026",
+      "brochure_or_status_url": "https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf",
       "apply_url": "https://hpplots.yamunaexpresswayauthority.com/"
     }
   ]
