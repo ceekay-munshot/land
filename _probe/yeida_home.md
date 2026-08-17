@@ -40,11 +40,36 @@ Spotlight
 
 About Us
 
-# Strategic Industrial and Urban   Development in YEIDA
+# Strategic Industrial and Urban    Development in YEIDA
 
 UP Government has enacted the UP Industrial Development Act, 1976 to ensure planned development of industrial and allied activities in the state. NOIDA, Greater NOIDA (GNOIDA) and Yamuna Expressway ... [Read More](https://www.yamunaexpresswayauthority.com/About-Us/Overview "Read More")
 
+![CEO Photo](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/ceo.png)
+
+Welcome to the Official Website of the Yamuna Expressway Industrial Development Authority (YEIDA). Established in 2001 under the Uttar Pradesh Industrial Area Development Act, 1976, YEIDA is the nodal agency responsible for the planned and sustainable development of the region along the Yamuna Expressway, covering the notified areas of Gautam Buddh Nagar, Bulandshahr, Aligarh, Hathras, Mathura, and Agra. Our mandate extends beyond infrastructure—it is about creating a well-planned industrial, residential, institutional, and commercial ecosystem that generates lasting... [Read More](https://www.yamunaexpresswayauthority.com/About-Us/Ceo-Message "CEO Message Read More")
+
+**Shri Rakesh Kumar Singh (IAS)** Chief Executive Officer
+
 ### Public Announcement
+
+[Test](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/bf673784-ed30-4806-af7c-1373973b6760.pdf)
+
+01 Aug 26
+
+
+[Village Kherli bhaw ke 07% Kisan aabdi plot ki 5.5 ki final list Prakashit](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/fa42c63e-bf68-4189-934d-22479c500eef.pdf)
+
+29 Aug 26
+
+.pdf
+
+(341KB)
+
+
+[EC Letter -EMC YEIDA](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/4a5db13c-b002-42b6-b915-223d5c1e200e.pdf)
+
+29 Aug 26
+
 
 [Final Allotment Status of Mix Land use scheme MLU/2025-26/11](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11)
 
@@ -56,26 +81,16 @@ UP Government has enacted the UP Industrial Development Act, 1976 to ensure plan
 02 Jul 26
 
 
-[Corrigendum](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/IMG-20260804-WA0001.jpg)
-
-04 Aug 26
-
-
-[मेडिकल डिवाइस पार्क आवंटन योजना](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-03-at-40610-PM-600x563.jpeg)
-
-04 Aug 26
-
-
-[आवासीय भूखण्ड योजना RPS10/2025](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp-Image-2026-06-04-at-115103-AM-600x495.jpeg)
-
-04 Aug 26
-
-
 [View All](https://www.yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
 
 Pause News Slider
 
 - Live Scheme
+
+- Important Link - Services
+
+
+- All Scheme
 
 - Commercial
 
@@ -85,10 +100,6 @@ Pause News Slider
 
 - Residential
 
-- Services
-
-
-## Live Scheme
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Extended -
@@ -102,16 +113,12 @@ Extended -
 
 [click to view](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf "click to view")
 
-## Commercial
-
 No records found.
-
-## Industrial
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
 
-06-07-2026
+10-08-2026
 
 
 [Final Status of Industrial plots Applications YEA/IND8000(2025-26)-14](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20Applications%20YEA/IND8000(2025-26)-14)
@@ -121,56 +128,16 @@ Date -
 [click to view](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20Applications%20YEA/IND8000(2025-26)-14 "click to view")
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-06-07-2026
-
-
-[Eligibility Status of YEA/IND-MDP(2026)-06 Scheme](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Eligibility%20Status%20of%20YEA/IND-MDP(2026)-06%20Scheme)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Eligibility%20Status%20of%20YEA/IND-MDP(2026)-06%20Scheme)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Eligibility%20Status%20of%20YEA/IND-MDP(2026)-06%20Scheme "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-06-07-2026
-
-
-[Final Allotment Status of Mix Land use scheme MLU/2025-26/11](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11 "click to view")
-
-## Institutional
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-06-07-2026
-
-
-[Final Status of YEA/INST 2024-2025/07](https://www.yamunaexpresswayauthority.com/RpsDraw2/DrawResult?schemeName=Final%20Status%20of%20YEA/INST%202024-2025/07)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw2/DrawResult?schemeName=Final%20Status%20of%20YEA/INST%202024-2025/07)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw2/DrawResult?schemeName=Final%20Status%20of%20YEA/INST%202024-2025/07 "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Extended -
 
 30-08-2026
 
 
-[Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf)
+[Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf)
 
 [Apply now](https://hpplots.yamunaexpresswayauthority.com/)
 
-[click to view](https://www.yamunaexpresswayauthority.com/uploads/2026/02/HOSPITAL-CHILD-WELFARE-AND-BROCHURE.pdf "click to view")
-
-## Residential
+[click to view](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf "click to view")
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
@@ -195,7 +162,17 @@ Date -
 
 [click to view](https://www.yamunaexpresswayauthority.com/RpsDraw5/DrawResult?schemeName=Final%20Applicant%20List%20of%20RPS10/2026 "click to view")
 
-## Services
+![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
+Date -
+
+06-08-2026
+
+
+[Citizen Services](https://www.yamunaexpresswayauthority.com/citizen-services)
+
+[View Details](https://www.yamunaexpresswayauthority.com/citizen-services)
+
+[click to view](https://www.yamunaexpresswayauthority.com/citizen-services "click to view")
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
@@ -212,18 +189,6 @@ Date -
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
 
-05-08-2026
-
-
-[Nivesh Mitra](https://niveshmitra.up.nic.in/)
-
-[Check Status](https://niveshmitra.up.nic.in/)
-
-[click to view](https://niveshmitra.up.nic.in/ "click to view")
-
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
 06-07-2026
 
 
@@ -232,6 +197,18 @@ Date -
 [View Details](https://bpms.yamunaexpresswayauthority.com/)
 
 [click to view](https://bpms.yamunaexpresswayauthority.com/ "click to view")
+
+![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
+Date -
+
+05-08-2026
+
+
+[Nivesh Mitra](https://niveshmitra.up.nic.in/)
+
+[Check Status](https://niveshmitra.up.nic.in/)
+
+[click to view](https://niveshmitra.up.nic.in/ "click to view")
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
@@ -263,11 +240,11 @@ Date -
 06-07-2026
 
 
-[Know Your Checklist Status](https://www.yamunaexpresswayauthority.com/RpsDraw7/DrawResult?schemeName=Know%20Your%20Checklist%20Status)
+[Latest News & Updates](https://www.yamunaexpresswayauthority.com/Spotlight)
 
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw7/DrawResult?schemeName=Know%20Your%20Checklist%20Status)
+[View Details](https://www.yamunaexpresswayauthority.com/Spotlight)
 
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw7/DrawResult?schemeName=Know%20Your%20Checklist%20Status "click to view")
+[click to view](https://www.yamunaexpresswayauthority.com/Spotlight "click to view")
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
@@ -275,23 +252,49 @@ Date -
 06-07-2026
 
 
-[Latest News & Updates](https://www.yamunaexpresswayauthority.com/Spotlight)
+[Know Your Checklist Status](https://www.yamunaexpresswayauthority.com/RpsDraw7/DrawResult?schemeName=Know%20Your%20Checklist%20Status)
 
-[View Details](https://www.yamunaexpresswayauthority.com/Spotlight)
+[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw7/DrawResult?schemeName=Know%20Your%20Checklist%20Status)
 
-[click to view](https://www.yamunaexpresswayauthority.com/Spotlight "click to view")
-
-![CEO Photo](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/ceo.png)
-
-Welcome to the Official Website of the Yamuna Expressway Industrial Development Authority (YEIDA). Established in 2001 under the Uttar Pradesh Industrial Area Development Act, 1976, YEIDA is the nodal agency responsible for the planned and sustainable development of the region along the Yamuna Expressway, covering the notified areas of Gautam Buddh Nagar, Bulandshahr, Aligarh, Hathras, Mathura, and Agra. Our mandate extends beyond infrastructure—it is about creating a well-planned industrial, residential, institutional, and commercial ecosystem that generates lasting... [Read More](https://www.yamunaexpresswayauthority.com/About-Us/Ceo-Message "CEO Message Read More")
-
-**Shri Rakesh Kumar Singh (IAS)** Chief Executive Officer
+[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw7/DrawResult?schemeName=Know%20Your%20Checklist%20Status "click to view")
 
 Highlights
 
 ## Interesting Facts of YEIDA
 
-Industrial Development Authority manages one of India’s fastest-growing integrated urban regions connecting Noida, Greater Noida, and Agra
+Industrial Development Authority manages one of India’s fastest-growing
+integrated urban regions connecting Noida, Greater Noida, and Agra
+
+
+[GIS Portal](http://sangwanweb.nkbssl.com:8092/)
+
+![GIS Portal icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/map-icon.png)
+
+Public Grievance
+
+Online Services
+
+Grievances
+
+[Citizen Charter](https://ccp.yamunaexpresswayauthority.com/)
+
+![Citizen Charter icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/citizen-icon.png)
+
+Citizen Charter
+
+Online Allottee
+
+Payment System
+
+[Building Plan Map Approval System](https://bpms.yamunaexpresswayauthority.com/)
+
+![Building Plan Map Approval System icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/ISP-icon.png)
+
+Building Plan Map Approval System
+
+Online sanction
+
+& completion plans
 
 06
 
@@ -317,39 +320,9 @@ Passengers
 
 Investment
 
-[GIS Portal](http://sangwanweb.nkbssl.com:8092/)
-
-![GIS Portal icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/map-icon.png)
-
-Public Grievance
-
-Online Services
-
-Grievances
-
-[Citizen Charter](https://ccp.yamunaexpresswayauthority.com/)
-
-![Citizen Charter icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/citizen-icon.png)
-
-Citizen Charter
-
-Online Allottee
-
-Payment System
-
-[Kiosk Scheme](https://bpms.yamunaexpresswayauthority.com/)
-
-![Kiosk Scheme icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/ISP-icon.png)
-
-Building Plan Map Approval System
-
-Online sanction
-
-& completion plans
-
 Projects
 
-## Explore Our Major Project   & Proposed Plan
+## Explore Our Major Project    & Proposed Plan
 
 Yamuna Expressway Industrial Development Authority (YEIDA) is driving major infrastructure growth along the Yamuna Expressway [Read More](https://www.yamunaexpresswayauthority.com/Projects/Our-Projects "Read More")
 
