@@ -52,18 +52,18 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 
 ### Public Announcement
 
-[Test](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/bf673784-ed30-4806-af7c-1373973b6760.pdf)
+[Village Pachokra ke 07% Kisan aabdi plot ki 5.5 ki final list Prakashit](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/6c5f8f90-a887-47ce-bed7-1a85927dd3d1.pdf)
 
-01 Aug 26
+29 Dec 26
+
+.pdf
+
+(311KB)
 
 
 [Village Kherli bhaw ke 07% Kisan aabdi plot ki 5.5 ki final list Prakashit](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/fa42c63e-bf68-4189-934d-22479c500eef.pdf)
 
-29 Aug 26
-
-.pdf
-
-(341KB)
+27 Aug 26
 
 
 [EC Letter -EMC YEIDA](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/4a5db13c-b002-42b6-b915-223d5c1e200e.pdf)
