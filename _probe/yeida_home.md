@@ -26,10 +26,6 @@ Hon’ble State Minister, of Industrial Development, Uttar Pradesh
 
 Spotlight
 
-- [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://hpplots.yamunaexpresswayauthority.com/ "Click here to download")
-- [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://hpplots.yamunaexpresswayauthority.com/ "Click here to download")
-- [Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://hpplots.yamunaexpresswayauthority.com/ "Click here to download")
-
 [View All](https://www.yamunaexpresswayauthority.com/Spotlight)
 
 ![Slider Image 2](https://www.yamunaexpresswayauthority.com/Upload/Slider/Banner_01.jpg)
@@ -51,6 +47,15 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 **Shri Rakesh Kumar Singh (IAS)** Chief Executive Officer
 
 ### Public Announcement
+
+[OFFICE ORDER REGARDING RPS10/2026 SCHEME PAYMENT](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/a810c74d-1c39-4cc3-a90f-0baadf050aaf.jpeg)
+
+29 Dec 27
+
+.jpeg
+
+(395KB)
+
 
 [Village Pachokra ke 07% Kisan aabdi plot ki 5.5 ki final list Prakashit](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/6c5f8f90-a887-47ce-bed7-1a85927dd3d1.pdf)
 
@@ -76,11 +81,6 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 02 Jul 26
 
 
-[RPS10/2026 Draw Result](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result)
-
-02 Jul 26
-
-
 [View All](https://www.yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
 
 Pause News Slider
@@ -101,17 +101,7 @@ Pause News Slider
 - Residential
 
 
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Extended -
-
-30-08-2026
-
-
-[Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf)
-
-[Apply now](https://hpplots.yamunaexpresswayauthority.com/)
-
-[click to view](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf "click to view")
+No records found.
 
 No records found.
 
@@ -127,17 +117,7 @@ Date -
 
 [click to view](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20Applications%20YEA/IND8000(2025-26)-14 "click to view")
 
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Extended -
-
-30-08-2026
-
-
-[Hospital, Child Welfare & Maternity Centre Plots YEA/INST 2025-2026/06](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf)
-
-[Apply now](https://hpplots.yamunaexpresswayauthority.com/)
-
-[click to view](https://www.yamunaexpresswayauthority.com/upload/scheme/5786586b-65cf-44d9-901f-43da742ec741.pdf "click to view")
+No records found.
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
