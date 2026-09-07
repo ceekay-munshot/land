@@ -26,6 +26,8 @@ Hon’ble State Minister, of Industrial Development, Uttar Pradesh
 
 Spotlight
 
+- [Office Order Regarding RPS10/2026 Scheme Payment](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/bf9a7bf1-6b2a-49b7-9add-6f0d761018f0.pdf "Click here to download")
+
 [View All](https://www.yamunaexpresswayauthority.com/Spotlight)
 
 ![Slider Image 2](https://www.yamunaexpresswayauthority.com/Upload/Slider/Banner_01.jpg)
@@ -36,7 +38,7 @@ Spotlight
 
 About Us
 
-# Strategic Industrial and Urban    Development in YEIDA
+# Strategic Industrial and Urban   Development in YEIDA
 
 UP Government has enacted the UP Industrial Development Act, 1976 to ensure planned development of industrial and allied activities in the state. NOIDA, Greater NOIDA (GNOIDA) and Yamuna Expressway ... [Read More](https://www.yamunaexpresswayauthority.com/About-Us/Overview "Read More")
 
@@ -48,37 +50,33 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 
 ### Public Announcement
 
-[OFFICE ORDER REGARDING RPS10/2026 SCHEME PAYMENT](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/a810c74d-1c39-4cc3-a90f-0baadf050aaf.jpeg)
+[Industry- Lease Deed Executed But Map Not Applied.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/d32da754-b6ba-419f-9e29-fcb35b923ace.pdf)
 
-29 Dec 27
-
-.jpeg
-
-(395KB)
-
-
-[Village Pachokra ke 07% Kisan aabdi plot ki 5.5 ki final list Prakashit](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/6c5f8f90-a887-47ce-bed7-1a85927dd3d1.pdf)
-
-29 Dec 26
+25 Apr 26
 
 .pdf
 
-(311KB)
+(1620KB)
 
 
-[Village Kherli bhaw ke 07% Kisan aabdi plot ki 5.5 ki final list Prakashit](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/fa42c63e-bf68-4189-934d-22479c500eef.pdf)
-
-27 Aug 26
-
-
-[EC Letter -EMC YEIDA](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/4a5db13c-b002-42b6-b915-223d5c1e200e.pdf)
+[Office Order Regarding Rps10/2026 Scheme Payment.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/bf9a7bf1-6b2a-49b7-9add-6f0d761018f0.pdf)
 
 29 Aug 26
 
 
-[Final Allotment Status of Mix Land use scheme MLU/2025-26/11](https://www.yamunaexpresswayauthority.com/RpsDraw4/DrawResultOtp?schemeName=Final%20Allotment%20Status%20of%20Mix%20Land%20use%20scheme%20MLU/2025-26/11)
+[Village Pachokra Ke 07% Kisan Abadi Plot Ki 5.5 Ki Final List Prakashit.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/6c5f8f90-a887-47ce-bed7-1a85927dd3d1.pdf)
 
-02 Jul 26
+25 Aug 26
+
+
+[Village Kherli Bhaw Ke 07% Kisan Abadi Plot Ki 5.5 Ki Final List Prakashit.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/fa42c63e-bf68-4189-934d-22479c500eef.pdf)
+
+25 Aug 26
+
+
+[Ec Letter -Emc Yeida .](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/4a5db13c-b002-42b6-b915-223d5c1e200e.pdf)
+
+29 Aug 26
 
 
 [View All](https://www.yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
@@ -105,42 +103,11 @@ No records found.
 
 No records found.
 
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-10-08-2026
-
-
-[Final Status of Industrial plots Applications YEA/IND8000(2025-26)-14](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20Applications%20YEA/IND8000(2025-26)-14)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20Applications%20YEA/IND8000(2025-26)-14)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw6/DrawResultOtp?schemeName=Final%20Status%20of%20Industrial%20plots%20Applications%20YEA/IND8000(2025-26)-14 "click to view")
+No records found.
 
 No records found.
 
-![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
-Date -
-
-06-07-2026
-
-
-[RPS10/2026 Draw Result](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw/DrawResult?schemeName=RPS10/2026%20Draw%20Result "click to view")
-
-Date -
-
-06-07-2026
-
-
-[Final Applicant List of RPS10/2026](https://www.yamunaexpresswayauthority.com/RpsDraw5/DrawResult?schemeName=Final%20Applicant%20List%20of%20RPS10/2026)
-
-[View Details](https://www.yamunaexpresswayauthority.com/RpsDraw5/DrawResult?schemeName=Final%20Applicant%20List%20of%20RPS10/2026)
-
-[click to view](https://www.yamunaexpresswayauthority.com/RpsDraw5/DrawResult?schemeName=Final%20Applicant%20List%20of%20RPS10/2026 "click to view")
+No records found.
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
@@ -220,11 +187,11 @@ Date -
 06-07-2026
 
 
-[Latest News & Updates](https://www.yamunaexpresswayauthority.com/Spotlight)
+[Latest News & Updates](https://yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
 
-[View Details](https://www.yamunaexpresswayauthority.com/Spotlight)
+[View Details](https://yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
 
-[click to view](https://www.yamunaexpresswayauthority.com/Spotlight "click to view")
+[click to view](https://yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement "click to view")
 
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
@@ -242,11 +209,9 @@ Highlights
 
 ## Interesting Facts of YEIDA
 
-Industrial Development Authority manages one of India’s fastest-growing
-integrated urban regions connecting Noida, Greater Noida, and Agra
+Industrial Development Authority manages one of India’s fastest-growing integrated urban regions connecting Noida, Greater Noida, and Agra
 
-
-[GIS Portal](http://sangwanweb.nkbssl.com:8092/)
+[GIS Portal](https://www.yamunaexpresswayauthority.com/grievance)
 
 ![GIS Portal icon](https://www.yamunaexpresswayauthority.com/assets/images/icon/map-icon.png)
 
@@ -302,7 +267,7 @@ Investment
 
 Projects
 
-## Explore Our Major Project    & Proposed Plan
+## Explore Our Major Project   & Proposed Plan
 
 Yamuna Expressway Industrial Development Authority (YEIDA) is driving major infrastructure growth along the Yamuna Expressway [Read More](https://www.yamunaexpresswayauthority.com/Projects/Our-Projects "Read More")
 
@@ -372,9 +337,11 @@ Pause Slider
 
 Screen Reader
 
-Bigger Text
+Bigger
+Text
 
-Small Text
+Small
+Text
 
 Line Height
 
@@ -389,6 +356,7 @@ Hide Images
 Cursor
 
 Light-Dark
+
 
 Invert Colors
 
