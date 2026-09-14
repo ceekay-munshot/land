@@ -50,6 +50,20 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 
 ### Public Announcement
 
+[Tirthali 2Nd List Of 7% Eligible Farmers.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/14ae72d9-27db-4670-9bbf-e10df72e4f1e.pdf)
+
+12 Sep 26
+
+.pdf
+
+(1253KB)
+
+
+[7% Plot Final List Of Village Thora, Tehsil Jewar, Gautambuddha Nagar.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/fbe07444-e90c-49ba-bd34-58d63cbbed7b.pdf)
+
+12 Sep 26
+
+
 [Industry- Lease Deed Executed But Map Not Applied.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/d32da754-b6ba-419f-9e29-fcb35b923ace.pdf)
 
 25 Apr 26
@@ -67,16 +81,6 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 [Village Pachokra Ke 07% Kisan Abadi Plot Ki 5.5 Ki Final List Prakashit.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/6c5f8f90-a887-47ce-bed7-1a85927dd3d1.pdf)
 
 25 Aug 26
-
-
-[Village Kherli Bhaw Ke 07% Kisan Abadi Plot Ki 5.5 Ki Final List Prakashit.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/fa42c63e-bf68-4189-934d-22479c500eef.pdf)
-
-25 Aug 26
-
-
-[Ec Letter -Emc Yeida .](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/4a5db13c-b002-42b6-b915-223d5c1e200e.pdf)
-
-29 Aug 26
 
 
 [View All](https://www.yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
@@ -378,3 +382,22 @@ Namaste! I'm YEIDA AI Assistant. How can I help you with property, schemes, or s
 Recording...
 
 Helpline: 1800-180-8296 \| [yamunaexpresswayauthority.com](https://yamunaexpresswayauthority.com/)
+
+#### Disclaimer
+
+This assistant answers from YEIDA's published documents using AI, so it can be
+wrong or out of date. Always confirm scheme dates, rates and eligibility on the
+official YEIDA website or helpline.
+
+
+It cannot give legal advice, or check the status of your application, payment
+or refund.
+
+
+यह सहायक YEIDA के प्रकाशित दस्तावेज़ों से AI द्वारा उत्तर देता है, इसलिए जानकारी गलत या
+पुरानी हो सकती है। योजना की तिथियाँ, दरें और पात्रता आधिकारिक YEIDA वेबसाइट या हेल्पलाइन
+से अवश्य पुष्टि करें। यह कानूनी सलाह नहीं है, और यह आपके आवेदन, भुगतान या रिफंड की स्थिति
+नहीं देख सकता।
+
+
+Got it
