@@ -1,11 +1,14 @@
 {
-  "fetched_at": "2026-09-28T11:04:52.988540Z",
+  "fetched_at": "2026-10-05T11:40:57.648368Z",
   "pages": [
     {
       "slug": "home",
       "url": "https://www.yamunaexpresswayauthority.com/",
-      "success": false,
-      "error": "HTTP Error 402: Payment Required"
+      "success": true,
+      "md_len": 16784,
+      "n_links": 40,
+      "title": "Home - Yamuna Expressway Industrial Development Authority (YEIDA)",
+      "has_live_scheme": true
     }
   ],
   "live_schemes_parsed": 0,
