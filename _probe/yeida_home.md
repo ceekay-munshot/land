@@ -144,7 +144,7 @@ Date -
 
 [Scheme for Group Housing Plots Allotment](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/283991f4-c965-4233-95b9-eee7415077c0.pdf)
 
-[View Details](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/283991f4-c965-4233-95b9-eee7415077c0.pdf)
+[Apply now](http://www.gerpegov.com/YEIDASCHM1)
 
 [click to view](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/283991f4-c965-4233-95b9-eee7415077c0.pdf "click to view")
 
