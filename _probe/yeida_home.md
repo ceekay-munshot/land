@@ -26,8 +26,11 @@ Hon’ble State Minister, of Industrial Development, Uttar Pradesh
 
 Spotlight
 
+- [Extension Notice for Corporate Office](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/811d57ea-cbb1-4b85-8011-d2cc6c863bca.jpeg "Click here to download")
+- [Extension Notice for Senior Secondary School Plots](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/8387fc9f-c53d-47ce-ae18-76a9ad24fd5a.jpeg "Click here to download")
 - [Scheme For Hotel Plot Scheme.](https://yeida.procure247.com/upavp-auction/home "Click here to download")
 - [Office Order Regarding RPS10/2026 Scheme Payment](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/bf9a7bf1-6b2a-49b7-9add-6f0d761018f0.pdf "Click here to download")
+- [Scheme for Allotment of Senior Secondary School Plots](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/114a4885-5b61-4120-ac9a-ebd7f00c2134.pdf "Click here to download")
 
 [View All](https://www.yamunaexpresswayauthority.com/Spotlight)
 
@@ -51,6 +54,21 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 
 ### Public Announcement
 
+[Extension Notice For Senior Secondary School Plots.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/8387fc9f-c53d-47ce-ae18-76a9ad24fd5a.jpeg)
+
+16 Oct 26
+
+
+[Extension Notice For Corporate Office .](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/811d57ea-cbb1-4b85-8011-d2cc6c863bca.jpeg)
+
+16 Oct 26
+
+
+[Scheme For Allotment Of Senior Secondary School Plots.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/114a4885-5b61-4120-ac9a-ebd7f00c2134.pdf)
+
+16 Sep 26
+
+
 [Scheme For Group Housing Plots Allotment.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/283991f4-c965-4233-95b9-eee7415077c0.pdf)
 
 28 Sep 26
@@ -59,25 +77,6 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 [Scheme For Hotel Plot Scheme.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/85a97ce1-e88e-4797-89bc-30e01e255562.pdf)
 
 25 Sep 26
-
-
-[Scheme For Allotment Of Senior Secondary School Plots.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/114a4885-5b61-4120-ac9a-ebd7f00c2134.pdf)
-
-16 Sep 26
-
-
-[Scheme For Allotment Of Corporate Office.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/de1ad55b-5ef6-41bd-ade4-53e82ded3f53.pdf)
-
-16 Sep 26
-
-
-[Tirthali 2Nd List Of 7% Eligible Farmers.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/14ae72d9-27db-4670-9bbf-e10df72e4f1e.pdf)
-
-12 Sep 26
-
-.pdf
-
-(1253KB)
 
 
 [View All](https://www.yamunaexpresswayauthority.com/News-and-Media/News-and-Announcement)
