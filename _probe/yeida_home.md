@@ -29,6 +29,7 @@ Spotlight
 - [Extension Notice for Corporate Office](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/811d57ea-cbb1-4b85-8011-d2cc6c863bca.jpeg "Click here to download")
 - [Extension Notice for Group Housing Plots](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-05_at_184446.jpeg "Click here to download")
 - [Extension Notice for Senior Secondary School Plots](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/8387fc9f-c53d-47ce-ae18-76a9ad24fd5a.jpeg "Click here to download")
+- [Scheme For Hotel Plot Scheme.](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-13_at_170359.jpeg "Click here to download")
 - [Office Order Regarding RPS10/2026 Scheme Payment](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/bf9a7bf1-6b2a-49b7-9add-6f0d761018f0.pdf "Click here to download")
 - [Scheme for Allotment of Senior Secondary School Plots](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/114a4885-5b61-4120-ac9a-ebd7f00c2134.pdf "Click here to download")
 
@@ -59,9 +60,9 @@ Welcome to the Official Website of the Yamuna Expressway Industrial Development 
 09 Nov 26
 
 
-[Extension Notice For Hotel Plots Scheme.](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/9f215034-d2a3-4945-ae2c-10fb3feefb73.pdf)
+[Extension Notice For Hotel Plots Scheme.](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-13_at_170359.jpeg)
 
-24 Oct 26
+22 Oct 26
 
 
 [Extension Notice For Group Housing Plots.](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-05_at_184446.jpeg)
@@ -126,6 +127,18 @@ Date -
 ![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
 Date -
 
+25-09-2026
+
+
+[Scheme For Hotel Plot Scheme.](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-13_at_170359.jpeg)
+
+[Apply now](https://yeida.procure247.com/upavp-auction/home)
+
+[click to view](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-13_at_170359.jpeg "click to view")
+
+![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
+Date -
+
 28-09-2026
 
 
@@ -135,7 +148,17 @@ Date -
 
 [click to view](https://www.yamunaexpresswayauthority.com/Upload/PressNewsFiles/283991f4-c965-4233-95b9-eee7415077c0.pdf "click to view")
 
-No records found.
+![](https://www.yamunaexpresswayauthority.com/assets/images/icon/new_blink.png)
+Date -
+
+25-09-2026
+
+
+[Scheme For Hotel Plot Scheme.](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-13_at_170359.jpeg)
+
+[Apply now](https://yeida.procure247.com/upavp-auction/home)
+
+[click to view](https://www.yamunaexpresswayauthority.com/Upload/MediaGallery/WhatsApp_Image_2026-11-13_at_170359.jpeg "click to view")
 
 No records found.
 
@@ -393,11 +416,9 @@ Pause Slider
 
 Screen Reader
 
-Bigger
-Text
+Bigger Text
 
-Small
-Text
+Small Text
 
 Line Height
 
@@ -413,7 +434,42 @@ Cursor
 
 Light-Dark
 
-
 Invert Colors
 
 Reset All Settings
+
+![Yeid@ AI](https://yeidabot.ptpluat.in/widget/ai-yeida.svg)
+
+Yeid@ AI
+
+![YEIDA](https://www.yamunaexpresswayauthority.com/web/wp-content/uploads/2021/09/logo.png)
+
+### YEIDA AI Assistant
+
+Online
+
+Namaste! I'm YEIDA AI Assistant. How can I help you with property, schemes, or services today?
+
+
+Recording...
+
+Helpline: 1800-180-8296 \| [yamunaexpresswayauthority.com](https://yamunaexpresswayauthority.com/)
+
+#### Disclaimer
+
+This assistant answers from YEIDA's published documents using AI, so it can be
+wrong or out of date. Always confirm scheme dates, rates and eligibility on the
+official YEIDA website or helpline.
+
+
+It cannot give legal advice, or check the status of your application, payment
+or refund.
+
+
+यह सहायक YEIDA के प्रकाशित दस्तावेज़ों से AI द्वारा उत्तर देता है, इसलिए जानकारी गलत या
+पुरानी हो सकती है। योजना की तिथियाँ, दरें और पात्रता आधिकारिक YEIDA वेबसाइट या हेल्पलाइन
+से अवश्य पुष्टि करें। यह कानूनी सलाह नहीं है, और यह आपके आवेदन, भुगतान या रिफंड की स्थिति
+नहीं देख सकता।
+
+
+Got it
